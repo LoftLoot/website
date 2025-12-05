@@ -149,30 +149,6 @@
         ]
     },
     {
-        "id": 16,
-        "name": "Hulk Hogan - Real American",
-        "collection": "WWF",
-        "brand": "WWF",
-        "type": "Action Figure",
-        "manufacturer": "Hasbro",
-        "releaseDate": 1990,
-        "price": 150,
-        "stock": 1,
-        "demographic": "masculine",
-        "description": "Hasbro WWF line 1 (1990). Gorilla press slam action. Iconic yellow trunks. Card has minor edgewear.",
-        "condition": "MOC",
-        "links": [
-            {
-                "platform": "eBay",
-                "url": "#"
-            }
-        ],
-        "images": [
-            "https://placehold.co/600x750/f1c232/ffffff?text=Hulkster",
-            "https://placehold.co/600x750/e06666/ffffff?text=Card+Back"
-        ]
-    },
-    {
         "id": 17,
         "name": "Ultimate Warrior 12\" Talking",
         "collection": "WWF",
