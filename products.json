@@ -1,89 +1,274 @@
 [
   {
     "id": 1,
-    "name": "Leonardo",
-    "price": 45.00,
-    "stock": 1,
-    "collection": "TMNT",
-    "releaseDate": 1988,
-    "brand": "Playmates",
-    "manufacturer": "Playmates",
+    "name": "Skeletor - Showa Variant",
+    "collection": "He-Man",
+    "brand": "Masters of the Universe",
     "type": "Action Figure",
-    "description": "The original 1988 release of the TMNT leader. Comes with katana blades and belt. Slight wear on the shell but joints are tight.",
-    "images": [
-      "https://images.unsplash.com/photo-1615828738363-238479e39b92?auto=format&fit=crop&w=800&q=80"
-    ],
-    "condition": "Used - Good",
+    "manufacturer": "Mattel",
+    "releaseDate": 1985,
+    "price": 120.0,
+    "stock": 1,
+    "badgeText": "Rare Variant",
+    "badgeColor": "#b4a7d6",
+    "demographic": "masculine",
+    "description": "Official Mattel 1985 mold. Rare Japanese market release with pearlescent finish. Includes Havoc Staff and Power Sword. The card back features unique Japanese localized art not seen in the US release.",
+    "condition": "C8.5 Near Mint",
     "links": [
-      { "platform": "eBay", "url": "#" }
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Skeletor+Front",
+      "https://www.youtube.com/watch?v=mownw0aqNiA"
     ]
   },
   {
-    "id": 2,
-    "name": "Luke Skywalker (Farmboy)",
-    "price": 120.00,
-    "stock": 1,
-    "collection": "Star Wars",
-    "releaseDate": 1977,
-    "brand": "Kenner",
-    "manufacturer": "Kenner",
-    "type": "Action Figure",
-    "description": "Original 1977 Kenner release. Double telescoping lightsaber variant (reproduction saber). Paint apps on face are pristine.",
-    "images": [
-      "https://images.unsplash.com/photo-1608889175123-8ee362201f81?auto=format&fit=crop&w=800&q=80"
-    ],
-    "condition": "Used - Excellent",
-    "links": []
-  },
-  {
     "id": 3,
-    "name": "Lion-O",
-    "price": 85.00,
-    "stock": 0,
-    "collection": "Thundercats",
-    "releaseDate": 1985,
-    "brand": "LJN",
-    "manufacturer": "LJN",
+    "name": "Donatello 'Pizza Time'",
+    "collection": "TMNT",
+    "brand": "Teenage Mutant Ninja Turtles",
     "type": "Action Figure",
-    "description": "Complete with Sword of Omens and Claw Shield. The battery compartment is clean and the eye light-up feature still works!",
-    "images": [
-      "https://images.unsplash.com/photo-1560155016-5123d9b43d46?auto=format&fit=crop&w=800&q=80"
+    "manufacturer": "Playmates",
+    "releaseDate": 1992,
+    "price": 85.0,
+    "stock": 1,
+    "badgeText": "Mint On Card",
+    "badgeColor": "#93c47d",
+    "demographic": "masculine",
+    "description": "Playmates 1992 Wacky Action series. Mint on card. Unpunched. The pizza-throwing mechanism still functions perfectly through the blister pack testing port.",
+    "condition": "MOC (Mint on Card)",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
     ],
-    "condition": "Used - Very Good",
-    "links": []
+    "images": [
+      "https://placehold.co/600x750/93c47d/ffffff?text=Donatello+MOC"
+    ]
   },
   {
     "id": 4,
-    "name": "Ecto-1",
-    "price": 150.00,
-    "stock": 1,
-    "collection": "Ghostbusters",
-    "releaseDate": 1984,
-    "brand": "Kenner",
-    "manufacturer": "Kenner",
-    "type": "Vehicle",
-    "description": "The classic vehicle. Sticker wear is present, but the capturing claw mechanism works perfectly. No box.",
-    "images": [
-      "https://images.unsplash.com/photo-1534253893894-3f1415057d84?auto=format&fit=crop&w=800&q=80"
+    "name": "Lion-O Chrome Edition",
+    "collection": "Thundercats",
+    "brand": "Thundercats",
+    "type": "Action Figure",
+    "manufacturer": "LJN",
+    "releaseDate": 1986,
+    "price": 250.0,
+    "stock": 0,
+    "demographic": "masculine",
+    "description": "LJN 1986 original. Rare chrome variant mail-away exclusive. Minimal wear on the chrome finish, which is incredibly rare for this figure. Eyes still light up.",
+    "condition": "Loose - Excellent",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
     ],
-    "condition": "Used - Fair",
-    "links": []
+    "images": [
+      "https://placehold.co/600x750/e06666/ffffff?text=Lion-O+Chrome"
+    ]
   },
   {
-    "id": 5,
-    "name": "Pikachu (Chubby Variant)",
-    "price": 30.00,
-    "stock": 5,
-    "collection": "Pokémon",
-    "releaseDate": 1998,
-    "brand": "Hasbro",
-    "manufacturer": "Hasbro",
-    "type": "Plush",
-    "description": "The original 'fat' Pikachu plush design. Tag is still attached but creased.",
-    "images": [
-      "https://images.unsplash.com/photo-1613771404721-c5b4515a5113?auto=format&fit=crop&w=800&q=80"
+    "id": 7,
+    "name": "Raphael - Trenchcoat",
+    "collection": "TMNT",
+    "brand": "Teenage Mutant Ninja Turtles",
+    "type": "Action Figure",
+    "manufacturer": "Playmates",
+    "releaseDate": 1990,
+    "price": 55.0,
+    "stock": 1,
+    "demographic": "masculine",
+    "description": "Playmates 1990 Movie Star line. Rubber texture. Loose, complete. Includes the sai weapons and the fedora hat which is often missing.",
+    "condition": "Loose - Complete",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
     ],
-    "condition": "Used - Like New",
-    "links": []
+    "images": [
+      "https://placehold.co/600x750/cc0000/ffffff?text=Raph+Trenchcoat"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Mumm-Ra The Ever-Living",
+    "collection": "Thundercats",
+    "brand": "Thundercats",
+    "type": "Action Figure",
+    "manufacturer": "LJN",
+    "releaseDate": 1986,
+    "price": 180.0,
+    "stock": 1,
+    "demographic": "masculine",
+    "description": "LJN 1986. Light-up eyes functionality confirmed working. Includes dagger and headdress. Minor paint rub on the toes.",
+    "condition": "Loose - Very Good",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/444444/ffffff?text=Mumm-Ra"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Goliath - Stone Sleep",
+    "collection": "Gargoyles",
+    "brand": "Gargoyles",
+    "type": "Action Figure",
+    "manufacturer": "Kenner",
+    "releaseDate": 1995,
+    "price": 85.0,
+    "stock": 1,
+    "demographic": "masculine",
+    "description": "Kenner 1995. Hard-to-find Stone Sleep variant. 12 inch wingspan. Features 'stone' armor plating that snaps on.",
+    "condition": "Loose - Complete",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/483d8b/ffffff?text=Goliath",
+      "https://placehold.co/600x750/2e2759/ffffff?text=Wing+Span"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Boba Fett - Kenner 1979",
+    "collection": "Star Wars",
+    "brand": "Star Wars",
+    "type": "Action Figure",
+    "manufacturer": "Kenner",
+    "releaseDate": 1979,
+    "price": 350.0,
+    "stock": 0,
+    "badgeText": "Holy Grail",
+    "badgeColor": "#E67C73",
+    "demographic": "masculine",
+    "description": "Kenner 1979 original release. Unpunched 21-Back card. The holy grail for many collectors. Blister is clear with no yellowing.",
+    "condition": "MOC - Unpunched",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/556b2f/ffffff?text=Boba+Fett",
+      "https://placehold.co/600x750/3a4a20/ffffff?text=Rocket+Detail"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Hulk Hogan - Real American",
+    "collection": "WWF",
+    "brand": "WWF",
+    "type": "Action Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1990,
+    "price": 150.0,
+    "stock": 1,
+    "demographic": "masculine",
+    "description": "Hasbro WWF Series 1 (1990). Gorilla press slam action. Iconic yellow trunks. Card has minor edgewear.",
+    "condition": "MOC",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f1c232/ffffff?text=Hulkster",
+      "https://placehold.co/600x750/e06666/ffffff?text=Card+Back"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Ultimate Warrior 12\" Talking",
+    "collection": "WWF",
+    "brand": "WWF",
+    "type": "Action Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 85.0,
+    "stock": 1,
+    "demographic": "masculine",
+    "description": "Hasbro 1991. Massive 12-inch scale figure. Pull-string voice mechanism tested and working: 'Feel the power of the Warrior!' Paint apps on face paint are crisp.",
+    "condition": "Loose - Good",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/ff9900/ffffff?text=Ultimate+Warrior",
+      "https://placehold.co/600x750/ccff00/ffffff?text=Back+Detail"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Pokémon Pikachu 35mm Camera",
+    "collection": "Pokémon",
+    "brand": "Pokémon",
+    "type": "Electronics",
+    "manufacturer": "Tiger Electronics",
+    "releaseDate": 1999,
+    "price": 55.0,
+    "stock": 1,
+    "demographic": "neutral",
+    "description": "Tiger Electronics 1999. Fully functional 35mm film camera with built-in flash. Features a molded Pikachu sitting on the top housing. Lens cover intact.",
+    "condition": "Boxed - Untested",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      },
+      {
+        "platform": "Etsy",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f6b26b/ffffff?text=Pika+Camera",
+      "https://placehold.co/600x750/e69138/ffffff?text=Box+View"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "The Driller - Ram-Pagers",
+    "collection": "Thundercats",
+    "brand": "Thundercats",
+    "type": "Vehicle",
+    "manufacturer": "LJN",
+    "releaseDate": 1987,
+    "price": 450.0,
+    "stock": 0,
+    "badgeText": "Ultra Rare",
+    "badgeColor": "#b4a7d6",
+    "demographic": "masculine",
+    "description": "LJN 1987 Ram-Pagers series. Ultra rare drill-action vehicle/figure hybrid. Diamond-tipped drill bit spins when rolled. One of the hardest Thundercats items to find in this condition.",
+    "condition": "Loose - Rare",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/b4a7d6/ffffff?text=The+Driller",
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Action+Feature"
+    ]
   }
 ]
