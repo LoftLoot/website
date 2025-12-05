@@ -12,12 +12,11 @@ const Footer = () => {
                     <Logo className="scale-75 origin-left" />
                 </div>
                 <div className="text-center md:text-right">
-                    <p className="text-xs text-[#514d46] font-medium">© {new Date().getFullYear()} Loft Loot.</p>
+                    <p className="text-xs text-[#514d46] font-medium">© {new Date().getFullYear()} Loft Loot. <br/>Items are part of a private collection and are sold as-is. We have no affiliation <br />with the original brands, manufacturers or retailers of the products listed.</p>
                 </div>
             </div>
         </footer>
     );
 };
-
 
 export default Footer;
