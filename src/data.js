@@ -1,3 +1,7 @@
+// src/data.js
+
+import { Package, Search, ShoppingBag } from 'lucide-react';
+
 // --- KEEP HELPER FUNCTIONS ---
 export const normalizeText = (text) => {
     if (!text) return "";
@@ -31,7 +35,7 @@ export const generateYearTokens = (product) => {
     return Array.from(tokens);
 };
 
-// --- KEEP CONSTANTS ---
+// --- CONSTANTS ---
 export const BASE_LOGOS = {
     "eBay": "https://raw.githubusercontent.com/LoftLoot/site/refs/heads/main/images/logo_ebay.png",
     "Etsy": "https://raw.githubusercontent.com/LoftLoot/site/refs/heads/main/images/logo_etsy.png"
@@ -82,23 +86,21 @@ export const addToBoundedCache = (cache, key, value, limit) => {
     if (cache.size > limit) cache.delete(cache.keys().next().value);
 };
 
-// --- ADDED MISSING EXPORT ---
+// --- FIX: ADDED MISSING EXPORTS ---
+// These are used by useSearchIndex.js to populate search suggestions
+
 export const STATIC_COLLECTIONS = [
-  {
-    id: 'vintage-classics',
-    title: 'Vintage Classics',
-    description: 'Timeless figures from the golden era.',
-    image: 'https://images.unsplash.com/photo-1593085512500-bfd1f9316e84?auto=format&fit=crop&w=800&q=80'
-  },
-  {
-    id: 'modern-era',
-    title: 'Modern Era',
-    description: 'The latest and greatest in collectibles.',
-    image: 'https://images.unsplash.com/photo-1608889175123-8ee362201f81?auto=format&fit=crop&w=800&q=80'
-  }
+    "Star Wars", "TMNT", "Thundercats", "WWE", "Pokémon", "Gargoyles", "Ghostbusters"
 ];
 
-// --- NEW DATA PROCESSOR (Replaces static exports) ---
+// Automatically create list from TYPE_CONFIG keys
+export const STATIC_TYPES = Object.keys(TYPE_CONFIG);
+
+export const STATIC_DECADES = [
+    "1970s", "1980s", "1990s", "2000s", "2010s"
+];
+
+// --- DATA PROCESSOR ---
 
 export const processProductData = (rawProducts) => {
     if (!rawProducts || !Array.isArray(rawProducts)) return null;
