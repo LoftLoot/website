@@ -87,7 +87,6 @@ const RelatedProductsCarousel = React.memo(({ products, onOpen }) => {
         if (!products || products.length === 0) return [];
         for (let i = 0; i < products.length; i += itemsPerSet) {
             const chunk = products.slice(i, i + itemsPerSet);
-            // Fill remaining slots with placeholders if needed
             while (chunk.length < itemsPerSet) {
                 chunk.push({ id: `placeholder-${i}-${chunk.length}`, isPlaceholder: true });
             }
@@ -102,7 +101,7 @@ const RelatedProductsCarousel = React.memo(({ products, onOpen }) => {
     if (products.length === 0) return null;
 
     return (
-        <div className="max-w-7xl mx-auto px-4 w-full mb-12 mt-16 relative animate-fade-in">
+        <div className="max-w-7xl mx-auto px-4 w-full mt-16 pb-16 relative animate-fade-in">
             <div className="group/carousel">
                 <div className="mb-6">
                     <h3 className="font-black text-[#514d46] text-xl flex items-center gap-2" style={{ fontFamily: '"Jua", sans-serif' }}>
@@ -173,8 +172,8 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
     
     const { isActive, imgRef, handleImageClick, handleImageMouseMove, handleMouseLeave } = useImageZoom();
-    // Memoize images to satisfy hooks
-    const images = useMemo(() => product.processedImages || [], [product.processedImages]);
+    // Memoize images
+    const images = useMemo(() => product.processedImages || [], [product.processedImages]); 
     const { thumbsRef, showLeft, showRight, scrollThumbs } = useThumbScroll(images);
 
     // Reset states on product change
@@ -185,11 +184,11 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
 
     useLayoutEffect(() => { window.scrollTo(0, 0); }, [product.id]);
 
+    // Handle Title SEO locally
     useEffect(() => {
         document.title = `${product.name} - ${product.manufacturer} | Loft Loot`;
     }, [product.name, product.manufacturer]);
 
-    // RESTORED: No limit on related products (was .slice(0,5)) so carousel works
     const relatedProducts = useMemo(() => (product.relatedIds || [])
         .map(id => productMap?.get(id))
         .filter(Boolean), [product.relatedIds, productMap]);
@@ -197,6 +196,7 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
     const activeMedia = images[activeImgIndex];
     const currentVideoId = activeMedia?.videoId;
 
+    // JSON-LD Schema
     const jsonLd = useMemo(() => JSON.stringify({ 
         "@context": "https://schema.org/", 
         "@type": "Product", 
@@ -227,8 +227,9 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
         <div className="min-h-screen bg-[#fffbf0] text-[#514d46] font-sans pb-0 relative z-50 flex flex-col mb-20">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
             
-            <div className="bg-[#f2e9d9] pb-16 pt-8 relative w-full">
-                <div className="max-w-7xl mx-auto px-4 relative z-10">
+            {/* MAIN CREAM WRAPPER - Encloses Details AND Carousel */}
+            <div className="bg-[#f2e9d9] relative w-full pb-16">
+                <div className="max-w-7xl mx-auto px-4 pt-8 relative z-10">
                     
                     {/* Breadcrumbs */}
                     <nav aria-label="Breadcrumb" className="flex items-center flex-wrap gap-2 mb-8 text-sm font-bold uppercase tracking-wider text-[#514d46]/60">
@@ -379,11 +380,13 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                         </div>
                     </div>
                 </div>
+
+                {/* RESTORED CAROUSEL (Inside the cream wrapper) */}
+                <RelatedProductsCarousel products={relatedProducts} onOpen={onOpen} />
+
+                {/* JAGGED LINE (Moved to the very bottom) */}
                 <JaggedLine position="bottom" color="#f2e9d9" />
             </div>
-
-            {/* RESTORED: CAROUSEL */}
-            <RelatedProductsCarousel products={relatedProducts} onOpen={onOpen} />
         </div>
     );
 };
