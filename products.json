@@ -255,10 +255,8 @@
     "releaseDate": 1985,
     "price": 60.0,
     "stock": 5,
-    "badgeText": "Wave 1 Figure",
-    "badgeColor": "#6aa84f",
     "demographic": "unisex",
-    "description": "Loose figure includes Baton and Wilykit PVC Figure. Part of the first wave (Wave 1, 1985) of Thundercats action figures.",
+    "description": "Loose figure from Wave 1 (1985). Includes Baton and Wilykit PVC Figure.",
     "condition": "Loose",
     "links": [
       {
@@ -266,7 +264,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Cheetara+W1"
+    ]
   },
   {
     "id": 21,
@@ -278,10 +278,8 @@
     "releaseDate": 1985,
     "price": 30.0,
     "stock": 8,
-    "badgeText": "Wave 1 Figure",
-    "badgeColor": "#6aa84f",
     "demographic": "masculine",
-    "description": "Loose figure includes Club and Shoulder Strap. A key Mutant villain from the first wave (Wave 1, 1985) of Thundercats figures.",
+    "description": "Loose Mutant villain figure from Wave 1 (1985). Includes Club and Shoulder Strap.",
     "condition": "Loose",
     "links": [
       {
@@ -289,7 +287,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Jackalman+W1"
+    ]
   },
   {
     "id": 22,
@@ -301,10 +301,8 @@
     "releaseDate": 1985,
     "price": 85.0,
     "stock": 4,
-    "badgeText": "Hero Leader",
-    "badgeColor": "#f1c232",
     "demographic": "masculine",
-    "description": "Loose figure includes Sword of Omens, Claw Shield, Power Ring, and Battery (for light-up feature). The main hero of the Thundercats, part of Wave 1 (1985).",
+    "description": "Loose main hero figure from Wave 1 (1985). Includes Sword of Omens, Claw Shield, Power Ring, and Battery.",
     "condition": "Loose",
     "links": [
       {
@@ -312,7 +310,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Lion-O+W1"
+    ]
   },
   {
     "id": 23,
@@ -324,10 +324,8 @@
     "releaseDate": 1985,
     "price": 30.0,
     "stock": 7,
-    "badgeText": "Wave 1 Figure",
-    "badgeColor": "#6aa84f",
     "demographic": "masculine",
-    "description": "Loose figure includes Mace and Helmet. A prominent member of the Mutants from Wave 1 (1985).",
+    "description": "Loose Mutant figure from Wave 1 (1985). Includes Mace and Helmet.",
     "condition": "Loose",
     "links": [
       {
@@ -335,7 +333,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Monkian+W1"
+    ]
   },
   {
     "id": 24,
@@ -347,10 +347,8 @@
     "releaseDate": 1985,
     "price": 75.0,
     "stock": 3,
-    "badgeText": "Main Villain",
-    "badgeColor": "#cc0000",
     "demographic": "masculine",
-    "description": "Loose figure includes Sword, Dagger, Headdress, Power Ring, and Battery (for light-up feature). The primary antagonist, part of Wave 1 (1985).",
+    "description": "Loose primary antagonist figure from Wave 1 (1985). Includes Sword, Dagger, Headdress, Power Ring, and Battery.",
     "condition": "Loose",
     "links": [
       {
@@ -358,7 +356,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Mumm-Ra+W1"
+    ]
   },
   {
     "id": 25,
@@ -370,10 +370,8 @@
     "releaseDate": 1985,
     "price": 50.0,
     "stock": 6,
-    "badgeText": "Wave 1 Figure",
-    "badgeColor": "#6aa84f",
     "demographic": "masculine",
-    "description": "Loose figure includes Nunchuks. The mechanic and driver of the Thundercats, part of Wave 1 (1985).",
+    "description": "Loose Thundercats figure from Wave 1 (1985). Includes Nunchuks.",
     "condition": "Loose",
     "links": [
       {
@@ -381,7 +379,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Panthro+W1"
+    ]
   },
   {
     "id": 26,
@@ -393,10 +393,8 @@
     "releaseDate": 1985,
     "price": 40.0,
     "stock": 7,
-    "badgeText": "Wave 1 Figure",
-    "badgeColor": "#6aa84f",
     "demographic": "masculine",
-    "description": "Loose figure includes Battle Axe. The leader of the Mutants, part of Wave 1 (1985).",
+    "description": "Loose Mutant leader figure from Wave 1 (1985). Includes Battle Axe.",
     "condition": "Loose",
     "links": [
       {
@@ -404,7 +402,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Slithe+W1"
+    ]
   },
   {
     "id": 27,
@@ -416,10 +416,8 @@
     "releaseDate": 1985,
     "price": 60.0,
     "stock": 5,
-    "badgeText": "Wave 1 Figure",
-    "badgeColor": "#6aa84f",
     "demographic": "unisex",
-    "description": "Loose figure includes Bolo Whip and Wilykat PVC Figure. The architect and scientist of the Thundercats, part of Wave 1 (1985).",
+    "description": "Loose figure from Wave 1 (1985). Includes Bolo Whip and Wilykat PVC Figure.",
     "condition": "Loose",
     "links": [
       {
@@ -427,7 +425,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Tygra+W1"
+    ]
   },
   {
     "id": 28,
@@ -439,10 +439,8 @@
     "releaseDate": 1985,
     "price": 120.0,
     "stock": 2,
-    "badgeText": "Wave 1 Vehicle",
-    "badgeColor": "#76a5af",
     "demographic": "masculine",
-    "description": "Loose Mutant vehicle from the first wave (Wave 1, 1985) of Thundercats vehicles.",
+    "description": "Loose Mutant vehicle from Wave 1 (1985).",
     "condition": "Loose",
     "links": [
       {
@@ -450,7 +448,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Nose+Diver+W1"
+    ]
   },
   {
     "id": 29,
@@ -462,10 +462,8 @@
     "releaseDate": 1985,
     "price": 100.0,
     "stock": 3,
-    "badgeText": "Wave 1 Vehicle",
-    "badgeColor": "#76a5af",
     "demographic": "masculine",
-    "description": "Loose flying Mutant vehicle from the first wave (Wave 1, 1985).",
+    "description": "Loose flying Mutant vehicle from Wave 1 (1985).",
     "condition": "Loose",
     "links": [
       {
@@ -473,7 +471,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Skycutter+W1"
+    ]
   },
   {
     "id": 30,
@@ -485,8 +485,6 @@
     "releaseDate": 1985,
     "price": 250.0,
     "stock": 1,
-    "badgeText": "Iconic Vehicle",
-    "badgeColor": "#3d85c6",
     "demographic": "masculine",
     "description": "Loose Thundercats ground assault vehicle. The signature transport, part of Wave 1 (1985).",
     "condition": "Loose",
@@ -496,7 +494,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Thundertank+W1"
+    ]
   },
   {
     "id": 31,
@@ -508,10 +508,8 @@
     "releaseDate": 1986,
     "price": 55.0,
     "stock": 4,
-    "badgeText": "Wave 2 Figure",
-    "badgeColor": "#a64d79",
     "demographic": "masculine",
-    "description": "Loose figure includes Spiked Mace and Knuckleduster. A classic Thundercats villain, part of Wave 2 (1986).",
+    "description": "Loose villain figure from Wave 2 (1986). Includes Spiked Mace and Knuckleduster.",
     "condition": "Loose",
     "links": [
       {
@@ -519,7 +517,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Grune+W2"
+    ]
   },
   {
     "id": 32,
@@ -531,10 +531,8 @@
     "releaseDate": 1986,
     "price": 45.0,
     "stock": 5,
-    "badgeText": "Wave 2 Figure",
-    "badgeColor": "#a64d79",
     "demographic": "masculine",
-    "description": "Loose figure includes Helmet and Katana Sword. The samurai warrior ally, part of Wave 2 (1986).",
+    "description": "Loose samurai warrior figure from Wave 2 (1986). Includes Helmet and Katana Sword.",
     "condition": "Loose",
     "links": [
       {
@@ -542,7 +540,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Hachiman+W2"
+    ]
   },
   {
     "id": 33,
@@ -554,10 +554,8 @@
     "releaseDate": 1986,
     "price": 65.0,
     "stock": 3,
-    "badgeText": "Wave 2 Figure",
-    "badgeColor": "#a64d79",
     "demographic": "masculine",
-    "description": "Loose figure includes Two Daggers (Rat’s Eyes). The notorious villain and leader of the Rat-Men, part of Wave 2 (1986).",
+    "description": "Loose villain figure from Wave 2 (1986). Includes Two Daggers (Rat’s Eyes).",
     "condition": "Loose",
     "links": [
       {
@@ -565,7 +563,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Ratar-O+W2"
+    ]
   },
   {
     "id": 34,
@@ -577,10 +577,8 @@
     "releaseDate": 1986,
     "price": 70.0,
     "stock": 3,
-    "badgeText": "Wave 2 Figure",
-    "badgeColor": "#a64d79",
     "demographic": "masculine",
-    "description": "Loose figure includes Helmet, Spear, and Shield. The ruler of Hook Mountain, part of Wave 2 (1986).",
+    "description": "Loose figure from Wave 2 (1986). Includes Helmet, Spear, and Shield.",
     "condition": "Loose",
     "links": [
       {
@@ -588,7 +586,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Snowman+W2"
+    ]
   },
   {
     "id": 35,
@@ -600,10 +600,8 @@
     "releaseDate": 1986,
     "price": 45.0,
     "stock": 5,
-    "badgeText": "Wave 2 Figure",
-    "badgeColor": "#a64d79",
     "demographic": "masculine",
-    "description": "Loose figure includes Rifle Gun. A member of the noble Tuska race, part of Wave 2 (1986).",
+    "description": "Loose figure from Wave 2 (1986). Includes Rifle Gun.",
     "condition": "Loose",
     "links": [
       {
@@ -611,7 +609,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Tuska+Warrior+W2"
+    ]
   },
   {
     "id": 36,
@@ -623,10 +623,8 @@
     "releaseDate": 1986,
     "price": 50.0,
     "stock": 4,
-    "badgeText": "Wave 2 Figure",
-    "badgeColor": "#a64d79",
     "demographic": "masculine",
-    "description": "Loose figure includes Clawed Staff. The mechanic/inventor for the Mutants, part of Wave 2 (1986).",
+    "description": "Loose Mutant figure from Wave 2 (1986). Includes Clawed Staff.",
     "condition": "Loose",
     "links": [
       {
@@ -634,22 +632,22 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Vultureman+W2"
+    ]
   },
   {
     "id": 37,
     "name": "Cruncher",
     "collection": "Thundercats",
     "brand": "Thundercats",
-    "type": "Figure (Berserker)",
+    "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
     "price": 30.0,
     "stock": 6,
-    "badgeText": "Berserker Figure",
-    "badgeColor": "#b4a7d6",
     "demographic": "masculine",
-    "description": "Loose Berserker figure from the second wave (Wave 2, 1986).",
+    "description": "Loose Berserker figure from Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -657,22 +655,22 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Cruncher+W2"
+    ]
   },
   {
     "id": 38,
     "name": "Hammerhead",
     "collection": "Thundercats",
     "brand": "Thundercats",
-    "type": "Figure (Berserker)",
+    "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
     "price": 30.0,
     "stock": 6,
-    "badgeText": "Berserker Figure",
-    "badgeColor": "#b4a7d6",
     "demographic": "masculine",
-    "description": "Loose Berserker figure from the second wave (Wave 2, 1986).",
+    "description": "Loose Berserker figure from Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -680,22 +678,22 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Hammerhead+W2"
+    ]
   },
   {
     "id": 39,
     "name": "Ram Bam",
     "collection": "Thundercats",
     "brand": "Thundercats",
-    "type": "Figure (Berserker)",
+    "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
     "price": 35.0,
     "stock": 5,
-    "badgeText": "Berserker Figure",
-    "badgeColor": "#b4a7d6",
     "demographic": "masculine",
-    "description": "Loose Berserker figure from the second wave (Wave 2, 1986).",
+    "description": "Loose Berserker figure from Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -703,22 +701,22 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Ram+Bam+W2"
+    ]
   },
   {
     "id": 40,
     "name": "Top Spinner",
     "collection": "Thundercats",
     "brand": "Thundercats",
-    "type": "Figure (Berserker)",
+    "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
     "price": 35.0,
     "stock": 5,
-    "badgeText": "Berserker Figure",
-    "badgeColor": "#b4a7d6",
     "demographic": "masculine",
-    "description": "Loose Berserker figure from the second wave (Wave 2, 1986).",
+    "description": "Loose Berserker figure from Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -726,22 +724,22 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Top+Spinner+W2"
+    ]
   },
   {
     "id": 41,
     "name": "Ma-Mutt",
     "collection": "Thundercats",
     "brand": "Thundercats",
-    "type": "Figure (Companion)",
+    "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
     "price": 25.0,
     "stock": 7,
-    "badgeText": "Companion Figure",
-    "badgeColor": "#cfe2f3",
     "demographic": "unisex",
-    "description": "Loose Companion figure, Ma-Mutt, includes Attached Chain. Mumm-Ra's faithful pet, part of Wave 2 (1986).",
+    "description": "Loose Companion figure, Mumm-Ra's pet, from Wave 2 (1986). Includes Attached Chain.",
     "condition": "Loose",
     "links": [
       {
@@ -749,22 +747,22 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Ma-Mutt+W2"
+    ]
   },
   {
     "id": 42,
     "name": "Snarf",
     "collection": "Thundercats",
     "brand": "Thundercats",
-    "type": "Figure (Companion)",
+    "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
     "price": 30.0,
     "stock": 6,
-    "badgeText": "Companion Figure",
-    "badgeColor": "#cfe2f3",
     "demographic": "unisex",
-    "description": "Loose Companion figure of Snarf, the Thundercats' loyal companion, part of Wave 2 (1986).",
+    "description": "Loose Companion figure from Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -772,22 +770,22 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Snarf+W2"
+    ]
   },
   {
     "id": 43,
     "name": "Wilykat",
     "collection": "Thundercats",
     "brand": "Thundercats",
-    "type": "Figure (Companion)",
+    "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
     "price": 35.0,
     "stock": 5,
-    "badgeText": "Companion Figure",
-    "badgeColor": "#cfe2f3",
     "demographic": "unisex",
-    "description": "Loose Companion figure includes Hover Board. One of the Thunderkittens, part of Wave 2 (1986).",
+    "description": "Loose Thunderkitten figure from Wave 2 (1986). Includes Hover Board.",
     "condition": "Loose",
     "links": [
       {
@@ -795,22 +793,22 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Wilykat+W2"
+    ]
   },
   {
     "id": 44,
     "name": "Wilykit",
     "collection": "Thundercats",
     "brand": "Thundercats",
-    "type": "Figure (Companion)",
+    "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
     "price": 35.0,
     "stock": 5,
-    "badgeText": "Companion Figure",
-    "badgeColor": "#cfe2f3",
     "demographic": "unisex",
-    "description": "Loose Companion figure includes Hover Board. One of the Thunderkittens, part of Wave 2 (1986).",
+    "description": "Loose Thunderkitten figure from Wave 2 (1986). Includes Hover Board.",
     "condition": "Loose",
     "links": [
       {
@@ -818,22 +816,22 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Wilykit+W2"
+    ]
   },
   {
     "id": 45,
     "name": "Berbil Belle",
     "collection": "Thundercats",
     "brand": "Thundercats",
-    "type": "Figure (Companion)",
+    "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
     "price": 20.0,
     "stock": 8,
-    "badgeText": "Companion Figure",
-    "badgeColor": "#cfe2f3",
     "demographic": "feminine",
-    "description": "Loose Berbil Companion figure, part of Wave 2 (1986).",
+    "description": "Loose Berbil Companion figure from Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -841,22 +839,22 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Berbil+Belle+W2"
+    ]
   },
   {
     "id": 46,
     "name": "Berbil Bert",
     "collection": "Thundercats",
     "brand": "Thundercats",
-    "type": "Figure (Companion)",
+    "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
     "price": 20.0,
     "stock": 8,
-    "badgeText": "Companion Figure",
-    "badgeColor": "#cfe2f3",
     "demographic": "masculine",
-    "description": "Loose Berbil Companion figure, part of Wave 2 (1986).",
+    "description": "Loose Berbil Companion figure from Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -864,22 +862,22 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Berbil+Bert+W2"
+    ]
   },
   {
     "id": 47,
     "name": "Berbil Bill",
     "collection": "Thundercats",
     "brand": "Thundercats",
-    "type": "Figure (Companion)",
+    "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
     "price": 20.0,
     "stock": 8,
-    "badgeText": "Companion Figure",
-    "badgeColor": "#cfe2f3",
     "demographic": "masculine",
-    "description": "Loose Berbil Companion figure, part of Wave 2 (1986).",
+    "description": "Loose Berbil Companion figure from Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -887,22 +885,22 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Berbil+Bill+W2"
+    ]
   },
   {
     "id": 48,
     "name": "Mummy Mumm-Ra",
     "collection": "Thundercats",
     "brand": "Thundercats",
-    "type": "Figure (Companion)",
+    "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
     "price": 40.0,
     "stock": 4,
-    "badgeText": "Mummy Form",
-    "badgeColor": "#cc0000",
     "demographic": "masculine",
-    "description": "Loose Companion figure of Mumm-Ra in his Mummy Form, includes Staff, part of Wave 2 (1986).",
+    "description": "Loose Mumm-Ra figure in Mummy Form from Wave 2 (1986). Includes Staff.",
     "condition": "Loose",
     "links": [
       {
@@ -910,7 +908,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Mummy+Mumm-Ra+W2"
+    ]
   },
   {
     "id": 49,
@@ -922,10 +922,8 @@
     "releaseDate": 1986,
     "price": 110.0,
     "stock": 3,
-    "badgeText": "Wave 2 Vehicle",
-    "badgeColor": "#76a5af",
     "demographic": "masculine",
-    "description": "Loose Mutant vehicle from the second wave (Wave 2, 1986) of Thundercats vehicles.",
+    "description": "Loose Mutant vehicle from Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -933,7 +931,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Fist+Pounder+W2"
+    ]
   },
   {
     "id": 50,
@@ -945,10 +945,8 @@
     "releaseDate": 1986,
     "price": 150.0,
     "stock": 2,
-    "badgeText": "Wave 2 Vehicle",
-    "badgeColor": "#3d85c6",
     "demographic": "masculine",
-    "description": "Loose Thundercats vehicle, a one-man attack hovercraft, part of Wave 2 (1986).",
+    "description": "Loose one-man attack hovercraft vehicle from Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -956,20 +954,20 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Thunderclaw+W2"
+    ]
   },
   {
     "id": 51,
     "name": "Snarf (Plush)",
     "collection": "Thundercats",
     "brand": "Thundercats",
-    "type": "Plush Accessory",
+    "type": "Plush",
     "manufacturer": "LJN",
     "releaseDate": 1986,
     "price": 25.0,
     "stock": 5,
-    "badgeText": "Accessory",
-    "badgeColor": "#f9cb9c",
     "demographic": "unisex",
     "description": "Soft plush version of Snarf, released as an accessory in Wave 2 (1986).",
     "condition": "Loose",
@@ -979,7 +977,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Snarf+Plush+W2"
+    ]
   },
   {
     "id": 52,
@@ -991,10 +991,8 @@
     "releaseDate": 1987,
     "price": 70.0,
     "stock": 3,
-    "badgeText": "Wave 3 Figure",
-    "badgeColor": "#ff9900",
     "demographic": "masculine",
-    "description": "Loose figure includes Hammer of Thundera. One of the new Thundercats, part of Wave 3 (1987).",
+    "description": "Loose new Thundercats figure from Wave 3 (1987). Includes Hammer of Thundera.",
     "condition": "Loose",
     "links": [
       {
@@ -1002,7 +1000,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Bengali+W3"
+    ]
   },
   {
     "id": 53,
@@ -1014,10 +1014,8 @@
     "releaseDate": 1987,
     "price": 55.0,
     "stock": 4,
-    "badgeText": "Wave 3 Figure",
-    "badgeColor": "#ff9900",
     "demographic": "masculine",
-    "description": "Loose figure includes Cutlass Sword. The space pirate villain, part of Wave 3 (1987).",
+    "description": "Loose space pirate figure from Wave 3 (1987). Includes Cutlass Sword.",
     "condition": "Loose",
     "links": [
       {
@@ -1025,7 +1023,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Capt+Cracker+W3"
+    ]
   },
   {
     "id": 54,
@@ -1037,10 +1037,8 @@
     "releaseDate": 1987,
     "price": 50.0,
     "stock": 5,
-    "badgeText": "Wave 3 Figure",
-    "badgeColor": "#ff9900",
     "demographic": "masculine",
-    "description": "Loose figure includes Laser Blaster. The intergalactic trader, part of Wave 3 (1987).",
+    "description": "Loose intergalactic trader figure from Wave 3 (1987). Includes Laser Blaster.",
     "condition": "Loose",
     "links": [
       {
@@ -1048,7 +1046,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Capt+Shiner+W3"
+    ]
   },
   {
     "id": 55,
@@ -1060,10 +1060,8 @@
     "releaseDate": 1987,
     "price": 80.0,
     "stock": 2,
-    "badgeText": "Wave 3 Figure",
-    "badgeColor": "#ff9900",
     "demographic": "masculine",
-    "description": "Loose figure includes Helmet and Sword of Omens. The mentor of Lion-O, part of Wave 3 (1987).",
+    "description": "Loose mentor figure from Wave 3 (1987). Includes Helmet and Sword of Omens.",
     "condition": "Loose - Helmet Glued",
     "links": [
       {
@@ -1071,7 +1069,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Jaga+W3"
+    ]
   },
   {
     "id": 56,
@@ -1083,10 +1083,8 @@
     "releaseDate": 1987,
     "price": 60.0,
     "stock": 4,
-    "badgeText": "Wave 3 Figure",
-    "badgeColor": "#ff9900",
     "demographic": "masculine",
-    "description": "Loose figure includes Light Shield. The blind Thundercat elder, part of Wave 3 (1987).",
+    "description": "Loose blind Thundercat elder figure from Wave 3 (1987). Includes Light Shield.",
     "condition": "Loose",
     "links": [
       {
@@ -1094,7 +1092,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Lynx-O+W3"
+    ]
   },
   {
     "id": 57,
@@ -1106,10 +1106,8 @@
     "releaseDate": 1987,
     "price": 75.0,
     "stock": 3,
-    "badgeText": "Wave 3 Figure",
-    "badgeColor": "#ff9900",
     "demographic": "masculine",
-    "description": "Loose figure includes Scythe. The demonic villain, part of Wave 3 (1987).",
+    "description": "Loose demonic villain figure from Wave 3 (1987). Includes Scythe.",
     "condition": "Loose",
     "links": [
       {
@@ -1117,7 +1115,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Mongor+W3"
+    ]
   },
   {
     "id": 58,
@@ -1129,10 +1129,8 @@
     "releaseDate": 1987,
     "price": 60.0,
     "stock": 4,
-    "badgeText": "Wave 3 Figure",
-    "badgeColor": "#ff9900",
     "demographic": "feminine",
-    "description": "Loose figure includes Sling. The healer of the new Thundercats, part of Wave 3 (1987).",
+    "description": "Loose healer figure from Wave 3 (1987). Includes Sling.",
     "condition": "Loose",
     "links": [
       {
@@ -1140,7 +1138,9 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Pumyra+W3"
+    ]
   },
   {
     "id": 59,
@@ -1152,10 +1152,8 @@
     "releaseDate": 1987,
     "price": 50.0,
     "stock": 5,
-    "badgeText": "Wave 3 Figure",
-    "badgeColor": "#ff9900",
     "demographic": "masculine",
-    "description": "Loose figure includes Safari Gun. The great game hunter, part of Wave 3 (1987).",
+    "description": "Loose hunter figure from Wave 3 (1987). Includes Safari Gun.",
     "condition": "Loose",
     "links": [
       {
@@ -1163,14 +1161,16 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Safari+Joe+W3"
+    ]
   },
   {
     "id": 60,
     "name": "The Driller",
     "collection": "Thundercats",
     "brand": "Thundercats",
-    "type": "Ram-Pager Figure",
+    "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1987,
     "price": 450.0,
@@ -1178,7 +1178,7 @@
     "badgeText": "Ultra Rare",
     "badgeColor": "#b4a7d6",
     "demographic": "masculine",
-    "description": "LJN 1987 Ram-Pagers series. The drill-action figure/vehicle hybrid. Highly collectible, part of Wave 3 (1987).",
+    "description": "LJN 1987 Ram-Pagers series. Drill-action figure/vehicle hybrid, part of Wave 3 (1987).",
     "condition": "Loose - Rare",
     "links": [
       {
@@ -1186,22 +1186,22 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=The+Driller+W3"
+    ]
   },
   {
     "id": 61,
     "name": "The Stinger",
     "collection": "Thundercats",
     "brand": "Thundercats",
-    "type": "Ram-Pager Figure",
+    "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1987,
     "price": 200.0,
     "stock": 1,
-    "badgeText": "Ram-Pager Figure",
-    "badgeColor": "#b4a7d6",
     "demographic": "masculine",
-    "description": "LJN 1987 Ram-Pagers series. The stinger-action figure/vehicle hybrid. Highly collectible, part of Wave 3 (1987).",
+    "description": "LJN 1987 Ram-Pagers series. Stinger-action figure/vehicle hybrid, part of Wave 3 (1987).",
     "condition": "Loose",
     "links": [
       {
@@ -1209,22 +1209,22 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=The+Stinger+W3"
+    ]
   },
   {
     "id": 62,
     "name": "Luna Lasher Mumm-Ra",
     "collection": "Thundercats",
     "brand": "Thundercats",
-    "type": "Ram-Pager Figure",
+    "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1987,
     "price": 220.0,
     "stock": 1,
-    "badgeText": "Ram-Pager Figure",
-    "badgeColor": "#b4a7d6",
     "demographic": "masculine",
-    "description": "LJN 1987 Ram-Pagers series. The Luna Lasher Mumm-Ra figure/vehicle hybrid. Highly collectible, part of Wave 3 (1987).",
+    "description": "LJN 1987 Ram-Pagers series. Luna Lasher Mumm-Ra figure/vehicle hybrid, part of Wave 3 (1987).",
     "condition": "Loose",
     "links": [
       {
@@ -1232,6 +1232,8 @@
         "url": "#"
       }
     ],
-    "images": []
+    "images": [
+      "https://placehold.co/600x750/8e7cc3/ffffff?text=Luna+Lasher+W3"
+    ]
   }
 ]
