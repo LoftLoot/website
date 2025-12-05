@@ -24,6 +24,30 @@
         ]
     },
     {
+        "id": 2,
+        "name": "Talking Baby Sinclair Plush",
+        "collection": "Disney",
+        "brand": "Dinosaurs",
+        "line": "",
+        "type": "Plush",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1992,
+        "price": 45,
+        "stock": 1,
+        "demographic": "unisex",
+        "description": "Talking plush figure based on the popular TV show Dinosaurs. Features the iconic catchphrase 'Not the mama!'.",
+        "condition": "Loose - Still talking",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://i.ebayimg.com/images/g/tTcAAeSwEF9pKL4C/s-l1600.jpg"
+        ]
+    },
+    {
         "id": 3,
         "name": "Donatello 'Pizza Time'",
         "collection": "TMNT",
@@ -944,7 +968,7 @@
     },
     {
         "id": 51,
-        "name": "Snarf (Plush)",
+        "name": "Snarf",
         "collection": "Thundercats",
         "brand": "Thundercats",
         "line": "Wave 2 (1986) Accessories",
