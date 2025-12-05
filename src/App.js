@@ -376,7 +376,7 @@ const AppContent = () => {
       window.addEventListener('popstate', handler); return () => window.removeEventListener('popstate', handler);
   }, [appData]);
 
-  useSEO({ title: viewProduct ? null : "LoftLoot | Vintage Toys", canonical: window.location.href });
+  useSEO({ title: viewProduct ? null : "Loft Loot | Vintage Toys", canonical: window.location.href });
 
   const dynamicH1 = useMemo(() => {
       if (committedQuery) return `'${committedQuery}'`;
@@ -462,3 +462,4 @@ const AppContent = () => {
 
 const App = () => ( <ErrorBoundary><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_SCHEMA) }} /><AppContent /></ErrorBoundary> );
 export default App;
+
