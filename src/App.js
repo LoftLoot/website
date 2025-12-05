@@ -20,11 +20,41 @@ import AboutSection from './components/AboutSection';
 const GlobalStyles = () => (
     <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Jua&family=Outfit:wght@300;400;500;700;900&display=swap');
+        
+        /* --- RESET & BASE --- */
+        * { box-sizing: border-box; }
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Outfit', sans-serif;
+            -webkit-font-smoothing: antialiased; 
+            -moz-osx-font-smoothing: grayscale; 
+            background-color: #fffbf0;
+            color: #514d46;
+        }
+
+        /* --- FONTS --- */
         .font-jua { font-family: 'Jua', sans-serif; }
         .font-outfit { font-family: 'Outfit', sans-serif; }
+
+        /* --- UI POLISH --- */
+        ::selection { background-color: #f4e799; color: #514d46; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f2e9d9; }
+        ::-webkit-scrollbar-thumb { background: #d35153; border-radius: 5px; border: 2px solid #f2e9d9; }
+        ::-webkit-scrollbar-thumb:hover { background: #b94547; }
+        
+        /* Utilities */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* --- ANIMATIONS --- */
         @keyframes deal-bottom { 0% { transform: translateY(100px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
         @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
         @keyframes tear-off { 0% { transform: rotate(0deg); } 20% { transform: rotate(-5deg); } 40% { transform: rotate(5deg); } 60% { transform: rotate(-2deg); } 100% { transform: translateY(150%) rotate(10deg); opacity: 0; } }
+        
         .animate-deal-bottom { animation: deal-bottom 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
         .animate-fade-in { animation: fade-in 0.4s ease-out forwards; }
         .animate-tear-off { animation: tear-off 0.8s ease-in forwards; }
