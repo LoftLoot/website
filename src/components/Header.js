@@ -1,6 +1,7 @@
 // src/components/Header.js
 import React, { useState, useRef, useEffect } from 'react';
-import { Search, X, Filter, ChevronRight, ArrowRight } from 'lucide-react';
+// FIX: REMOVED UNUSED IMPORTS
+import { Search, X } from 'lucide-react';
 
 // --- SUB-COMPONENTS ---
 
@@ -148,7 +149,7 @@ const SearchInput = React.memo(({ search, onSearchUpdate, onCommit, suggestions 
                         onFocus={() => { if(search && search.length >= 2) { const hasResults = (suggestions?.filters?.length > 0 || suggestions?.products?.length > 0); if (hasResults) setIsOpen(true); onSearchUpdate(search); } }}
                         className="w-full bg-white text-[#514d46] py-3 md:py-2.5 pl-4 pr-10 font-bold placeholder:text-[#514d46]/40 focus:outline-none md:border-2 border-r-0 border-[#E0E8F0] md:border-[#514d46]/20 focus:border-[#d35153] focus:border-r-0 transition-colors text-lg md:text-base font-outfit md:rounded-l-2xl"
                         aria-activedescendant={activeIndex >= 0 ? `option-${activeIndex}` : undefined}
-                        aria-expanded={isOpen}
+                        // FIX: REMOVED aria-expanded to satisfy role rules (since this is 'text' input not combobox)
                     />
                     {search && (
                         <button onClick={() => { onSearchUpdate(''); onCommit({ type: 'query', value: '' }); inputRef.current?.blur(); }} className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#514d46]/20 text-white rounded-full p-1 hover:bg-[#514d46]/40 transition-colors"><X size={14} strokeWidth={3} /></button>
