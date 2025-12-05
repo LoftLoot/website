@@ -1,31 +1,5 @@
 [
     {
-        "id": 1,
-        "name": "Skeletor - Showa Variant",
-        "collection": "He-Man",
-        "brand": "Masters of the Universe",
-        "type": "Action Figure",
-        "manufacturer": "Mattel",
-        "releaseDate": 1985,
-        "price": 120,
-        "stock": 1,
-        "badgeText": "Rare Variant",
-        "badgeColor": "#b4a7d6",
-        "demographic": "masculine",
-        "description": "Official Mattel 1985 mold. Rare Japanese market release with pearlescent finish. Includes Havoc Staff and Power Sword. The card back features unique Japanese localized art not seen in the US release.",
-        "condition": "C8.5 Near Mint",
-        "links": [
-            {
-                "platform": "eBay",
-                "url": "#"
-            }
-        ],
-        "images": [
-            "https://placehold.co/600x750/8e7cc3/ffffff?text=Skeletor+Front",
-            "https://www.youtube.com/watch?v=mownw0aqNiA"
-        ]
-    },
-    {
         "id": 3,
         "name": "Donatello 'Pizza Time'",
         "collection": "TMNT",
@@ -1171,7 +1145,7 @@
         "releaseDate": 1987,
         "price": 400,
         "stock": 1,
-        "badgeText": "Ultra Rare",
+        "badgeText": "Rare!",
         "badgeColor": "#b4a7d6",
         "demographic": "masculine",
         "description": "LJN 1987 Ram-Pagers line. Drill-action figure/vehicle hybrid, part of Wave 3 (1987).",
