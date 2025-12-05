@@ -1,5 +1,3 @@
-// src/data.js
-
 // --- KEEP HELPER FUNCTIONS ---
 export const normalizeText = (text) => {
     if (!text) return "";
@@ -83,6 +81,22 @@ export const addToBoundedCache = (cache, key, value, limit) => {
     cache.set(key, value);
     if (cache.size > limit) cache.delete(cache.keys().next().value);
 };
+
+// --- ADDED MISSING EXPORT ---
+export const STATIC_COLLECTIONS = [
+  {
+    id: 'vintage-classics',
+    title: 'Vintage Classics',
+    description: 'Timeless figures from the golden era.',
+    image: 'https://images.unsplash.com/photo-1593085512500-bfd1f9316e84?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'modern-era',
+    title: 'Modern Era',
+    description: 'The latest and greatest in collectibles.',
+    image: 'https://images.unsplash.com/photo-1608889175123-8ee362201f81?auto=format&fit=crop&w=800&q=80'
+  }
+];
 
 // --- NEW DATA PROCESSOR (Replaces static exports) ---
 
