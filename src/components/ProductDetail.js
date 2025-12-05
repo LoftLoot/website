@@ -1,14 +1,17 @@
 // src/components/ProductDetail.js
-import React, { useState, useRef, useCallback, useEffect } from 'react';
-import { ChevronRight, ChevronLeft, ExternalLink, ShoppingBag, PlayCircle } from 'lucide-react';
-import { JaggedLine } from './AboutSection'; // Reuse component
-import ProductCard from './ProductCard'; // Reuse card for related items
+import React, { useState, useRef, useCallback, useEffect, useMemo, useLayoutEffect } from 'react';
+import { ChevronRight, ChevronLeft, ExternalLink, ShoppingBag, Play, Archive } from 'lucide-react';
+import { JaggedLine } from './About'; 
+import ProductCard from './ProductCard'; 
+import { ORGANIZATION_SCHEMA } from '../data';
 
-// --- HOOKS ---
+// --- HELPERS ---
+const NAV_BTN_BASE = "bg-white/90 backdrop-blur-sm border border-[#487ec8]/20 text-[#487ec8] shadow-lg rounded-full flex items-center justify-center transition-all hover:scale-110 active:scale-95 disabled:opacity-30 disabled:cursor-default disabled:hover:scale-100 disabled:active:scale-100";
 
 const useImageZoom = () => {
     const [isActive, setIsActive] = useState(false);
     const imgRef = useRef(null);
+    const rafRef = useRef(null);
     
     const handleImageClick = useCallback((e) => {
         setIsActive(prev => !prev);
@@ -24,13 +27,19 @@ const useImageZoom = () => {
     }, [isActive]);
 
     const handleImageMouseMove = useCallback((e) => {
-        if (!isActive || !imgRef.current) return;
+        if (!isActive || !imgRef.current || rafRef.current) return;
         const { clientX, clientY, currentTarget } = e;
-        const rect = currentTarget.getBoundingClientRect();
-        const x = ((clientX - rect.left) / rect.width) * 100;
-        const y = ((clientY - rect.top) / rect.height) * 100;
-        imgRef.current.style.transformOrigin = `${x}% ${y}%`;
+        rafRef.current = requestAnimationFrame(() => {
+            const rect = currentTarget.getBoundingClientRect();
+            const x = ((clientX - rect.left) / rect.width) * 100;
+            const y = ((clientY - rect.top) / rect.height) * 100;
+            imgRef.current.style.transformOrigin = `${x}% ${y}%`;
+            rafRef.current = null;
+        });
     }, [isActive]);
+
+    useEffect(() => () => rafRef.current && cancelAnimationFrame(rafRef.current), []);
+    useEffect(() => { if (!isActive && imgRef.current) imgRef.current.style.transform = 'scale(1)'; }, [isActive]);
 
     return { isActive, imgRef, handleImageClick, handleImageMouseMove, handleMouseLeave: () => setIsActive(false) };
 };
@@ -69,26 +78,68 @@ const SpecItem = ({ label, value }) => {
 
 const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClick, onDecadeClick, onOpen }) => {
     const [activeImgIndex, setActiveImgIndex] = useState(0);
+    const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+    const [isLcpLoaded, setIsLcpLoaded] = useState(false);
+    
     const { isActive, imgRef, handleImageClick, handleImageMouseMove, handleMouseLeave } = useImageZoom();
-    // Use processedImages from data.js
     const images = product.processedImages || []; 
     const { thumbsRef, showLeft, showRight, scrollThumbs } = useThumbScroll(images);
-    
-    // Reset image on product change
-    useEffect(() => { setActiveImgIndex(0); }, [product.id]);
 
-    // Resolve related products using the passed productMap prop
+    // Dynamic Theme Logic: Locked to cream per preference, but structure kept for potential expansion
+    const theme = useMemo(() => (product.id % 2 === 0 ? { bg: "bg-[#eef5fc]", hex: "#eef5fc", border: "border-[#c4d6e8]" } : { bg: "bg-[#fceded]", hex: "#fceded", border: "border-[#eecbc8]" }), [product.id]);
+    
+    useEffect(() => { 
+        setActiveImgIndex(0); 
+        setIsVideoPlaying(false);
+        setIsLcpLoaded(false);
+    }, [product.id]);
+
+    useLayoutEffect(() => { window.scrollTo(0, 0); }, [product.id]);
+
+    useEffect(() => {
+        document.title = `${product.name} - ${product.manufacturer} | Loft Loot`;
+    }, [product.name, product.manufacturer]);
+
     const relatedProducts = (product.relatedIds || [])
         .map(id => productMap?.get(id))
         .filter(Boolean)
-        .slice(0, 4);
+        .slice(0, 5); 
 
     const activeMedia = images[activeImgIndex];
+    const currentVideoId = activeMedia?.videoId;
+
+    const jsonLd = useMemo(() => JSON.stringify({ 
+        "@context": "https://schema.org/", 
+        "@type": "Product", 
+        "name": product.name, 
+        "image": images.map(img => img.original), 
+        "description": product.description, 
+        "brand": { "@type": "Brand", "name": product.manufacturer }, 
+        "offers": { 
+            "@type": "Offer", 
+            "url": window.location.href, 
+            "priceCurrency": "GBP", 
+            "price": product.price, 
+            "itemCondition": product.schemaCondition, 
+            "availability": product.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock" 
+        }, 
+        "publisher": ORGANIZATION_SCHEMA 
+    }), [product, images]);
+
+    const navImg = (dir) => (e) => { 
+        e?.stopPropagation(); 
+        setActiveImgIndex(prev => { 
+            const n = prev + dir; 
+            return n < 0 ? 0 : n >= images.length ? images.length - 1 : n; 
+        }); 
+    };
 
     return (
-        <div className="min-h-screen bg-[#fffbf0] text-[#514d46] font-sans pb-0 animate-fade-in relative z-50">
+        <div className="min-h-screen bg-[#fffbf0] text-[#514d46] font-sans pb-0 relative z-50 flex flex-col mb-20">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
             
-            <div className="bg-[#f2e9d9] pb-16 pt-8 relative">
+            {/* Background locked to cream (#f2e9d9) */}
+            <div className="bg-[#f2e9d9] pb-16 pt-8 relative w-full">
                 <div className="max-w-7xl mx-auto px-4 relative z-10">
                     
                     {/* Breadcrumbs */}
@@ -102,69 +153,98 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                         <span className="text-[#514d46] opacity-100 truncate max-w-[200px]">{product.name}</span>
                     </nav>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                         
                         {/* LEFT COLUMN: IMAGES */}
-                        <div className="lg:col-span-7 self-start space-y-4">
-                            <div className="aspect-[4/5] bg-white rounded-2xl overflow-hidden border-4 border-white shadow-xl shadow-[#514d46]/5 relative group select-none">
-                                {activeMedia?.isVideo ? (
-                                    <iframe 
-                                        width="100%" height="100%" 
-                                        src={`https://www.youtube.com/embed/${activeMedia.videoId}?autoplay=1`} 
-                                        title="YouTube video player" 
-                                        frameBorder="0" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                        allowFullScreen 
-                                        className="absolute inset-0 w-full h-full"
-                                    />
-                                ) : (
-                                    <div className="w-full h-full cursor-zoom-in" onClick={handleImageClick} onMouseMove={handleImageMouseMove} onMouseLeave={handleMouseLeave}>
-                                         <img 
-                                            ref={imgRef} 
-                                            src={activeMedia?.original || activeMedia?.thumbnail} 
-                                            alt={product.name} 
-                                            className="w-full h-full object-contain transition-transform duration-200" 
-                                            style={{ transform: isActive ? 'scale(2.5)' : 'scale(1)' }}
+                        <div className="space-y-4">
+                            <div 
+                                className={`aspect-[4/5] bg-white rounded-3xl overflow-hidden border-4 border-white shadow-xl shadow-[#514d46]/5 relative group ${!currentVideoId ? (isActive ? 'cursor-zoom-out' : 'cursor-zoom-in') : ''} will-change-transform`}
+                                onClick={!currentVideoId ? handleImageClick : undefined} 
+                                onMouseMove={handleImageMouseMove} 
+                                onMouseLeave={handleMouseLeave}
+                            >
+                                {images.length > 1 && !isActive && (
+                                    <>
+                                        <button onClick={navImg(-1)} disabled={activeImgIndex === 0} className={`${NAV_BTN_BASE} absolute left-4 top-1/2 -translate-y-1/2 z-40 p-2 opacity-0 group-hover:opacity-100 disabled:hidden`}><ChevronLeft size={24} /></button>
+                                        <button onClick={navImg(1)} disabled={activeImgIndex === images.length - 1} className={`${NAV_BTN_BASE} absolute right-4 top-1/2 -translate-y-1/2 z-40 p-2 opacity-0 group-hover:opacity-100 disabled:hidden`}><ChevronRight size={24} /></button>
+                                    </>
+                                )}
+
+                                {currentVideoId ? (
+                                    isVideoPlaying ? (
+                                        <iframe 
+                                            src={`https://www.youtube.com/embed/${currentVideoId}?autoplay=1&rel=0&controls=0&modestbranding=1&iv_load_policy=3`} 
+                                            className="w-full h-full absolute inset-0 z-20" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                            allowFullScreen 
+                                            title="YouTube" 
                                         />
+                                    ) : (
+                                        <div role="button" tabIndex={0} onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setIsVideoPlaying(true)} className="absolute inset-0 z-20 cursor-pointer group/play focus:outline-none focus:ring-4 focus:ring-pink-200" onClick={() => setIsVideoPlaying(true)}>
+                                            <img src={activeMedia.thumbnail} alt={`${product.name} video`} className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover/play:opacity-100 transition-opacity" />
+                                            <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover/play:bg-black/20 transition-colors">
+                                                <div className="w-20 h-20 bg-[#d35153] text-white rounded-full flex items-center justify-center shadow-2xl transform group-hover/play:scale-110 transition-transform duration-300">
+                                                    <Play size={40} fill="currentColor" className="ml-1" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                ) : (
+                                    <>
+                                        <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-4xl z-0 opacity-20" style={{ backgroundColor: `#${product.imageColor}` }}>{product.name.substring(0,2).toUpperCase()}</div>
+                                        <img 
+                                            ref={imgRef} 
+                                            src={activeMedia?.original} 
+                                            alt={product.name} 
+                                            className={`relative z-10 w-full h-full object-cover ${product.isSold ? 'grayscale-[0.5]' : ''} will-change-transform transition-transform duration-100`} 
+                                            style={{ transition: isActive ? 'none' : 'transform 0.3s ease-out' }}
+                                            onLoad={() => setIsLcpLoaded(true)}
+                                        />
+                                    </>
+                                )}
+
+                                {product.isSold && !isActive && (
+                                    <div className="absolute inset-0 z-30 pointer-events-none flex items-center justify-center">
+                                        <div className="relative animate-stamp">
+                                            <div className="bg-[#d35153]/90 text-white text-3xl font-black px-8 py-4 -rotate-12 border-4 border-white shadow-2xl uppercase tracking-widest relative z-20">Sold Out</div>
+                                            {[...Array(8)].map((_, i) => <div key={i} className={`absolute w-${4+i%4} h-${4+i%4} bg-white/80 rounded-full animate-dust dust-${i+1} z-10`}></div>)}
+                                        </div>
                                     </div>
                                 )}
-                                {product.isSold && <div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none"><div className="bg-[#d35153]/90 text-white text-3xl font-black px-8 py-4 -rotate-12 border-4 border-white shadow-2xl uppercase tracking-widest">Sold Out</div></div>}
                             </div>
                             
-                            {/* Thumbnails */}
                             {images.length > 1 && (
                                 <div className="flex items-center gap-2">
-                                     <button onClick={() => scrollThumbs('left')} disabled={!showLeft} className="bg-white/90 border border-[#487ec8]/20 text-[#487ec8] shadow-lg rounded-full w-8 h-8 flex items-center justify-center disabled:opacity-30"><ChevronLeft size={18} /></button>
-                                    <div ref={thumbsRef} className="flex gap-3 overflow-x-auto pb-2 no-scrollbar flex-1 px-1">
+                                     <button onClick={() => scrollThumbs('left')} disabled={!showLeft} className={`${NAV_BTN_BASE} hidden md:flex shrink-0 p-1.5`}><ChevronLeft size={20} /></button>
+                                    <div ref={thumbsRef} className="flex gap-4 overflow-x-auto pb-2 scroll-smooth no-scrollbar flex-1 px-1">
                                         {images.map((img, idx) => (
-                                            <button key={idx} onClick={() => setActiveImgIndex(idx)} className={`w-20 h-20 flex-shrink-0 rounded-xl overflow-hidden border-2 transition-all relative ${activeImgIndex === idx ? 'border-[#487ec8] ring-2 ring-white shadow-md' : 'border-transparent opacity-60 hover:opacity-100'} bg-white`}>
+                                            <button key={idx} onClick={() => setActiveImgIndex(idx)} className={`w-24 h-24 flex-shrink-0 rounded-xl overflow-hidden border-2 transition-all relative ${activeImgIndex === idx ? 'border-[#487ec8] opacity-100 ring-2 ring-pink-100' : 'border-transparent opacity-60 hover:opacity-100'} bg-white`}>
                                                 <img src={img.thumbnail} alt="" className="w-full h-full object-cover" />
-                                                {img.isVideo && <div className="absolute inset-0 flex items-center justify-center bg-black/20 text-white"><PlayCircle size={24} fill="rgba(0,0,0,0.5)" /></div>}
+                                                {img.isVideo && <div className="absolute inset-0 flex items-center justify-center bg-black/20 text-white"><Play size={24} fill="rgba(0,0,0,0.5)" /></div>}
                                             </button>
                                         ))}
                                     </div>
-                                    <button onClick={() => scrollThumbs('right')} disabled={!showRight} className="bg-white/90 border border-[#487ec8]/20 text-[#487ec8] shadow-lg rounded-full w-8 h-8 flex items-center justify-center disabled:opacity-30"><ChevronRight size={18} /></button>
+                                    <button onClick={() => scrollThumbs('right')} disabled={!showRight} className={`${NAV_BTN_BASE} hidden md:flex shrink-0 p-1.5`}><ChevronRight size={20} /></button>
                                 </div>
                             )}
                         </div>
 
                         {/* RIGHT COLUMN: INFO */}
-                        <div className="lg:col-span-5 select-text">
-                            
-                            {/* Header Section */}
+                        <div className="space-y-6 select-text">
+                            {/* Header with HR style */}
                             <div className="border-b-2 border-[#514d46]/5 pb-6">
                                 <div className="mb-2 text-xs font-bold text-[#514d46]/60 uppercase tracking-wider">{product.manufacturer}</div>
-                                <h1 className="text-3xl md:text-4xl font-black text-[#514d46] leading-tight mb-4" style={{ fontFamily: '"Jua", sans-serif' }}>{product.name}</h1>
-                                <div className="flex items-center justify-between">
+                                <h1 className="text-4xl md:text-5xl font-black text-[#514d46] leading-tight mb-4" style={{ fontFamily: '"Jua", sans-serif' }}>{product.name}</h1>
+                                <div className="flex items-baseline gap-4">
                                     <span className={`text-3xl font-mono font-bold ${!product.isSold ? 'text-[#487ec8]' : 'text-[#514d46]/40 decoration-double'}`}>£{product.price.toFixed(2)}</span>
-                                    {!product.isSold
+                                    {!product.isSold 
                                         ? <span className="flex items-center gap-1.5 text-xs font-black bg-[#487ec8]/10 text-[#487ec8] px-3 py-1 rounded-full uppercase tracking-wider"><div className="w-2 h-2 rounded-full bg-[#487ec8]"></div> In Stock</span> 
                                         : <span className="text-xs font-black bg-[#d35153]/10 text-[#d35153] px-3 py-1 rounded-full uppercase tracking-wider">Sold Out</span>
                                     }
                                 </div>
                             </div>
 
-                            {/* Technical Specs */}
+                            {/* Info Box: NEWER HR Style (Linear, no bubble) */}
                             <div className="pt-6 pb-6 border-b-2 border-[#514d46]/5">
                                 <div className="grid grid-cols-2 gap-y-6 gap-x-4">
                                     <SpecItem label="Collection" value={product.collection} />
@@ -177,31 +257,40 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                                 </div>
                             </div>
 
-                            {/* Description */}
-                             <div className="pt-6 prose prose-lg text-[#514d46]/80 leading-relaxed font-outfit">
-                                 <p>{product.description}</p>
-                             </div>
+                            <div className="prose prose-lg text-[#514d46]/80 leading-relaxed font-outfit">
+                                <p>{product.description}</p>
+                                <p className="text-sm italic opacity-60 mt-4">Photos represent the actual item you will receive. All photos and videos were taken by us.</p>
+                            </div>
 
-                            {/* Dynamic Actions */}
-                            <div className="pt-8 space-y-3">
-                                {product.links && product.links.length > 0 ? (
-                                    product.links.map((link, i) => (
-                                        <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-between p-4 rounded-xl bg-[#514d46] text-white hover:bg-[#3f3b36] transition-all duration-300 group font-bold shadow-lg hover:shadow-xl active:scale-[0.98]">
-                                            <span className="flex items-center gap-3">
-                                                <ShoppingBag size={20} />
-                                                <span>Buy on {link.platform}</span>
-                                            </span>
-                                            <div className="flex items-center gap-3">
-                                                {link.logo && <img src={link.logo} alt={link.platform} className="h-6 brightness-0 invert opacity-50 group-hover:opacity-100 transition-opacity" />}
-                                                <ExternalLink size={20} className="opacity-50 group-hover:opacity-100" />
-                                            </div>
-                                        </a>
-                                    ))
-                                ) : !product.isSold ? (
-                                    <button disabled className="w-full p-4 rounded-xl bg-[#514d46]/10 text-[#514d46]/40 font-bold cursor-not-allowed">
-                                        Purchase Link Unavailable
-                                    </button>
-                                ) : null}
+                            {/* Buttons: OLDER Style (White with border) */}
+                            <div className="pt-8 border-t-2 border-[#514d46]/5">
+                                <h3 className="font-bold text-[#514d46] text-sm uppercase tracking-widest mb-4">External Purchasing Options</h3>
+                                <div className="flex flex-col gap-3">
+                                    {product.links && product.links.length > 0 ? (
+                                        product.links.map((link, i) => (
+                                            product.isSold ? (
+                                                <div key={i} className="flex items-center justify-between p-4 rounded-xl border-2 border-[#514d46]/10 bg-white/50 text-[#514d46]/40 font-bold cursor-default">
+                                                    <span className="flex items-center gap-2">
+                                                        <Archive size={18} />
+                                                        <span className="flex items-center gap-1.5"><span>Sold on</span>{link.logo ? <img src={link.logo} alt={link.platform} style={{ height: '18px', width: 'auto' }} className="object-contain translate-y-[1px] -translate-x-[1px] grayscale opacity-50" /> : link.platform}</span>
+                                                    </span>
+                                                </div>
+                                            ) : (
+                                                <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 rounded-xl border-2 border-[#514d46] bg-white hover:bg-[#514d46] hover:text-white transition-all duration-300 group font-bold shadow-sm">
+                                                    <span className="flex items-center gap-2">
+                                                        <ShoppingBag size={18} />
+                                                        <span className="flex items-center gap-1.5"><span>Buy on</span>{link.logo ? <img src={link.logo} alt={link.platform} style={{ height: '18px', width: 'auto' }} className="object-contain translate-y-[1px] -translate-x-[1px]" /> : link.platform}</span>
+                                                    </span>
+                                                    <ExternalLink size={18} className="opacity-50 group-hover:opacity-100" />
+                                                </a>
+                                            )
+                                        ))
+                                    ) : !product.isSold ? (
+                                        <button disabled className="w-full p-4 rounded-xl bg-[#514d46]/10 text-[#514d46]/40 font-bold cursor-not-allowed">
+                                            Purchase Link Unavailable
+                                        </button>
+                                    ) : null}
+                                </div>
                             </div>
                         </div>
                     </div>
