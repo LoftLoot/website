@@ -32,7 +32,7 @@ const About = () => {
     return (
         <>
             {/* TOP SECTION: STORY */}
-            <div className="relative bg-[#e5e5e5] text-[#514d46] transition-all duration-500 mb-12 pb-12">
+            <div className="relative bg-[#f2e9d9] text-[#514d46] transition-all duration-500 mb-12 pb-12">
                 <div className="max-w-3xl mx-auto px-4 pt-12 relative z-10">
                     
                     <div className="space-y-8 leading-relaxed text-lg relative overflow-hidden text-center md:text-left">
@@ -41,9 +41,9 @@ const About = () => {
                         </div>
 
                         {/* BROTHER */}
-                        <div className="float-left mr-8 mb-2 relative group cursor-pointer select-none z-10 hidden md:block">
+                        <div className="float-left mr-8 mb-2 relative group select-none z-10 hidden md:block">
                             <div className="absolute top-2 -left-2 bg-[#f4e799] rounded-xl -rotate-12 shadow-sm transition-transform duration-300 group-hover:rotate-0 group-hover:scale-105" style={{ width: BOY_WIDTH, height: '100px' }}></div>
-                            <div className="relative overflow-hidden rounded-lg transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3" style={{ width: BOY_WIDTH, height: IMG_HEIGHT }}>
+                            <div className="relative overflow-hidden rounded-lg" style={{ width: BOY_WIDTH, height: IMG_HEIGHT }}>
                                 <img src={SIBLING_IMG} alt="Brother" className="absolute h-full max-w-none object-cover object-left" style={{ left: '0', width: 'auto' }} />
                             </div>
                         </div>
@@ -53,9 +53,9 @@ const About = () => {
                         <p>Recently, while looking through <a href="https://retromash.com/argos/" target="_blank" rel="noopener noreferrer" className="font-bold underline decoration-2 decoration-[#487ec8]/50 hover:decoration-[#487ec8] hover:text-[#487ec8] transition-all">archived catalogues</a> online, we realized we actually still own most of it. It's been sitting in our parents' loft for decades! We've decided to catalog our collection here, hoping to find new homes for them with people who appreciate them as much as we did.</p>
 
                         {/* SISTER */}
-                        <div className="float-right ml-8 mb-1 mt-1 relative group cursor-pointer select-none z-10 hidden md:block">
+                        <div className="float-right ml-8 mb-1 mt-1 relative group select-none z-10 hidden md:block">
                             <div className="absolute top-2 -right-1 bg-[#f4e799] rounded-xl rotate-12 shadow-sm transition-transform duration-300 group-hover:rotate-0 group-hover:scale-105" style={{ width: GIRL_WIDTH, height: '100px' }}></div>
-                            <div className="relative overflow-hidden rounded-lg transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3" style={{ width: GIRL_WIDTH, height: IMG_HEIGHT }}>
+                            <div className="relative overflow-hidden rounded-lg" style={{ width: GIRL_WIDTH, height: IMG_HEIGHT }}>
                                 <img src={SIBLING_IMG} alt="Sister" className="absolute h-full max-w-none object-cover object-right" style={{ right: '0', width: 'auto' }} />
                             </div>
                         </div>
@@ -73,7 +73,7 @@ const About = () => {
                     </div>
                 </div>
                 {/* Jagged Divider */}
-                <JaggedLine position="bottom" color="#e5e5e5" />
+                <JaggedLine position="bottom" color="#f2e9d9" />
             </div>
 
             {/* BOTTOM SECTION: CONTACT */}
@@ -104,3 +104,4 @@ const About = () => {
 };
 
 export default About;
+
