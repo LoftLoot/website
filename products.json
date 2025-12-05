@@ -1257,5 +1257,1421 @@
     "images": [
       "https://placehold.co/600x750/9a83a0/ffffff?text=Luna+Lasher+W3"
     ]
+  },
+  {
+    "id": 63,
+    "name": "Akeem",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 1",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1990,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from the first wave of WWF Hasbro Real Wrestling Action figures. No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/b09e84/000000?text=Akeem+S1"
+    ]
+  },
+  {
+    "id": 64,
+    "name": "Andre The Giant",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 1",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1990,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 1. No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/c7c7c7/000000?text=Andre+S1"
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Big Boss Man #1",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 1",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1990,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 1. Includes Nightstick.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/999fa4/000000?text=Boss+Man+S1"
+    ]
+  },
+  {
+    "id": 66,
+    "name": "Brutus The Barber Beefcake #1",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 1",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1990,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 1. Includes Sheers.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/d4a59a/000000?text=Brutus+S1"
+    ]
+  },
+  {
+    "id": 67,
+    "name": "Hulk Hogan #1",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 1",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1990,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 1. No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f4e799/000000?text=Hogan+S1"
+    ]
+  },
+  {
+    "id": 68,
+    "name": "Jake The Snake Roberts",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 1",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1990,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 1. Includes Snake.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/9aae8d/000000?text=Jake+S1"
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Macho Man Randy Savage #1",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 1",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1990,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 1. No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f7a95b/000000?text=Macho+Man+S1"
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Million Dollar Man Ted DiBiase",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 1",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1990,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 1. No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/e0d164/000000?text=DiBiase+S1"
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Ravishing Rick Rude",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 1",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1990,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 1. No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f0d8d0/000000?text=Rick+Rude+S1"
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Ultimate Warrior #1",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 1",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1990,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 1. No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f4e799/000000?text=Warrior+S1"
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Hacksaw Jim Duggan",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 2",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 2 (1991). Includes 2x4.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/9aae8d/000000?text=Duggan+S2"
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Honky Tonk Man",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 2",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 2 (1991). Includes Guitar.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/c7c7c7/000000?text=Honky+Tonk+S2"
+    ]
+  },
+  {
+    "id": 75,
+    "name": "Hulk Hogan #2",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 2",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 2 (1991). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f4e799/000000?text=Hogan+S2"
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Million Dollar Man Ted DiBiase #2",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 2",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 2 (1991). Includes Belt.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/e0d164/000000?text=DiBiase+S2"
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Rowdy Roddy Piper",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 2",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 2 (1991). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/c2c694/000000?text=Piper+S2"
+    ]
+  },
+  {
+    "id": 78,
+    "name": "Superfly Jimmy Snuka",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 2",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 2 (1991). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f4e2bf/000000?text=Snuka+S2"
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Ultimate Warrior #2",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 2",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 2 (1991). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f4e799/000000?text=Warrior+S2"
+    ]
+  },
+  {
+    "id": 80,
+    "name": "Big Boss Man #2",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 3",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 3 (1991). Includes Nightstick.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/999fa4/000000?text=Boss+Man+S3"
+    ]
+  },
+  {
+    "id": 81,
+    "name": "Brutus The Barber Beefcake #2",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 3",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 3 (1991). Includes Sheers.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/d4a59a/000000?text=Brutus+S3"
+    ]
+  },
+  {
+    "id": 82,
+    "name": "Earthquake",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 3",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 3 (1991). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/c7c7c7/000000?text=Earthquake+S3"
+    ]
+  },
+  {
+    "id": 83,
+    "name": "Greg The Hammer Valentine",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 3",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 3 (1991). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f0d8d0/000000?text=Valentine+S3"
+    ]
+  },
+  {
+    "id": 84,
+    "name": "Hulk Hogan #3",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 3",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 3 (1991). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f4e799/000000?text=Hogan+S3"
+    ]
+  },
+  {
+    "id": 85,
+    "name": "Koko B Ware",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 3",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 3 (1991). Includes Bird.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/b09e84/000000?text=Koko+S3"
+    ]
+  },
+  {
+    "id": 86,
+    "name": "Macho Man Randy Savage #3",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 3",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 3 (1991). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f7a95b/000000?text=Macho+Man+S3"
+    ]
+  },
+  {
+    "id": 87,
+    "name": "Mr. Perfect #1",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 3",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 3 (1991). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/c2c694/000000?text=Mr+Perfect+S3"
+    ]
+  },
+  {
+    "id": 88,
+    "name": "Sgt. Slaughter",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 3",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 3 (1991). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/8a9aa0/ffffff?text=Sgt+Slaughter+S3"
+    ]
+  },
+  {
+    "id": 89,
+    "name": "Texas Tornado",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 3",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 3 (1991). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f0d8d0/000000?text=Texas+Tornado+S3"
+    ]
+  },
+  {
+    "id": 90,
+    "name": "Typhoon",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 3",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 3 (1991). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/8a8b8c/ffffff?text=Typhoon+S3"
+    ]
+  },
+  {
+    "id": 91,
+    "name": "Ultimate Warrior #3",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 3",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 3 (1991). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f4e799/000000?text=Warrior+S3"
+    ]
+  },
+  {
+    "id": 92,
+    "name": "Bret The Hitman Hart #1",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 4",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1992,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 4 (1992). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/d4a59a/000000?text=Bret+Hart+S4"
+    ]
+  },
+  {
+    "id": 93,
+    "name": "British Bulldog",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 4",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1992,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 4 (1992). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/b09e84/000000?text=Bulldog+S4"
+    ]
+  },
+  {
+    "id": 94,
+    "name": "Ricky The Dragon Steamboat",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 4",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1992,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 4 (1992). Includes Dragon Wing.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f7a95b/000000?text=Steamboat+S4"
+    ]
+  },
+  {
+    "id": 95,
+    "name": "The Undertaker #1",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 4",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1992,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 4 (1992). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/c7c7c7/000000?text=Undertaker+S4"
+    ]
+  },
+  {
+    "id": 96,
+    "name": "IRS",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 5",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1992,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 5 (1992). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f0d8a0/000000?text=IRS+S5"
+    ]
+  },
+  {
+    "id": 97,
+    "name": "Jim The Anvil Neidhart",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 5",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1992,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 5 (1992). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/d4a59a/000000?text=Neidhart+S5"
+    ]
+  },
+  {
+    "id": 98,
+    "name": "The Mountie",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 5",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1992,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 5 (1992). Includes Stick.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f0d8d0/000000?text=Mountie+S5"
+    ]
+  },
+  {
+    "id": 99,
+    "name": "Skinner",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 5",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1992,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 5 (1992). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/9aae8d/000000?text=Skinner+S5"
+    ]
+  },
+  {
+    "id": 100,
+    "name": "Virgil",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 5",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1992,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 5 (1992). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/e0d164/000000?text=Virgil+S5"
+    ]
+  },
+  {
+    "id": 101,
+    "name": "The Warlord",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 5",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1992,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 5 (1992). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/8a8b8c/ffffff?text=Warlord+S5"
+    ]
+  },
+  {
+    "id": 102,
+    "name": "The Berzerker",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 6",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1993,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 6 (1993). Includes Cloak.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f0d8a0/000000?text=Berzerker+S6"
+    ]
+  },
+  {
+    "id": 103,
+    "name": "Papa Shango",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 6",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1993,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 6 (1993). Includes Necklace.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/9aae8d/000000?text=Papa+Shango+S6"
+    ]
+  },
+  {
+    "id": 104,
+    "name": "Repo Man",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 6",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1993,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 6 (1993). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/8a9aa0/ffffff?text=Repo+Man+S6"
+    ]
+  },
+  {
+    "id": 105,
+    "name": "Ric Flair",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 6",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1993,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 6 (1993). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f4e799/000000?text=Ric+Flair+S6"
+    ]
+  },
+  {
+    "id": 106,
+    "name": "Tatanka #1",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 6",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1993,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 6 (1993). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f0d8d0/000000?text=Tatanka+S6"
+    ]
+  },
+  {
+    "id": 107,
+    "name": "Crush #1",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 7",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1993,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 7 (1993). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/b09e84/000000?text=Crush+S7"
+    ]
+  },
+  {
+    "id": 108,
+    "name": "Kamala",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 7",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1993,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 7 (1993). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f4e2bf/000000?text=Kamala+S7"
+    ]
+  },
+  {
+    "id": 109,
+    "name": "Nailz",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 7",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1993,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 7 (1993). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/999fa4/000000?text=Nailz+S7"
+    ]
+  },
+  {
+    "id": 110,
+    "name": "Owen Hart",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 7",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1993,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 7 (1993). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/c2e0e3/000000?text=Owen+Hart+S7"
+    ]
+  },
+  {
+    "id": 111,
+    "name": "Razor Ramon #1",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 7",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1993,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 7 (1993). Includes Gold Chain.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/e0d164/000000?text=Razor+Ramon+S7"
+    ]
+  },
+  {
+    "id": 112,
+    "name": "Shawn Michaels #1",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 7",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1993,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 7 (1993). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/d4a59a/000000?text=Michaels+S7"
+    ]
+  },
+  {
+    "id": 113,
+    "name": "The Undertaker #2",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 8",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1994,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 8 (1994). Includes Jacket.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/c7c7c7/000000?text=Undertaker+S8"
+    ]
+  },
+  {
+    "id": 114,
+    "name": "Yokozuna #1",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 8",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1994,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 8 (1994). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f0d8d0/000000?text=Yokozuna+S8"
+    ]
+  },
+  {
+    "id": 115,
+    "name": "Doink The Clown",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 9",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1994,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 9 (1994). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/e0d164/000000?text=Doink+S9"
+    ]
+  },
+  {
+    "id": 116,
+    "name": "Tatanka #2",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Series 9",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1994,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure from WWF Hasbro Series 9 (1994). No accessories.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f0d8d0/000000?text=Tatanka+S9"
+    ]
+  },
+  {
+    "id": 117,
+    "name": "The Bushwhackers",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Tag Team Series 1",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure 2-pack from the WWF Hasbro Tag Team Series 1 (1991). No accessories listed.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/b09e84/000000?text=Bushwhackers+TT1"
+    ]
+  },
+  {
+    "id": 118,
+    "name": "Demolition",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Tag Team Series 1",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure 2-pack from the WWF Hasbro Tag Team Series 1 (1991). Includes 2 Helmets.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/9a83a0/ffffff?text=Demolition+TT1"
+    ]
+  },
+  {
+    "id": 119,
+    "name": "The Legion Of Doom",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Tag Team Series 1",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure 2-pack from the WWF Hasbro Tag Team Series 1 (1991). No accessories listed.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/8a9aa0/ffffff?text=LOD+TT1"
+    ]
+  },
+  {
+    "id": 120,
+    "name": "The Nasty Boys",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Tag Team Series 2",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1992,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure 2-pack from the WWF Hasbro Tag Team Series 2 (1992). No accessories listed.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/999fa4/000000?text=Nasty+Boys+TT2"
+    ]
+  },
+  {
+    "id": 121,
+    "name": "The Rockers",
+    "collection": "WWF",
+    "brand": "WWF",
+    "line": "Tag Team Series 1",
+    "type": "Figure",
+    "manufacturer": "Hasbro",
+    "releaseDate": 1991,
+    "price": 30.0,
+    "stock": 5,
+    "demographic": "masculine",
+    "description": "Loose figure 2-pack from the WWF Hasbro Tag Team Series 1 (1991). No accessories listed.",
+    "condition": "Loose",
+    "links": [
+      {
+        "platform": "eBay",
+        "url": "#"
+      }
+    ],
+    "images": [
+      "https://placehold.co/600x750/f4e799/000000?text=Rockers+TT1"
+    ]
   }
 ]
