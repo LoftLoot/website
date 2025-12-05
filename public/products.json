@@ -52,17 +52,19 @@
   },
   {
     "id": 4,
-    "name": "Lion-O Chrome Edition",
-    "collection": "Thundercats",
-    "brand": "Thundercats",
+    "name": "Mutatin' Raphael",
+    "collection": "TMNT",
+    "brand": "Teenage Mutant Ninja Turtles",
     "type": "Action Figure",
-    "manufacturer": "LJN",
-    "releaseDate": 1986,
-    "price": 250.0,
-    "stock": 0,
+    "manufacturer": "Playmates",
+    "releaseDate": 1992,
+    "price": 85.0,
+    "stock": 1,
+    "badgeText": "Mint On Card",
+    "badgeColor": "#93c47d",
     "demographic": "masculine",
-    "description": "LJN 1986 original. Rare chrome variant mail-away exclusive. Minimal wear on the chrome finish, which is incredibly rare for this figure. Eyes still light up.",
-    "condition": "Loose - Excellent",
+    "description": "Playmates 1992 Wacky Action series.",
+    "condition": "MOC (Mint on Card)",
     "links": [
       {
         "platform": "eBay",
@@ -70,7 +72,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/e06666/ffffff?text=Lion-O+Chrome"
+      "https://placehold.co/600x750/93c47d/ffffff?text=Raphael"
     ]
   },
   {
@@ -94,29 +96,6 @@
     ],
     "images": [
       "https://placehold.co/600x750/cc0000/ffffff?text=Raph+Trenchcoat"
-    ]
-  },
-  {
-    "id": 9,
-    "name": "Mumm-Ra The Ever-Living",
-    "collection": "Thundercats",
-    "brand": "Thundercats",
-    "type": "Action Figure",
-    "manufacturer": "LJN",
-    "releaseDate": 1986,
-    "price": 180.0,
-    "stock": 1,
-    "demographic": "masculine",
-    "description": "LJN 1986. Light-up eyes functionality confirmed working. Includes dagger and headdress. Minor paint rub on the toes.",
-    "condition": "Loose - Very Good",
-    "links": [
-      {
-        "platform": "eBay",
-        "url": "#"
-      }
-    ],
-    "images": [
-      "https://placehold.co/600x750/444444/ffffff?text=Mumm-Ra"
     ]
   },
   {
