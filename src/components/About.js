@@ -41,8 +41,8 @@ const About = () => {
                         </div>
 
                         {/* BROTHER */}
-                        <div className="float-left mr-8 mb-2 relative group select-none z-10 hidden md:block">
-                            <div className="absolute top-2 -left-2 bg-[#f4e799] rounded-xl -rotate-12 shadow-sm transition-transform duration-300 group-hover:rotate-0 group-hover:scale-105" style={{ width: BOY_WIDTH, height: '100px' }}></div>
+                        <div className="float-left mr-8 mb-2 relative group select-none z-10 hidden md:block -mt-2">
+                            <div className="absolute top-0 -left-2 bg-[#f4e799] rounded-xl -rotate-12 shadow-sm transition-transform duration-300 group-hover:rotate-0 group-hover:scale-105" style={{ width: BOY_WIDTH, height: '100px' }}></div>
                             <div className="relative overflow-hidden rounded-lg" style={{ width: BOY_WIDTH, height: IMG_HEIGHT }}>
                                 <img src={SIBLING_IMG} alt="Brother" className="absolute h-full max-w-none object-cover object-left" style={{ left: '0', width: 'auto' }} />
                             </div>
@@ -104,4 +104,5 @@ const About = () => {
 };
 
 export default About;
+
 
