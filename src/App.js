@@ -13,7 +13,7 @@ import Hero from './components/Hero';
 import Footer from './components/Footer'; 
 import ProductCard from './components/ProductCard';
 import ProductDetail from './components/ProductDetail';
-import AboutSection from './components/AboutSection';
+import AboutSection from './components/About';
 
 // --- STYLES & HELPERS ---
 
@@ -458,3 +458,4 @@ const AppContent = () => {
 
 const App = () => ( <ErrorBoundary><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_SCHEMA) }} /><AppContent /></ErrorBoundary> );
 export default App;
+
