@@ -4,7 +4,7 @@ import { JaggedLine } from './About';
 
 const Hero = () => {
     return (
-        <div className="relative bg-[#f4e799] text-[#514d46] transition-all duration-500 mb-8">
+        <div className="relative bg-[#f4e799] text-[#514d46] mb-8">
             <div className="max-w-7xl mx-auto px-4 py-16 md:py-24 relative z-10">
                 <div 
                     className="absolute top-4 bottom-4 right-4 left-4 z-0 pointer-events-none [background-position:right_center] lg:[background-position:95%_center]" 
