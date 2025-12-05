@@ -171,30 +171,6 @@
         ]
     },
     {
-        "id": 17,
-        "name": "Ultimate Warrior 12\" Talking",
-        "collection": "WWF",
-        "brand": "WWF",
-        "type": "Action Figure",
-        "manufacturer": "Hasbro",
-        "releaseDate": 1991,
-        "price": 85,
-        "stock": 1,
-        "demographic": "masculine",
-        "description": "Hasbro 1991. Massive 12-inch scale figure. Pull-string voice mechanism tested and working: 'Feel the power of the Warrior!' Paint apps on face paint are crisp.",
-        "condition": "Loose - Good",
-        "links": [
-            {
-                "platform": "eBay",
-                "url": "#"
-            }
-        ],
-        "images": [
-            "https://i.ebayimg.com/images/g/f2kAAOSwUvNnmZUY/s-l1600.jpg",
-            "https://placehold.co/600x750/ccff00/ffffff?text=Back+Detail"
-        ]
-    },
-    {
         "id": 18,
         "name": "Pokémon Pikachu 35mm Camera",
         "collection": "Pokémon",
@@ -2670,6 +2646,30 @@
         ],
         "images": [
             "https://placehold.co/600x750/f4e799/000000?text=Rockers+TT1"
+        ]
+    },
+    {
+        "id": 17,
+        "name": "Talking  Ultimate Warrior 12\"",
+        "collection": "WWF",
+        "brand": "WWF",
+        "type": "Action Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 85,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Hasbro 1991. Massive 12-inch scale figure. Pull-string voice mechanism tested and working: 'Feel the power of the Warrior!' Paint apps on face paint are crisp.",
+        "condition": "Loose - Good",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://i.ebayimg.com/images/g/f2kAAOSwUvNnmZUY/s-l1600.jpg",
+            "https://placehold.co/600x750/ccff00/ffffff?text=Back+Detail"
         ]
     }
 ]
