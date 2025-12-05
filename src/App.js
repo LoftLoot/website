@@ -9,8 +9,8 @@ import {
 } from './data';
 import { useSearchIndex } from './hooks/useSearchIndex';
 import Header from './components/Header';
-import Hero from './components/Hero'; // New Import
-import Footer from './components/Footer'; // New Import
+import Hero from './components/Hero'; 
+import Footer from './components/Footer'; 
 import ProductCard from './components/ProductCard';
 import ProductDetail from './components/ProductDetail';
 import AboutSection from './components/AboutSection';
@@ -169,7 +169,8 @@ const AppContent = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('products.json')
+    // FIX: Use PUBLIC_URL for GitHub Pages compatibility
+    fetch(`${process.env.PUBLIC_URL}/products.json`)
         .then(res => {
             if (!res.ok) throw new Error("Failed to load products");
             return res.json();
