@@ -4,7 +4,7 @@ import { X, Filter, ChevronDown, ArrowUp, Search } from 'lucide-react';
 
 import { 
     ITEMS_PER_PAGE, FILTER_COLORS, TYPE_CONFIG, ORGANIZATION_SCHEMA, 
-    SORT_STRATEGIES, SORT_OPTIONS
+    SORT_STRATEGIES, SORT_OPTIONS, processProductData 
 } from './data';
 import { useSearchIndex } from './hooks/useSearchIndex';
 
@@ -14,7 +14,7 @@ import Hero from './components/Hero';
 import Footer from './components/Footer'; 
 import ProductCard from './components/ProductCard';
 import ProductDetail from './components/ProductDetail';
-import About from './components/About';
+import AboutSection from './components/About';
 
 // --- STYLES ---
 
@@ -110,7 +110,7 @@ const useSEO = ({ title, description, image, canonical }) => {
     }, [title, description, image, canonical]);
 };
 
-// --- FILTER COMPONENTS (RESTORED TO ORIGINAL FLAT STYLE) ---
+// --- FILTER COMPONENTS (FLAT STYLE) ---
 
 const FilterGroup = React.memo(({ title, options, selected, onChange, available, color }) => (
     <div className="space-y-3">
@@ -142,7 +142,6 @@ const FilterGroup = React.memo(({ title, options, selected, onChange, available,
 ));
 
 const FilterSection = React.memo(({ collections, decades, types, selectedCollection, selectedDecade, selectedType, priceRange, minPrice, maxPrice, availableCollections, availableDecades, availableTypes, showInStockOnly, onCollectionChange, onDecadeChange, onTypeChange, onPriceChange, onStockChange, onClearFilters }) => {
-    // Local state for slider dragging
     const [localRange, setLocalRange] = useState(priceRange);
     const isDisabled = minPrice === maxPrice;
     
@@ -210,14 +209,9 @@ const AppContent = () => {
             return res.json();
         })
         .then(json => {
-            // NOTE: processProductData needs to be imported from data.js
-            // But for this full file replacement, we assume it's available via import
-            // I'll dynamically import the processor to ensure it works with the file structure
-            import('./data').then(module => {
-                const processed = module.processProductData(json);
-                setAppData(processed);
-                setLoading(false);
-            });
+            const processed = processProductData(json);
+            setAppData(processed);
+            setLoading(false);
         })
         .catch(err => {
             console.error(err);
@@ -352,7 +346,6 @@ const AppContent = () => {
   useEffect(() => setVisibleCount(ITEMS_PER_PAGE), [selectedCollection, selectedDecade, selectedType, priceRange, committedQuery, sortOption, showInStockOnly]);
   const visibleProducts = useMemo(() => filteredProducts.slice(0, visibleCount), [filteredProducts, visibleCount]);
 
-  // URL Sync Logic
   useEffect(() => {
       const p = new URLSearchParams();
       if (committedQuery) p.set('q', committedQuery); 
@@ -400,7 +393,6 @@ const AppContent = () => {
       return parts.join(" ");
   }, [selectedDecade, selectedCollection, selectedType, committedQuery]);
 
-  // --- RENDER ---
   if (loading) return <div className="min-h-screen flex items-center justify-center bg-[#fffbf0] text-[#514d46] font-bold">Loading Loot...</div>;
   if (error) return <div className="min-h-screen flex items-center justify-center bg-[#fffbf0] text-[#d35153] font-bold">Error: {error}</div>;
 
