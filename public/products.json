@@ -1,5 +1,29 @@
 [
     {
+        "id": 1,
+        "name": "Pokémon Master Trainer Board Game",
+        "collection": "Pokémon",
+        "brand": "Pokémon",
+        "line": "",
+        "type": "Board Game",
+        "manufacturer": "MB",
+        "releaseDate": 1999,
+        "price": 75,
+        "stock": 1,
+        "demographic": "neutral",
+        "description": "Classic Pokémon board game by MB. Challenge players to travel, battle, and collect Pokémon to become the ultimate Master Trainer. Complete games are highly sought after.",
+        "condition": "Boxed - Complete",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/c2e0e3/000000?text=Master+Trainer"
+        ]
+    },
+    {
         "id": 3,
         "name": "Donatello 'Pizza Time'",
         "collection": "TMNT",
