@@ -1,9 +1,8 @@
+// src/components/About.js
 import React, { useState, useEffect } from 'react';
 import { Mail } from 'lucide-react';
 
-// --- SHARED COMPONENTS ---
-
-// Exporting JaggedLine in case other components need it later
+// --- SHARED COMPONENT ---
 export const JaggedLine = React.memo(({ position, color = "#f4e799" }) => (
     <div 
         className={`absolute left-0 right-0 h-[10px] w-full z-20 ${position === 'top' ? '-top-[10px]' : '-bottom-[10px] rotate-180'}`} 
@@ -21,7 +20,7 @@ JaggedLine.displayName = 'JaggedLine';
 const About = () => {
     const [isPeeled, setIsPeeled] = useState(false);
 
-    // Canvas SEO stub - safe to keep or remove if managed by App.js
+    // Simple SEO for the About View
     useEffect(() => { document.title = "About Us | LoftLoot"; }, []);
 
     // CONSTANTS
@@ -33,75 +32,48 @@ const About = () => {
     return (
         <>
             {/* TOP SECTION: STORY */}
-            <div className="relative bg-[#f2e9d9] text-[#514d46] transition-all duration-500 mb-12 pb-12">
-                <div className="max-w-2xl mx-auto px-6 pt-12 relative z-10">
+            <div className="relative bg-[#e5e5e5] text-[#514d46] transition-all duration-500 mb-12 pb-12">
+                <div className="max-w-3xl mx-auto px-4 pt-12 relative z-10">
                     
-                    <div className="text-center mb-10">
-                        <h1 className="text-4xl font-black text-[#514d46] leading-tight" style={{ fontFamily: '"Jua", sans-serif' }}>About Us</h1>
-                    </div>
+                    <div className="space-y-8 leading-relaxed text-lg relative overflow-hidden text-center md:text-left">
+                        <div className="text-center mb-6">
+                            <h1 className="text-3xl md:text-4xl font-black text-[#514d46] leading-tight" style={{ fontFamily: '"Jua", sans-serif' }}>About Us</h1>
+                        </div>
 
-                    <div className="leading-relaxed text-lg text-left">
-                        
-                        {/* --- TOP LEFT: BROTHER --- */}
-                        <div className="float-left mr-8 mb-2 relative group cursor-pointer select-none z-10">
-                            {/* Yellow Backing */}
-                            <div 
-                                className="absolute top-2 -left-2 bg-[#f4e799] rounded-xl -rotate-12 shadow-sm transition-transform duration-300 group-hover:rotate-0 group-hover:scale-105"
-                                style={{ width: BOY_WIDTH, height: '100px' }}
-                            ></div>
-                            {/* Character Mask */}
-                            <div 
-                                className="relative overflow-hidden rounded-lg transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3"
-                                style={{ width: BOY_WIDTH, height: IMG_HEIGHT }}
-                            >
-                                <img 
-                                    src={SIBLING_IMG} 
-                                    alt="Brother" 
-                                    className="absolute h-full max-w-none object-cover object-left"
-                                    style={{ left: '0', width: 'auto' }} 
-                                />
+                        {/* BROTHER */}
+                        <div className="float-left mr-8 mb-2 relative group cursor-pointer select-none z-10 hidden md:block">
+                            <div className="absolute top-2 -left-2 bg-[#f4e799] rounded-xl -rotate-12 shadow-sm transition-transform duration-300 group-hover:rotate-0 group-hover:scale-105" style={{ width: BOY_WIDTH, height: '100px' }}></div>
+                            <div className="relative overflow-hidden rounded-lg transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3" style={{ width: BOY_WIDTH, height: IMG_HEIGHT }}>
+                                <img src={SIBLING_IMG} alt="Brother" className="absolute h-full max-w-none object-cover object-left" style={{ left: '0', width: 'auto' }} />
                             </div>
                         </div>
 
-                        <p className="font-medium mb-8">We are a brother and sister who grew up in the North East of England in the early '90s. Like most kids, we spent every Christmas circling <i>all the things</i> in the Argos catalogue.</p>
+                        <p className="font-medium">We are a brother and sister who grew up in the North East of England in the early '90s. Like most kids, we spent every Christmas circling <i>all the things</i> in the Argos catalogue.</p>
                         
-                        <p className="mb-8">Recently, while looking through <a href="https://retromash.com/argos/" target="_blank" rel="noopener noreferrer" className="font-bold underline decoration-2 decoration-[#487ec8]/50 hover:decoration-[#487ec8] hover:text-[#487ec8] transition-all">archived catalogues</a> online, we realized we actually still own most of it. It's been sitting in our parents' loft for decades! We've decided to catalog our collection here, hoping to find new homes for them with people who appreciate them as much as we did.</p>
+                        <p>Recently, while looking through <a href="https://retromash.com/argos/" target="_blank" rel="noopener noreferrer" className="font-bold underline decoration-2 decoration-[#487ec8]/50 hover:decoration-[#487ec8] hover:text-[#487ec8] transition-all">archived catalogues</a> online, we realized we actually still own most of it. It's been sitting in our parents' loft for decades! We've decided to catalog our collection here, hoping to find new homes for them with people who appreciate them as much as we did.</p>
 
-                        {/* --- BOTTOM RIGHT: SISTER --- */}
-                        <div className="float-right ml-8 mb-1 mt-1 relative group cursor-pointer select-none z-10">
-                            {/* Yellow Backing */}
-                            <div 
-                                className="absolute top-2 -right-1 bg-[#f4e799] rounded-xl rotate-12 shadow-sm transition-transform duration-300 group-hover:rotate-0 group-hover:scale-105"
-                                style={{ width: GIRL_WIDTH, height: '100px' }}
-                            ></div>
-                            {/* Character Mask */}
-                            <div 
-                                className="relative overflow-hidden rounded-lg transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3"
-                                style={{ width: GIRL_WIDTH, height: IMG_HEIGHT }}
-                            >
-                                <img 
-                                    src={SIBLING_IMG} 
-                                    alt="Sister" 
-                                    className="absolute h-full max-w-none object-cover object-right"
-                                    style={{ right: '0', width: 'auto' }}
-                                />
+                        {/* SISTER */}
+                        <div className="float-right ml-8 mb-1 mt-1 relative group cursor-pointer select-none z-10 hidden md:block">
+                            <div className="absolute top-2 -right-1 bg-[#f4e799] rounded-xl rotate-12 shadow-sm transition-transform duration-300 group-hover:rotate-0 group-hover:scale-105" style={{ width: GIRL_WIDTH, height: '100px' }}></div>
+                            <div className="relative overflow-hidden rounded-lg transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3" style={{ width: GIRL_WIDTH, height: IMG_HEIGHT }}>
+                                <img src={SIBLING_IMG} alt="Sister" className="absolute h-full max-w-none object-cover object-right" style={{ right: '0', width: 'auto' }} />
                             </div>
                         </div>
 
-                        <p className="mb-8">We aren't resellers. Every item has been played with and loved.</p>
+                        <p>We aren't resellers. Every item has been played with and loved.</p>
 
                         <p className="font-bold text-[#514d46]">We hope you find an old favourite, or finally get your hands on that one thing Santa never brought.</p>
                         
                         {/* Clear floats */}
                         <div className="clear-both"></div>
 
-                        <div className="pt-3 mt-8 border-t-2 border-[#514d46]/10">
-                            <p className="text-sm text-[#514d46]/60 italic">Artwork by Shishido Doshi.</p>
+                        <div className="text-sm text-[#514d46]/60 italic mt-8 pt-8 border-t-2 border-[#514d46]/10">
+                            Artwork by Shishido Doshi.
                         </div>
                     </div>
                 </div>
                 {/* Jagged Divider */}
-                <JaggedLine position="bottom" color="#f2e9d9" />
+                <JaggedLine position="bottom" color="#e5e5e5" />
             </div>
 
             {/* BOTTOM SECTION: CONTACT */}
@@ -132,4 +104,3 @@ const About = () => {
 };
 
 export default About;
-
