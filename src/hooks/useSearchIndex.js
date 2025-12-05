@@ -3,13 +3,11 @@ import { useMemo, useCallback } from 'react';
 import { 
     normalizeText, 
     generateYearTokens, 
-    STATIC_COLLECTIONS, 
-    STATIC_TYPES, 
-    STATIC_DECADES, 
     TYPE_CONFIG 
 } from '../data';
 
 export const useSearchIndex = (products) => {
+    // 1. Create the Search Index
     const index = useMemo(() => {
         return products.map(p => ({
             id: p.id,
@@ -28,11 +26,29 @@ export const useSearchIndex = (products) => {
         }));
     }, [products]);
 
+    // 2. Derive unique lists for suggestions (Dynamic, not static)
+    const derivedLists = useMemo(() => {
+        const collections = new Set();
+        const types = new Set();
+        const decades = new Set();
+
+        products.forEach(p => {
+            if (p.collection) collections.add(p.collection);
+            if (p.type) types.add(p.type);
+            if (p.decade) decades.add(p.decade);
+        });
+
+        return {
+            collections: Array.from(collections).sort(),
+            types: Array.from(types).sort(),
+            decades: Array.from(decades).sort()
+        };
+    }, [products]);
+
     const getSnippet = useCallback((product, query) => {
         const q = normalizeText(query);
         if (!q) return null;
         
-        // Priority: releaseYear > brand > manufacturer > type > collection > description
         if (product.releaseDate && product.releaseDate.toString().includes(q)) return { text: `Release year: ${product.releaseDate}`, field: 'year' };
         if (product.lowerBrand.includes(q)) return { text: `Brand: ${product.brand}`, field: 'brand' };
         if (product.lowerManufacturer.includes(q)) return { text: `Manufacturer: ${product.manufacturer}`, field: 'manufacturer' };
@@ -52,10 +68,9 @@ export const useSearchIndex = (products) => {
         if (!query || query.length < 2) return { filters: [], products: [], totalProducts: 0 };
         
         const normQ = normalizeText(query);
-        // Split query into tokens (e.g. "1985 skeletor" -> ["1985", "skeletor"])
         const tokens = normQ.split(" ").filter(t => t.length > 0);
 
-        // Pass A: Filters (Simple match against full string for UI filters)
+        // Pass A: Filters (Match against our dynamically derived lists)
         const filterCandidates = [];
         const addFilter = (label, kind, value) => {
             const normLabel = normalizeText(label);
@@ -65,12 +80,13 @@ export const useSearchIndex = (products) => {
             }
         };
 
-        STATIC_COLLECTIONS.forEach(c => addFilter(c, 'Collection', c));
-        STATIC_TYPES.forEach(t => {
+        // Use derived lists instead of static ones
+        derivedLists.collections.forEach(c => addFilter(c, 'Collection', c));
+        derivedLists.types.forEach(t => {
             const label = TYPE_CONFIG[t] ? TYPE_CONFIG[t].plural : t;
             addFilter(label, 'Type', t);
         });
-        STATIC_DECADES.forEach(d => addFilter(d, 'Era', d));
+        derivedLists.decades.forEach(d => addFilter(d, 'Era', d));
 
         // Dedupe and Sort Filters
         const uniqueFilters = Array.from(new Map(filterCandidates.map(item => [item.label + item.kind, item])).values())
@@ -83,7 +99,6 @@ export const useSearchIndex = (products) => {
         for (const item of index) {
             if (showInStockOnly && item.original.stock < 1) continue;
 
-            // Rule: Every token must match AT LEAST ONE field
             const allTokensMatch = tokens.every(token => {
                 return (
                     item.norm.name.includes(token) ||
@@ -97,7 +112,6 @@ export const useSearchIndex = (products) => {
             });
 
             if (allTokensMatch) {
-                // Calculate Score based on field importance across all tokens
                 let score = 0;
                 tokens.forEach(token => {
                     if (item.norm.name.includes(token)) score += item.norm.name.startsWith(token) ? 20 : 10;
@@ -105,7 +119,7 @@ export const useSearchIndex = (products) => {
                     if (item.norm.manufacturer.includes(token)) score += 8;
                     if (item.norm.collection.includes(token)) score += 6;
                     if (item.norm.type.includes(token)) score += 6;
-                    if (item.norm.years.includes(token)) score += 15; // High score for year/decade match
+                    if (item.norm.years.includes(token)) score += 15;
                     if (item.norm.desc.includes(token)) score += 1;
                 });
 
@@ -125,14 +139,13 @@ export const useSearchIndex = (products) => {
             products: productsSlice,
             totalProducts: scoredProducts.length
         };
-    }, [index, getSnippet]);
+    }, [index, getSnippet, derivedLists]);
 
     const search = useCallback((query, filters = {}) => {
         let results = [...products];
         const normQ = normalizeText(query);
         const tokens = normQ.split(" ").filter(t => t.length > 0);
 
-        // 1. Keyword Score & Filtering
         if (tokens.length > 0) {
             const scored = [];
             
@@ -140,7 +153,6 @@ export const useSearchIndex = (products) => {
                 const idxItem = index.find(i => i.id === p.id);
                 if (!idxItem) continue;
 
-                // Rule: Every token must match AT LEAST ONE field
                 const allTokensMatch = tokens.every(token => {
                     return (
                         idxItem.norm.name.includes(token) ||
@@ -172,7 +184,6 @@ export const useSearchIndex = (products) => {
             results = scored;
         }
 
-        // 2. Apply strict filters
         return results.filter(p => {
              if (filters.showInStockOnly && p.stock < 1) return false;
              if (filters.collection && filters.collection !== 'All' && p.collection !== filters.collection) return false;
