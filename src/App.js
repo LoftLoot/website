@@ -448,7 +448,7 @@ const AppContent = () => {
                     </div>
                 </main>
             </>
-          ) : ( <AboutSection /> )}
+          ) : ( <About /> )}
         </>
       )}
       <Footer />
@@ -458,5 +458,6 @@ const AppContent = () => {
 
 const App = () => ( <ErrorBoundary><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_SCHEMA) }} /><AppContent /></ErrorBoundary> );
 export default App;
+
 
 
