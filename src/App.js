@@ -14,7 +14,7 @@ import Hero from './components/Hero';
 import Footer from './components/Footer'; 
 import ProductCard from './components/ProductCard';
 import ProductDetail from './components/ProductDetail';
-import AboutSection from './components/About';
+import About from './components/About';
 
 // --- STYLES ---
 
