@@ -62,6 +62,98 @@ const useThumbScroll = (images) => {
     return { thumbsRef, showLeft: showArrows.left, showRight: showArrows.right, scrollThumbs };
 };
 
+// --- CAROUSEL COMPONENTS ---
+
+const PlaceholderCard = React.memo(() => (
+    <div className="flex-shrink-0 shrink-0 w-full h-full">
+        <div className="group bg-white rounded-xl overflow-hidden border border-[#f2f4f6] cursor-default w-full h-full flex flex-col shadow-sm">
+            <div className="aspect-square relative overflow-hidden bg-slate-50 flex items-center justify-center">
+                <span className="text-gray-200 font-bold text-4xl select-none">?</span>
+            </div>
+            <div className="p-3 flex-1 flex flex-col gap-2">
+                <div className="h-4 w-full bg-slate-50 rounded animate-pulse"></div>
+                <div className="h-4 w-2/3 bg-slate-50 rounded animate-pulse"></div>
+            </div>
+        </div>
+    </div>
+));
+
+const RelatedProductsCarousel = React.memo(({ products, onOpen }) => {
+    const [page, setPage] = useState(0);
+    const itemsPerSet = 5;
+    
+    const productSets = useMemo(() => {
+        const sets = [];
+        if (!products || products.length === 0) return [];
+        for (let i = 0; i < products.length; i += itemsPerSet) {
+            const chunk = products.slice(i, i + itemsPerSet);
+            // Fill remaining slots with placeholders if needed
+            while (chunk.length < itemsPerSet) {
+                chunk.push({ id: `placeholder-${i}-${chunk.length}`, isPlaceholder: true });
+            }
+            sets.push(chunk);
+        }
+        return sets;
+    }, [products]);
+    
+    const totalSets = productSets.length;
+    useEffect(() => setPage(0), [products]);
+    
+    if (products.length === 0) return null;
+
+    return (
+        <div className="max-w-7xl mx-auto px-4 w-full mb-12 mt-16 relative animate-fade-in">
+            <div className="group/carousel">
+                <div className="mb-6">
+                    <h3 className="font-black text-[#514d46] text-xl flex items-center gap-2" style={{ fontFamily: '"Jua", sans-serif' }}>
+                        <span className="text-[#d35153]">You May Also Like</span>
+                    </h3>
+                </div>
+                <div className="flex items-center gap-4">
+                    <button 
+                        onClick={() => setPage(p => Math.max(0, p - 1))} 
+                        disabled={page === 0} 
+                        className={`${NAV_BTN_BASE} p-3 shrink-0 z-10`} 
+                        aria-label="Previous page"
+                    >
+                        <ChevronLeft size={24} />
+                    </button>
+                    
+                    <div className="overflow-hidden rounded-2xl flex-1 min-w-0">
+                        <div 
+                            className="flex transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] will-change-transform" 
+                            style={{ transform: `translateX(-${page * 100}%)` }}
+                        >
+                            {productSets.map((set, setIndex) => (
+                                <div 
+                                    key={setIndex} 
+                                    className="w-full flex-shrink-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 p-2" 
+                                    style={{ flex: '0 0 100%' }}
+                                >
+                                    {set.map((p, i) => (
+                                        p.isPlaceholder 
+                                            ? <PlaceholderCard key={p.id} /> 
+                                            : <ProductCard key={p.id} product={p} index={i} onOpen={onOpen} isMicro={true} />
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    
+                    <button 
+                        onClick={() => setPage(p => Math.min(totalSets - 1, p + 1))} 
+                        disabled={page >= totalSets - 1} 
+                        className={`${NAV_BTN_BASE} p-3 shrink-0 z-10`} 
+                        aria-label="Next page"
+                    >
+                        <ChevronRight size={24} />
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+});
+
 // --- SUB-COMPONENTS ---
 
 const SpecItem = ({ label, value }) => {
@@ -81,8 +173,8 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
     
     const { isActive, imgRef, handleImageClick, handleImageMouseMove, handleMouseLeave } = useImageZoom();
-    // Use processedImages from data.js. Ensure it's memoized or stable.
-    const images = useMemo(() => product.processedImages || [], [product.processedImages]); 
+    // Memoize images to satisfy hooks
+    const images = useMemo(() => product.processedImages || [], [product.processedImages]);
     const { thumbsRef, showLeft, showRight, scrollThumbs } = useThumbScroll(images);
 
     // Reset states on product change
@@ -93,20 +185,18 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
 
     useLayoutEffect(() => { window.scrollTo(0, 0); }, [product.id]);
 
-    // Handle Title SEO locally
     useEffect(() => {
         document.title = `${product.name} - ${product.manufacturer} | Loft Loot`;
     }, [product.name, product.manufacturer]);
 
-    const relatedProducts = (product.relatedIds || [])
+    // RESTORED: No limit on related products (was .slice(0,5)) so carousel works
+    const relatedProducts = useMemo(() => (product.relatedIds || [])
         .map(id => productMap?.get(id))
-        .filter(Boolean)
-        .slice(0, 5); 
+        .filter(Boolean), [product.relatedIds, productMap]);
 
     const activeMedia = images[activeImgIndex];
     const currentVideoId = activeMedia?.videoId;
 
-    // JSON-LD Schema
     const jsonLd = useMemo(() => JSON.stringify({ 
         "@context": "https://schema.org/", 
         "@type": "Product", 
@@ -125,7 +215,6 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
         "publisher": ORGANIZATION_SCHEMA 
     }), [product, images]);
 
-    // Navigation for main image arrows
     const navImg = (dir) => (e) => { 
         e?.stopPropagation(); 
         setActiveImgIndex(prev => { 
@@ -138,7 +227,6 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
         <div className="min-h-screen bg-[#fffbf0] text-[#514d46] font-sans pb-0 relative z-50 flex flex-col mb-20">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
             
-            {/* Background color locked to cream (#f2e9d9) */}
             <div className="bg-[#f2e9d9] pb-16 pt-8 relative w-full">
                 <div className="max-w-7xl mx-auto px-4 relative z-10">
                     
@@ -163,7 +251,6 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                                 onMouseMove={handleImageMouseMove} 
                                 onMouseLeave={handleMouseLeave}
                             >
-                                {/* Main Image Navigation Arrows */}
                                 {images.length > 1 && !isActive && (
                                     <>
                                         <button onClick={navImg(-1)} disabled={activeImgIndex === 0} className={`${NAV_BTN_BASE} absolute left-4 top-1/2 -translate-y-1/2 z-40 p-2 opacity-0 group-hover:opacity-100 disabled:hidden`}><ChevronLeft size={24} /></button>
@@ -203,7 +290,6 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                                     </>
                                 )}
 
-                                {/* Animated Stamp and Dust */}
                                 {product.isSold && !isActive && (
                                     <div className="absolute inset-0 z-30 pointer-events-none flex items-center justify-center">
                                         <div className="relative animate-stamp">
@@ -214,7 +300,6 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                                 )}
                             </div>
                             
-                            {/* Thumbnails */}
                             {images.length > 1 && (
                                 <div className="flex items-center gap-2">
                                      <button onClick={() => scrollThumbs('left')} disabled={!showLeft} className={`${NAV_BTN_BASE} hidden md:flex shrink-0 p-1.5`}><ChevronLeft size={20} /></button>
@@ -233,7 +318,6 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
 
                         {/* RIGHT COLUMN: INFO */}
                         <div className="space-y-6 select-text">
-                            {/* Header with HR style */}
                             <div className="border-b-2 border-[#514d46]/5 pb-6">
                                 <div className="mb-2 text-xs font-bold text-[#514d46]/60 uppercase tracking-wider">{product.manufacturer}</div>
                                 <h1 className="text-4xl md:text-5xl font-black text-[#514d46] leading-tight mb-4" style={{ fontFamily: '"Jua", sans-serif' }}>{product.name}</h1>
@@ -246,7 +330,6 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                                 </div>
                             </div>
 
-                            {/* Info Box: NEWER HR Style (Linear, no bubble) */}
                             <div className="pt-6 pb-6 border-b-2 border-[#514d46]/5">
                                 <div className="grid grid-cols-2 gap-y-6 gap-x-4">
                                     <SpecItem label="Collection" value={product.collection} />
@@ -264,7 +347,6 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                                 <p className="text-sm italic opacity-60 mt-4">Photos represent the actual item you will receive. All photos and videos were taken by us.</p>
                             </div>
 
-                            {/* Buttons: OLDER Style (White with border) */}
                             <div className="pt-8 border-t-2 border-[#514d46]/5">
                                 <h3 className="font-bold text-[#514d46] text-sm uppercase tracking-widest mb-4">External Purchasing Options</h3>
                                 <div className="flex flex-col gap-3">
@@ -300,20 +382,8 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                 <JaggedLine position="bottom" color="#f2e9d9" />
             </div>
 
-            {/* RELATED PRODUCTS */}
-            {relatedProducts.length > 0 && (
-                <div className="max-w-7xl mx-auto px-4 py-16">
-                    <h3 className="font-bold text-[#514d46] text-xl uppercase tracking-widest flex items-center gap-3 mb-8">
-                        <div className="w-3 h-3 rounded-full bg-[#d35153]"></div>
-                        You might also like
-                    </h3>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                        {relatedProducts.map((p, i) => (
-                            <ProductCard key={p.id} product={p} index={i} onOpen={onOpen} isMicro={false} />
-                        ))}
-                    </div>
-                </div>
-            )}
+            {/* RESTORED: CAROUSEL */}
+            <RelatedProductsCarousel products={relatedProducts} onOpen={onOpen} />
         </div>
     );
 };
