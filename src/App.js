@@ -295,7 +295,8 @@ const AppContent = () => {
     if (!appData) return [];
     const results = performSearch(committedQuery, { collection: selectedCollection, decade: selectedDecade, type: selectedType, priceRange, showInStockOnly });
     const sortFn = SORT_STRATEGIES[sortOption];
-    if (sortFn) results.sort((a, b) => (a.stock > 0 !== b.stock > 0) ? (a.stock > 0 ? -1 : 1) : sortFn(a, b));
+    // FIX: ADDED PARENTHESES TO FIX MIXED OPERATORS ERROR
+    if (sortFn) results.sort((a, b) => ((a.stock > 0) !== (b.stock > 0)) ? (a.stock > 0 ? -1 : 1) : sortFn(a, b));
     return results;
   }, [committedQuery, selectedCollection, selectedDecade, selectedType, priceRange, sortOption, showInStockOnly, performSearch, appData]));
 
