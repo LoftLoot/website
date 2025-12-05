@@ -1,5 +1,5 @@
 // src/App.js
-import React, { useState, useMemo, useEffect, useLayoutEffect, useRef, useDeferredValue, useCallback } from 'react';
+import React, { useState, useMemo, useEffect, useRef, useDeferredValue, useCallback } from 'react';
 import { X, Filter, ChevronDown, ArrowUp, Search } from 'lucide-react';
 
 import { 
@@ -209,14 +209,9 @@ const AppContent = () => {
             return res.json();
         })
         .then(json => {
-            // NOTE: processProductData needs to be imported from data.js
-            // But for this full file replacement, we assume it's available via import
-            // I'll dynamically import the processor to ensure it works with the file structure
-            import('./data').then(module => {
-                const processed = module.processProductData(json);
-                setAppData(processed);
-                setLoading(false);
-            });
+            const processed = processProductData(json);
+            setAppData(processed);
+            setLoading(false);
         })
         .catch(err => {
             console.error(err);
