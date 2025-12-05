@@ -1,6 +1,6 @@
 // src/components/Footer.js
 import React from 'react';
-import { JaggedLine } from './AboutSection';
+import { JaggedLine } from './About';
 import { Logo } from './Header';
 
 const Footer = () => {
@@ -18,5 +18,6 @@ const Footer = () => {
         </footer>
     );
 };
+
 
 export default Footer;
