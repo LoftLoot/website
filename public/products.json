@@ -246,36 +246,9 @@
     ]
   },
   {
-    "id": 19,
-    "name": "The Driller - Ram-Pagers",
-    "collection": "Thundercats",
-    "brand": "Thundercats",
-    "type": "Vehicle",
-    "manufacturer": "LJN",
-    "releaseDate": 1987,
-    "price": 450.0,
-    "stock": 0,
-    "badgeText": "Ultra Rare",
-    "badgeColor": "#b4a7d6",
-    "demographic": "masculine",
-    "description": "LJN 1987 Ram-Pagers series. Ultra rare drill-action vehicle/figure hybrid. Diamond-tipped drill bit spins when rolled. One of the hardest Thundercats items to find in this condition.",
-    "condition": "Loose - Rare",
-    "links": [
-      {
-        "platform": "eBay",
-        "url": "#"
-      }
-    ],
-    "images": [
-      "https://i.ebayimg.com/images/g/8Q8AAeSw1qVpIwV~/s-l960.jpg",
-      "https://placehold.co/600x750/8e7cc3/ffffff?text=Action+Feature"
-    ]
-  },
-[
-  {
     "id": 20,
     "name": "Cheetara with Wilykit",
-    "collection": "Thundercats – Wave 1 (1985)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -285,7 +258,7 @@
     "badgeText": "Wave 1 Figure",
     "badgeColor": "#6aa84f",
     "demographic": "unisex",
-    "description": "Loose figure includes Baton and Wilykit PVC Figure. Part of the first wave of Thundercats action figures.",
+    "description": "Loose figure includes Baton and Wilykit PVC Figure. Part of the first wave (Wave 1, 1985) of Thundercats action figures.",
     "condition": "Loose",
     "links": [
       {
@@ -298,7 +271,7 @@
   {
     "id": 21,
     "name": "Jackalman",
-    "collection": "Thundercats – Wave 1 (1985)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -308,7 +281,7 @@
     "badgeText": "Wave 1 Figure",
     "badgeColor": "#6aa84f",
     "demographic": "masculine",
-    "description": "Loose figure includes Club and Shoulder Strap. A key Mutant villain from the first wave of Thundercats figures.",
+    "description": "Loose figure includes Club and Shoulder Strap. A key Mutant villain from the first wave (Wave 1, 1985) of Thundercats figures.",
     "condition": "Loose",
     "links": [
       {
@@ -321,7 +294,7 @@
   {
     "id": 22,
     "name": "Lion-O",
-    "collection": "Thundercats – Wave 1 (1985)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -331,7 +304,7 @@
     "badgeText": "Hero Leader",
     "badgeColor": "#f1c232",
     "demographic": "masculine",
-    "description": "Loose figure includes Sword of Omens, Claw Shield, Power Ring, and Battery (for light-up feature). The main hero of the Thundercats.",
+    "description": "Loose figure includes Sword of Omens, Claw Shield, Power Ring, and Battery (for light-up feature). The main hero of the Thundercats, part of Wave 1 (1985).",
     "condition": "Loose",
     "links": [
       {
@@ -344,7 +317,7 @@
   {
     "id": 23,
     "name": "Monkian",
-    "collection": "Thundercats – Wave 1 (1985)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -354,7 +327,7 @@
     "badgeText": "Wave 1 Figure",
     "badgeColor": "#6aa84f",
     "demographic": "masculine",
-    "description": "Loose figure includes Mace and Helmet. A prominent member of the Mutants from Wave 1.",
+    "description": "Loose figure includes Mace and Helmet. A prominent member of the Mutants from Wave 1 (1985).",
     "condition": "Loose",
     "links": [
       {
@@ -367,7 +340,7 @@
   {
     "id": 24,
     "name": "Mumm-Ra",
-    "collection": "Thundercats – Wave 1 (1985)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -377,7 +350,7 @@
     "badgeText": "Main Villain",
     "badgeColor": "#cc0000",
     "demographic": "masculine",
-    "description": "Loose figure includes Sword, Dagger, Headdress, Power Ring, and Battery (for light-up feature). The primary antagonist.",
+    "description": "Loose figure includes Sword, Dagger, Headdress, Power Ring, and Battery (for light-up feature). The primary antagonist, part of Wave 1 (1985).",
     "condition": "Loose",
     "links": [
       {
@@ -390,7 +363,7 @@
   {
     "id": 25,
     "name": "Panthro",
-    "collection": "Thundercats – Wave 1 (1985)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -400,7 +373,7 @@
     "badgeText": "Wave 1 Figure",
     "badgeColor": "#6aa84f",
     "demographic": "masculine",
-    "description": "Loose figure includes Nunchuks. The mechanic and driver of the Thundercats.",
+    "description": "Loose figure includes Nunchuks. The mechanic and driver of the Thundercats, part of Wave 1 (1985).",
     "condition": "Loose",
     "links": [
       {
@@ -413,7 +386,7 @@
   {
     "id": 26,
     "name": "S-S-Slithe",
-    "collection": "Thundercats – Wave 1 (1985)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -423,7 +396,7 @@
     "badgeText": "Wave 1 Figure",
     "badgeColor": "#6aa84f",
     "demographic": "masculine",
-    "description": "Loose figure includes Battle Axe. The leader of the Mutants.",
+    "description": "Loose figure includes Battle Axe. The leader of the Mutants, part of Wave 1 (1985).",
     "condition": "Loose",
     "links": [
       {
@@ -436,7 +409,7 @@
   {
     "id": 27,
     "name": "Tygra with Wilykat",
-    "collection": "Thundercats – Wave 1 (1985)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -446,7 +419,7 @@
     "badgeText": "Wave 1 Figure",
     "badgeColor": "#6aa84f",
     "demographic": "unisex",
-    "description": "Loose figure includes Bolo Whip and Wilykat PVC Figure. The architect and scientist of the Thundercats.",
+    "description": "Loose figure includes Bolo Whip and Wilykat PVC Figure. The architect and scientist of the Thundercats, part of Wave 1 (1985).",
     "condition": "Loose",
     "links": [
       {
@@ -459,7 +432,7 @@
   {
     "id": 28,
     "name": "Mutant Nose Diver",
-    "collection": "Thundercats – Wave 1 (1985): Vehicles",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Vehicle",
     "manufacturer": "LJN",
@@ -469,7 +442,7 @@
     "badgeText": "Wave 1 Vehicle",
     "badgeColor": "#76a5af",
     "demographic": "masculine",
-    "description": "Loose Mutant vehicle from the first wave of Thundercats vehicles.",
+    "description": "Loose Mutant vehicle from the first wave (Wave 1, 1985) of Thundercats vehicles.",
     "condition": "Loose",
     "links": [
       {
@@ -482,7 +455,7 @@
   {
     "id": 29,
     "name": "Mutant Skycutter",
-    "collection": "Thundercats – Wave 1 (1985): Vehicles",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Vehicle",
     "manufacturer": "LJN",
@@ -492,7 +465,7 @@
     "badgeText": "Wave 1 Vehicle",
     "badgeColor": "#76a5af",
     "demographic": "masculine",
-    "description": "Loose flying Mutant vehicle from the first wave.",
+    "description": "Loose flying Mutant vehicle from the first wave (Wave 1, 1985).",
     "condition": "Loose",
     "links": [
       {
@@ -505,7 +478,7 @@
   {
     "id": 30,
     "name": "Thundertank",
-    "collection": "Thundercats – Wave 1 (1985): Vehicles",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Vehicle",
     "manufacturer": "LJN",
@@ -515,7 +488,7 @@
     "badgeText": "Iconic Vehicle",
     "badgeColor": "#3d85c6",
     "demographic": "masculine",
-    "description": "Loose Thundercats ground assault vehicle. The signature transport of the Thundercats.",
+    "description": "Loose Thundercats ground assault vehicle. The signature transport, part of Wave 1 (1985).",
     "condition": "Loose",
     "links": [
       {
@@ -528,7 +501,7 @@
   {
     "id": 31,
     "name": "Grune The Destroyer",
-    "collection": "Thundercats – Wave 2 (1986)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -538,7 +511,7 @@
     "badgeText": "Wave 2 Figure",
     "badgeColor": "#a64d79",
     "demographic": "masculine",
-    "description": "Loose figure includes Spiked Mace and Knuckleduster. A classic Thundercats villain.",
+    "description": "Loose figure includes Spiked Mace and Knuckleduster. A classic Thundercats villain, part of Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -551,7 +524,7 @@
   {
     "id": 32,
     "name": "Hachiman",
-    "collection": "Thundercats – Wave 2 (1986)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -561,7 +534,7 @@
     "badgeText": "Wave 2 Figure",
     "badgeColor": "#a64d79",
     "demographic": "masculine",
-    "description": "Loose figure includes Helmet and Katana Sword. The samurai warrior ally.",
+    "description": "Loose figure includes Helmet and Katana Sword. The samurai warrior ally, part of Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -574,7 +547,7 @@
   {
     "id": 33,
     "name": "Ratar-O",
-    "collection": "Thundercats – Wave 2 (1986)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -584,7 +557,7 @@
     "badgeText": "Wave 2 Figure",
     "badgeColor": "#a64d79",
     "demographic": "masculine",
-    "description": "Loose figure includes Two Daggers (Rat’s Eyes). The notorious villain and leader of the Rat-Men.",
+    "description": "Loose figure includes Two Daggers (Rat’s Eyes). The notorious villain and leader of the Rat-Men, part of Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -597,7 +570,7 @@
   {
     "id": 34,
     "name": "Snowman of Hook Mountain",
-    "collection": "Thundercats – Wave 2 (1986)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -607,7 +580,7 @@
     "badgeText": "Wave 2 Figure",
     "badgeColor": "#a64d79",
     "demographic": "masculine",
-    "description": "Loose figure includes Helmet, Spear, and Shield. The ruler of Hook Mountain.",
+    "description": "Loose figure includes Helmet, Spear, and Shield. The ruler of Hook Mountain, part of Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -620,7 +593,7 @@
   {
     "id": 35,
     "name": "Tuska Warrior",
-    "collection": "Thundercats – Wave 2 (1986)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -630,7 +603,7 @@
     "badgeText": "Wave 2 Figure",
     "badgeColor": "#a64d79",
     "demographic": "masculine",
-    "description": "Loose figure includes Rifle Gun. A member of the noble Tuska race.",
+    "description": "Loose figure includes Rifle Gun. A member of the noble Tuska race, part of Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -643,7 +616,7 @@
   {
     "id": 36,
     "name": "Vultureman",
-    "collection": "Thundercats – Wave 2 (1986)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -653,7 +626,7 @@
     "badgeText": "Wave 2 Figure",
     "badgeColor": "#a64d79",
     "demographic": "masculine",
-    "description": "Loose figure includes Clawed Staff. The mechanic/inventor for the Mutants.",
+    "description": "Loose figure includes Clawed Staff. The mechanic/inventor for the Mutants, part of Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -666,7 +639,7 @@
   {
     "id": 37,
     "name": "Cruncher",
-    "collection": "Thundercats – Wave 2 (1986): Berserkers Figures",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure (Berserker)",
     "manufacturer": "LJN",
@@ -676,7 +649,7 @@
     "badgeText": "Berserker Figure",
     "badgeColor": "#b4a7d6",
     "demographic": "masculine",
-    "description": "Loose Berserker figure from the second wave.",
+    "description": "Loose Berserker figure from the second wave (Wave 2, 1986).",
     "condition": "Loose",
     "links": [
       {
@@ -689,7 +662,7 @@
   {
     "id": 38,
     "name": "Hammerhead",
-    "collection": "Thundercats – Wave 2 (1986): Berserkers Figures",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure (Berserker)",
     "manufacturer": "LJN",
@@ -699,7 +672,7 @@
     "badgeText": "Berserker Figure",
     "badgeColor": "#b4a7d6",
     "demographic": "masculine",
-    "description": "Loose Berserker figure from the second wave.",
+    "description": "Loose Berserker figure from the second wave (Wave 2, 1986).",
     "condition": "Loose",
     "links": [
       {
@@ -712,7 +685,7 @@
   {
     "id": 39,
     "name": "Ram Bam",
-    "collection": "Thundercats – Wave 2 (1986): Berserkers Figures",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure (Berserker)",
     "manufacturer": "LJN",
@@ -722,7 +695,7 @@
     "badgeText": "Berserker Figure",
     "badgeColor": "#b4a7d6",
     "demographic": "masculine",
-    "description": "Loose Berserker figure from the second wave.",
+    "description": "Loose Berserker figure from the second wave (Wave 2, 1986).",
     "condition": "Loose",
     "links": [
       {
@@ -735,7 +708,7 @@
   {
     "id": 40,
     "name": "Top Spinner",
-    "collection": "Thundercats – Wave 2 (1986): Berserkers Figures",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure (Berserker)",
     "manufacturer": "LJN",
@@ -745,7 +718,7 @@
     "badgeText": "Berserker Figure",
     "badgeColor": "#b4a7d6",
     "demographic": "masculine",
-    "description": "Loose Berserker figure from the second wave.",
+    "description": "Loose Berserker figure from the second wave (Wave 2, 1986).",
     "condition": "Loose",
     "links": [
       {
@@ -758,7 +731,7 @@
   {
     "id": 41,
     "name": "Ma-Mutt",
-    "collection": "Thundercats – Wave 2 (1986): Companions Figures",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure (Companion)",
     "manufacturer": "LJN",
@@ -768,7 +741,7 @@
     "badgeText": "Companion Figure",
     "badgeColor": "#cfe2f3",
     "demographic": "unisex",
-    "description": "Loose Companion figure, Ma-Mutt, includes Attached Chain. Mumm-Ra's faithful pet.",
+    "description": "Loose Companion figure, Ma-Mutt, includes Attached Chain. Mumm-Ra's faithful pet, part of Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -781,7 +754,7 @@
   {
     "id": 42,
     "name": "Snarf",
-    "collection": "Thundercats – Wave 2 (1986): Companions Figures",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure (Companion)",
     "manufacturer": "LJN",
@@ -791,7 +764,7 @@
     "badgeText": "Companion Figure",
     "badgeColor": "#cfe2f3",
     "demographic": "unisex",
-    "description": "Loose Companion figure of Snarf, the Thundercats' loyal companion.",
+    "description": "Loose Companion figure of Snarf, the Thundercats' loyal companion, part of Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -804,7 +777,7 @@
   {
     "id": 43,
     "name": "Wilykat",
-    "collection": "Thundercats – Wave 2 (1986): Companions Figures",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure (Companion)",
     "manufacturer": "LJN",
@@ -814,7 +787,7 @@
     "badgeText": "Companion Figure",
     "badgeColor": "#cfe2f3",
     "demographic": "unisex",
-    "description": "Loose Companion figure includes Hover Board. One of the Thunderkittens.",
+    "description": "Loose Companion figure includes Hover Board. One of the Thunderkittens, part of Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -827,7 +800,7 @@
   {
     "id": 44,
     "name": "Wilykit",
-    "collection": "Thundercats – Wave 2 (1986): Companions Figures",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure (Companion)",
     "manufacturer": "LJN",
@@ -837,7 +810,7 @@
     "badgeText": "Companion Figure",
     "badgeColor": "#cfe2f3",
     "demographic": "unisex",
-    "description": "Loose Companion figure includes Hover Board. One of the Thunderkittens.",
+    "description": "Loose Companion figure includes Hover Board. One of the Thunderkittens, part of Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -850,7 +823,7 @@
   {
     "id": 45,
     "name": "Berbil Belle",
-    "collection": "Thundercats – Wave 2 (1986): Companions Figures",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure (Companion)",
     "manufacturer": "LJN",
@@ -860,7 +833,7 @@
     "badgeText": "Companion Figure",
     "badgeColor": "#cfe2f3",
     "demographic": "feminine",
-    "description": "Loose Berbil Companion figure.",
+    "description": "Loose Berbil Companion figure, part of Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -873,7 +846,7 @@
   {
     "id": 46,
     "name": "Berbil Bert",
-    "collection": "Thundercats – Wave 2 (1986): Companions Figures",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure (Companion)",
     "manufacturer": "LJN",
@@ -883,7 +856,7 @@
     "badgeText": "Companion Figure",
     "badgeColor": "#cfe2f3",
     "demographic": "masculine",
-    "description": "Loose Berbil Companion figure.",
+    "description": "Loose Berbil Companion figure, part of Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -896,7 +869,7 @@
   {
     "id": 47,
     "name": "Berbil Bill",
-    "collection": "Thundercats – Wave 2 (1986): Companions Figures",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure (Companion)",
     "manufacturer": "LJN",
@@ -906,7 +879,7 @@
     "badgeText": "Companion Figure",
     "badgeColor": "#cfe2f3",
     "demographic": "masculine",
-    "description": "Loose Berbil Companion figure.",
+    "description": "Loose Berbil Companion figure, part of Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -919,7 +892,7 @@
   {
     "id": 48,
     "name": "Mummy Mumm-Ra",
-    "collection": "Thundercats – Wave 2 (1986): Companions Figures",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure (Companion)",
     "manufacturer": "LJN",
@@ -929,7 +902,7 @@
     "badgeText": "Mummy Form",
     "badgeColor": "#cc0000",
     "demographic": "masculine",
-    "description": "Loose Companion figure of Mumm-Ra in his Mummy Form, includes Staff.",
+    "description": "Loose Companion figure of Mumm-Ra in his Mummy Form, includes Staff, part of Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -942,7 +915,7 @@
   {
     "id": 49,
     "name": "Mutant Fist Pounder",
-    "collection": "Thundercats – Wave 2 (1986): Vehicles",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Vehicle",
     "manufacturer": "LJN",
@@ -952,7 +925,7 @@
     "badgeText": "Wave 2 Vehicle",
     "badgeColor": "#76a5af",
     "demographic": "masculine",
-    "description": "Loose Mutant vehicle from the second wave of Thundercats vehicles.",
+    "description": "Loose Mutant vehicle from the second wave (Wave 2, 1986) of Thundercats vehicles.",
     "condition": "Loose",
     "links": [
       {
@@ -965,7 +938,7 @@
   {
     "id": 50,
     "name": "Thunderclaw",
-    "collection": "Thundercats – Wave 2 (1986): Vehicles",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Vehicle",
     "manufacturer": "LJN",
@@ -975,7 +948,7 @@
     "badgeText": "Wave 2 Vehicle",
     "badgeColor": "#3d85c6",
     "demographic": "masculine",
-    "description": "Loose Thundercats vehicle, a one-man attack hovercraft.",
+    "description": "Loose Thundercats vehicle, a one-man attack hovercraft, part of Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -988,7 +961,7 @@
   {
     "id": 51,
     "name": "Snarf (Plush)",
-    "collection": "Thundercats – Wave 2 (1986): Accessories",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Plush Accessory",
     "manufacturer": "LJN",
@@ -998,7 +971,7 @@
     "badgeText": "Accessory",
     "badgeColor": "#f9cb9c",
     "demographic": "unisex",
-    "description": "Soft plush version of Snarf.",
+    "description": "Soft plush version of Snarf, released as an accessory in Wave 2 (1986).",
     "condition": "Loose",
     "links": [
       {
@@ -1011,7 +984,7 @@
   {
     "id": 52,
     "name": "Bengali",
-    "collection": "Thundercats – Wave 3 (1987)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -1021,7 +994,7 @@
     "badgeText": "Wave 3 Figure",
     "badgeColor": "#ff9900",
     "demographic": "masculine",
-    "description": "Loose figure includes Hammer of Thundera. One of the new Thundercats.",
+    "description": "Loose figure includes Hammer of Thundera. One of the new Thundercats, part of Wave 3 (1987).",
     "condition": "Loose",
     "links": [
       {
@@ -1034,7 +1007,7 @@
   {
     "id": 53,
     "name": "Captain Cracker",
-    "collection": "Thundercats – Wave 3 (1987)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -1044,7 +1017,7 @@
     "badgeText": "Wave 3 Figure",
     "badgeColor": "#ff9900",
     "demographic": "masculine",
-    "description": "Loose figure includes Cutlass Sword. The space pirate villain.",
+    "description": "Loose figure includes Cutlass Sword. The space pirate villain, part of Wave 3 (1987).",
     "condition": "Loose",
     "links": [
       {
@@ -1057,7 +1030,7 @@
   {
     "id": 54,
     "name": "Captain Shiner",
-    "collection": "Thundercats – Wave 3 (1987)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -1067,7 +1040,7 @@
     "badgeText": "Wave 3 Figure",
     "badgeColor": "#ff9900",
     "demographic": "masculine",
-    "description": "Loose figure includes Laser Blaster. The intergalactic trader.",
+    "description": "Loose figure includes Laser Blaster. The intergalactic trader, part of Wave 3 (1987).",
     "condition": "Loose",
     "links": [
       {
@@ -1080,7 +1053,7 @@
   {
     "id": 55,
     "name": "Jaga",
-    "collection": "Thundercats – Wave 3 (1987)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -1090,7 +1063,7 @@
     "badgeText": "Wave 3 Figure",
     "badgeColor": "#ff9900",
     "demographic": "masculine",
-    "description": "Loose figure includes Helmet and Sword of Omens. The mentor of Lion-O.",
+    "description": "Loose figure includes Helmet and Sword of Omens. The mentor of Lion-O, part of Wave 3 (1987).",
     "condition": "Loose - Helmet Glued",
     "links": [
       {
@@ -1103,7 +1076,7 @@
   {
     "id": 56,
     "name": "Lynx-O",
-    "collection": "Thundercats – Wave 3 (1987)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -1113,7 +1086,7 @@
     "badgeText": "Wave 3 Figure",
     "badgeColor": "#ff9900",
     "demographic": "masculine",
-    "description": "Loose figure includes Light Shield. The blind Thundercat elder.",
+    "description": "Loose figure includes Light Shield. The blind Thundercat elder, part of Wave 3 (1987).",
     "condition": "Loose",
     "links": [
       {
@@ -1126,7 +1099,7 @@
   {
     "id": 57,
     "name": "Mongor",
-    "collection": "Thundercats – Wave 3 (1987)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -1136,7 +1109,7 @@
     "badgeText": "Wave 3 Figure",
     "badgeColor": "#ff9900",
     "demographic": "masculine",
-    "description": "Loose figure includes Scythe. The demonic villain.",
+    "description": "Loose figure includes Scythe. The demonic villain, part of Wave 3 (1987).",
     "condition": "Loose",
     "links": [
       {
@@ -1149,7 +1122,7 @@
   {
     "id": 58,
     "name": "Pumyra",
-    "collection": "Thundercats – Wave 3 (1987)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -1159,7 +1132,7 @@
     "badgeText": "Wave 3 Figure",
     "badgeColor": "#ff9900",
     "demographic": "feminine",
-    "description": "Loose figure includes Sling. The healer of the new Thundercats.",
+    "description": "Loose figure includes Sling. The healer of the new Thundercats, part of Wave 3 (1987).",
     "condition": "Loose",
     "links": [
       {
@@ -1172,7 +1145,7 @@
   {
     "id": 59,
     "name": "Safari Joe",
-    "collection": "Thundercats – Wave 3 (1987)",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Figure",
     "manufacturer": "LJN",
@@ -1182,7 +1155,7 @@
     "badgeText": "Wave 3 Figure",
     "badgeColor": "#ff9900",
     "demographic": "masculine",
-    "description": "Loose figure includes Safari Gun. The great game hunter.",
+    "description": "Loose figure includes Safari Gun. The great game hunter, part of Wave 3 (1987).",
     "condition": "Loose",
     "links": [
       {
@@ -1195,7 +1168,7 @@
   {
     "id": 60,
     "name": "The Driller",
-    "collection": "Thundercats – Wave 3 (1987): Ram-Pagers Figures",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Ram-Pager Figure",
     "manufacturer": "LJN",
@@ -1205,7 +1178,7 @@
     "badgeText": "Ultra Rare",
     "badgeColor": "#b4a7d6",
     "demographic": "masculine",
-    "description": "LJN 1987 Ram-Pagers series. The drill-action figure/vehicle hybrid. Highly collectible.",
+    "description": "LJN 1987 Ram-Pagers series. The drill-action figure/vehicle hybrid. Highly collectible, part of Wave 3 (1987).",
     "condition": "Loose - Rare",
     "links": [
       {
@@ -1218,7 +1191,7 @@
   {
     "id": 61,
     "name": "The Stinger",
-    "collection": "Thundercats – Wave 3 (1987): Ram-Pagers Figures",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Ram-Pager Figure",
     "manufacturer": "LJN",
@@ -1228,7 +1201,7 @@
     "badgeText": "Ram-Pager Figure",
     "badgeColor": "#b4a7d6",
     "demographic": "masculine",
-    "description": "LJN 1987 Ram-Pagers series. The stinger-action figure/vehicle hybrid. Highly collectible.",
+    "description": "LJN 1987 Ram-Pagers series. The stinger-action figure/vehicle hybrid. Highly collectible, part of Wave 3 (1987).",
     "condition": "Loose",
     "links": [
       {
@@ -1241,7 +1214,7 @@
   {
     "id": 62,
     "name": "Luna Lasher Mumm-Ra",
-    "collection": "Thundercats – Wave 3 (1987): Ram-Pagers Figures",
+    "collection": "Thundercats",
     "brand": "Thundercats",
     "type": "Ram-Pager Figure",
     "manufacturer": "LJN",
@@ -1251,7 +1224,7 @@
     "badgeText": "Ram-Pager Figure",
     "badgeColor": "#b4a7d6",
     "demographic": "masculine",
-    "description": "LJN 1987 Ram-Pagers series. The Luna Lasher Mumm-Ra figure/vehicle hybrid. Highly collectible.",
+    "description": "LJN 1987 Ram-Pagers series. The Luna Lasher Mumm-Ra figure/vehicle hybrid. Highly collectible, part of Wave 3 (1987).",
     "condition": "Loose",
     "links": [
       {
