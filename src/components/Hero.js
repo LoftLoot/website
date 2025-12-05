@@ -1,6 +1,6 @@
 // src/components/Hero.js
 import React from 'react';
-import { JaggedLine } from './AboutSection';
+import { JaggedLine } from './About';
 
 const Hero = () => {
     return (
@@ -27,5 +27,6 @@ const Hero = () => {
         </div>
     );
 };
+
 
 export default Hero;
