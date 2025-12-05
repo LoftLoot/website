@@ -1,7 +1,5 @@
 // src/data.js
 
-import { Package, Search, ShoppingBag } from 'lucide-react';
-
 // --- KEEP HELPER FUNCTIONS ---
 export const normalizeText = (text) => {
     if (!text) return "";
