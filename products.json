@@ -229,6 +229,7 @@
     "name": "Cheetara with Wilykit",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 1 (1985)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1985,
@@ -244,7 +245,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/3d85c6/ffffff?text=Cheetara+W1"
+      "https://placehold.co/600x750/040a33/ffffff?text=Cheetara+W1"
     ]
   },
   {
@@ -252,6 +253,7 @@
     "name": "Jackalman",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 1 (1985)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1985,
@@ -267,7 +269,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/3d85c6/ffffff?text=Jackalman+W1"
+      "https://placehold.co/600x750/781f8f/ffffff?text=Jackalman+W1"
     ]
   },
   {
@@ -275,6 +277,7 @@
     "name": "Lion-O",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 1 (1985)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1985,
@@ -290,7 +293,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/3d85c6/ffffff?text=Lion-O+W1"
+      "https://placehold.co/600x750/b05537/ffffff?text=Lion-O+W1"
     ]
   },
   {
@@ -298,6 +301,7 @@
     "name": "Monkian",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 1 (1985)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1985,
@@ -313,7 +317,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/3d85c6/ffffff?text=Monkian+W1"
+      "https://placehold.co/600x750/22023d/ffffff?text=Monkian+W1"
     ]
   },
   {
@@ -321,6 +325,7 @@
     "name": "Mumm-Ra",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 1 (1985)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1985,
@@ -336,7 +341,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/3d85c6/ffffff?text=Mumm-Ra+W1"
+      "https://placehold.co/600x750/e0d164/000000?text=Mumm-Ra+W1"
     ]
   },
   {
@@ -344,6 +349,7 @@
     "name": "Panthro",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 1 (1985)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1985,
@@ -359,7 +365,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/3d85c6/ffffff?text=Panthro+W1"
+      "https://placehold.co/600x750/781308/ffffff?text=Panthro+W1"
     ]
   },
   {
@@ -367,6 +373,7 @@
     "name": "S-S-Slithe",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 1 (1985)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1985,
@@ -382,7 +389,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/3d85c6/ffffff?text=Slithe+W1"
+      "https://placehold.co/600x750/d2994f/000000?text=Slithe+W1"
     ]
   },
   {
@@ -390,6 +397,7 @@
     "name": "Tygra with Wilykat",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 1 (1985)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1985,
@@ -405,7 +413,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/3d85c6/ffffff?text=Tygra+W1"
+      "https://placehold.co/600x750/4f6d77/ffffff?text=Tygra+W1"
     ]
   },
   {
@@ -413,6 +421,7 @@
     "name": "Mutant Nose Diver",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 1 (1985) Vehicles",
     "type": "Vehicle",
     "manufacturer": "LJN",
     "releaseDate": 1985,
@@ -428,7 +437,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/3d85c6/ffffff?text=Nose+Diver+W1"
+      "https://placehold.co/600x750/0b3687/ffffff?text=Nose+Diver+W1"
     ]
   },
   {
@@ -436,6 +445,7 @@
     "name": "Mutant Skycutter",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 1 (1985) Vehicles",
     "type": "Vehicle",
     "manufacturer": "LJN",
     "releaseDate": 1985,
@@ -451,7 +461,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/3d85c6/ffffff?text=Skycutter+W1"
+      "https://placehold.co/600x750/19001b/ffffff?text=Skycutter+W1"
     ]
   },
   {
@@ -459,6 +469,7 @@
     "name": "Thundertank",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 1 (1985) Vehicles",
     "type": "Vehicle",
     "manufacturer": "LJN",
     "releaseDate": 1985,
@@ -474,7 +485,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/3d85c6/ffffff?text=Thundertank+W1"
+      "https://placehold.co/600x750/a7a7a7/ffffff?text=Thundertank+W1"
     ]
   },
   {
@@ -482,6 +493,7 @@
     "name": "Grune The Destroyer",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 2 (1986)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
@@ -497,7 +509,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/6aa84f/ffffff?text=Grune+W2"
+      "https://placehold.co/600x750/8a39e8/ffffff?text=Grune+W2"
     ]
   },
   {
@@ -505,6 +517,7 @@
     "name": "Hachiman",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 2 (1986)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
@@ -520,7 +533,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/6aa84f/ffffff?text=Hachiman+W2"
+      "https://placehold.co/600x750/5e5429/ffffff?text=Hachiman+W2"
     ]
   },
   {
@@ -528,6 +541,7 @@
     "name": "Ratar-O",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 2 (1986)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
@@ -543,7 +557,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/6aa84f/ffffff?text=Ratar-O+W2"
+      "https://placehold.co/600x750/d3890f/ffffff?text=Ratar-O+W2"
     ]
   },
   {
@@ -551,6 +565,7 @@
     "name": "Snowman of Hook Mountain",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 2 (1986)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
@@ -566,7 +581,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/6aa84f/ffffff?text=Snowman+W2"
+      "https://placehold.co/600x750/083431/ffffff?text=Snowman+W2"
     ]
   },
   {
@@ -574,6 +589,7 @@
     "name": "Tuska Warrior",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 2 (1986)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
@@ -589,7 +605,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/6aa84f/ffffff?text=Tuska+Warrior+W2"
+      "https://placehold.co/600x750/2b0808/ffffff?text=Tuska+Warrior+W2"
     ]
   },
   {
@@ -597,6 +613,7 @@
     "name": "Vultureman",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 2 (1986)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
@@ -612,7 +629,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/6aa84f/ffffff?text=Vultureman+W2"
+      "https://placehold.co/600x750/8a2f4c/ffffff?text=Vultureman+W2"
     ]
   },
   {
@@ -620,6 +637,7 @@
     "name": "Cruncher",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 2 (1986) Berserkers Figures",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
@@ -635,7 +653,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/6aa84f/ffffff?text=Cruncher+W2"
+      "https://placehold.co/600x750/39316d/ffffff?text=Cruncher+W2"
     ]
   },
   {
@@ -643,6 +661,7 @@
     "name": "Hammerhead",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 2 (1986) Berserkers Figures",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
@@ -658,7 +677,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/6aa84f/ffffff?text=Hammerhead+W2"
+      "https://placehold.co/600x750/f06c1c/ffffff?text=Hammerhead+W2"
     ]
   },
   {
@@ -666,6 +685,7 @@
     "name": "Ram Bam",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 2 (1986) Berserkers Figures",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
@@ -681,7 +701,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/6aa84f/ffffff?text=Ram+Bam+W2"
+      "https://placehold.co/600x750/a8a176/ffffff?text=Ram+Bam+W2"
     ]
   },
   {
@@ -689,6 +709,7 @@
     "name": "Top Spinner",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 2 (1986) Berserkers Figures",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
@@ -704,7 +725,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/6aa84f/ffffff?text=Top+Spinner+W2"
+      "https://placehold.co/600x750/8f1f72/ffffff?text=Top+Spinner+W2"
     ]
   },
   {
@@ -712,6 +733,7 @@
     "name": "Ma-Mutt",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 2 (1986) Companions Figures",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
@@ -727,7 +749,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/6aa84f/ffffff?text=Ma-Mutt+W2"
+      "https://placehold.co/600x750/1a4a4a/ffffff?text=Ma-Mutt+W2"
     ]
   },
   {
@@ -735,6 +757,7 @@
     "name": "Snarf",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 2 (1986) Companions Figures",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
@@ -750,7 +773,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/6aa84f/ffffff?text=Snarf+W2"
+      "https://placehold.co/600x750/9c9c9c/ffffff?text=Snarf+W2"
     ]
   },
   {
@@ -758,6 +781,7 @@
     "name": "Wilykat",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 2 (1986) Companions Figures",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
@@ -773,7 +797,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/6aa84f/ffffff?text=Wilykat+W2"
+      "https://placehold.co/600x750/177977/ffffff?text=Wilykat+W2"
     ]
   },
   {
@@ -781,6 +805,7 @@
     "name": "Wilykit",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 2 (1986) Companions Figures",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
@@ -796,7 +821,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/6aa84f/ffffff?text=Wilykit+W2"
+      "https://placehold.co/600x750/9b9f07/ffffff?text=Wilykit+W2"
     ]
   },
   {
@@ -804,6 +829,7 @@
     "name": "Berbil Belle",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 2 (1986) Companions Figures",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
@@ -819,7 +845,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/6aa84f/ffffff?text=Berbil+Belle+W2"
+      "https://placehold.co/600x750/23075c/ffffff?text=Berbil+Belle+W2"
     ]
   },
   {
@@ -827,6 +853,7 @@
     "name": "Berbil Bert",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 2 (1986) Companions Figures",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
@@ -842,7 +869,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/6aa84f/ffffff?text=Berbil+Bert+W2"
+      "https://placehold.co/600x750/f0b1a0/ffffff?text=Berbil+Bert+W2"
     ]
   },
   {
@@ -850,6 +877,7 @@
     "name": "Berbil Bill",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 2 (1986) Companions Figures",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
@@ -865,7 +893,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/6aa84f/ffffff?text=Berbil+Bill+W2"
+      "https://placehold.co/600x750/8c7075/ffffff?text=Berbil+Bill+W2"
     ]
   },
   {
@@ -873,6 +901,7 @@
     "name": "Mummy Mumm-Ra",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 2 (1986) Companions Figures",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1986,
@@ -888,7 +917,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/6aa84f/ffffff?text=Mummy+Mumm-Ra+W2"
+      "https://placehold.co/600x750/14470b/ffffff?text=Mummy+Mumm-Ra+W2"
     ]
   },
   {
@@ -896,6 +925,7 @@
     "name": "Mutant Fist Pounder",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 2 (1986) Vehicles",
     "type": "Vehicle",
     "manufacturer": "LJN",
     "releaseDate": 1986,
@@ -911,7 +941,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/6aa84f/ffffff?text=Fist+Pounder+W2"
+      "https://placehold.co/600x750/362947/ffffff?text=Fist+Pounder+W2"
     ]
   },
   {
@@ -919,6 +949,7 @@
     "name": "Thunderclaw",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 2 (1986) Vehicles",
     "type": "Vehicle",
     "manufacturer": "LJN",
     "releaseDate": 1986,
@@ -934,7 +965,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/6aa84f/ffffff?text=Thunderclaw+W2"
+      "https://placehold.co/600x750/f0b11a/000000?text=Thunderclaw+W2"
     ]
   },
   {
@@ -942,6 +973,7 @@
     "name": "Snarf (Plush)",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 2 (1986) Accessories",
     "type": "Plush",
     "manufacturer": "LJN",
     "releaseDate": 1986,
@@ -957,7 +989,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/6aa84f/ffffff?text=Snarf+Plush+W2"
+      "https://placehold.co/600x750/474747/ffffff?text=Snarf+Plush+W2"
     ]
   },
   {
@@ -965,6 +997,7 @@
     "name": "Bengali",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 3 (1987)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1987,
@@ -980,7 +1013,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/cc0000/ffffff?text=Bengali+W3"
+      "https://placehold.co/600x750/085816/ffffff?text=Bengali+W3"
     ]
   },
   {
@@ -988,6 +1021,7 @@
     "name": "Captain Cracker",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 3 (1987)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1987,
@@ -1003,7 +1037,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/cc0000/ffffff?text=Capt+Cracker+W3"
+      "https://placehold.co/600x750/c8695d/ffffff?text=Capt+Cracker+W3"
     ]
   },
   {
@@ -1011,6 +1045,7 @@
     "name": "Captain Shiner",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 3 (1987)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1987,
@@ -1026,7 +1061,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/cc0000/ffffff?text=Capt+Shiner+W3"
+      "https://placehold.co/600x750/512b1b/ffffff?text=Capt+Shiner+W3"
     ]
   },
   {
@@ -1034,6 +1069,7 @@
     "name": "Jaga",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 3 (1987)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1987,
@@ -1049,7 +1085,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/cc0000/ffffff?text=Jaga+W3"
+      "https://placehold.co/600x750/8d8a21/ffffff?text=Jaga+W3"
     ]
   },
   {
@@ -1057,6 +1093,7 @@
     "name": "Lynx-O",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 3 (1987)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1987,
@@ -1072,7 +1109,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/cc0000/ffffff?text=Lynx-O+W3"
+      "https://placehold.co/600x750/5e0099/ffffff?text=Lynx-O+W3"
     ]
   },
   {
@@ -1080,6 +1117,7 @@
     "name": "Mongor",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 3 (1987)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1987,
@@ -1095,7 +1133,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/cc0000/ffffff?text=Mongor+W3"
+      "https://placehold.co/600x750/0f8d8d/ffffff?text=Mongor+W3"
     ]
   },
   {
@@ -1103,6 +1141,7 @@
     "name": "Pumyra",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 3 (1987)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1987,
@@ -1118,7 +1157,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/cc0000/ffffff?text=Pumyra+W3"
+      "https://placehold.co/600x750/781b49/ffffff?text=Pumyra+W3"
     ]
   },
   {
@@ -1126,6 +1165,7 @@
     "name": "Safari Joe",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 3 (1987)",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1987,
@@ -1141,7 +1181,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/cc0000/ffffff?text=Safari+Joe+W3"
+      "https://placehold.co/600x750/e03310/ffffff?text=Safari+Joe+W3"
     ]
   },
   {
@@ -1149,6 +1189,7 @@
     "name": "The Driller",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 3 (1987) Ram-Pagers Figures",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1987,
@@ -1166,7 +1207,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/cc0000/ffffff?text=The+Driller+W3"
+      "https://placehold.co/600x750/4f6d77/ffffff?text=The+Driller+W3"
     ]
   },
   {
@@ -1174,6 +1215,7 @@
     "name": "The Stinger",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 3 (1987) Ram-Pagers Figures",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1987,
@@ -1189,7 +1231,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/cc0000/ffffff?text=The+Stinger+W3"
+      "https://placehold.co/600x750/9a0e69/ffffff?text=The+Stinger+W3"
     ]
   },
   {
@@ -1197,6 +1239,7 @@
     "name": "Luna Lasher Mumm-Ra",
     "collection": "Thundercats",
     "brand": "Thundercats",
+    "series": "Wave 3 (1987) Ram-Pagers Figures",
     "type": "Figure",
     "manufacturer": "LJN",
     "releaseDate": 1987,
@@ -1212,7 +1255,7 @@
       }
     ],
     "images": [
-      "https://placehold.co/600x750/cc0000/ffffff?text=Luna+Lasher+W3"
+      "https://placehold.co/600x750/0b1f2e/ffffff?text=Luna+Lasher+W3"
     ]
   }
 ]
