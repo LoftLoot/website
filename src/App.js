@@ -1,13 +1,14 @@
 // src/App.js
 import React, { useState, useMemo, useEffect, useLayoutEffect, useRef, useDeferredValue } from 'react';
-import { Search, X, Filter, ChevronDown, ArrowUp } from 'lucide-react';
+import { X, Filter, ChevronDown, ArrowUp, Search } from 'lucide-react';
 
 import { 
-    processProductData, 
-    SORT_OPTIONS, ITEMS_PER_PAGE, FILTER_COLORS, TYPE_CONFIG, ORGANIZATION_SCHEMA, 
-    SORT_STRATEGIES
+    ITEMS_PER_PAGE, FILTER_COLORS, TYPE_CONFIG, ORGANIZATION_SCHEMA, 
+    SORT_STRATEGIES, SORT_OPTIONS
 } from './data';
 import { useSearchIndex } from './hooks/useSearchIndex';
+
+// Components
 import Header from './components/Header';
 import Hero from './components/Hero'; 
 import Footer from './components/Footer'; 
@@ -15,13 +16,12 @@ import ProductCard from './components/ProductCard';
 import ProductDetail from './components/ProductDetail';
 import About from './components/About';
 
-// --- STYLES & HELPERS ---
+// --- STYLES ---
 
 const GlobalStyles = () => (
     <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Jua&family=Outfit:wght@300;400;500;700;900&display=swap');
         
-        /* --- RESET & BASE --- */
         * { box-sizing: border-box; }
         body { 
             margin: 0; 
@@ -33,32 +33,44 @@ const GlobalStyles = () => (
             color: #514d46;
         }
 
-        /* --- FONTS --- */
         .font-jua { font-family: 'Jua', sans-serif; }
         .font-outfit { font-family: 'Outfit', sans-serif; }
 
-        /* --- UI POLISH --- */
         ::selection { background-color: #f4e799; color: #514d46; }
         
-        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: #f2e9d9; }
         ::-webkit-scrollbar-thumb { background: #d35153; border-radius: 5px; border: 2px solid #f2e9d9; }
         ::-webkit-scrollbar-thumb:hover { background: #b94547; }
         
-        /* Utilities */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* --- ANIMATIONS --- */
         @keyframes deal-bottom { 0% { transform: translateY(100px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
         @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
         @keyframes tear-off { 0% { transform: rotate(0deg); } 20% { transform: rotate(-5deg); } 40% { transform: rotate(5deg); } 60% { transform: rotate(-2deg); } 100% { transform: translateY(150%) rotate(10deg); opacity: 0; } }
+        @keyframes stamp { 0% { opacity: 0; transform: scale(2) rotate(-12deg); } 40% { opacity: 1; transform: scale(0.9) rotate(-12deg); } 70% { transform: scale(1.1) rotate(-12deg); } 100% { opacity: 1; transform: scale(1) rotate(-12deg); } }
+        @keyframes puff { 0% { opacity: 1; transform: translate(0,0) scale(1); } 100% { opacity: 0; transform: translate(var(--x),var(--y)) scale(0); } }
         
         .animate-deal-bottom { animation: deal-bottom 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
         .animate-fade-in { animation: fade-in 0.4s ease-out forwards; }
         .animate-tear-off { animation: tear-off 0.8s ease-in forwards; }
+        .animate-stamp { animation: stamp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0; animation-delay: 0.3s; }
+        .animate-dust { animation: puff 0.6s ease-out forwards; opacity: 0; animation-delay: 0.4s; }
+        
+        .dust-1 { --x: -60px; --y: -60px; top: 0; left: 0; }
+        .dust-2 { --x: 60px; --y: -60px; top: 0; right: 0; }
+        .dust-3 { --x: -60px; --y: 60px; bottom: 0; left: 0; }
+        .dust-4 { --x: 60px; --y: 60px; bottom: 0; right: 0; }
+        .dust-5 { --x: 0; --y: -80px; top: -10px; left: 50%; transform: translateX(-50%); }
+        .dust-6 { --x: 0; --y: 80px; bottom: -10px; left: 50%; transform: translateX(-50%); }
+        .dust-7 { --x: -80px; --y: 0; top: 50%; left: -10px; transform: translateY(-50%); }
+        .dust-8 { --x: 80px; --y: 0; top: 50%; right: -10px; transform: translateY(-50%); }
+
         .ticker-wrapper:hover .animate-marquee-slow { animation-play-state: paused; }
+        
+        input[type=range]::-webkit-slider-thumb { pointer-events: auto; }
+        input[type=range]::-moz-range-thumb { pointer-events: auto; }
     `}</style>
 );
 
@@ -98,65 +110,88 @@ const useSEO = ({ title, description, image, canonical }) => {
     }, [title, description, image, canonical]);
 };
 
-// --- FILTER COMPONENTS ---
+// --- FILTER COMPONENTS (RESTORED TO ORIGINAL FLAT STYLE) ---
 
-const FilterGroup = ({ title, options, selected, onChange, color, availableSet }) => {
-    const [isOpen, setIsOpen] = useState(true);
-    return (
-        <div className="mb-6 border-b border-[#514d46]/10 pb-6 last:border-0">
-            <button onClick={() => setIsOpen(!isOpen)} className="flex items-center justify-between w-full mb-3 group"><h3 className="font-bold text-[#514d46] uppercase tracking-widest text-sm group-hover:text-[#487ec8] transition-colors">{title}</h3><ChevronDown size={16} className={`text-[#514d46]/40 transition-transform ${isOpen ? 'rotate-180' : ''}`} /></button>
-            {isOpen && (
-                <div className="space-y-2 animate-fade-in">
-                    <button onClick={() => onChange("All")} className={`w-full text-left px-3 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${selected === "All" ? "bg-[#514d46] text-white shadow-md" : "text-[#514d46]/60 hover:bg-[#514d46]/5 hover:text-[#514d46]"}`}><div className={`w-2 h-2 rounded-full ${selected === "All" ? "bg-white" : "bg-[#514d46]/20"}`}></div>All {title}</button>
-                    {options.map((opt) => {
-                         const isAvailable = !availableSet || availableSet.includes(opt);
-                         const label = title === 'Type' && TYPE_CONFIG[opt] ? TYPE_CONFIG[opt].plural : opt;
-                         return (
-                            <button key={opt} onClick={() => onChange(opt)} disabled={!isAvailable} className={`w-full text-left px-3 py-2 rounded-lg text-sm font-bold transition-all flex items-center justify-between group ${selected === opt ? "bg-white text-[#514d46] shadow-sm border border-[#E0E8F0]" : "text-[#514d46]/70 hover:bg-white hover:shadow-sm"} ${!isAvailable ? 'opacity-40 cursor-not-allowed' : ''}`}>
-                                <span>{label}</span>
-                                {selected === opt && <div className="w-2 h-2 rounded-full" style={{ backgroundColor: color }}></div>}
-                            </button>
-                        );
-                    })}
-                </div>
-            )}
-        </div>
-    );
-};
-
-const FilterSection = React.memo(({ collections, decades, types, selectedCollection, selectedDecade, selectedType, priceRange, minPrice, maxPrice, availableCollections, availableDecades, availableTypes, showInStockOnly, onCollectionChange, onDecadeChange, onTypeChange, onPriceChange, onStockChange }) => (
-    <div className="bg-[#fffbf0] md:bg-transparent p-4 md:p-0 h-full overflow-y-auto md:overflow-visible">
-        <div className="flex items-center justify-between mb-6 md:hidden"><h2 className="text-xl font-black text-[#514d46]" style={{ fontFamily: '"Jua", sans-serif' }}>Filters</h2></div>
-        
-        {/* Price Slider */}
-        <div className="mb-8 border-b border-[#514d46]/10 pb-8">
-            <h3 className="font-bold text-[#514d46] uppercase tracking-widest text-sm mb-4">Price Range</h3>
-            <div className="px-2">
-                <input type="range" min={minPrice} max={maxPrice} value={priceRange[1]} onChange={(e) => onPriceChange([minPrice, parseInt(e.target.value)])} className="w-full accent-[#487ec8] h-1 bg-[#514d46]/10 rounded-lg appearance-none cursor-pointer" />
-                <div className="flex justify-between mt-2 text-xs font-bold text-[#514d46]/60"><span>£{minPrice}</span><span>£{priceRange[1]}</span></div>
-            </div>
-        </div>
-
-        {/* Stock Toggle */}
-        <div className="mb-8 border-b border-[#514d46]/10 pb-8">
-             <label className="flex items-center justify-between cursor-pointer group">
-                 <span className="font-bold text-[#514d46] text-sm group-hover:text-[#487ec8] transition-colors">In Stock Only</span>
-                 <div className={`w-12 h-6 rounded-full p-1 transition-colors ${showInStockOnly ? 'bg-[#487ec8]' : 'bg-[#514d46]/20'}`}>
-                     <div className={`w-4 h-4 rounded-full bg-white shadow-sm transition-transform ${showInStockOnly ? 'translate-x-6' : 'translate-x-0'}`}></div>
-                 </div>
-                 <input type="checkbox" className="hidden" checked={showInStockOnly} onChange={(e) => onStockChange(e.target.checked)} />
-             </label>
-        </div>
-
-        <FilterGroup title="Collection" options={collections} selected={selectedCollection} onChange={onCollectionChange} color={FILTER_COLORS.Collection} availableSet={availableCollections} />
-        <FilterGroup title="Era" options={decades} selected={selectedDecade} onChange={onDecadeChange} color={FILTER_COLORS.Era} availableSet={availableDecades} />
-        <FilterGroup title="Type" options={types} selected={selectedType} onChange={onTypeChange} color={FILTER_COLORS.Type} availableSet={availableTypes} />
-        
-        <div className="mt-8 pt-6 border-t border-[#514d46]/10">
-            <button onClick={() => { onCollectionChange("All"); onDecadeChange("All"); onTypeChange("All"); onPriceChange([minPrice, maxPrice]); onStockChange(false); }} className="w-full py-3 rounded-xl border-2 border-[#d35153] text-[#d35153] font-bold text-sm hover:bg-[#d35153] hover:text-white transition-all active:scale-95">Reset Filters</button>
+const FilterGroup = React.memo(({ title, options, selected, onChange, available, color }) => (
+    <div className="space-y-3">
+        <h3 className="font-bold text-[#514d46] text-sm uppercase tracking-widest flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full" style={{ backgroundColor: color }}></div>{title}
+        </h3>
+        <div className="flex flex-col gap-2">
+            {['All', ...options].map(opt => {
+                const isAvailable = opt === 'All' || available.includes(opt);
+                return (
+                    <button 
+                        key={opt} 
+                        disabled={!isAvailable} 
+                        onClick={() => onChange(opt)} 
+                        className={`text-left px-4 py-3 rounded-xl text-sm font-bold transition-all duration-200 ease-out ${
+                            selected === opt 
+                            ? "bg-[#eef5fc] text-[#487ec8] shadow-inner translate-x-1 ring-2 ring-[#eef5fc]" 
+                            : isAvailable 
+                                ? "text-[#514d46]/60 hover:bg-white hover:text-[#487ec8] hover:shadow-sm hover:translate-x-1 active:scale-95" 
+                                : "text-[#514d46]/20 cursor-default"
+                        }`}
+                    >
+                        {title === 'Type' && TYPE_CONFIG[opt] ? TYPE_CONFIG[opt].plural : opt}
+                    </button>
+                );
+            })}
         </div>
     </div>
 ));
+
+const FilterSection = React.memo(({ collections, decades, types, selectedCollection, selectedDecade, selectedType, priceRange, minPrice, maxPrice, availableCollections, availableDecades, availableTypes, showInStockOnly, onCollectionChange, onDecadeChange, onTypeChange, onPriceChange, onStockChange, onClearFilters }) => {
+    // Local state for slider dragging
+    const [localRange, setLocalRange] = useState(priceRange);
+    const isDisabled = minPrice === maxPrice;
+    
+    useEffect(() => { setLocalRange(priceRange); }, [priceRange]);
+
+    const handleMinChange = (e) => setLocalRange([Math.min(Number(e.target.value), localRange[1] - 1), localRange[1]]);
+    const handleMaxChange = (e) => setLocalRange([localRange[0], Math.max(Number(e.target.value), localRange[0] + 1)]);
+    const commitRange = () => onPriceChange(localRange);
+    const getPercent = (v) => isDisabled ? (v === minPrice ? 100 : 0) : Math.max(0, Math.min(100, Math.round(((v - minPrice) / (maxPrice - minPrice)) * 100)));
+
+    const thumbClasses = "absolute inset-0 w-full h-full appearance-none bg-transparent pointer-events-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-[#d99875] [&::-webkit-slider-thumb]:hover:scale-110 [&::-webkit-slider-thumb]:transition-transform [&::-webkit-slider-thumb]:cursor-grab [&::-webkit-slider-thumb]:active:cursor-grabbing";
+
+    return (
+        <div className="flex flex-col gap-8">
+            <div className="space-y-3">
+                <h3 className="font-bold text-[#514d46] text-sm uppercase tracking-widest flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-[#487ec8]"></div>Availability
+                </h3>
+                <div className="flex flex-col gap-2">
+                     <button onClick={() => onStockChange(false)} className={`text-left px-4 py-3 rounded-xl text-sm font-bold transition-all duration-200 ease-out ${!showInStockOnly ? "bg-[#eef5fc] text-[#487ec8] shadow-inner translate-x-1 ring-2 ring-[#eef5fc]" : "text-[#514d46]/60 hover:bg-white hover:text-[#487ec8] hover:shadow-sm hover:translate-x-1 active:scale-95"}`}>Show All</button>
+                     <button onClick={() => onStockChange(true)} className={`text-left px-4 py-3 rounded-xl text-sm font-bold transition-all duration-200 ease-out ${showInStockOnly ? "bg-[#eef5fc] text-[#487ec8] shadow-inner translate-x-1 ring-2 ring-[#eef5fc]" : "text-[#514d46]/60 hover:bg-white hover:text-[#487ec8] hover:shadow-sm hover:translate-x-1 active:scale-95"}`}>In Stock</button>
+                </div>
+            </div>
+
+            <FilterGroup title="Era" options={decades} selected={selectedDecade} onChange={onDecadeChange} available={availableDecades} color={FILTER_COLORS.Era} />
+            <FilterGroup title="Collection" options={collections} selected={selectedCollection} onChange={onCollectionChange} available={availableCollections} color={FILTER_COLORS.Collection} />
+            <FilterGroup title="Product Type" options={types} selected={selectedType} onChange={onTypeChange} available={availableTypes} color={FILTER_COLORS.Type} />
+            
+            <div className="space-y-4">
+                <h3 className="font-bold text-[#514d46] text-sm uppercase tracking-widest flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-[#d99875]"></div>Price Range
+                </h3>
+                <div className="px-2 py-2">
+                    <div className="flex justify-between text-xs text-[#514d46]/60 font-bold mb-2 font-mono"><span>£{isDisabled ? 0 : localRange[0]}</span><span>£{localRange[1]}</span></div>
+                    <div className={`relative w-full h-6`}>
+                        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full h-2 bg-[#E0E8F0] rounded-lg pointer-events-none"></div>
+                        <div className={`absolute top-1/2 -translate-y-1/2 h-2 rounded-lg z-10 pointer-events-none transition-all duration-100 ease-out ${isDisabled ? 'bg-slate-300' : 'bg-[#d99875]'}`} style={{ left: isDisabled ? '0%' : `${getPercent(localRange[0])}%`, width: isDisabled ? '100%' : `${getPercent(localRange[1]) - getPercent(localRange[0])}%` }}></div>
+                        {!isDisabled && (
+                            <>
+                                <input type="range" step={1} min={minPrice} max={maxPrice} value={localRange[0]} onChange={handleMinChange} onMouseUp={commitRange} onTouchEnd={commitRange} className={`${thumbClasses} z-20`} />
+                                <input type="range" step={1} min={minPrice} max={maxPrice} value={localRange[1]} onChange={handleMaxChange} onMouseUp={commitRange} onTouchEnd={commitRange} className={`${thumbClasses} z-30`} />
+                            </>
+                        )}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+});
 
 // --- MAIN APP CONTENT ---
 
@@ -169,16 +204,20 @@ const AppContent = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // FIX: Use PUBLIC_URL for GitHub Pages compatibility
     fetch(`${process.env.PUBLIC_URL}/products.json`)
         .then(res => {
             if (!res.ok) throw new Error("Failed to load products");
             return res.json();
         })
         .then(json => {
-            const processed = processProductData(json);
-            setAppData(processed);
-            setLoading(false);
+            // NOTE: processProductData needs to be imported from data.js
+            // But for this full file replacement, we assume it's available via import
+            // I'll dynamically import the processor to ensure it works with the file structure
+            import('./data').then(module => {
+                const processed = module.processProductData(json);
+                setAppData(processed);
+                setLoading(false);
+            });
         })
         .catch(err => {
             console.error(err);
@@ -187,37 +226,19 @@ const AppContent = () => {
         });
   }, []);
 
-  // --- STATE (Derived from AppData or URL) ---
+  // --- STATE ---
   const [searchQuery, setSearchQuery] = useState(() => urlParams.get('q') || ""); 
   const [committedQuery, setCommittedQuery] = useState(() => urlParams.get('q') || ""); 
   const [isTyping, setIsTyping] = useState(false);
   
-  // Default values must handle null appData initially
   const [selectedCollection, setSelectedCollection] = useState(() => urlParams.get('collection') || "All");
   const [selectedDecade, setSelectedDecade] = useState(() => urlParams.get('decade') || "All");
   const [selectedType, setSelectedType] = useState(() => urlParams.get('type') || "All");
   const [sortOption, setSortOption] = useState(() => urlParams.get('sort') || "latest");
   const [showInStockOnly, setShowInStockOnly] = useState(false);
-  const [priceRange, setPriceRange] = useState([0, 1000]); // Temporary default
+  const [priceRange, setPriceRange] = useState([0, 1000]); 
   
-  // View product logic needs appData to be ready
   const [viewProduct, setViewProduct] = useState(null);
-  
-  // Update viewProduct and priceRange once data loads
-  useEffect(() => {
-      if (!appData) return;
-      
-      // 1. Set Price Range limits
-      setPriceRange([appData.minPrice, appData.maxPrice]);
-
-      // 2. Check URL for Product ID
-      const pid = urlParams.get('id');
-      if (pid) {
-          const found = appData.productMap.get(parseInt(pid));
-          if (found) setViewProduct(found);
-      }
-  }, [appData, urlParams]);
-
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
   const [currentView, setCurrentView] = useState('shop'); 
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
@@ -228,7 +249,16 @@ const AppContent = () => {
   const topSectionRef = useRef(null); 
   const sortRef = useRef(null);
 
-  // Search Engine Hook - pass empty array if loading
+  useEffect(() => {
+      if (!appData) return;
+      setPriceRange([appData.minPrice, appData.maxPrice]);
+      const pid = urlParams.get('id');
+      if (pid) {
+          const found = appData.productMap.get(parseInt(pid));
+          if (found) setViewProduct(found);
+      }
+  }, [appData, urlParams]);
+
   const { autocomplete, search: performSearch } = useSearchIndex(appData ? appData.products : []);
   
   const deferredSearch = useDeferredValue(searchQuery);
@@ -238,16 +268,16 @@ const AppContent = () => {
   }, [deferredSearch, isTyping, showInStockOnly, autocomplete, appData]);
 
   // Actions
-  const openProduct = (id) => { 
+  const openProduct = useCallback((id) => { 
       if (!appData) return;
       lastScrollPos.current = window.scrollY; 
       const prod = appData.productMap.get(id);
       setViewProduct(prod); 
-  };
+  }, [appData]);
   
-  const closeProduct = () => setViewProduct(null);
+  const closeProduct = useCallback(() => setViewProduct(null), []);
 
-  const resetView = () => { 
+  const resetView = useCallback(() => { 
       if (!appData) return;
       closeProduct(); 
       setCurrentView('shop'); 
@@ -259,9 +289,9 @@ const AppContent = () => {
       setPriceRange([appData.minPrice, appData.maxPrice]); 
       window.scrollTo({ top: 0, behavior: 'instant' }); 
       lastScrollPos.current = 0; 
-  };
+  }, [appData, closeProduct]);
 
-  const handleCommit = (action) => {
+  const handleCommit = useCallback((action) => {
       setIsTyping(false);
       lastScrollPos.current = 0;
       setViewProduct(null);
@@ -288,7 +318,7 @@ const AppContent = () => {
           openProduct(action.payload.id);
           setSearchQuery("");
       }
-  };
+  }, [searchQuery, appData, openProduct]);
 
   const handleSearchUpdate = (newVal) => { setSearchQuery(newVal); setIsTyping(true); };
   const scrollToTopSmart = () => window.scrollTo({ top: topSectionRef.current && window.scrollY > topSectionRef.current.getBoundingClientRect().top + window.scrollY - 80 + 10 ? topSectionRef.current.getBoundingClientRect().top + window.scrollY - 80 : 0, behavior: "smooth" });
@@ -299,7 +329,6 @@ const AppContent = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Filter Logic
   const available = useMemo(() => {
       if (!appData) return { collections: [], decades: [], types: [] };
       const c = new Set(), d = new Set(), t = new Set();
@@ -312,21 +341,10 @@ const AppContent = () => {
       return { collections: Array.from(c).sort(), decades: Array.from(d).sort(), types: Array.from(t).sort() };
   }, [selectedDecade, selectedCollection, selectedType, showInStockOnly, appData]);
 
-  const { min, max } = useMemo(() => {
-      if (!appData) return { min: 0, max: 1000 };
-      let f = appData.products.filter(p => (selectedCollection === 'All' || p.collection === selectedCollection) && (selectedDecade === 'All' || p.decade === selectedDecade) && (selectedType === 'All' || p.type === selectedType) && (!showInStockOnly || p.stock > 0));
-      if (f.length === 0) return { min: 0, max: 100 };
-      const prices = f.map(p => p.price);
-      return { min: Math.min(...prices), max: Math.max(...prices) };
-  }, [selectedCollection, selectedDecade, selectedType, showInStockOnly, appData]);
-
-  useLayoutEffect(() => setPriceRange([min, max]), [min, max]);
-
   const filteredProducts = useDeferredValue(useMemo(() => {
     if (!appData) return [];
     const results = performSearch(committedQuery, { collection: selectedCollection, decade: selectedDecade, type: selectedType, priceRange, showInStockOnly });
     const sortFn = SORT_STRATEGIES[sortOption];
-    // FIX: ADDED PARENTHESES TO FIX MIXED OPERATORS ERROR
     if (sortFn) results.sort((a, b) => ((a.stock > 0) !== (b.stock > 0)) ? (a.stock > 0 ? -1 : 1) : sortFn(a, b));
     return results;
   }, [committedQuery, selectedCollection, selectedDecade, selectedType, priceRange, sortOption, showInStockOnly, performSearch, appData]));
@@ -334,7 +352,7 @@ const AppContent = () => {
   useEffect(() => setVisibleCount(ITEMS_PER_PAGE), [selectedCollection, selectedDecade, selectedType, priceRange, committedQuery, sortOption, showInStockOnly]);
   const visibleProducts = useMemo(() => filteredProducts.slice(0, visibleCount), [filteredProducts, visibleCount]);
 
-  // URL Sync
+  // URL Sync Logic
   useEffect(() => {
       const p = new URLSearchParams();
       if (committedQuery) p.set('q', committedQuery); 
@@ -343,18 +361,11 @@ const AppContent = () => {
       if (selectedType !== 'All') p.set('type', selectedType); 
       if (sortOption !== 'latest') p.set('sort', sortOption); 
       if (viewProduct) p.set('id', viewProduct.id);
-      const url = `${window.location.pathname}${p.toString() ? '?' + p.toString() : ''}`;
       
-      // Logic to decide between pushState and replaceState
-      // This enables the "Back" button to work for closing products
+      const url = `${window.location.pathname}${p.toString() ? '?' + p.toString() : ''}`;
       const currentParams = new URLSearchParams(window.location.search);
-      const currentId = currentParams.get('id');
-      const newId = p.get('id');
-
       if (window.location.search !== `?${p.toString()}`) {
-          // If we are opening a product (newId exists) and it's different from current (or current was null)
-          // We push state so the "Back" button works.
-          if (newId && newId !== currentId) {
+          if (p.get('id') && p.get('id') !== currentParams.get('id')) {
               window.history.pushState({}, '', url);
           } else {
               window.history.replaceState({}, '', url);
@@ -374,7 +385,6 @@ const AppContent = () => {
 
   useSEO({ title: viewProduct ? null : "LoftLoot | Vintage Toys", canonical: window.location.href });
 
-  // Dynamic Header Text
   const dynamicH1 = useMemo(() => {
       if (committedQuery) return `'${committedQuery}'`;
       const parts = [];
@@ -390,14 +400,14 @@ const AppContent = () => {
       return parts.join(" ");
   }, [selectedDecade, selectedCollection, selectedType, committedQuery]);
 
-  // --- LOADING / ERROR STATES ---
+  // --- RENDER ---
   if (loading) return <div className="min-h-screen flex items-center justify-center bg-[#fffbf0] text-[#514d46] font-bold">Loading Loot...</div>;
   if (error) return <div className="min-h-screen flex items-center justify-center bg-[#fffbf0] text-[#d35153] font-bold">Error: {error}</div>;
 
   return (
     <div className="min-h-screen bg-[#fffbf0] text-[#514d46] selection:bg-pink-200 flex flex-col" style={{ fontFamily: "'Outfit', sans-serif" }}>
       <GlobalStyles />
-      <Header currentView={currentView} isProductView={!!viewProduct} onCatalogueClick={() => { if(viewProduct) closeProduct(); setCurrentView('shop'); }} onAboutClick={() => { if(viewProduct) closeProduct(); setCurrentView('about'); }} onHomeClick={resetView} search={searchQuery} onSearchUpdate={handleSearchUpdate} onCommit={handleCommit} suggestions={suggestions} />
+      <Header currentView={currentView} isProductView={!!viewProduct} onCatalogueClick={() => { if(viewProduct) closeProduct(); setCurrentView('shop'); }} onAboutClick={() => { if(viewProduct) closeProduct(); setCurrentView('about'); }} onHomeClick={resetView} search={searchQuery} onSearchUpdate={handleSearchUpdate} onCommit={handleCommit} suggestions={suggestions} selectedCollection={selectedCollection} />
       
       <button onClick={scrollToTopSmart} className={`fixed bottom-8 right-8 z-50 p-4 rounded-full bg-[#487ec8] text-white shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 ${showScrollButton ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}><ArrowUp size={24} strokeWidth={3} /></button>
 
@@ -420,11 +430,12 @@ const AppContent = () => {
                     <div className="flex flex-col lg:flex-row gap-8" ref={topSectionRef}>
                         <button className="lg:hidden flex items-center justify-center gap-2 w-full bg-white border border-[#E0E8F0] py-3 rounded-xl font-bold text-[#514d46] shadow-sm active:scale-95 transition-transform" onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}>{isMobileFilterOpen ? <X size={18} /> : <Filter size={18} />}{isMobileFilterOpen ? 'Close Filters' : 'Filter Collection'}</button>
                         <aside className={`lg:w-64 flex-shrink-0 ${isMobileFilterOpen ? 'block' : 'hidden lg:block'} lg:pt-2`}>
-                            {/* Pass dynamic collections/decades/types from appData */}
-                            <FilterSection collections={appData.collections} decades={appData.decades} types={appData.types} selectedCollection={selectedCollection} selectedDecade={selectedDecade} selectedType={selectedType} priceRange={priceRange} minPrice={appData.minPrice} maxPrice={appData.maxPrice} availableCollections={available.collections} availableDecades={available.decades} availableTypes={available.types} showInStockOnly={showInStockOnly} onCollectionChange={setSelectedCollection} onDecadeChange={setSelectedDecade} onTypeChange={setSelectedType} onPriceChange={setPriceRange} onStockChange={setShowInStockOnly} />
+                            <FilterSection collections={appData.collections} decades={appData.decades} types={appData.types} selectedCollection={selectedCollection} selectedDecade={selectedDecade} selectedType={selectedType} priceRange={priceRange} minPrice={appData.minPrice} maxPrice={appData.maxPrice} availableCollections={available.collections} availableDecades={available.decades} availableTypes={available.types} showInStockOnly={showInStockOnly} onCollectionChange={setSelectedCollection} onDecadeChange={setSelectedDecade} onTypeChange={setSelectedType} onPriceChange={setPriceRange} onStockChange={setShowInStockOnly} onClearFilters={resetView} />
                         </aside>
                         <div className="flex-1 min-h-[500px]">
-                            <div className="-mt-4 mb-2"><h1 className="text-[#514d46] font-black text-3xl md:text-4xl leading-none flex items-center gap-2" style={{ fontFamily: '"Jua", sans-serif' }}>{dynamicH1} {committedQuery && <button onClick={() => { setCommittedQuery(""); setSearchQuery(""); }} className="bg-[#514d46]/20 text-white rounded-full p-0.5 hover:bg-[#514d46]/40 transition-colors"><X size={16} strokeWidth={3}/></button>}</h1></div>
+                            <div className="hidden lg:block -mt-4 mb-2"><h1 className="text-[#514d46] font-black text-3xl md:text-4xl leading-none flex items-center gap-2" style={{ fontFamily: '"Jua", sans-serif' }}>{dynamicH1} {committedQuery && <button onClick={() => { setCommittedQuery(""); setSearchQuery(""); }} className="bg-[#514d46]/20 text-white rounded-full p-0.5 hover:bg-[#514d46]/40 transition-colors"><X size={16} strokeWidth={3}/></button>}</h1></div>
+                            <div className="lg:hidden -mt-2 mb-2"><h1 className="text-[#514d46] font-black text-3xl leading-none flex items-center gap-2" style={{ fontFamily: '"Jua", sans-serif' }}>{dynamicH1} {committedQuery && <button onClick={() => { setCommittedQuery(""); setSearchQuery(""); }} className="bg-[#514d46]/20 text-white rounded-full p-0.5 hover:bg-[#514d46]/40 transition-colors"><X size={16} strokeWidth={3}/></button>}</h1></div>
+                            
                             <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-20">
                                 <h3 className="text-[#514d46]/60 font-medium text-sm">Showing <span className="text-[#514d46] font-bold">{filteredProducts.length}</span> results</h3>
                                 <div className="relative" ref={sortRef}>
@@ -436,6 +447,7 @@ const AppContent = () => {
                                     )}
                                 </div>
                             </div>
+
                             {visibleProducts.length > 0 ? (
                             <>
                                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-6 relative z-10">{visibleProducts.map((product, index) => (<ProductCard key={product.id} product={product} index={index} onOpen={openProduct} priority={index < 6} animationDelay={index >= ITEMS_PER_PAGE ? `${(index % ITEMS_PER_PAGE) * 0.03}s` : undefined} />))}</div>
@@ -458,6 +470,3 @@ const AppContent = () => {
 
 const App = () => ( <ErrorBoundary><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_SCHEMA) }} /><AppContent /></ErrorBoundary> );
 export default App;
-
-
-
