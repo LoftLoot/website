@@ -1153,7 +1153,7 @@
     "manufacturer": "LJN",
     "releaseDate": 1987,
     "price": 450.0,
-    "stock": 0,
+    "stock": 1,
     "badgeText": "Ultra Rare",
     "badgeColor": "#b4a7d6",
     "demographic": "masculine",
