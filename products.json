@@ -1193,8 +1193,8 @@
         "type": "Figure",
         "manufacturer": "LJN",
         "releaseDate": 1987,
-        "price": 450,
-        "stock": 0,
+        "price": 400,
+        "stock": 1,
         "badgeText": "Ultra Rare",
         "badgeColor": "#b4a7d6",
         "demographic": "masculine",
@@ -2587,10 +2587,10 @@
         "type": "Figure",
         "manufacturer": "Hasbro",
         "releaseDate": 1991,
-        "price": 30,
+        "price": 100,
         "stock": 5,
         "demographic": "masculine",
-        "description": "Loose figure 2-pack from the WWF Hasbro Tag Team Series 1 (1991). Includes 2 Helmets.",
+        "description": "Loose figure 2-pack from the WWF Hasbro Tag Team Series 1 (1991). Includes the 2 original Helmets.",
         "condition": "Loose",
         "links": [
             {
