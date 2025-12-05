@@ -18,7 +18,7 @@ JaggedLine.displayName = 'JaggedLine';
 
 // --- MAIN COMPONENT ---
 
-const AboutSection = () => {
+const About = () => {
     const [isPeeled, setIsPeeled] = useState(false);
 
     // Canvas SEO stub - safe to keep or remove if managed by App.js
@@ -131,4 +131,5 @@ const AboutSection = () => {
     );
 };
 
-export default AboutSection;
+export default About;
+
