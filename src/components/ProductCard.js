@@ -1,70 +1,8 @@
 // src/components/ProductCard.js
 import React, { useState, useRef, useCallback, useLayoutEffect, useEffect } from 'react';
-import { PRELOAD_CACHE, addToBoundedCache, ITEMS_PER_PAGE } from '../data';
+import { PRELOAD_CACHE, addToBoundedCache, ITEMS_PER_PAGE, GlobalObserver } from '../data';
 
-// --- UTILS & HOOKS (Moved here to keep the card self-contained) ---
-
-const GlobalObserver = { 
-    observer: null, 
-    elements: new Map(), 
-    isFast: false, 
-    scrollTimeout: null, 
-    lastScrollY: 0, 
-    lastTime: 0, 
-    init() { 
-        if (typeof window === 'undefined') return; 
-        this.setupObserver('600px'); 
-        window.addEventListener('scroll', this.onScroll, { passive: true }); 
-    }, 
-    setupObserver(margin) { 
-        if (this.observer) this.observer.disconnect(); 
-        this.observer = new IntersectionObserver((entries) => { 
-            entries.forEach(entry => { 
-                if (entry.isIntersecting) { 
-                    const cb = this.elements.get(entry.target); 
-                    if (cb) cb(); 
-                    this.unobserve(entry.target); 
-                } 
-            }); 
-        }, { rootMargin: `0px 0px ${margin} 0px` }); 
-        this.elements.forEach((_, el) => this.observer.observe(el)); 
-    }, 
-    observe(el, cb) { 
-        if (!this.observer) this.init(); 
-        if (this.elements.has(el)) return; 
-        this.elements.set(el, cb); 
-        this.observer.observe(el); 
-    }, 
-    unobserve(el) { 
-        if (!el) return; 
-        this.elements.delete(el); 
-        if (this.observer) this.observer.unobserve(el); 
-    }, 
-    onScroll: () => { 
-        const now = performance.now(); 
-        const scrollY = window.scrollY; 
-        const deltaY = Math.abs(scrollY - GlobalObserver.lastScrollY); 
-        const deltaT = now - GlobalObserver.lastTime; 
-        if (deltaT > 50) { 
-            const speed = deltaY / deltaT; 
-            const isNowFast = speed > 1.5; 
-            if (isNowFast !== GlobalObserver.isFast) { 
-                GlobalObserver.isFast = isNowFast; 
-                GlobalObserver.setupObserver(isNowFast ? '0px' : '600px'); 
-            } 
-            GlobalObserver.lastScrollY = scrollY; 
-            GlobalObserver.lastTime = now; 
-        } 
-        if (GlobalObserver.scrollTimeout) clearTimeout(GlobalObserver.scrollTimeout); 
-        GlobalObserver.scrollTimeout = setTimeout(() => { 
-            if (GlobalObserver.isFast) { 
-                GlobalObserver.isFast = false; 
-                GlobalObserver.setupObserver('600px'); 
-            } 
-        }, 150); 
-    } 
-}; 
-GlobalObserver.onScroll = GlobalObserver.onScroll.bind(GlobalObserver);
+// --- UTILS & HOOKS ---
 
 const preloadImage = (src) => {
     if (!src || PRELOAD_CACHE.has(src)) return;
@@ -78,7 +16,10 @@ const useProximityPreloader = (src) => {
     useEffect(() => {
         const element = ref.current;
         if (!element || !src || PRELOAD_CACHE.has(src)) return;
+        
+        // Use the centralized observer from data.js
         GlobalObserver.observe(element, () => preloadImage(src));
+        
         return () => {
              if(element) GlobalObserver.unobserve(element);
         };
@@ -119,9 +60,11 @@ const ProductCard = React.memo(({ product, index, onOpen, isMicro = false, prior
 
   const handlePointerEnter = useCallback((e) => {
       if (e.pointerType === 'touch') return;
-      // Prefetch route logic
+      // Prefetch route logic: Wait 150ms before triggering a heavy image load
       hoverTimer.current = setTimeout(() => {
-          if (product.processedImages[0]?.original) preloadImage(product.processedImages[0].original);
+          if (product.processedImages?.[0]?.original) {
+              preloadImage(product.processedImages[0].original);
+          }
       }, 150);
   }, [product.processedImages]);
 
