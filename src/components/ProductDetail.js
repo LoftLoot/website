@@ -79,23 +79,21 @@ const SpecItem = ({ label, value }) => {
 const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClick, onDecadeClick, onOpen }) => {
     const [activeImgIndex, setActiveImgIndex] = useState(0);
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-    const [isLcpLoaded, setIsLcpLoaded] = useState(false);
     
     const { isActive, imgRef, handleImageClick, handleImageMouseMove, handleMouseLeave } = useImageZoom();
-    const images = product.processedImages || []; 
+    // Use processedImages from data.js. Ensure it's memoized or stable.
+    const images = useMemo(() => product.processedImages || [], [product.processedImages]); 
     const { thumbsRef, showLeft, showRight, scrollThumbs } = useThumbScroll(images);
 
-    // Dynamic Theme Logic: Locked to cream per preference, but structure kept for potential expansion
-    const theme = useMemo(() => (product.id % 2 === 0 ? { bg: "bg-[#eef5fc]", hex: "#eef5fc", border: "border-[#c4d6e8]" } : { bg: "bg-[#fceded]", hex: "#fceded", border: "border-[#eecbc8]" }), [product.id]);
-    
+    // Reset states on product change
     useEffect(() => { 
         setActiveImgIndex(0); 
         setIsVideoPlaying(false);
-        setIsLcpLoaded(false);
     }, [product.id]);
 
     useLayoutEffect(() => { window.scrollTo(0, 0); }, [product.id]);
 
+    // Handle Title SEO locally
     useEffect(() => {
         document.title = `${product.name} - ${product.manufacturer} | Loft Loot`;
     }, [product.name, product.manufacturer]);
@@ -108,6 +106,7 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
     const activeMedia = images[activeImgIndex];
     const currentVideoId = activeMedia?.videoId;
 
+    // JSON-LD Schema
     const jsonLd = useMemo(() => JSON.stringify({ 
         "@context": "https://schema.org/", 
         "@type": "Product", 
@@ -126,6 +125,7 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
         "publisher": ORGANIZATION_SCHEMA 
     }), [product, images]);
 
+    // Navigation for main image arrows
     const navImg = (dir) => (e) => { 
         e?.stopPropagation(); 
         setActiveImgIndex(prev => { 
@@ -138,7 +138,7 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
         <div className="min-h-screen bg-[#fffbf0] text-[#514d46] font-sans pb-0 relative z-50 flex flex-col mb-20">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
             
-            {/* Background locked to cream (#f2e9d9) */}
+            {/* Background color locked to cream (#f2e9d9) */}
             <div className="bg-[#f2e9d9] pb-16 pt-8 relative w-full">
                 <div className="max-w-7xl mx-auto px-4 relative z-10">
                     
@@ -163,6 +163,7 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                                 onMouseMove={handleImageMouseMove} 
                                 onMouseLeave={handleMouseLeave}
                             >
+                                {/* Main Image Navigation Arrows */}
                                 {images.length > 1 && !isActive && (
                                     <>
                                         <button onClick={navImg(-1)} disabled={activeImgIndex === 0} className={`${NAV_BTN_BASE} absolute left-4 top-1/2 -translate-y-1/2 z-40 p-2 opacity-0 group-hover:opacity-100 disabled:hidden`}><ChevronLeft size={24} /></button>
@@ -198,11 +199,11 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                                             alt={product.name} 
                                             className={`relative z-10 w-full h-full object-cover ${product.isSold ? 'grayscale-[0.5]' : ''} will-change-transform transition-transform duration-100`} 
                                             style={{ transition: isActive ? 'none' : 'transform 0.3s ease-out' }}
-                                            onLoad={() => setIsLcpLoaded(true)}
                                         />
                                     </>
                                 )}
 
+                                {/* Animated Stamp and Dust */}
                                 {product.isSold && !isActive && (
                                     <div className="absolute inset-0 z-30 pointer-events-none flex items-center justify-center">
                                         <div className="relative animate-stamp">
@@ -213,6 +214,7 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                                 )}
                             </div>
                             
+                            {/* Thumbnails */}
                             {images.length > 1 && (
                                 <div className="flex items-center gap-2">
                                      <button onClick={() => scrollThumbs('left')} disabled={!showLeft} className={`${NAV_BTN_BASE} hidden md:flex shrink-0 p-1.5`}><ChevronLeft size={20} /></button>
