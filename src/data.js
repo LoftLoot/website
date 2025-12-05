@@ -85,7 +85,6 @@ export const addToBoundedCache = (cache, key, value, limit) => {
 };
 
 // --- GLOBAL OBSERVER ---
-// Moved here to be shared between App.js and ProductCard.js
 export const GlobalObserver = { 
     observer: null, 
     elements: new Map(), 
@@ -147,16 +146,6 @@ export const GlobalObserver = {
     } 
 }; 
 GlobalObserver.onScroll = GlobalObserver.onScroll.bind(GlobalObserver);
-
-export const STATIC_COLLECTIONS = [
-    "Star Wars", "TMNT", "Thundercats", "WWE", "Pokémon", "Gargoyles", "Ghostbusters"
-];
-
-export const STATIC_TYPES = Object.keys(TYPE_CONFIG);
-
-export const STATIC_DECADES = [
-    "1970s", "1980s", "1990s", "2000s", "2010s"
-];
 
 // --- DATA PROCESSOR ---
 
