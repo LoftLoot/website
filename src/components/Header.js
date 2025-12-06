@@ -62,7 +62,7 @@ const QuickFilterChips = ({ onCommit, selectedCollection, collections = [], deca
     return (
         <div 
             ref={scrollRef}
-            className="flex md:hidden w-full overflow-x-auto no-scrollbar items-center gap-2 px-4 pb-3 select-none cursor-grab active:cursor-grabbing bg-[#fffbf0] border-b border-[#514d46]/5"
+            className="flex lg:hidden w-full overflow-x-auto no-scrollbar items-center gap-2 px-4 pb-3 select-none cursor-grab active:cursor-grabbing bg-[#fffbf0] border-b border-[#514d46]/5"
             onMouseDown={handleMouseDown}
             onMouseLeave={handleMouseLeave}
             onMouseUp={handleMouseUp}
@@ -250,20 +250,23 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
         </div>
     </div>
     <header className="bg-[#fffbf0] relative transition-all duration-300 shadow-sm z-[60] pb-0">
-      <div className="max-w-7xl mx-auto px-4 min-h-[60px] md:h-[86px] flex flex-wrap md:flex-nowrap items-center justify-between pt-4 pb-0 md:py-0 gap-y-0 relative">
+      <div className="max-w-7xl mx-auto px-4 min-h-[60px] md:h-[86px] flex flex-wrap lg:flex-nowrap items-center justify-between pt-4 pb-0 md:py-0 gap-y-0 relative">
         
         {/* Logo */}
-        <div className="flex justify-start items-center cursor-pointer group select-none mr-auto md:mr-0 order-1 md:w-auto shrink-0" onClick={onHomeClick}>
+        <div className="flex justify-start items-center cursor-pointer group select-none mr-auto lg:mr-0 order-1 lg:w-auto shrink-0" onClick={onHomeClick}>
             <Logo />
         </div>
 
-        {/* Search - Absolutely Centered on Desktop, 100% Breakout Width on Mobile */}
-        <div className="w-[calc(100%+2rem)] -mx-4 px-4 order-3 md:order-2 mb-2 mt-3 pt-3 md:pt-0 md:mt-0 md:mb-0 md:border-t-0 border-t border-[#514d46]/10 md:absolute md:left-1/2 md:-translate-x-1/2 md:w-1/2 md:max-w-2xl md:mx-0 md:px-0">
+        {/* Search */}
+        {/* CHANGED md: prefixes to lg: prefixes to sync with sidebar appearing at lg */}
+        {/* < 1024px: Full width, row 2 */}
+        {/* >= 1024px: Absolute centered, fixed width */}
+        <div className="w-[calc(100%+2rem)] -mx-4 px-4 order-3 lg:order-2 mb-2 mt-3 pt-3 lg:pt-0 lg:mt-0 lg:mb-0 lg:border-t-0 border-t border-[#514d46]/10 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:w-[30rem] xl:w-[40rem] lg:mx-0 lg:px-0">
              <SearchInput search={search} onSearchUpdate={onSearchUpdate} onCommit={onCommit} suggestions={suggestions} />
         </div>
 
         {/* Navigation */}
-        <div className="flex justify-end items-center gap-3 md:gap-6 order-2 md:order-3 md:w-auto shrink-0">
+        <div className="flex justify-end items-center gap-3 md:gap-6 order-2 lg:order-3 lg:w-auto shrink-0">
              <button 
                 onClick={currentView !== 'shop' ? onCatalogueClick : undefined} 
                 disabled={currentView === 'shop' && !isProductView}
