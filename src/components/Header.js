@@ -60,41 +60,49 @@ const QuickFilterChips = ({ onCommit, selectedCollection, collections = [], deca
     };
 
     return (
-        <div 
-            ref={scrollRef}
-            className="flex lg:hidden w-full overflow-x-auto no-scrollbar items-center gap-2 px-4 pb-3 select-none cursor-grab active:cursor-grabbing bg-[#fffbf0] border-b border-[#514d46]/5"
-            onMouseDown={handleMouseDown}
-            onMouseLeave={handleMouseLeave}
-            onMouseUp={handleMouseUp}
-            onMouseMove={handleMouseMove}
-        >
-            {chips.map((chip, idx) => {
-                if (chip === "|") return <div key={`sep-${idx}`} className="h-5 w-px bg-[#514d46]/20 mx-1 shrink-0"></div>;
-                
-                const isActive = selectedCollection === chip; 
-                
-                return (
-                    <button
-                        key={chip}
-                        onClick={() => { 
-                            if (!isDragging) {
-                                let type = 'filter';
-                                let kind = 'Collection';
-                                if (decades.includes(chip)) kind = 'Era';
-                                if (chip === 'All') kind = 'Collection'; 
-                                onCommit({ type, payload: { kind, value: chip } }); 
-                            }
-                        }}
-                        className={`whitespace-nowrap px-3.5 py-1.5 rounded-full text-sm font-bold border transition-all shadow-sm ${
-                            isActive 
-                            ? "bg-[#487ec8] text-white border-[#487ec8] shadow-md ring-2 ring-[#487ec8]/20" 
-                            : "bg-white text-[#514d46] border-[#E0E8F0] hover:border-[#487ec8] hover:text-[#487ec8]"
-                        }`}
-                    >
-                        {chip}
-                    </button>
-                );
-            })}
+        <div className="relative w-full lg:hidden border-b border-[#514d46]/5 bg-[#fffbf0]">
+            {/* Left Fade Gradient */}
+            <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#fffbf0] to-transparent z-10 pointer-events-none"></div>
+            
+            {/* Right Fade Gradient */}
+            <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#fffbf0] to-transparent z-10 pointer-events-none"></div>
+
+            <div 
+                ref={scrollRef}
+                className="flex w-full overflow-x-auto no-scrollbar items-center gap-2 px-4 pb-3 pt-1 select-none cursor-grab active:cursor-grabbing"
+                onMouseDown={handleMouseDown}
+                onMouseLeave={handleMouseLeave}
+                onMouseUp={handleMouseUp}
+                onMouseMove={handleMouseMove}
+            >
+                {chips.map((chip, idx) => {
+                    if (chip === "|") return <div key={`sep-${idx}`} className="h-5 w-px bg-[#514d46]/20 mx-1 shrink-0"></div>;
+                    
+                    const isActive = selectedCollection === chip; 
+                    
+                    return (
+                        <button
+                            key={chip}
+                            onClick={() => { 
+                                if (!isDragging) {
+                                    let type = 'filter';
+                                    let kind = 'Collection';
+                                    if (decades.includes(chip)) kind = 'Era';
+                                    if (chip === 'All') kind = 'Collection'; 
+                                    onCommit({ type, payload: { kind, value: chip } }); 
+                                }
+                            }}
+                            className={`whitespace-nowrap px-3.5 py-1.5 rounded-full text-sm font-bold border transition-all shadow-sm ${
+                                isActive 
+                                ? "bg-[#487ec8] text-white border-[#487ec8] shadow-md ring-2 ring-[#487ec8]/20" 
+                                : "bg-white text-[#514d46] border-[#E0E8F0] hover:border-[#487ec8] hover:text-[#487ec8]"
+                            }`}
+                        >
+                            {chip}
+                        </button>
+                    );
+                })}
+            </div>
         </div>
     );
 };
@@ -257,7 +265,8 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
             <Logo />
         </div>
 
-        {/* Search - 50% Width on Desktop, Full on Mobile */}
+        {/* Search - Absolutely Centered on Desktop (Tablet+), Full Width on Mobile */}
+        {/* FIX: Use percentage width for cleaner responsive scaling */}
         <div className="w-[calc(100%+2rem)] -mx-4 px-4 order-3 lg:order-2 mb-2 mt-3 pt-3 lg:pt-0 lg:mt-0 lg:mb-0 lg:border-t-0 border-t border-[#514d46]/10 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:w-1/2 lg:max-w-3xl lg:mx-0 lg:px-0">
              <SearchInput search={search} onSearchUpdate={onSearchUpdate} onCommit={onCommit} suggestions={suggestions} />
         </div>
@@ -267,7 +276,8 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
              <button 
                 onClick={currentView !== 'shop' ? onCatalogueClick : undefined} 
                 disabled={currentView === 'shop' && !isProductView}
-                className={`text-base md:text-lg font-bold transition-colors ${currentView === 'shop' && !isProductView ? 'text-[#487ec8] opacity-50 cursor-default' : 'text-[#514d46]/60 hover:text-[#487ec8] active:scale-95'}`}
+                // FIXED: Removed opacity-50, now fully colored for active state
+                className={`text-base md:text-lg font-bold transition-colors ${currentView === 'shop' && !isProductView ? 'text-[#487ec8] cursor-default' : 'text-[#514d46]/60 hover:text-[#487ec8] active:scale-95'}`}
              >
                 Catalogue
              </button>
@@ -275,7 +285,8 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
              <button 
                 onClick={currentView !== 'about' ? onAboutClick : undefined}
                 disabled={currentView === 'about'}
-                className={`text-base md:text-lg font-bold transition-colors ${currentView === 'about' ? 'text-[#487ec8] opacity-50 cursor-default' : 'text-[#514d46]/60 hover:text-[#487ec8] active:scale-95'}`}
+                // FIXED: Removed opacity-50
+                className={`text-base md:text-lg font-bold transition-colors ${currentView === 'about' ? 'text-[#487ec8] cursor-default' : 'text-[#514d46]/60 hover:text-[#487ec8] active:scale-95'}`}
              >
                 About Us
              </button>
