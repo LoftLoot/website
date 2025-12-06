@@ -101,7 +101,7 @@ const RelatedProductsCarousel = React.memo(({ products, onOpen }) => {
     if (products.length === 0) return null;
 
     return (
-        <div className="max-w-7xl mx-auto px-4 w-full mt-16 pb-16 relative animate-fade-in">
+        <div className="max-w-7xl mx-auto px-4 w-full mt-16 mb-20 relative animate-fade-in">
             <div className="group/carousel">
                 <div className="mb-6">
                     <h3 className="font-black text-[#514d46] text-xl flex items-center gap-2" style={{ fontFamily: '"Jua", sans-serif' }}>
@@ -172,11 +172,9 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
     
     const { isActive, imgRef, handleImageClick, handleImageMouseMove, handleMouseLeave } = useImageZoom();
-    // Memoize images
     const images = useMemo(() => product.processedImages || [], [product.processedImages]); 
     const { thumbsRef, showLeft, showRight, scrollThumbs } = useThumbScroll(images);
 
-    // Reset states on product change
     useEffect(() => { 
         setActiveImgIndex(0); 
         setIsVideoPlaying(false);
@@ -184,7 +182,6 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
 
     useLayoutEffect(() => { window.scrollTo(0, 0); }, [product.id]);
 
-    // Handle Title SEO locally
     useEffect(() => {
         document.title = `${product.name} - ${product.manufacturer} | Loft Loot`;
     }, [product.name, product.manufacturer]);
@@ -196,7 +193,6 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
     const activeMedia = images[activeImgIndex];
     const currentVideoId = activeMedia?.videoId;
 
-    // JSON-LD Schema
     const jsonLd = useMemo(() => JSON.stringify({ 
         "@context": "https://schema.org/", 
         "@type": "Product", 
@@ -224,12 +220,12 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
     };
 
     return (
-        <div className="min-h-screen bg-[#fffbf0] text-[#514d46] font-sans pb-0 relative z-50 flex flex-col mb-20">
+        <div className="min-h-screen bg-[#fffbf0] text-[#514d46] font-sans pb-0 relative z-50 flex flex-col">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
             
-            {/* MAIN CREAM WRAPPER - Encloses Details AND Carousel */}
-            <div className="bg-[#f2e9d9] relative w-full pb-16">
-                <div className="max-w-7xl mx-auto px-4 pt-8 relative z-10">
+            {/* PRODUCT INFO AREA (Cream Background) */}
+            <div className="bg-[#f2e9d9] pb-16 pt-8 relative w-full">
+                <div className="max-w-7xl mx-auto px-4 relative z-10">
                     
                     {/* Breadcrumbs */}
                     <nav aria-label="Breadcrumb" className="flex items-center flex-wrap gap-2 mb-8 text-sm font-bold uppercase tracking-wider text-[#514d46]/60">
@@ -320,7 +316,8 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                         {/* RIGHT COLUMN: INFO */}
                         <div className="space-y-6 select-text">
                             <div className="border-b-2 border-[#514d46]/5 pb-6">
-                                <div className="mb-2 text-xs font-bold text-[#514d46]/60 uppercase tracking-wider">{product.manufacturer}</div>
+                                {/* UPDATED: Uses Collection instead of Manufacturer */}
+                                <div className="mb-2 text-xs font-bold text-[#514d46]/60 uppercase tracking-wider">{product.collection}</div>
                                 <h1 className="text-4xl md:text-5xl font-black text-[#514d46] leading-tight mb-4" style={{ fontFamily: '"Jua", sans-serif' }}>{product.name}</h1>
                                 <div className="flex items-baseline gap-4">
                                     <span className={`text-3xl font-mono font-bold ${!product.isSold ? 'text-[#487ec8]' : 'text-[#514d46]/40 decoration-double'}`}>£{product.price.toFixed(2)}</span>
@@ -331,15 +328,17 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                                 </div>
                             </div>
 
+                            {/* UPDATED SPEC GRID: Brand/Release, Line/Manufacturer, Type/Condition */}
                             <div className="pt-6 pb-6 border-b-2 border-[#514d46]/5">
                                 <div className="grid grid-cols-2 gap-y-6 gap-x-4">
-                                    <SpecItem label="Collection" value={product.collection} />
-                                    <SpecItem label="Era" value={product.decade} />
                                     <SpecItem label="Brand" value={product.brand} />
+                                    <SpecItem label="Release" value={product.releaseDate} />
+                                    
+                                    <SpecItem label="Line" value={product.line} />
+                                    <SpecItem label="Manufacturer" value={product.manufacturer} />
+                                    
                                     <SpecItem label="Type" value={product.type} />
-                                    <div className="col-span-2">
-                                        <SpecItem label="Condition" value={product.condition} />
-                                    </div>
+                                    <SpecItem label="Condition" value={product.condition} />
                                 </div>
                             </div>
 
@@ -380,12 +379,14 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                         </div>
                     </div>
                 </div>
-
-                {/* RESTORED CAROUSEL (Inside the cream wrapper) */}
-                <RelatedProductsCarousel products={relatedProducts} onOpen={onOpen} />
-
-                {/* JAGGED LINE (Moved to the very bottom) */}
+                
+                {/* JAGGED LINE SEPARATOR */}
                 <JaggedLine position="bottom" color="#f2e9d9" />
+            </div>
+
+            {/* RELATED PRODUCTS - SEPARATE WHITE AREA */}
+            <div className="bg-white pb-20 pt-8">
+                <RelatedProductsCarousel products={relatedProducts} onOpen={onOpen} />
             </div>
         </div>
     );
