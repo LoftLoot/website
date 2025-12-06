@@ -39,8 +39,8 @@ const About = () => {
                         </div>
 
                         {/* BROTHER */}
-                        {/* Changed to Absolute Positioning */}
-                        <div className="absolute left-0 -top-12 select-none z-10" style={{ width: BOY_WIDTH }}>
+                        {/* RESTORED: Float layout with translateY instead of negative margins */}
+                        <div className="float-left mr-8 mb-2 relative select-none z-10" style={{ width: BOY_WIDTH, transform: 'translateY(-2rem)' }}>
                             <div className="absolute top-2 -left-2 bg-[#fffbf0] -rotate-12 rounded-full" style={{ width: BOY_WIDTH, height: '120px' }}></div>
                             <div className="relative overflow-hidden -rotate-3" style={{ width: BOY_WIDTH, height: IMG_HEIGHT }}>
                                 <img src={SIBLING_IMG} alt="Brother" className="absolute h-full max-w-none object-cover object-left" style={{ left: '0', width: 'auto' }} />
@@ -52,8 +52,8 @@ const About = () => {
                         <p>Recently, while looking through <a href="https://retromash.com/argos/" target="_blank" rel="noopener noreferrer" className="font-bold underline decoration-2 decoration-[#487ec8]/50 hover:decoration-[#487ec8] hover:text-[#487ec8] transition-all">archived catalogues</a> online, we realized we actually still own most of it. It's been sitting in our parents' loft for decades! We've decided to catalog our collection here, hoping to find new homes for them with people who appreciate them as much as we did.</p>
 
                         {/* SISTER */}
-                        {/* Changed to Absolute Positioning */}
-                        <div className="absolute right-0 bottom-12 select-none z-10" style={{ width: GIRL_WIDTH }}>
+                        {/* RESTORED: Float layout with translateY instead of negative margins */}
+                        <div className="float-right ml-8 mb-1 relative select-none z-10" style={{ width: GIRL_WIDTH, transform: 'translateY(-0.5rem)' }}>
                             <div className="absolute top-2 -right-1 bg-[#fffbf0] rotate-12 rounded-full" style={{ width: GIRL_WIDTH, height: '120px' }}></div>
                             <div className="relative overflow-hidden rotate-3" style={{ width: GIRL_WIDTH, height: IMG_HEIGHT }}>
                                 <img src={SIBLING_IMG} alt="Sister" className="absolute h-full max-w-none object-cover object-right" style={{ right: '0', width: 'auto' }} />
