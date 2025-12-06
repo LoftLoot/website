@@ -33,17 +33,15 @@ const About = () => {
             <div className="relative bg-[#f2e9d9] text-[#514d46] transition-all duration-500 mb-12 pb-12">
                 <div className="max-w-3xl mx-auto px-4 pt-12 relative z-10">
                     
-                    {/* REMOVED overflow-hidden so the character can actually move up out of the box */}
                     <div className="space-y-8 leading-relaxed text-lg relative text-center md:text-left">
                         <div className="text-center mb-6">
                             <h1 className="text-3xl md:text-4xl font-black text-[#514d46] leading-tight" style={{ fontFamily: '"Jua", sans-serif' }}>About Us</h1>
                         </div>
 
                         {/* BROTHER */}
-                        {/* Mobile: Centered block, no negative margin to avoid text overlap */}
-                        {/* Desktop: Floated left, -mt-32 to pop out */}
-                        <div className="mx-auto md:mx-0 md:float-left md:mr-8 mb-6 md:mb-2 md:-mt-32 relative select-none z-10" style={{ width: BOY_WIDTH }}>
-                            <div className="absolute top-2 -left-2 bg-[#fffbf0] -rotate-12" style={{ width: BOY_WIDTH, height: '120px' }}></div>
+                        {/* Changed to Absolute Positioning */}
+                        <div className="absolute left-0 -top-12 select-none z-10" style={{ width: BOY_WIDTH }}>
+                            <div className="absolute top-2 -left-2 bg-[#fffbf0] -rotate-12 rounded-full" style={{ width: BOY_WIDTH, height: '120px' }}></div>
                             <div className="relative overflow-hidden -rotate-3" style={{ width: BOY_WIDTH, height: IMG_HEIGHT }}>
                                 <img src={SIBLING_IMG} alt="Brother" className="absolute h-full max-w-none object-cover object-left" style={{ left: '0', width: 'auto' }} />
                             </div>
@@ -54,10 +52,9 @@ const About = () => {
                         <p>Recently, while looking through <a href="https://retromash.com/argos/" target="_blank" rel="noopener noreferrer" className="font-bold underline decoration-2 decoration-[#487ec8]/50 hover:decoration-[#487ec8] hover:text-[#487ec8] transition-all">archived catalogues</a> online, we realized we actually still own most of it. It's been sitting in our parents' loft for decades! We've decided to catalog our collection here, hoping to find new homes for them with people who appreciate them as much as we did.</p>
 
                         {/* SISTER */}
-                        {/* Mobile: Centered block */}
-                        {/* Desktop: Floated right */}
-                        <div className="mx-auto md:mx-0 md:float-right md:ml-8 mb-6 md:mb-1 md:-mt-4 relative select-none z-10" style={{ width: GIRL_WIDTH }}>
-                            <div className="absolute top-2 -right-1 bg-[#fffbf0] rotate-12" style={{ width: GIRL_WIDTH, height: '120px' }}></div>
+                        {/* Changed to Absolute Positioning */}
+                        <div className="absolute right-0 bottom-12 select-none z-10" style={{ width: GIRL_WIDTH }}>
+                            <div className="absolute top-2 -right-1 bg-[#fffbf0] rotate-12 rounded-full" style={{ width: GIRL_WIDTH, height: '120px' }}></div>
                             <div className="relative overflow-hidden rotate-3" style={{ width: GIRL_WIDTH, height: IMG_HEIGHT }}>
                                 <img src={SIBLING_IMG} alt="Sister" className="absolute h-full max-w-none object-cover object-right" style={{ right: '0', width: 'auto' }} />
                             </div>
@@ -78,7 +75,7 @@ const About = () => {
             </div>
 
             {/* BOTTOM SECTION: CONTACT */}
-            <div className="max-w-3xl mx-auto px-4 pb-0 relative z-10">
+            <div className="max-w-3xl mx-auto px-4 pb-20 relative z-10">
                 <div className="text-center flex flex-col items-center justify-center">
                     <h3 className="text-2xl font-black text-[#514d46] mb-4" style={{ fontFamily: '"Jua", sans-serif' }}>Get in Touch</h3>
                     <p className="opacity-60 text-lg max-w-md mx-auto">Have a question about a specific item? We'd love to hear from you.</p>
@@ -89,12 +86,10 @@ const About = () => {
                         </div>
                         <button 
                             onClick={() => setIsPeeled(true)} 
-                            className={`sticker-front absolute inset-0 z-10 flex items-center justify-center gap-2 bg-[#487ec8] text-white font-bold text-xl rounded-xl border-2 border-white shadow-md cursor-pointer overflow-hidden ${isPeeled ? 'animate-tear-off pointer-events-none' : ''}`} 
+                            className={`sticker-front absolute inset-0 z-10 flex items-center justify-center gap-2 bg-[#487ec8] text-white font-bold text-xl rounded-xl cursor-pointer overflow-hidden hover:bg-[#3a66a3] transition-colors ${isPeeled ? 'animate-tear-off pointer-events-none' : ''}`} 
                             aria-label="Reveal Email"
                         >
                             <Mail size={20} className="relative z-10" /><span className="relative z-10">Email Us</span>
-                            <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-black/10 rounded-xl pointer-events-none z-0"></div>
-                            <div className="sticker-curl absolute top-0 right-0 w-0 h-0 bg-[#fffbf0] shadow-[-2px_2px_5px_rgba(0,0,0,0.2)] transition-all duration-300 ease-out z-20 pointer-events-none" style={{ borderBottomLeftRadius: '10px' }}></div>
                         </button>
                     </div>
 
