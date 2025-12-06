@@ -110,7 +110,7 @@ const useSEO = ({ title, description, image, canonical }) => {
     }, [title, description, image, canonical]);
 };
 
-// --- FILTER COMPONENTS (FLAT STYLE) ---
+// --- FILTER COMPONENTS ---
 
 const FilterGroup = React.memo(({ title, options, selected, onChange, available, color }) => (
     <div className="space-y-3">
@@ -441,18 +441,20 @@ const AppContent = () => {
                             <div className="hidden lg:block -mt-4 mb-2"><h1 className="text-[#514d46] font-black text-3xl md:text-4xl leading-none flex items-center gap-2" style={{ fontFamily: '"Jua", sans-serif' }}>{dynamicH1} {committedQuery && <button onClick={() => { setCommittedQuery(""); setSearchQuery(""); }} className="bg-[#514d46]/20 text-white rounded-full p-0.5 hover:bg-[#514d46]/40 transition-colors"><X size={16} strokeWidth={3}/></button>}</h1></div>
                             <div className="lg:hidden -mt-2 mb-2"><h1 className="text-[#514d46] font-black text-3xl leading-none flex items-center gap-2" style={{ fontFamily: '"Jua", sans-serif' }}>{dynamicH1} {committedQuery && <button onClick={() => { setCommittedQuery(""); setSearchQuery(""); }} className="bg-[#514d46]/20 text-white rounded-full p-0.5 hover:bg-[#514d46]/40 transition-colors"><X size={16} strokeWidth={3}/></button>}</h1></div>
                             
-                            {/* ACTIVE CHIPS - RESTORED */}
-                            <div className="flex flex-wrap items-center gap-2 mb-6">
-                                {selectedCollection !== 'All' && <button onClick={() => setSelectedCollection('All')} style={{ borderColor: FILTER_COLORS.Collection, color: FILTER_COLORS.Collection }} className="flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110">{selectedCollection} <X size={14} /></button>}
-                                {selectedDecade !== 'All' && <button onClick={() => setSelectedDecade('All')} style={{ borderColor: FILTER_COLORS.Era, color: FILTER_COLORS.Era }} className={`flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110 ${/^\d/.test(selectedDecade) ? '' : 'uppercase'}`}>{selectedDecade} <X size={14} /></button>}
-                                {selectedType !== 'All' && <button onClick={() => setSelectedType('All')} style={{ borderColor: FILTER_COLORS.Type, color: FILTER_COLORS.Type }} className="flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110">{selectedType} <X size={14} /></button>}
-                                {(priceRange[0] !== appData.minPrice || priceRange[1] !== appData.maxPrice) && <button onClick={() => setPriceRange([appData.minPrice, appData.maxPrice])} style={{ borderColor: FILTER_COLORS.Price, color: FILTER_COLORS.Price }} className="flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110">£{priceRange[0]} - £{priceRange[1]} <X size={14} /></button>}
-                                {showInStockOnly && <button onClick={() => setShowInStockOnly(false)} className="flex items-center gap-1 bg-white border-2 border-[#E0E8F0] px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#514d46] hover:border-[#487ec8] hover:text-[#487ec8] transition-all shadow-sm group active:scale-95">In Stock <X size={14} /></button>}
-                                {(selectedCollection !== 'All' || selectedDecade !== 'All' || selectedType !== 'All' || showInStockOnly || priceRange[0] !== appData.minPrice || priceRange[1] !== appData.maxPrice) && <button onClick={resetView} className="text-xs font-bold text-[#d35153] hover:underline ml-2">Clear All</button>}
-                            </div>
-
                             <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-20">
-                                <h3 className="text-[#514d46]/60 font-medium text-sm">Showing <span className="text-[#514d46] font-bold">{filteredProducts.length}</span> results</h3>
+                                <div className="flex flex-wrap items-center gap-4 min-h-[2rem]">
+                                    <h3 className="text-[#514d46]/60 font-medium text-sm">Showing <span className="text-[#514d46] font-bold">{filteredProducts.length}</span> results</h3>
+                                    
+                                    {/* ACTIVE CHIPS MOVED HERE */}
+                                    <div className="flex items-center gap-2">
+                                        {selectedCollection !== 'All' && <button onClick={() => setSelectedCollection('All')} style={{ borderColor: FILTER_COLORS.Collection, color: FILTER_COLORS.Collection }} className="flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110">{selectedCollection} <X size={14} /></button>}
+                                        {selectedDecade !== 'All' && <button onClick={() => setSelectedDecade('All')} style={{ borderColor: FILTER_COLORS.Era, color: FILTER_COLORS.Era }} className={`flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110 ${/^\d/.test(selectedDecade) ? '' : 'uppercase'}`}>{selectedDecade} <X size={14} /></button>}
+                                        {selectedType !== 'All' && <button onClick={() => setSelectedType('All')} style={{ borderColor: FILTER_COLORS.Type, color: FILTER_COLORS.Type }} className="flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110">{selectedType} <X size={14} /></button>}
+                                        {(priceRange[0] !== appData.minPrice || priceRange[1] !== appData.maxPrice) && <button onClick={() => setPriceRange([appData.minPrice, appData.maxPrice])} style={{ borderColor: FILTER_COLORS.Price, color: FILTER_COLORS.Price }} className="flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110">£{priceRange[0]} - £{priceRange[1]} <X size={14} /></button>}
+                                        {showInStockOnly && <button onClick={() => setShowInStockOnly(false)} className="flex items-center gap-1 bg-white border-2 border-[#E0E8F0] px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#514d46] hover:border-[#487ec8] hover:text-[#487ec8] transition-all shadow-sm group active:scale-95">In Stock <X size={14} /></button>}
+                                    </div>
+                                </div>
+
                                 <div className="relative" ref={sortRef}>
                                     <button onClick={() => setIsSortOpen(!isSortOpen)} className="flex items-center gap-2 text-sm focus:outline-none"><span className="text-[#514d46]/60 font-bold">Sort:&nbsp;</span><span className="font-bold text-[#514d46]">{SORT_OPTIONS.find(opt => opt.value === sortOption)?.label || "Latest"}</span><ChevronDown size={16} /></button>
                                     {isSortOpen && (
@@ -466,7 +468,7 @@ const AppContent = () => {
                             {visibleProducts.length > 0 ? (
                             <>
                                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-6 relative z-10">{visibleProducts.map((product, index) => (<ProductCard key={product.id} product={product} index={index} onOpen={openProduct} priority={index < 6} animationDelay={index >= ITEMS_PER_PAGE ? `${(index % ITEMS_PER_PAGE) * 0.03}s` : undefined} />))}</div>
-                                {/* RESULT COUNT FOOTER - RESTORED */}
+                                {/* RESULT COUNT FOOTER */}
                                 <div className="mt-12 text-center">
                                     {visibleCount < filteredProducts.length ? (
                                         <>
