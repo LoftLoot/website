@@ -101,8 +101,7 @@ const RelatedProductsCarousel = React.memo(({ products, onOpen }) => {
     if (products.length === 0) return null;
 
     return (
-        // Changed bg-white to bg-[#fffbf0] (brand off-white) and removed animate-fade-in
-        <div className="max-w-7xl mx-auto px-4 w-full mt-16 mb-20 relative">
+        <div className="max-w-7xl mx-auto px-4 w-full relative">
             <div className="group/carousel">
                 <div className="mb-6">
                     <h3 className="font-black text-[#514d46] text-xl flex items-center gap-2" style={{ fontFamily: '"Jua", sans-serif' }}>
@@ -319,7 +318,9 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                             <div className="border-b-2 border-[#514d46]/5 pb-6">
                                 <div className="mb-2 text-xs font-bold text-[#514d46]/60 uppercase tracking-wider">{product.collection}</div>
                                 <h1 className="text-4xl md:text-5xl font-black text-[#514d46] leading-tight mb-4" style={{ fontFamily: '"Jua", sans-serif' }}>{product.name}</h1>
-                                <div className="flex items-baseline gap-4">
+                                
+                                {/* ALIGNMENT FIX: items-baseline -> items-center */}
+                                <div className="flex items-center gap-4">
                                     <span className={`text-3xl font-mono font-bold ${!product.isSold ? 'text-[#487ec8]' : 'text-[#514d46]/40 decoration-double'}`}>£{product.price.toFixed(2)}</span>
                                     {!product.isSold 
                                         ? <span className="flex items-center gap-1.5 text-xs font-black bg-[#487ec8]/10 text-[#487ec8] px-3 py-1 rounded-full uppercase tracking-wider"><div className="w-2 h-2 rounded-full bg-[#487ec8]"></div> In Stock</span> 
@@ -328,15 +329,16 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                                 </div>
                             </div>
 
+                            {/* UPDATED SPEC GRID: Brand/Manufacturer, Type/Release, Line/Condition */}
                             <div className="pt-6 pb-6 border-b-2 border-[#514d46]/5">
                                 <div className="grid grid-cols-2 gap-y-6 gap-x-4">
                                     <SpecItem label="Brand" value={product.brand} />
-                                    <SpecItem label="Release" value={product.releaseDate} />
-                                    
-                                    <SpecItem label="Line" value={product.line} />
                                     <SpecItem label="Manufacturer" value={product.manufacturer} />
                                     
                                     <SpecItem label="Type" value={product.type} />
+                                    <SpecItem label="Release" value={product.releaseDate} />
+                                    
+                                    <SpecItem label="Line" value={product.line} />
                                     <SpecItem label="Condition" value={product.condition} />
                                 </div>
                             </div>
@@ -384,7 +386,7 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
             </div>
 
             {/* RELATED PRODUCTS - SEPARATE BRAND-OFF-WHITE AREA */}
-            <div className="bg-[#fffbf0] pb-20 pt-8">
+            <div className="bg-[#fffbf0] py-8">
                 <RelatedProductsCarousel products={relatedProducts} onOpen={onOpen} />
             </div>
         </div>
