@@ -1,5 +1,5 @@
 // src/components/Header.js
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { Search, X, Filter, ChevronRight, ArrowRight } from 'lucide-react';
 
 // --- SUB-COMPONENTS ---
@@ -35,7 +35,8 @@ const HighlightedText = ({ text, highlight }) => {
 
 // --- CHIPS (Mobile Only - Dynamic) ---
 const QuickFilterChips = ({ onCommit, selectedCollection, collections = [], decades = [] }) => {
-    const chips = ["All", "|", ...decades, "|", ...collections];
+    // FIX: Memoize chips array to prevent useEffect dependency churn
+    const chips = useMemo(() => ["All", "|", ...decades, "|", ...collections], [decades, collections]);
 
     const scrollRef = useRef(null);
     const [showLeft, setShowLeft] = useState(false);
@@ -309,7 +310,6 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
              <button 
                 onClick={currentView !== 'shop' ? onCatalogueClick : undefined} 
                 disabled={currentView === 'shop' && !isProductView}
-                // Updated: Removed opacity-50 for active state, now fully blue
                 className={`text-base md:text-lg font-bold transition-colors ${currentView === 'shop' && !isProductView ? 'text-[#487ec8] cursor-default' : 'text-[#514d46]/60 hover:text-[#487ec8] active:scale-95'}`}
              >
                 Catalogue
@@ -318,7 +318,6 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
              <button 
                 onClick={currentView !== 'about' ? onAboutClick : undefined}
                 disabled={currentView === 'about'}
-                // Updated: Removed opacity-50
                 className={`text-base md:text-lg font-bold transition-colors ${currentView === 'about' ? 'text-[#487ec8] cursor-default' : 'text-[#514d46]/60 hover:text-[#487ec8] active:scale-95'}`}
              >
                 About Us
