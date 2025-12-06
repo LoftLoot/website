@@ -29,7 +29,7 @@ const About = () => {
 
     return (
         <>
-            {/* TOP SECTION: STORY */}
+            {/* TOP SECTION: STORY - Cream Background */}
             <div className="relative bg-[#f2e9d9] text-[#514d46] transition-all duration-500 mb-12 pb-12">
                 <div className="max-w-3xl mx-auto px-4 pt-12 relative z-10">
                     
@@ -38,10 +38,10 @@ const About = () => {
                             <h1 className="text-3xl md:text-4xl font-black text-[#514d46] leading-tight" style={{ fontFamily: '"Jua", sans-serif' }}>About Us</h1>
                         </div>
 
-                        {/* BROTHER - Moved higher (-mt-20) */}
-                        <div className="float-left mr-8 mb-2 -mt-20 relative select-none z-10 hidden md:block">
-                            <div className="absolute top-2 -left-2 bg-[#fffbf0] rounded-xl -rotate-12 shadow-sm" style={{ width: BOY_WIDTH, height: '120px' }}></div>
-                            <div className="relative overflow-hidden rounded-lg -rotate-3" style={{ width: BOY_WIDTH, height: IMG_HEIGHT }}>
+                        {/* BROTHER - Moved up significantly (-mt-32), Squared Off (No rounded/shadow) */}
+                        <div className="float-left mr-8 mb-2 -mt-32 relative select-none z-10 hidden md:block">
+                            <div className="absolute top-2 -left-2 bg-[#fffbf0] -rotate-12" style={{ width: BOY_WIDTH, height: '120px' }}></div>
+                            <div className="relative overflow-hidden -rotate-3" style={{ width: BOY_WIDTH, height: IMG_HEIGHT }}>
                                 <img src={SIBLING_IMG} alt="Brother" className="absolute h-full max-w-none object-cover object-left" style={{ left: '0', width: 'auto' }} />
                             </div>
                         </div>
@@ -50,10 +50,10 @@ const About = () => {
                         
                         <p>Recently, while looking through <a href="https://retromash.com/argos/" target="_blank" rel="noopener noreferrer" className="font-bold underline decoration-2 decoration-[#487ec8]/50 hover:decoration-[#487ec8] hover:text-[#487ec8] transition-all">archived catalogues</a> online, we realized we actually still own most of it. It's been sitting in our parents' loft for decades! We've decided to catalog our collection here, hoping to find new homes for them with people who appreciate them as much as we did.</p>
 
-                        {/* SISTER */}
+                        {/* SISTER - Squared Off (No rounded/shadow) */}
                         <div className="float-right ml-8 mb-1 -mt-4 relative select-none z-10 hidden md:block">
-                            <div className="absolute top-2 -right-1 bg-[#fffbf0] rounded-xl rotate-12 shadow-sm" style={{ width: GIRL_WIDTH, height: '120px' }}></div>
-                            <div className="relative overflow-hidden rounded-lg rotate-3" style={{ width: GIRL_WIDTH, height: IMG_HEIGHT }}>
+                            <div className="absolute top-2 -right-1 bg-[#fffbf0] rotate-12" style={{ width: GIRL_WIDTH, height: '120px' }}></div>
+                            <div className="relative overflow-hidden rotate-3" style={{ width: GIRL_WIDTH, height: IMG_HEIGHT }}>
                                 <img src={SIBLING_IMG} alt="Sister" className="absolute h-full max-w-none object-cover object-right" style={{ right: '0', width: 'auto' }} />
                             </div>
                         </div>
@@ -77,8 +77,8 @@ const About = () => {
 
             {/* BOTTOM SECTION: CONTACT */}
             <div className="max-w-3xl mx-auto px-4 pb-0 relative z-10">
-                <div className="text-center space-y-6 relative overflow-hidden flex flex-col items-center justify-center">
-                    <h3 className="text-2xl font-black text-[#514d46]" style={{ fontFamily: '"Jua", sans-serif' }}>Get in Touch</h3>
+                <div className="text-center flex flex-col items-center justify-center">
+                    <h3 className="text-2xl font-black text-[#514d46] mb-4" style={{ fontFamily: '"Jua", sans-serif' }}>Get in Touch</h3>
                     <p className="opacity-60 text-lg max-w-md mx-auto">Have a question about a specific item? We'd love to hear from you.</p>
                     
                     <div className="relative mt-8 h-16 w-64 mx-auto flex items-center justify-center group sticker-container">
