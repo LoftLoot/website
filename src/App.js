@@ -51,13 +51,6 @@ const GlobalStyles = () => (
         @keyframes stamp { 0% { opacity: 0; transform: scale(2) rotate(-12deg); } 40% { opacity: 1; transform: scale(0.9) rotate(-12deg); } 70% { transform: scale(1.1) rotate(-12deg); } 100% { opacity: 1; transform: scale(1) rotate(-12deg); } }
         @keyframes puff { 0% { opacity: 1; transform: translate(0,0) scale(1); } 100% { opacity: 0; transform: translate(var(--x),var(--y)) scale(0); } }
         
-        /* Ticker Animation */
-        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
-        .animate-marquee-slow { animation: marquee 40s linear infinite; }
-        
-        /* Slow down on hover instead of pause */
-        .ticker-wrapper:hover .animate-marquee-slow { animation-duration: 120s; }
-        
         .animate-deal-bottom { animation: deal-bottom 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
         .animate-tear-off { animation: tear-off 0.8s ease-in forwards; }
         .animate-stamp { animation: stamp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0; animation-delay: 0.3s; }
@@ -72,6 +65,8 @@ const GlobalStyles = () => (
         .dust-7 { --x: -80px; --y: 0; top: 50%; left: -10px; transform: translateY(-50%); }
         .dust-8 { --x: 80px; --y: 0; top: 50%; right: -10px; transform: translateY(-50%); }
 
+        .ticker-wrapper:hover .animate-marquee-slow { animation-play-state: paused; }
+        
         input[type=range]::-webkit-slider-thumb { pointer-events: auto; }
         input[type=range]::-moz-range-thumb { pointer-events: auto; }
     `}</style>
@@ -113,7 +108,7 @@ const useSEO = ({ title, description, image, canonical }) => {
     }, [title, description, image, canonical]);
 };
 
-// --- FILTER COMPONENTS ---
+// --- FILTER COMPONENTS (FLAT STYLE) ---
 
 const FilterGroup = React.memo(({ title, options, selected, onChange, available, color }) => (
     <div className="space-y-3">
@@ -402,7 +397,6 @@ const AppContent = () => {
   return (
     <div className="min-h-screen bg-[#fffbf0] text-[#514d46] selection:bg-pink-200 flex flex-col" style={{ fontFamily: "'Outfit', sans-serif" }}>
       <GlobalStyles />
-      {/* Header with dynamic lists */}
       <Header 
         currentView={currentView} 
         isProductView={!!viewProduct} 
@@ -437,8 +431,7 @@ const AppContent = () => {
                 <Hero />
                 <main className="max-w-7xl mx-auto px-4 py-8 flex-1 w-full pb-12 mb-20">
                     <div className="flex flex-col lg:flex-row gap-8" ref={topSectionRef}>
-                        <button className="lg:hidden flex items-center justify-center gap-2 w-full bg-white border border-[#E0E8F0] py-3 rounded-xl font-bold text-[#514d46] shadow-sm active:scale-95 transition-transform" onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}>{isMobileFilterOpen ? <X size={18} /> : <Filter size={18} />}{isMobileFilterOpen ? 'Close Filters' : 'Filter Collection'}</button>
-                        <aside className={`lg:w-64 flex-shrink-0 ${isMobileFilterOpen ? 'block' : 'hidden lg:block'} lg:pt-2`}>
+                        <aside className={`lg:w-64 flex-shrink-0 hidden lg:block lg:pt-2`}>
                             <FilterSection collections={appData.collections} decades={appData.decades} types={appData.types} selectedCollection={selectedCollection} selectedDecade={selectedDecade} selectedType={selectedType} priceRange={priceRange} minPrice={appData.minPrice} maxPrice={appData.maxPrice} availableCollections={available.collections} availableDecades={available.decades} availableTypes={available.types} showInStockOnly={showInStockOnly} onCollectionChange={setSelectedCollection} onDecadeChange={setSelectedDecade} onTypeChange={setSelectedType} onPriceChange={setPriceRange} onStockChange={setShowInStockOnly} onClearFilters={resetView} />
                         </aside>
                         <div className="flex-1 min-h-[500px]">
@@ -476,7 +469,7 @@ const AppContent = () => {
                                 <div className="mt-12 text-center">
                                     {visibleCount < filteredProducts.length ? (
                                         <>
-                                            <button onClick={() => setVisibleCount(prev => prev + ITEMS_PER_PAGE)} className="px-8 py-3 bg-white border-2 border-[#E0E8F0] text-[#514d46] font-bold rounded-xl hover:border-[#487ec8] transition-all shadow-sm active:scale-95">Load More Loot</button>
+                                            <button onClick={() => setVisibleCount(prev => prev + ITEMS_PER_PAGE)} className="px-8 py-3 bg-white border-2 border-[#E0E8F0] text-[#514d46] font-bold rounded-xl hover:border-[#487ec8]">Load More Loot</button>
                                             <p className="text-xs text-[#514d46]/40 mt-3 font-medium">Showing {visibleProducts.length} of {filteredProducts.length} items</p>
                                         </>
                                     ) : (
