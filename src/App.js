@@ -63,7 +63,7 @@ const GlobalStyles = () => (
             will-change: transform;
         }
         
-        /* Pause on hover */
+        /* Pause on hover to prevent snapping */
         .ticker-wrapper:hover .animate-marquee-slow { 
             animation-play-state: paused; 
         }
@@ -123,7 +123,7 @@ const useSEO = ({ title, description, image, canonical }) => {
     }, [title, description, image, canonical]);
 };
 
-// --- FILTER COMPONENTS ---
+// --- FILTER COMPONENTS (FLAT STYLE) ---
 
 const FilterGroup = React.memo(({ title, options, selected, onChange, available, color }) => (
     <div className="space-y-3">
@@ -483,6 +483,7 @@ const AppContent = () => {
                                 <div className="mt-12 text-center">
                                     {visibleCount < filteredProducts.length ? (
                                         <>
+                                            {/* Removed transition-all and active:scale-95 to fix choppy effect */}
                                             <button onClick={() => setVisibleCount(prev => prev + ITEMS_PER_PAGE)} className="px-8 py-3 bg-white border-2 border-[#E0E8F0] text-[#514d46] font-bold rounded-xl hover:border-[#487ec8]">Load More Loot</button>
                                             <p className="text-xs text-[#514d46]/40 mt-3 font-medium">Showing {visibleProducts.length} of {filteredProducts.length} items</p>
                                         </>
