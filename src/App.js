@@ -47,13 +47,13 @@ const GlobalStyles = () => (
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
         @keyframes deal-bottom { 0% { transform: translateY(100px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
-        @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
         @keyframes tear-off { 0% { transform: rotate(0deg); } 20% { transform: rotate(-5deg); } 40% { transform: rotate(5deg); } 60% { transform: rotate(-2deg); } 100% { transform: translateY(150%) rotate(10deg); opacity: 0; } }
         @keyframes stamp { 0% { opacity: 0; transform: scale(2) rotate(-12deg); } 40% { opacity: 1; transform: scale(0.9) rotate(-12deg); } 70% { transform: scale(1.1) rotate(-12deg); } 100% { opacity: 1; transform: scale(1) rotate(-12deg); } }
         @keyframes puff { 0% { opacity: 1; transform: translate(0,0) scale(1); } 100% { opacity: 0; transform: translate(var(--x),var(--y)) scale(0); } }
         
+        /* Removed fade-in keyframes and classes here */
+        
         .animate-deal-bottom { animation: deal-bottom 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
-        .animate-fade-in { animation: fade-in 0.4s ease-out forwards; }
         .animate-tear-off { animation: tear-off 0.8s ease-in forwards; }
         .animate-stamp { animation: stamp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0; animation-delay: 0.3s; }
         .animate-dust { animation: puff 0.6s ease-out forwards; opacity: 0; animation-delay: 0.4s; }
@@ -445,7 +445,7 @@ const AppContent = () => {
                                 <div className="flex flex-wrap items-center gap-4 min-h-[2rem]">
                                     <h3 className="text-[#514d46]/60 font-medium text-sm">Showing <span className="text-[#514d46] font-bold">{filteredProducts.length}</span> results</h3>
                                     
-                                    {/* ACTIVE CHIPS MOVED HERE */}
+                                    {/* ACTIVE CHIPS - INLINE */}
                                     <div className="flex items-center gap-2">
                                         {selectedCollection !== 'All' && <button onClick={() => setSelectedCollection('All')} style={{ borderColor: FILTER_COLORS.Collection, color: FILTER_COLORS.Collection }} className="flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110">{selectedCollection} <X size={14} /></button>}
                                         {selectedDecade !== 'All' && <button onClick={() => setSelectedDecade('All')} style={{ borderColor: FILTER_COLORS.Era, color: FILTER_COLORS.Era }} className={`flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110 ${/^\d/.test(selectedDecade) ? '' : 'uppercase'}`}>{selectedDecade} <X size={14} /></button>}
@@ -458,7 +458,7 @@ const AppContent = () => {
                                 <div className="relative" ref={sortRef}>
                                     <button onClick={() => setIsSortOpen(!isSortOpen)} className="flex items-center gap-2 text-sm focus:outline-none"><span className="text-[#514d46]/60 font-bold">Sort:&nbsp;</span><span className="font-bold text-[#514d46]">{SORT_OPTIONS.find(opt => opt.value === sortOption)?.label || "Latest"}</span><ChevronDown size={16} /></button>
                                     {isSortOpen && (
-                                        <div className="absolute right-0 top-full mt-2 w-56 bg-white rounded-2xl shadow-2xl border-2 border-[#514d46]/20 overflow-hidden z-50 animate-fade-in flex flex-col">
+                                        <div className="absolute right-0 top-full mt-2 w-56 bg-white rounded-2xl shadow-2xl border-2 border-[#514d46]/20 overflow-hidden z-50 bg-white flex flex-col">
                                             {SORT_OPTIONS.map((opt) => (<button key={opt.value} onClick={() => { setSortOption(opt.value); setIsSortOpen(false); }} className={`w-full text-left px-4 py-3 text-base font-bold transition-colors hover:bg-[#f4f4f5] ${sortOption === opt.value ? 'text-[#d35153] bg-[#f4f4f5]' : 'text-[#514d46]'}`}>{opt.label}</button>))}
                                         </div>
                                     )}
@@ -497,3 +497,6 @@ const AppContent = () => {
 
 const App = () => ( <ErrorBoundary><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_SCHEMA) }} /><AppContent /></ErrorBoundary> );
 export default App;
+```
+
+Are you ready for the next file?
