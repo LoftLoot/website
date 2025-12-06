@@ -35,7 +35,6 @@ const HighlightedText = ({ text, highlight }) => {
 
 // --- CHIPS (Mobile Only - Dynamic) ---
 const QuickFilterChips = ({ onCommit, selectedCollection, collections = [], decades = [] }) => {
-    // Dynamic lists passed from parent
     const chips = ["All", "|", ...decades, "|", ...collections];
 
     const scrollRef = useRef(null);
@@ -79,14 +78,10 @@ const QuickFilterChips = ({ onCommit, selectedCollection, collections = [], deca
                         key={chip}
                         onClick={() => { 
                             if (!isDragging) {
-                                // Smart commit: Guess type based on value arrays
                                 let type = 'filter';
                                 let kind = 'Collection';
-                                
-                                // Determine if this is a Decade or Collection based on the source lists
                                 if (decades.includes(chip)) kind = 'Era';
-                                if (chip === 'All') kind = 'Collection'; // Reset
-                                
+                                if (chip === 'All') kind = 'Collection'; 
                                 onCommit({ type, payload: { kind, value: chip } }); 
                             }
                         }}
@@ -176,7 +171,7 @@ const SearchInput = React.memo(({ search, onSearchUpdate, onCommit, suggestions 
                 <button onClick={() => { onCommit({ type: 'query', value: search }); setIsOpen(false); }} className="bg-[#d35153] text-white px-5 flex items-center justify-center hover:bg-[#b94547] transition-colors cursor-pointer rounded-r-2xl border-2 border-[#d35153] border-l-0"><Search className="w-5 h-5" strokeWidth={3} /></button>
             </div>
             {isOpen && suggestions && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl border-2 border-[#514d46]/20 overflow-hidden flex flex-col animate-fade-in z-50">
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl border-2 border-[#514d46]/20 overflow-hidden flex flex-col z-50">
                     {suggestions.filters?.length > 0 && (
                         <div className="flex flex-col border-b border-[#514d46]/10">
                             <div className="px-4 py-2 bg-[#e4e4e7] text-xs uppercase font-black tracking-widest text-[#514d46]/80 border-b border-[#514d46]/10">Filters</div>
@@ -276,7 +271,7 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
 
       </div>
 
-      {/* Chips (Mobile Only) - Now receiving collections and decades */}
+      {/* Chips (Mobile Only) */}
       <QuickFilterChips onCommit={onCommit} selectedCollection={selectedCollection} collections={collections} decades={decades} />
     </header>
   </div>
