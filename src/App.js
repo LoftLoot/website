@@ -158,12 +158,17 @@ const FilterSection = React.memo(({ collections, decades, types, selectedCollect
     const [localRange, setLocalRange] = useState(priceRange);
     const isDisabled = minPrice === maxPrice;
     
+    // FIX: Calculate slider max as integer ceiling to ensure we can drag to "Full" even if max is 399.99
+    const sliderMax = Math.ceil(maxPrice);
+    const sliderMin = Math.floor(minPrice);
+
     useEffect(() => { setLocalRange(priceRange); }, [priceRange]);
 
     const handleMinChange = (e) => setLocalRange([Math.min(Number(e.target.value), localRange[1] - 1), localRange[1]]);
     const handleMaxChange = (e) => setLocalRange([localRange[0], Math.max(Number(e.target.value), localRange[0] + 1)]);
     const commitRange = () => onPriceChange(localRange);
-    const getPercent = (v) => isDisabled ? (v === minPrice ? 100 : 0) : Math.max(0, Math.min(100, Math.round(((v - minPrice) / (maxPrice - minPrice)) * 100)));
+    
+    const getPercent = (v) => isDisabled ? (v === sliderMin ? 100 : 0) : Math.max(0, Math.min(100, Math.round(((v - sliderMin) / (sliderMax - sliderMin)) * 100)));
 
     const thumbClasses = "absolute inset-0 w-full h-full appearance-none bg-transparent pointer-events-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-[#d99875] [&::-webkit-slider-thumb]:hover:scale-110 [&::-webkit-slider-thumb]:transition-transform [&::-webkit-slider-thumb]:cursor-grab [&::-webkit-slider-thumb]:active:cursor-grabbing";
 
@@ -194,8 +199,8 @@ const FilterSection = React.memo(({ collections, decades, types, selectedCollect
                         <div className={`absolute top-1/2 -translate-y-1/2 h-2 rounded-lg z-10 pointer-events-none transition-all duration-100 ease-out ${isDisabled ? 'bg-slate-300' : 'bg-[#d99875]'}`} style={{ left: isDisabled ? '0%' : `${getPercent(localRange[0])}%`, width: isDisabled ? '100%' : `${getPercent(localRange[1]) - getPercent(localRange[0])}%` }}></div>
                         {!isDisabled && (
                             <>
-                                <input type="range" step={1} min={minPrice} max={maxPrice} value={localRange[0]} onChange={handleMinChange} onMouseUp={commitRange} onTouchEnd={commitRange} className={`${thumbClasses} z-20`} />
-                                <input type="range" step={1} min={minPrice} max={maxPrice} value={localRange[1]} onChange={handleMaxChange} onMouseUp={commitRange} onTouchEnd={commitRange} className={`${thumbClasses} z-30`} />
+                                <input type="range" step={1} min={sliderMin} max={sliderMax} value={localRange[0]} onChange={handleMinChange} onMouseUp={commitRange} onTouchEnd={commitRange} className={`${thumbClasses} z-20`} />
+                                <input type="range" step={1} min={sliderMin} max={sliderMax} value={localRange[1]} onChange={handleMaxChange} onMouseUp={commitRange} onTouchEnd={commitRange} className={`${thumbClasses} z-30`} />
                             </>
                         )}
                     </div>
@@ -461,7 +466,6 @@ const AppContent = () => {
                                         {selectedCollection !== 'All' && <button onClick={() => setSelectedCollection('All')} style={{ borderColor: FILTER_COLORS.Collection, color: FILTER_COLORS.Collection }} className="flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110">{selectedCollection} <X size={14} /></button>}
                                         {selectedDecade !== 'All' && <button onClick={() => setSelectedDecade('All')} style={{ borderColor: FILTER_COLORS.Era, color: FILTER_COLORS.Era }} className={`flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110 ${/^\d/.test(selectedDecade) ? '' : 'uppercase'}`}>{selectedDecade} <X size={14} /></button>}
                                         {selectedType !== 'All' && <button onClick={() => setSelectedType('All')} style={{ borderColor: FILTER_COLORS.Type, color: FILTER_COLORS.Type }} className="flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110">{selectedType} <X size={14} /></button>}
-                                        {/* FIXED PRICE CHIP CONDITION: Only shows if filtering is active (> min OR < max) */}
                                         {(priceRange[0] > appData.minPrice || priceRange[1] < appData.maxPrice) && <button onClick={() => setPriceRange([appData.minPrice, appData.maxPrice])} style={{ borderColor: FILTER_COLORS.Price, color: FILTER_COLORS.Price }} className="flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110">£{priceRange[0]} - £{priceRange[1]} <X size={14} /></button>}
                                         {showInStockOnly && <button onClick={() => setShowInStockOnly(false)} className="flex items-center gap-1 bg-white border-2 border-[#E0E8F0] px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#514d46] hover:border-[#487ec8] hover:text-[#487ec8] transition-all shadow-sm group active:scale-95">In Stock <X size={14} /></button>}
                                     </div>
