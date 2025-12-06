@@ -249,8 +249,10 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
             </div>
         </div>
     </div>
+    {/* FIXED: Changed md:h-[86px] to lg:h-[86px] to match the breakpoint where layout switches */}
+    {/* FIXED: Changed md:py-0 to lg:py-0 to maintain padding on tablets */}
     <header className="bg-[#fffbf0] relative transition-all duration-300 shadow-sm z-[60] pb-0">
-      <div className="max-w-7xl mx-auto px-4 min-h-[60px] md:h-[86px] flex flex-wrap lg:flex-nowrap items-center justify-between pt-4 pb-0 md:py-0 gap-y-0 relative">
+      <div className="max-w-7xl mx-auto px-4 min-h-[60px] lg:h-[86px] flex flex-wrap lg:flex-nowrap items-center justify-between pt-4 pb-0 lg:py-0 gap-y-0 relative">
         
         {/* Logo */}
         <div className="flex justify-start items-center cursor-pointer group select-none mr-auto lg:mr-0 order-1 lg:w-auto shrink-0" onClick={onHomeClick}>
@@ -258,7 +260,6 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
         </div>
 
         {/* Search */}
-        {/* Updated Breakpoints: lg: (1024px) is now where desktop layout begins, matching App.js Sidebar */}
         <div className="w-[calc(100%+2rem)] -mx-4 px-4 order-3 lg:order-2 mb-2 mt-3 pt-3 lg:pt-0 lg:mt-0 lg:mb-0 lg:border-t-0 border-t border-[#514d46]/10 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:w-[30rem] xl:w-[40rem] lg:mx-0 lg:px-0">
              <SearchInput search={search} onSearchUpdate={onSearchUpdate} onCommit={onCommit} suggestions={suggestions} />
         </div>
