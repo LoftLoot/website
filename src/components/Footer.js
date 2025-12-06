@@ -5,7 +5,6 @@ import { Logo } from './Header';
 
 const Footer = () => {
     return (
-        // Added z-50 to ensure it overlaps any preceding content/margins correctly
         <footer className="relative bg-[#f4e799] mt-auto pt-12 pb-12 z-50">
             <JaggedLine position="top" />
             <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6 opacity-50">
