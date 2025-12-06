@@ -399,7 +399,6 @@ const AppContent = () => {
   return (
     <div className="min-h-screen bg-[#fffbf0] text-[#514d46] selection:bg-pink-200 flex flex-col" style={{ fontFamily: "'Outfit', sans-serif" }}>
       <GlobalStyles />
-      {/* Pass dynamic collections and decades to Header */}
       <Header 
         currentView={currentView} 
         isProductView={!!viewProduct} 
@@ -442,6 +441,16 @@ const AppContent = () => {
                             <div className="hidden lg:block -mt-4 mb-2"><h1 className="text-[#514d46] font-black text-3xl md:text-4xl leading-none flex items-center gap-2" style={{ fontFamily: '"Jua", sans-serif' }}>{dynamicH1} {committedQuery && <button onClick={() => { setCommittedQuery(""); setSearchQuery(""); }} className="bg-[#514d46]/20 text-white rounded-full p-0.5 hover:bg-[#514d46]/40 transition-colors"><X size={16} strokeWidth={3}/></button>}</h1></div>
                             <div className="lg:hidden -mt-2 mb-2"><h1 className="text-[#514d46] font-black text-3xl leading-none flex items-center gap-2" style={{ fontFamily: '"Jua", sans-serif' }}>{dynamicH1} {committedQuery && <button onClick={() => { setCommittedQuery(""); setSearchQuery(""); }} className="bg-[#514d46]/20 text-white rounded-full p-0.5 hover:bg-[#514d46]/40 transition-colors"><X size={16} strokeWidth={3}/></button>}</h1></div>
                             
+                            {/* ACTIVE CHIPS - RESTORED */}
+                            <div className="flex flex-wrap items-center gap-2 mb-6">
+                                {selectedCollection !== 'All' && <button onClick={() => setSelectedCollection('All')} style={{ borderColor: FILTER_COLORS.Collection, color: FILTER_COLORS.Collection }} className="flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110">{selectedCollection} <X size={14} /></button>}
+                                {selectedDecade !== 'All' && <button onClick={() => setSelectedDecade('All')} style={{ borderColor: FILTER_COLORS.Era, color: FILTER_COLORS.Era }} className={`flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110 ${/^\d/.test(selectedDecade) ? '' : 'uppercase'}`}>{selectedDecade} <X size={14} /></button>}
+                                {selectedType !== 'All' && <button onClick={() => setSelectedType('All')} style={{ borderColor: FILTER_COLORS.Type, color: FILTER_COLORS.Type }} className="flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110">{selectedType} <X size={14} /></button>}
+                                {(priceRange[0] !== appData.minPrice || priceRange[1] !== appData.maxPrice) && <button onClick={() => setPriceRange([appData.minPrice, appData.maxPrice])} style={{ borderColor: FILTER_COLORS.Price, color: FILTER_COLORS.Price }} className="flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110">£{priceRange[0]} - £{priceRange[1]} <X size={14} /></button>}
+                                {showInStockOnly && <button onClick={() => setShowInStockOnly(false)} className="flex items-center gap-1 bg-white border-2 border-[#E0E8F0] px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#514d46] hover:border-[#487ec8] hover:text-[#487ec8] transition-all shadow-sm group active:scale-95">In Stock <X size={14} /></button>}
+                                {(selectedCollection !== 'All' || selectedDecade !== 'All' || selectedType !== 'All' || showInStockOnly || priceRange[0] !== appData.minPrice || priceRange[1] !== appData.maxPrice) && <button onClick={resetView} className="text-xs font-bold text-[#d35153] hover:underline ml-2">Clear All</button>}
+                            </div>
+
                             <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-20">
                                 <h3 className="text-[#514d46]/60 font-medium text-sm">Showing <span className="text-[#514d46] font-bold">{filteredProducts.length}</span> results</h3>
                                 <div className="relative" ref={sortRef}>
@@ -457,7 +466,17 @@ const AppContent = () => {
                             {visibleProducts.length > 0 ? (
                             <>
                                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-6 relative z-10">{visibleProducts.map((product, index) => (<ProductCard key={product.id} product={product} index={index} onOpen={openProduct} priority={index < 6} animationDelay={index >= ITEMS_PER_PAGE ? `${(index % ITEMS_PER_PAGE) * 0.03}s` : undefined} />))}</div>
-                                {visibleCount < filteredProducts.length && <div className="mt-12 text-center"><button onClick={() => setVisibleCount(prev => prev + ITEMS_PER_PAGE)} className="px-8 py-3 bg-white border-2 border-[#E0E8F0] text-[#514d46] font-bold rounded-xl hover:border-[#487ec8] transition-all shadow-sm active:scale-95">Load More Loot</button></div>}
+                                {/* RESULT COUNT FOOTER - RESTORED */}
+                                <div className="mt-12 text-center">
+                                    {visibleCount < filteredProducts.length ? (
+                                        <>
+                                            <button onClick={() => setVisibleCount(prev => prev + ITEMS_PER_PAGE)} className="px-8 py-3 bg-white border-2 border-[#E0E8F0] text-[#514d46] font-bold rounded-xl hover:border-[#487ec8] transition-all shadow-sm active:scale-95">Load More Loot</button>
+                                            <p className="text-xs text-[#514d46]/40 mt-3 font-medium">Showing {visibleProducts.length} of {filteredProducts.length} items</p>
+                                        </>
+                                    ) : (
+                                        <p className="text-xs text-[#514d46]/40 mt-3 font-medium">Showing {filteredProducts.length} of {filteredProducts.length} items</p>
+                                    )}
+                                </div>
                             </>
                             ) : (
                                 <div className="text-center py-20 bg-white rounded-3xl border-2 border-dashed border-[#E0E8F0]"><div className="w-16 h-16 bg-[#E0E8F0] rounded-full flex items-center justify-center mx-auto mb-4 text-[#487ec8]"><Search size={32} /></div><h3 className="text-[#514d46] font-bold text-lg mb-1">No loot found :(</h3><button onClick={resetView} className="mt-4 text-[#d35153] font-bold text-sm hover:underline">Clear all filters</button></div>
