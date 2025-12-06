@@ -123,7 +123,7 @@ const useSEO = ({ title, description, image, canonical }) => {
     }, [title, description, image, canonical]);
 };
 
-// --- FILTER COMPONENTS (FLAT STYLE) ---
+// --- FILTER COMPONENTS ---
 
 const FilterGroup = React.memo(({ title, options, selected, onChange, available, color }) => (
     <div className="space-y-3">
@@ -444,17 +444,17 @@ const AppContent = () => {
             <>
                 <Hero />
                 <main className="max-w-7xl mx-auto px-4 py-8 flex-1 w-full pb-12 mb-20">
-                    <div className="flex flex-col md:flex-row gap-8" ref={topSectionRef}>
-                        {/* SIDEBAR: Visible from 'md' (tablet) and up */}
-                        <aside className={`md:w-64 flex-shrink-0 hidden md:block md:pt-2`}>
+                    <div className="flex flex-col lg:flex-row gap-8" ref={topSectionRef}>
+                        {/* SIDEBAR: Visible from 'lg' (1024px) and up */}
+                        <aside className={`lg:w-64 flex-shrink-0 hidden lg:block lg:pt-2`}>
                             <FilterSection collections={appData.collections} decades={appData.decades} types={appData.types} selectedCollection={selectedCollection} selectedDecade={selectedDecade} selectedType={selectedType} priceRange={priceRange} minPrice={appData.minPrice} maxPrice={appData.maxPrice} availableCollections={available.collections} availableDecades={available.decades} availableTypes={available.types} showInStockOnly={showInStockOnly} onCollectionChange={setSelectedCollection} onDecadeChange={setSelectedDecade} onTypeChange={setSelectedType} onPriceChange={setPriceRange} onStockChange={setShowInStockOnly} onClearFilters={resetView} />
                         </aside>
                         <div className="flex-1 min-h-[500px]">
-                            {/* H1: Visible from 'md' and up */}
-                            <div className="hidden md:block -mt-4 mb-2"><h1 className="text-[#514d46] font-black text-3xl md:text-4xl leading-none flex items-center gap-2" style={{ fontFamily: '"Jua", sans-serif' }}>{dynamicH1} {committedQuery && <button onClick={() => { setCommittedQuery(""); setSearchQuery(""); }} className="bg-[#514d46]/20 text-white rounded-full p-0.5 hover:bg-[#514d46]/40 transition-colors"><X size={16} strokeWidth={3}/></button>}</h1></div>
+                            {/* H1: Visible from 'lg' and up */}
+                            <div className="hidden lg:block -mt-4 mb-2"><h1 className="text-[#514d46] font-black text-3xl md:text-4xl leading-none flex items-center gap-2" style={{ fontFamily: '"Jua", sans-serif' }}>{dynamicH1} {committedQuery && <button onClick={() => { setCommittedQuery(""); setSearchQuery(""); }} className="bg-[#514d46]/20 text-white rounded-full p-0.5 hover:bg-[#514d46]/40 transition-colors"><X size={16} strokeWidth={3}/></button>}</h1></div>
                             
-                            {/* H1: Visible on Mobile only */}
-                            <div className="md:hidden -mt-2 mb-2"><h1 className="text-[#514d46] font-black text-3xl leading-none flex items-center gap-2" style={{ fontFamily: '"Jua", sans-serif' }}>{dynamicH1} {committedQuery && <button onClick={() => { setCommittedQuery(""); setSearchQuery(""); }} className="bg-[#514d46]/20 text-white rounded-full p-0.5 hover:bg-[#514d46]/40 transition-colors"><X size={16} strokeWidth={3}/></button>}</h1></div>
+                            {/* H1: Visible on Mobile/Tablet only (< 1024px) */}
+                            <div className="lg:hidden -mt-2 mb-2"><h1 className="text-[#514d46] font-black text-3xl leading-none flex items-center gap-2" style={{ fontFamily: '"Jua", sans-serif' }}>{dynamicH1} {committedQuery && <button onClick={() => { setCommittedQuery(""); setSearchQuery(""); }} className="bg-[#514d46]/20 text-white rounded-full p-0.5 hover:bg-[#514d46]/40 transition-colors"><X size={16} strokeWidth={3}/></button>}</h1></div>
                             
                             <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-20">
                                 <div className="flex flex-wrap items-center gap-4 min-h-[2rem]">
@@ -483,9 +483,11 @@ const AppContent = () => {
                             {visibleProducts.length > 0 ? (
                             <>
                                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-6 relative z-10">{visibleProducts.map((product, index) => (<ProductCard key={product.id} product={product} index={index} onOpen={openProduct} priority={index < 6} animationDelay={index >= ITEMS_PER_PAGE ? `${(index % ITEMS_PER_PAGE) * 0.03}s` : undefined} />))}</div>
+                                {/* RESULT COUNT FOOTER */}
                                 <div className="mt-12 text-center">
                                     {visibleCount < filteredProducts.length ? (
                                         <>
+                                            {/* Removed transition-all and active:scale-95 to fix choppy effect */}
                                             <button onClick={() => setVisibleCount(prev => prev + ITEMS_PER_PAGE)} className="px-8 py-3 bg-white border-2 border-[#E0E8F0] text-[#514d46] font-bold rounded-xl hover:border-[#487ec8]">Load More Loot</button>
                                             <p className="text-xs text-[#514d46]/40 mt-3 font-medium">Showing {visibleProducts.length} of {filteredProducts.length} items</p>
                                         </>
@@ -511,4 +513,3 @@ const AppContent = () => {
 
 const App = () => ( <ErrorBoundary><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_SCHEMA) }} /><AppContent /></ErrorBoundary> );
 export default App;
-
