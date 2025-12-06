@@ -1,5 +1,5 @@
 // src/components/Header.js
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Search, X, Filter, ChevronRight, ArrowRight } from 'lucide-react';
 
 // --- SUB-COMPONENTS ---
@@ -38,42 +38,78 @@ const QuickFilterChips = ({ onCommit, selectedCollection, collections = [], deca
     const chips = ["All", "|", ...decades, "|", ...collections];
 
     const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+    const [showLeft, setShowLeft] = useState(false);
+    const [showRight, setShowRight] = useState(false);
+    const requestRef = useRef();
+    const scrollSpeed = useRef(0);
 
-    const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+    // Check visibility of gradients based on scroll position
+    const checkScroll = useCallback(() => {
+        if (!scrollRef.current) return;
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        setShowLeft(scrollLeft > 0);
+        // Using a small buffer (1px) for float calculation safety
+        setShowRight(Math.ceil(scrollLeft + clientWidth) < scrollWidth);
+    }, []);
+
+    useEffect(() => {
+        const el = scrollRef.current;
+        if (el) {
+            el.addEventListener('scroll', checkScroll);
+            window.addEventListener('resize', checkScroll);
+            // Check initially and after a slight delay to allow rendering
+            checkScroll();
+            setTimeout(checkScroll, 100);
+        }
+        return () => {
+            el?.removeEventListener('scroll', checkScroll);
+            window.removeEventListener('resize', checkScroll);
+            if (requestRef.current) cancelAnimationFrame(requestRef.current);
+        };
+    }, [checkScroll, chips]);
+
+    // Hover Scroll Logic
+    const startScrolling = (direction) => {
+        const speed = direction === 'left' ? -5 : 5;
+        scrollSpeed.current = speed;
+        
+        const animate = () => {
+            if (scrollRef.current) {
+                scrollRef.current.scrollLeft += scrollSpeed.current;
+            }
+            requestRef.current = requestAnimationFrame(animate);
+        };
+        requestRef.current = requestAnimationFrame(animate);
     };
 
-    const handleMouseLeave = () => setIsDragging(false);
-    const handleMouseUp = () => setIsDragging(false);
-
-    const handleMouseMove = (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-        const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+    const stopScrolling = () => {
+        if (requestRef.current) {
+            cancelAnimationFrame(requestRef.current);
+        }
     };
 
     return (
         <div className="relative w-full lg:hidden border-b border-[#514d46]/5 bg-[#fffbf0]">
-            {/* Left Fade Gradient */}
-            <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#fffbf0] to-transparent z-10 pointer-events-none"></div>
             
-            {/* Right Fade Gradient */}
-            <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#fffbf0] to-transparent z-10 pointer-events-none"></div>
+            {/* Left Fade & Scroll Zone */}
+            <div 
+                className={`absolute left-0 top-0 bottom-0 w-12 z-10 transition-opacity duration-300 ${showLeft ? 'opacity-100 cursor-w-resize' : 'opacity-0 pointer-events-none'}`}
+                style={{ background: 'linear-gradient(to right, #fffbf0 20%, transparent)' }}
+                onMouseEnter={() => showLeft && startScrolling('left')}
+                onMouseLeave={stopScrolling}
+            />
+            
+            {/* Right Fade & Scroll Zone */}
+            <div 
+                className={`absolute right-0 top-0 bottom-0 w-12 z-10 transition-opacity duration-300 ${showRight ? 'opacity-100 cursor-e-resize' : 'opacity-0 pointer-events-none'}`}
+                style={{ background: 'linear-gradient(to left, #fffbf0 20%, transparent)' }}
+                onMouseEnter={() => showRight && startScrolling('right')}
+                onMouseLeave={stopScrolling}
+            />
 
             <div 
                 ref={scrollRef}
-                className="flex w-full overflow-x-auto no-scrollbar items-center gap-2 px-4 pb-3 pt-1 select-none cursor-grab active:cursor-grabbing"
-                onMouseDown={handleMouseDown}
-                onMouseLeave={handleMouseLeave}
-                onMouseUp={handleMouseUp}
-                onMouseMove={handleMouseMove}
+                className="flex w-full overflow-x-auto no-scrollbar items-center gap-2 px-4 pb-3 pt-1 select-none"
             >
                 {chips.map((chip, idx) => {
                     if (chip === "|") return <div key={`sep-${idx}`} className="h-5 w-px bg-[#514d46]/20 mx-1 shrink-0"></div>;
@@ -84,13 +120,11 @@ const QuickFilterChips = ({ onCommit, selectedCollection, collections = [], deca
                         <button
                             key={chip}
                             onClick={() => { 
-                                if (!isDragging) {
-                                    let type = 'filter';
-                                    let kind = 'Collection';
-                                    if (decades.includes(chip)) kind = 'Era';
-                                    if (chip === 'All') kind = 'Collection'; 
-                                    onCommit({ type, payload: { kind, value: chip } }); 
-                                }
+                                let type = 'filter';
+                                let kind = 'Collection';
+                                if (decades.includes(chip)) kind = 'Era';
+                                if (chip === 'All') kind = 'Collection'; 
+                                onCommit({ type, payload: { kind, value: chip } }); 
                             }}
                             className={`whitespace-nowrap px-3.5 py-1.5 rounded-full text-sm font-bold border transition-all shadow-sm ${
                                 isActive 
@@ -265,8 +299,7 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
             <Logo />
         </div>
 
-        {/* Search - Absolutely Centered on Desktop (Tablet+), Full Width on Mobile */}
-        {/* FIX: Use percentage width for cleaner responsive scaling */}
+        {/* Search */}
         <div className="w-[calc(100%+2rem)] -mx-4 px-4 order-3 lg:order-2 mb-2 mt-3 pt-3 lg:pt-0 lg:mt-0 lg:mb-0 lg:border-t-0 border-t border-[#514d46]/10 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:w-1/2 lg:max-w-3xl lg:mx-0 lg:px-0">
              <SearchInput search={search} onSearchUpdate={onSearchUpdate} onCommit={onCommit} suggestions={suggestions} />
         </div>
@@ -276,7 +309,7 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
              <button 
                 onClick={currentView !== 'shop' ? onCatalogueClick : undefined} 
                 disabled={currentView === 'shop' && !isProductView}
-                // FIXED: Removed opacity-50, now fully colored for active state
+                // Updated: Removed opacity-50 for active state, now fully blue
                 className={`text-base md:text-lg font-bold transition-colors ${currentView === 'shop' && !isProductView ? 'text-[#487ec8] cursor-default' : 'text-[#514d46]/60 hover:text-[#487ec8] active:scale-95'}`}
              >
                 Catalogue
@@ -285,7 +318,7 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
              <button 
                 onClick={currentView !== 'about' ? onAboutClick : undefined}
                 disabled={currentView === 'about'}
-                // FIXED: Removed opacity-50
+                // Updated: Removed opacity-50
                 className={`text-base md:text-lg font-bold transition-colors ${currentView === 'about' ? 'text-[#487ec8] cursor-default' : 'text-[#514d46]/60 hover:text-[#487ec8] active:scale-95'}`}
              >
                 About Us
