@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useState, useMemo, useEffect, useRef, useDeferredValue, useCallback } from 'react';
-import { X, Filter, ChevronDown, ArrowUp, Search } from 'lucide-react';
+import { X, ChevronDown, ArrowUp, Search } from 'lucide-react';
 
 import { 
     ITEMS_PER_PAGE, FILTER_COLORS, TYPE_CONFIG, ORGANIZATION_SCHEMA, 
@@ -14,7 +14,7 @@ import Hero from './components/Hero';
 import Footer from './components/Footer'; 
 import ProductCard from './components/ProductCard';
 import ProductDetail from './components/ProductDetail';
-import About from './components/About';
+import AboutSection from './components/About';
 
 // --- STYLES ---
 
@@ -50,13 +50,6 @@ const GlobalStyles = () => (
         @keyframes tear-off { 0% { transform: rotate(0deg); } 20% { transform: rotate(-5deg); } 40% { transform: rotate(5deg); } 60% { transform: rotate(-2deg); } 100% { transform: translateY(150%) rotate(10deg); opacity: 0; } }
         @keyframes stamp { 0% { opacity: 0; transform: scale(2) rotate(-12deg); } 40% { opacity: 1; transform: scale(0.9) rotate(-12deg); } 70% { transform: scale(1.1) rotate(-12deg); } 100% { opacity: 1; transform: scale(1) rotate(-12deg); } }
         @keyframes puff { 0% { opacity: 1; transform: translate(0,0) scale(1); } 100% { opacity: 0; transform: translate(var(--x),var(--y)) scale(0); } }
-        
-        /* Ticker Animation */
-        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
-        .animate-marquee-slow { animation: marquee 40s linear infinite; }
-        
-        /* FIX: Pause on hover to prevent snapping/jarring effect */
-        .ticker-wrapper:hover .animate-marquee-slow { animation-play-state: paused; }
         
         .animate-deal-bottom { animation: deal-bottom 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
         .animate-tear-off { animation: tear-off 0.8s ease-in forwards; }
@@ -238,7 +231,6 @@ const AppContent = () => {
   const [priceRange, setPriceRange] = useState([0, 1000]); 
   
   const [viewProduct, setViewProduct] = useState(null);
-  const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
   const [currentView, setCurrentView] = useState('shop'); 
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -438,7 +430,6 @@ const AppContent = () => {
                 <Hero />
                 <main className="max-w-7xl mx-auto px-4 py-8 flex-1 w-full pb-12 mb-20">
                     <div className="flex flex-col lg:flex-row gap-8" ref={topSectionRef}>
-                        {/* MOBILE FILTER BUTTON REMOVED FROM HERE */}
                         <aside className={`lg:w-64 flex-shrink-0 hidden lg:block lg:pt-2`}>
                             <FilterSection collections={appData.collections} decades={appData.decades} types={appData.types} selectedCollection={selectedCollection} selectedDecade={selectedDecade} selectedType={selectedType} priceRange={priceRange} minPrice={appData.minPrice} maxPrice={appData.maxPrice} availableCollections={available.collections} availableDecades={available.decades} availableTypes={available.types} showInStockOnly={showInStockOnly} onCollectionChange={setSelectedCollection} onDecadeChange={setSelectedDecade} onTypeChange={setSelectedType} onPriceChange={setPriceRange} onStockChange={setShowInStockOnly} onClearFilters={resetView} />
                         </aside>
@@ -473,6 +464,7 @@ const AppContent = () => {
                             {visibleProducts.length > 0 ? (
                             <>
                                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-6 relative z-10">{visibleProducts.map((product, index) => (<ProductCard key={product.id} product={product} index={index} onOpen={openProduct} priority={index < 6} animationDelay={index >= ITEMS_PER_PAGE ? `${(index % ITEMS_PER_PAGE) * 0.03}s` : undefined} />))}</div>
+                                {/* RESULT COUNT FOOTER */}
                                 <div className="mt-12 text-center">
                                     {visibleCount < filteredProducts.length ? (
                                         <>
@@ -491,7 +483,7 @@ const AppContent = () => {
                     </div>
                 </main>
             </>
-          ) : ( <About /> )}
+          ) : ( <AboutSection /> )}
         </>
       )}
       <Footer />
