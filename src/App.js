@@ -46,10 +46,27 @@ const GlobalStyles = () => (
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
+        /* ANIMATIONS */
         @keyframes deal-bottom { 0% { transform: translateY(100px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
         @keyframes tear-off { 0% { transform: rotate(0deg); } 20% { transform: rotate(-5deg); } 40% { transform: rotate(5deg); } 60% { transform: rotate(-2deg); } 100% { transform: translateY(150%) rotate(10deg); opacity: 0; } }
         @keyframes stamp { 0% { opacity: 0; transform: scale(2) rotate(-12deg); } 40% { opacity: 1; transform: scale(0.9) rotate(-12deg); } 70% { transform: scale(1.1) rotate(-12deg); } 100% { opacity: 1; transform: scale(1) rotate(-12deg); } }
         @keyframes puff { 0% { opacity: 1; transform: translate(0,0) scale(1); } 100% { opacity: 0; transform: translate(var(--x),var(--y)) scale(0); } }
+        
+        /* TICKER ANIMATION */
+        @keyframes marquee { 
+            0% { transform: translate3d(0, 0, 0); } 
+            100% { transform: translate3d(-100%, 0, 0); } 
+        }
+        
+        .animate-marquee-slow { 
+            animation: marquee 40s linear infinite; 
+            will-change: transform;
+        }
+        
+        /* Pause on hover */
+        .ticker-wrapper:hover .animate-marquee-slow { 
+            animation-play-state: paused; 
+        }
         
         .animate-deal-bottom { animation: deal-bottom 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
         .animate-tear-off { animation: tear-off 0.8s ease-in forwards; }
@@ -65,8 +82,6 @@ const GlobalStyles = () => (
         .dust-7 { --x: -80px; --y: 0; top: 50%; left: -10px; transform: translateY(-50%); }
         .dust-8 { --x: 80px; --y: 0; top: 50%; right: -10px; transform: translateY(-50%); }
 
-        .ticker-wrapper:hover .animate-marquee-slow { animation-play-state: paused; }
-        
         input[type=range]::-webkit-slider-thumb { pointer-events: auto; }
         input[type=range]::-moz-range-thumb { pointer-events: auto; }
     `}</style>
@@ -108,7 +123,7 @@ const useSEO = ({ title, description, image, canonical }) => {
     }, [title, description, image, canonical]);
 };
 
-// --- FILTER COMPONENTS (FLAT STYLE) ---
+// --- FILTER COMPONENTS ---
 
 const FilterGroup = React.memo(({ title, options, selected, onChange, available, color }) => (
     <div className="space-y-3">
@@ -493,4 +508,3 @@ const AppContent = () => {
 
 const App = () => ( <ErrorBoundary><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_SCHEMA) }} /><AppContent /></ErrorBoundary> );
 export default App;
-
