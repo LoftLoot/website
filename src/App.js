@@ -376,7 +376,7 @@ const AppContent = () => {
       window.addEventListener('popstate', handler); return () => window.removeEventListener('popstate', handler);
   }, [appData]);
 
-  useSEO({ title: viewProduct ? null : "Loft Loot | Vintage Toys", canonical: window.location.href });
+  useSEO({ title: viewProduct ? null : "LoftLoot | Vintage Toys", canonical: window.location.href });
 
   const dynamicH1 = useMemo(() => {
       if (committedQuery) return `'${committedQuery}'`;
@@ -399,7 +399,21 @@ const AppContent = () => {
   return (
     <div className="min-h-screen bg-[#fffbf0] text-[#514d46] selection:bg-pink-200 flex flex-col" style={{ fontFamily: "'Outfit', sans-serif" }}>
       <GlobalStyles />
-      <Header currentView={currentView} isProductView={!!viewProduct} onCatalogueClick={() => { if(viewProduct) closeProduct(); setCurrentView('shop'); }} onAboutClick={() => { if(viewProduct) closeProduct(); setCurrentView('about'); }} onHomeClick={resetView} search={searchQuery} onSearchUpdate={handleSearchUpdate} onCommit={handleCommit} suggestions={suggestions} selectedCollection={selectedCollection} />
+      {/* Pass dynamic collections and decades to Header */}
+      <Header 
+        currentView={currentView} 
+        isProductView={!!viewProduct} 
+        onCatalogueClick={() => { if(viewProduct) closeProduct(); setCurrentView('shop'); }} 
+        onAboutClick={() => { if(viewProduct) closeProduct(); setCurrentView('about'); }} 
+        onHomeClick={resetView} 
+        search={searchQuery} 
+        onSearchUpdate={handleSearchUpdate} 
+        onCommit={handleCommit} 
+        suggestions={suggestions} 
+        selectedCollection={selectedCollection} 
+        collections={appData.collections} 
+        decades={appData.decades} 
+      />
       
       <button onClick={scrollToTopSmart} className={`fixed bottom-8 right-8 z-50 p-4 rounded-full bg-[#487ec8] text-white shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 ${showScrollButton ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}><ArrowUp size={24} strokeWidth={3} /></button>
 
@@ -462,4 +476,3 @@ const AppContent = () => {
 
 const App = () => ( <ErrorBoundary><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_SCHEMA) }} /><AppContent /></ErrorBoundary> );
 export default App;
-
