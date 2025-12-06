@@ -22,7 +22,6 @@ const About = () => {
 
     useEffect(() => { document.title = "About Us | LoftLoot"; }, []);
 
-    // INCREASED CONSTANTS
     const SIBLING_IMG = "https://raw.githubusercontent.com/LoftLoot/site/refs/heads/main/images/us.png";
     const BOY_WIDTH = "115px";  
     const GIRL_WIDTH = "145px"; 
@@ -30,8 +29,8 @@ const About = () => {
 
     return (
         <>
-            {/* TOP SECTION: STORY */}
-            <div className="relative bg-[#e5e5e5] text-[#514d46] transition-all duration-500 mb-12 pb-12">
+            {/* TOP SECTION: STORY - Reverted to Cream Background (#f2e9d9) */}
+            <div className="relative bg-[#f2e9d9] text-[#514d46] transition-all duration-500 mb-12 pb-12">
                 <div className="max-w-3xl mx-auto px-4 pt-12 relative z-10">
                     
                     <div className="space-y-8 leading-relaxed text-lg relative overflow-hidden text-center md:text-left">
@@ -39,8 +38,8 @@ const About = () => {
                             <h1 className="text-3xl md:text-4xl font-black text-[#514d46] leading-tight" style={{ fontFamily: '"Jua", sans-serif' }}>About Us</h1>
                         </div>
 
-                        {/* BROTHER - Moved up (-mt-6) and static (no hover effects) */}
-                        <div className="float-left mr-8 mb-2 -mt-6 relative select-none z-10 hidden md:block">
+                        {/* BROTHER - Moved up significantly (-mt-12) */}
+                        <div className="float-left mr-8 mb-2 -mt-12 relative select-none z-10 hidden md:block">
                             <div className="absolute top-2 -left-2 bg-[#f4e799] rounded-xl -rotate-12 shadow-sm" style={{ width: BOY_WIDTH, height: '120px' }}></div>
                             <div className="relative overflow-hidden rounded-lg -rotate-3" style={{ width: BOY_WIDTH, height: IMG_HEIGHT }}>
                                 <img src={SIBLING_IMG} alt="Brother" className="absolute h-full max-w-none object-cover object-left" style={{ left: '0', width: 'auto' }} />
@@ -51,8 +50,8 @@ const About = () => {
                         
                         <p>Recently, while looking through <a href="https://retromash.com/argos/" target="_blank" rel="noopener noreferrer" className="font-bold underline decoration-2 decoration-[#487ec8]/50 hover:decoration-[#487ec8] hover:text-[#487ec8] transition-all">archived catalogues</a> online, we realized we actually still own most of it. It's been sitting in our parents' loft for decades! We've decided to catalog our collection here, hoping to find new homes for them with people who appreciate them as much as we did.</p>
 
-                        {/* SISTER - Static (no hover effects) */}
-                        <div className="float-right ml-8 mb-1 mt-1 relative select-none z-10 hidden md:block">
+                        {/* SISTER - Moved up slightly (-mt-4) */}
+                        <div className="float-right ml-8 mb-1 -mt-4 relative select-none z-10 hidden md:block">
                             <div className="absolute top-2 -right-1 bg-[#f4e799] rounded-xl rotate-12 shadow-sm" style={{ width: GIRL_WIDTH, height: '120px' }}></div>
                             <div className="relative overflow-hidden rounded-lg rotate-3" style={{ width: GIRL_WIDTH, height: IMG_HEIGHT }}>
                                 <img src={SIBLING_IMG} alt="Sister" className="absolute h-full max-w-none object-cover object-right" style={{ right: '0', width: 'auto' }} />
@@ -66,24 +65,23 @@ const About = () => {
                         {/* Clear floats */}
                         <div className="clear-both"></div>
 
-                        {/* Reduced spacing above artwork credit (mt-4 pt-4) */}
-                        <div className="text-sm text-[#514d46]/60 italic mt-4 pt-4 border-t-2 border-[#514d46]/10">
+                        {/* Artwork Credit - Removed HR border */}
+                        <div className="text-sm text-[#514d46]/60 italic mt-4 pt-2">
                             Artwork by Shishido Doshi.
                         </div>
                     </div>
                 </div>
-                {/* Jagged Divider */}
-                <JaggedLine position="bottom" color="#e5e5e5" />
+                {/* Jagged Divider - Matched to Cream */}
+                <JaggedLine position="bottom" color="#f2e9d9" />
             </div>
 
-            {/* BOTTOM SECTION: CONTACT - Reduced padding (pb-10) */}
-            <div className="max-w-3xl mx-auto px-4 pb-10 relative z-10">
+            {/* BOTTOM SECTION: CONTACT - Removed bottom padding */}
+            <div className="max-w-3xl mx-auto px-4 pb-0 relative z-10">
                 <div className="text-center space-y-6 relative overflow-hidden flex flex-col items-center justify-center">
                     <h3 className="text-2xl font-black text-[#514d46]" style={{ fontFamily: '"Jua", sans-serif' }}>Get in Touch</h3>
                     <p className="opacity-60 text-lg max-w-md mx-auto">Have a question about a specific item? We'd love to hear from you.</p>
                     
                     <div className="relative mt-8 h-16 w-64 mx-auto flex items-center justify-center group sticker-container">
-                        {/* Dotted line changed to #f4e799 (Cream) */}
                         <div className="absolute inset-0 flex items-center justify-center bg-white border-2 border-[#f4e799] border-dashed rounded-xl z-0 shadow-sm">
                             <a href="mailto:hello@loftloot.co.uk" className="font-bold text-[#d35153] text-xl hover:underline">hello@loftloot.co.uk</a>
                         </div>
