@@ -145,8 +145,8 @@ const SearchInput = React.memo(({ search, onSearchUpdate, onCommit, suggestions 
     }, [search, suggestions]);
 
     return (
-        <div ref={containerRef} className="relative w-full max-w-xl group z-[60]">
-            <div className="flex w-full">
+        <div ref={containerRef} className="relative w-full h-full group z-[60]">
+            <div className="flex w-full h-full">
                 <div className="relative flex-1">
                     <input 
                         ref={inputRef}
@@ -162,7 +162,7 @@ const SearchInput = React.memo(({ search, onSearchUpdate, onCommit, suggestions 
                                 onSearchUpdate(search); 
                             } 
                         }}
-                        className="w-full bg-white text-[#514d46] py-2.5 pl-4 pr-10 font-bold placeholder:text-[#514d46]/40 focus:outline-none rounded-l-2xl border-2 border-r-0 border-[#514d46]/20 focus:border-[#d35153] focus:border-r-0 transition-colors"
+                        className="w-full h-full bg-white text-[#514d46] py-2.5 pl-4 pr-10 font-bold placeholder:text-[#514d46]/40 focus:outline-none rounded-l-2xl border-2 border-r-0 border-[#514d46]/20 focus:border-[#d35153] focus:border-r-0 transition-colors"
                     />
                     {search && (
                         <button onClick={() => { onSearchUpdate(''); onCommit({ type: 'query', value: '' }); inputRef.current?.blur(); }} className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#514d46]/20 text-white rounded-full p-1 hover:bg-[#514d46]/40 transition-colors"><X size={14} strokeWidth={3} /></button>
@@ -257,8 +257,8 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
             <Logo />
         </div>
 
-        {/* Search - Absolutely Centered on Desktop */}
-        <div className="w-[calc(100%+2rem)] -mx-4 px-4 order-3 md:order-2 mb-2 mt-3 pt-3 md:pt-0 md:mt-0 md:mb-0 md:border-t-0 border-t border-[#514d46]/10 md:absolute md:left-1/2 md:-translate-x-1/2 md:w-auto md:max-w-xl md:mx-0 md:px-0">
+        {/* Search - Absolutely Centered on Desktop, 100% Breakout Width on Mobile */}
+        <div className="w-[calc(100%+2rem)] -mx-4 px-4 order-3 md:order-2 mb-2 mt-3 pt-3 md:pt-0 md:mt-0 md:mb-0 md:border-t-0 border-t border-[#514d46]/10 md:absolute md:left-1/2 md:-translate-x-1/2 md:w-1/2 md:max-w-2xl md:mx-0 md:px-0">
              <SearchInput search={search} onSearchUpdate={onSearchUpdate} onCommit={onCommit} suggestions={suggestions} />
         </div>
 
