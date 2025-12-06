@@ -49,8 +49,8 @@ const About = () => {
 
                         {/* SISTER */}
                         <div className="float-right ml-6 mb-1 relative select-none z-10 w-[135px] md:w-[160px]" style={{ transform: 'translateY(-0.5rem)' }}>
-                            {/* Changed width to w-[90%] to reduce background box width independently of character */}
-                            <div className="absolute top-2 right-0 bg-[#fffbf0] rotate-12 w-[90%] h-[100px] md:h-[120px]"></div>
+                            {/* Changed right-0 to right-2 to move box left a bit */}
+                            <div className="absolute top-2 right-2 bg-[#fffbf0] rotate-12 w-[90%] h-[100px] md:h-[120px]"></div>
                             <div className="relative overflow-hidden rotate-3 w-full h-[125px] md:h-[150px]">
                                 <img src={SIBLING_IMG} alt="Sister" className="absolute h-full max-w-none object-cover object-right" style={{ right: '15px', width: 'auto' }} />
                             </div>
