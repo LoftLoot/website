@@ -29,7 +29,7 @@ const About = () => {
 
     return (
         <>
-            {/* TOP SECTION: STORY - Reverted to Cream Background (#f2e9d9) */}
+            {/* TOP SECTION: STORY */}
             <div className="relative bg-[#f2e9d9] text-[#514d46] transition-all duration-500 mb-12 pb-12">
                 <div className="max-w-3xl mx-auto px-4 pt-12 relative z-10">
                     
@@ -38,9 +38,9 @@ const About = () => {
                             <h1 className="text-3xl md:text-4xl font-black text-[#514d46] leading-tight" style={{ fontFamily: '"Jua", sans-serif' }}>About Us</h1>
                         </div>
 
-                        {/* BROTHER - Moved up significantly (-mt-12) */}
-                        <div className="float-left mr-8 mb-2 -mt-12 relative select-none z-10 hidden md:block">
-                            <div className="absolute top-2 -left-2 bg-[#f4e799] rounded-xl -rotate-12 shadow-sm" style={{ width: BOY_WIDTH, height: '120px' }}></div>
+                        {/* BROTHER - Moved higher (-mt-20) */}
+                        <div className="float-left mr-8 mb-2 -mt-20 relative select-none z-10 hidden md:block">
+                            <div className="absolute top-2 -left-2 bg-[#fffbf0] rounded-xl -rotate-12 shadow-sm" style={{ width: BOY_WIDTH, height: '120px' }}></div>
                             <div className="relative overflow-hidden rounded-lg -rotate-3" style={{ width: BOY_WIDTH, height: IMG_HEIGHT }}>
                                 <img src={SIBLING_IMG} alt="Brother" className="absolute h-full max-w-none object-cover object-left" style={{ left: '0', width: 'auto' }} />
                             </div>
@@ -50,9 +50,9 @@ const About = () => {
                         
                         <p>Recently, while looking through <a href="https://retromash.com/argos/" target="_blank" rel="noopener noreferrer" className="font-bold underline decoration-2 decoration-[#487ec8]/50 hover:decoration-[#487ec8] hover:text-[#487ec8] transition-all">archived catalogues</a> online, we realized we actually still own most of it. It's been sitting in our parents' loft for decades! We've decided to catalog our collection here, hoping to find new homes for them with people who appreciate them as much as we did.</p>
 
-                        {/* SISTER - Moved up slightly (-mt-4) */}
+                        {/* SISTER */}
                         <div className="float-right ml-8 mb-1 -mt-4 relative select-none z-10 hidden md:block">
-                            <div className="absolute top-2 -right-1 bg-[#f4e799] rounded-xl rotate-12 shadow-sm" style={{ width: GIRL_WIDTH, height: '120px' }}></div>
+                            <div className="absolute top-2 -right-1 bg-[#fffbf0] rounded-xl rotate-12 shadow-sm" style={{ width: GIRL_WIDTH, height: '120px' }}></div>
                             <div className="relative overflow-hidden rounded-lg rotate-3" style={{ width: GIRL_WIDTH, height: IMG_HEIGHT }}>
                                 <img src={SIBLING_IMG} alt="Sister" className="absolute h-full max-w-none object-cover object-right" style={{ right: '0', width: 'auto' }} />
                             </div>
@@ -65,17 +65,17 @@ const About = () => {
                         {/* Clear floats */}
                         <div className="clear-both"></div>
 
-                        {/* Artwork Credit - Removed HR border */}
+                        {/* Artwork Credit */}
                         <div className="text-sm text-[#514d46]/60 italic mt-4 pt-2">
                             Artwork by Shishido Doshi.
                         </div>
                     </div>
                 </div>
-                {/* Jagged Divider - Matched to Cream */}
+                {/* Jagged Divider */}
                 <JaggedLine position="bottom" color="#f2e9d9" />
             </div>
 
-            {/* BOTTOM SECTION: CONTACT - Removed bottom padding */}
+            {/* BOTTOM SECTION: CONTACT */}
             <div className="max-w-3xl mx-auto px-4 pb-0 relative z-10">
                 <div className="text-center space-y-6 relative overflow-hidden flex flex-col items-center justify-center">
                     <h3 className="text-2xl font-black text-[#514d46]" style={{ fontFamily: '"Jua", sans-serif' }}>Get in Touch</h3>
