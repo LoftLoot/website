@@ -177,6 +177,22 @@ const SpecItem = ({ label, value }) => {
     );
 };
 
+// Reusable Header Component for Mobile (Top) and Desktop (Right Col)
+const ProductHeader = ({ product, className = "" }) => (
+    <div className={`border-b-2 border-[#514d46]/5 pb-6 ${className}`}>
+        <div className="mb-2 text-xs font-bold text-[#514d46]/60 uppercase tracking-wider">{product.collection}</div>
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#514d46] leading-tight mb-4" style={{ fontFamily: '"Jua", sans-serif' }}>{product.name}</h1>
+        
+        <div className="flex items-center gap-4">
+            <span className={`text-3xl font-mono font-bold ${!product.isSold ? 'text-[#487ec8]' : 'text-[#514d46]/40 decoration-double'}`}>£{product.price.toFixed(2)}</span>
+            {!product.isSold 
+                ? <span className="flex items-center gap-1.5 text-xs font-black bg-[#487ec8]/10 text-[#487ec8] px-3 py-1 rounded-full uppercase tracking-wider"><div className="w-2 h-2 rounded-full bg-[#487ec8]"></div> In Stock</span> 
+                : <span className="text-xs font-black bg-[#d35153]/10 text-[#d35153] px-3 py-1 rounded-full uppercase tracking-wider">Sold Out</span>
+            }
+        </div>
+    </div>
+);
+
 // --- MAIN COMPONENT ---
 
 const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClick, onDecadeClick, onOpen }) => {
@@ -250,10 +266,16 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                         <span className="text-[#514d46] opacity-100 truncate max-w-[200px]">{product.name}</span>
                     </nav>
 
+                    {/* MOBILE HEADER: Show Title/Price above Image on small screens */}
+                    <div className="block lg:hidden mb-8">
+                        <ProductHeader product={product} className="border-b-0 pb-0" />
+                    </div>
+
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                         
                         {/* LEFT COLUMN: IMAGES */}
-                        <div className="space-y-4">
+                        {/* Added max-w-md mx-auto to constrain width on mobile, preventing full-screen images */}
+                        <div className="space-y-4 max-w-md mx-auto lg:max-w-none w-full">
                             <div 
                                 className={`aspect-square lg:aspect-[4/5] bg-white rounded-3xl overflow-hidden border-4 border-white shadow-xl shadow-[#514d46]/5 relative group ${!currentVideoId ? (isActive ? 'cursor-zoom-out' : 'cursor-zoom-in') : ''} will-change-transform`}
                                 onClick={!currentVideoId ? handleImageClick : undefined} 
@@ -327,17 +349,10 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
 
                         {/* RIGHT COLUMN: INFO */}
                         <div className="space-y-6 select-text">
-                            <div className="border-b-2 border-[#514d46]/5 pb-6">
-                                <div className="mb-2 text-xs font-bold text-[#514d46]/60 uppercase tracking-wider">{product.collection}</div>
-                                <h1 className="text-4xl md:text-5xl font-black text-[#514d46] leading-tight mb-4" style={{ fontFamily: '"Jua", sans-serif' }}>{product.name}</h1>
-                                
-                                <div className="flex items-center gap-4">
-                                    <span className={`text-3xl font-mono font-bold ${!product.isSold ? 'text-[#487ec8]' : 'text-[#514d46]/40 decoration-double'}`}>£{product.price.toFixed(2)}</span>
-                                    {!product.isSold 
-                                        ? <span className="flex items-center gap-1.5 text-xs font-black bg-[#487ec8]/10 text-[#487ec8] px-3 py-1 rounded-full uppercase tracking-wider"><div className="w-2 h-2 rounded-full bg-[#487ec8]"></div> In Stock</span> 
-                                        : <span className="text-xs font-black bg-[#d35153]/10 text-[#d35153] px-3 py-1 rounded-full uppercase tracking-wider">Sold Out</span>
-                                    }
-                                </div>
+                            
+                            {/* DESKTOP HEADER: Hidden on Mobile */}
+                            <div className="hidden lg:block">
+                                <ProductHeader product={product} />
                             </div>
 
                             <div className="pt-3 pb-4 border-b-2 border-[#514d46]/5">
