@@ -33,13 +33,16 @@ const About = () => {
             <div className="relative bg-[#f2e9d9] text-[#514d46] transition-all duration-500 mb-12 pb-12">
                 <div className="max-w-3xl mx-auto px-4 pt-12 relative z-10">
                     
-                    <div className="space-y-8 leading-relaxed text-lg relative overflow-hidden text-center md:text-left">
+                    {/* REMOVED overflow-hidden so the character can actually move up out of the box */}
+                    <div className="space-y-8 leading-relaxed text-lg relative text-center md:text-left">
                         <div className="text-center mb-6">
                             <h1 className="text-3xl md:text-4xl font-black text-[#514d46] leading-tight" style={{ fontFamily: '"Jua", sans-serif' }}>About Us</h1>
                         </div>
 
-                        {/* BROTHER - Moved up significantly (-mt-32), Squared Off (No rounded/shadow) */}
-                        <div className="float-left mr-8 mb-2 -mt-32 relative select-none z-10 hidden md:block">
+                        {/* BROTHER */}
+                        {/* Mobile: Centered block, no negative margin to avoid text overlap */}
+                        {/* Desktop: Floated left, -mt-32 to pop out */}
+                        <div className="mx-auto md:mx-0 md:float-left md:mr-8 mb-6 md:mb-2 md:-mt-32 relative select-none z-10" style={{ width: BOY_WIDTH }}>
                             <div className="absolute top-2 -left-2 bg-[#fffbf0] -rotate-12" style={{ width: BOY_WIDTH, height: '120px' }}></div>
                             <div className="relative overflow-hidden -rotate-3" style={{ width: BOY_WIDTH, height: IMG_HEIGHT }}>
                                 <img src={SIBLING_IMG} alt="Brother" className="absolute h-full max-w-none object-cover object-left" style={{ left: '0', width: 'auto' }} />
@@ -50,8 +53,10 @@ const About = () => {
                         
                         <p>Recently, while looking through <a href="https://retromash.com/argos/" target="_blank" rel="noopener noreferrer" className="font-bold underline decoration-2 decoration-[#487ec8]/50 hover:decoration-[#487ec8] hover:text-[#487ec8] transition-all">archived catalogues</a> online, we realized we actually still own most of it. It's been sitting in our parents' loft for decades! We've decided to catalog our collection here, hoping to find new homes for them with people who appreciate them as much as we did.</p>
 
-                        {/* SISTER - Squared Off (No rounded/shadow) */}
-                        <div className="float-right ml-8 mb-1 -mt-4 relative select-none z-10 hidden md:block">
+                        {/* SISTER */}
+                        {/* Mobile: Centered block */}
+                        {/* Desktop: Floated right */}
+                        <div className="mx-auto md:mx-0 md:float-right md:ml-8 mb-6 md:mb-1 md:-mt-4 relative select-none z-10" style={{ width: GIRL_WIDTH }}>
                             <div className="absolute top-2 -right-1 bg-[#fffbf0] rotate-12" style={{ width: GIRL_WIDTH, height: '120px' }}></div>
                             <div className="relative overflow-hidden rotate-3" style={{ width: GIRL_WIDTH, height: IMG_HEIGHT }}>
                                 <img src={SIBLING_IMG} alt="Sister" className="absolute h-full max-w-none object-cover object-right" style={{ right: '0', width: 'auto' }} />
@@ -62,16 +67,13 @@ const About = () => {
 
                         <p className="font-bold text-[#514d46]">We hope you find an old favourite, or finally get your hands on that one thing Santa never brought.</p>
                         
-                        {/* Clear floats */}
                         <div className="clear-both"></div>
 
-                        {/* Artwork Credit */}
                         <div className="text-sm text-[#514d46]/60 italic mt-4 pt-2">
                             Artwork by Shishido Doshi.
                         </div>
                     </div>
                 </div>
-                {/* Jagged Divider */}
                 <JaggedLine position="bottom" color="#f2e9d9" />
             </div>
 
