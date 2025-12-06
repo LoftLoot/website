@@ -315,7 +315,7 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
 
                         {/* RIGHT COLUMN: INFO */}
                         <div className="space-y-6 select-text">
-                            <div className="border-b-2 border-[#514d46]/5 pb-6">
+                            <div className="border-b-2 border-[#514d46]/5 pb-4">
                                 <div className="mb-2 text-xs font-bold text-[#514d46]/60 uppercase tracking-wider">{product.collection}</div>
                                 <h1 className="text-4xl md:text-5xl font-black text-[#514d46] leading-tight mb-4" style={{ fontFamily: '"Jua", sans-serif' }}>{product.name}</h1>
                                 
@@ -328,23 +328,22 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                                 </div>
                             </div>
 
-                            {/* UPDATED SPEC GRID: Brand/Release, Type/Manufacturer, Line/Condition */}
-                            <div className="pt-6 pb-6 border-b-2 border-[#514d46]/5">
-                                <div className="grid grid-cols-2 gap-y-6 gap-x-4">
+                            <div className="pt-4 pb-4 border-b-2 border-[#514d46]/5">
+                                <div className="grid grid-cols-2 gap-y-4 gap-x-4">
                                     <SpecItem label="Brand" value={product.brand} />
                                     <SpecItem label="Release" value={product.releaseDate} />
                                     
-                                    <SpecItem label="Type" value={product.type} />
+                                    <SpecItem label="Line" value={product.line} />
                                     <SpecItem label="Manufacturer" value={product.manufacturer} />
                                     
-                                    <SpecItem label="Line" value={product.line} />
+                                    <SpecItem label="Type" value={product.type} />
                                     <SpecItem label="Condition" value={product.condition} />
                                 </div>
                             </div>
 
                             <div className="prose prose-lg text-[#514d46]/80 leading-relaxed font-outfit">
                                 <p>{product.description}</p>
-                                <p className="text-sm italic opacity-60 mt-4">Photos represent the actual item you will receive. All photos and videos were taken by us.</p>
+                                <p className="text-sm italic text-[#514d46] font-medium mt-4">Photos represent the actual item you will receive. All photos and videos were taken by us.</p>
                             </div>
 
                             <div className="pt-8 border-t-2 border-[#514d46]/5">
