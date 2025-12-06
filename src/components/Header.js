@@ -33,11 +33,10 @@ const HighlightedText = ({ text, highlight }) => {
     );
 };
 
-// --- CHIPS (Mobile Only) ---
-const QuickFilterChips = ({ onCommit, selectedCollection }) => {
-    const eras = ["1970s", "1980s", "1990s", "2000s"];
-    const collections = ["Star Wars", "TMNT", "Thundercats", "WWE", "Pokémon", "Gargoyles"];
-    const chips = ["All", "|", ...eras, "|", ...collections];
+// --- CHIPS (Mobile Only - Dynamic) ---
+const QuickFilterChips = ({ onCommit, selectedCollection, collections = [], decades = [] }) => {
+    // Dynamic lists passed from parent
+    const chips = ["All", "|", ...decades, "|", ...collections];
 
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -72,9 +71,7 @@ const QuickFilterChips = ({ onCommit, selectedCollection }) => {
         >
             {chips.map((chip, idx) => {
                 if (chip === "|") return <div key={`sep-${idx}`} className="h-5 w-px bg-[#514d46]/20 mx-1 shrink-0"></div>;
-                // Determine if this chip is active (Era or Collection match)
-                // Note: This logic assumes 'selectedCollection' prop might hold a decade value if passed from parent loosely, 
-                // but strictly speaking onCommit handles the type differentiation.
+                
                 const isActive = selectedCollection === chip; 
                 
                 return (
@@ -85,7 +82,9 @@ const QuickFilterChips = ({ onCommit, selectedCollection }) => {
                                 // Smart commit: Guess type based on value arrays
                                 let type = 'filter';
                                 let kind = 'Collection';
-                                if (eras.includes(chip)) kind = 'Era';
+                                
+                                // Determine if this is a Decade or Collection based on the source lists
+                                if (decades.includes(chip)) kind = 'Era';
                                 if (chip === 'All') kind = 'Collection'; // Reset
                                 
                                 onCommit({ type, payload: { kind, value: chip } }); 
@@ -233,7 +232,7 @@ SearchInput.displayName = 'SearchInput';
 
 // --- MAIN HEADER COMPONENT ---
 
-const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAboutClick, onHomeClick, search, onSearchUpdate, onCommit, suggestions, selectedCollection }) => (
+const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAboutClick, onHomeClick, search, onSearchUpdate, onCommit, suggestions, selectedCollection, collections, decades }) => (
   <div className="relative z-[60] flex flex-col bg-[#fffbf0]">
     <div className="bg-[#487ec8] text-white text-[10px] md:text-xs font-medium uppercase tracking-[0.2em] py-2 overflow-hidden ticker-wrapper">
         <div className="flex overflow-hidden select-none gap-0">
@@ -277,8 +276,8 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
 
       </div>
 
-      {/* Chips (Mobile Only) */}
-      <QuickFilterChips onCommit={onCommit} selectedCollection={selectedCollection} />
+      {/* Chips (Mobile Only) - Now receiving collections and decades */}
+      <QuickFilterChips onCommit={onCommit} selectedCollection={selectedCollection} collections={collections} decades={decades} />
     </header>
   </div>
 ));
