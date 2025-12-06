@@ -445,15 +445,11 @@ const AppContent = () => {
                 <Hero />
                 <main className="max-w-7xl mx-auto px-4 py-8 flex-1 w-full pb-12 mb-20">
                     <div className="flex flex-col lg:flex-row gap-8" ref={topSectionRef}>
-                        {/* SIDEBAR: Visible from 'lg' (1024px) and up */}
                         <aside className={`lg:w-64 flex-shrink-0 hidden lg:block lg:pt-2`}>
                             <FilterSection collections={appData.collections} decades={appData.decades} types={appData.types} selectedCollection={selectedCollection} selectedDecade={selectedDecade} selectedType={selectedType} priceRange={priceRange} minPrice={appData.minPrice} maxPrice={appData.maxPrice} availableCollections={available.collections} availableDecades={available.decades} availableTypes={available.types} showInStockOnly={showInStockOnly} onCollectionChange={setSelectedCollection} onDecadeChange={setSelectedDecade} onTypeChange={setSelectedType} onPriceChange={setPriceRange} onStockChange={setShowInStockOnly} onClearFilters={resetView} />
                         </aside>
                         <div className="flex-1 min-h-[500px]">
-                            {/* H1: Visible from 'lg' and up */}
                             <div className="hidden lg:block -mt-4 mb-2"><h1 className="text-[#514d46] font-black text-3xl md:text-4xl leading-none flex items-center gap-2" style={{ fontFamily: '"Jua", sans-serif' }}>{dynamicH1} {committedQuery && <button onClick={() => { setCommittedQuery(""); setSearchQuery(""); }} className="bg-[#514d46]/20 text-white rounded-full p-0.5 hover:bg-[#514d46]/40 transition-colors"><X size={16} strokeWidth={3}/></button>}</h1></div>
-                            
-                            {/* H1: Visible on Mobile/Tablet only (< 1024px) */}
                             <div className="lg:hidden -mt-2 mb-2"><h1 className="text-[#514d46] font-black text-3xl leading-none flex items-center gap-2" style={{ fontFamily: '"Jua", sans-serif' }}>{dynamicH1} {committedQuery && <button onClick={() => { setCommittedQuery(""); setSearchQuery(""); }} className="bg-[#514d46]/20 text-white rounded-full p-0.5 hover:bg-[#514d46]/40 transition-colors"><X size={16} strokeWidth={3}/></button>}</h1></div>
                             
                             <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-20">
@@ -465,7 +461,8 @@ const AppContent = () => {
                                         {selectedCollection !== 'All' && <button onClick={() => setSelectedCollection('All')} style={{ borderColor: FILTER_COLORS.Collection, color: FILTER_COLORS.Collection }} className="flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110">{selectedCollection} <X size={14} /></button>}
                                         {selectedDecade !== 'All' && <button onClick={() => setSelectedDecade('All')} style={{ borderColor: FILTER_COLORS.Era, color: FILTER_COLORS.Era }} className={`flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110 ${/^\d/.test(selectedDecade) ? '' : 'uppercase'}`}>{selectedDecade} <X size={14} /></button>}
                                         {selectedType !== 'All' && <button onClick={() => setSelectedType('All')} style={{ borderColor: FILTER_COLORS.Type, color: FILTER_COLORS.Type }} className="flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110">{selectedType} <X size={14} /></button>}
-                                        {(priceRange[0] !== appData.minPrice || priceRange[1] !== appData.maxPrice) && <button onClick={() => setPriceRange([appData.minPrice, appData.maxPrice])} style={{ borderColor: FILTER_COLORS.Price, color: FILTER_COLORS.Price }} className="flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110">£{priceRange[0]} - £{priceRange[1]} <X size={14} /></button>}
+                                        {/* FIXED PRICE CHIP CONDITION: Only shows if filtering is active (> min OR < max) */}
+                                        {(priceRange[0] > appData.minPrice || priceRange[1] < appData.maxPrice) && <button onClick={() => setPriceRange([appData.minPrice, appData.maxPrice])} style={{ borderColor: FILTER_COLORS.Price, color: FILTER_COLORS.Price }} className="flex items-center gap-1 bg-white border-2 px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm group active:scale-95 hover:brightness-110">£{priceRange[0]} - £{priceRange[1]} <X size={14} /></button>}
                                         {showInStockOnly && <button onClick={() => setShowInStockOnly(false)} className="flex items-center gap-1 bg-white border-2 border-[#E0E8F0] px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#514d46] hover:border-[#487ec8] hover:text-[#487ec8] transition-all shadow-sm group active:scale-95">In Stock <X size={14} /></button>}
                                     </div>
                                 </div>
@@ -483,11 +480,9 @@ const AppContent = () => {
                             {visibleProducts.length > 0 ? (
                             <>
                                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-6 relative z-10">{visibleProducts.map((product, index) => (<ProductCard key={product.id} product={product} index={index} onOpen={openProduct} priority={index < 6} animationDelay={index >= ITEMS_PER_PAGE ? `${(index % ITEMS_PER_PAGE) * 0.03}s` : undefined} />))}</div>
-                                {/* RESULT COUNT FOOTER */}
                                 <div className="mt-12 text-center">
                                     {visibleCount < filteredProducts.length ? (
                                         <>
-                                            {/* Removed transition-all and active:scale-95 to fix choppy effect */}
                                             <button onClick={() => setVisibleCount(prev => prev + ITEMS_PER_PAGE)} className="px-8 py-3 bg-white border-2 border-[#E0E8F0] text-[#514d46] font-bold rounded-xl hover:border-[#487ec8]">Load More Loot</button>
                                             <p className="text-xs text-[#514d46]/40 mt-3 font-medium">Showing {visibleProducts.length} of {filteredProducts.length} items</p>
                                         </>
