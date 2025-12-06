@@ -80,8 +80,20 @@ const PlaceholderCard = React.memo(() => (
 
 const RelatedProductsCarousel = React.memo(({ products, onOpen }) => {
     const [page, setPage] = useState(0);
-    const itemsPerSet = 5;
+    const [itemsPerSet, setItemsPerSet] = useState(5); 
     
+    useEffect(() => {
+        const handleResize = () => {
+            const width = window.innerWidth;
+            if (width < 768) setItemsPerSet(2);
+            else if (width < 1024) setItemsPerSet(3);
+            else setItemsPerSet(5);
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const productSets = useMemo(() => {
         const sets = [];
         if (!products || products.length === 0) return [];
@@ -93,10 +105,10 @@ const RelatedProductsCarousel = React.memo(({ products, onOpen }) => {
             sets.push(chunk);
         }
         return sets;
-    }, [products]);
+    }, [products, itemsPerSet]);
     
     const totalSets = productSets.length;
-    useEffect(() => setPage(0), [products]);
+    useEffect(() => setPage(0), [itemsPerSet, products]);
     
     if (products.length === 0) return null;
 
@@ -243,7 +255,7 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                         {/* LEFT COLUMN: IMAGES */}
                         <div className="space-y-4">
                             <div 
-                                className={`aspect-[4/5] bg-white rounded-3xl overflow-hidden border-4 border-white shadow-xl shadow-[#514d46]/5 relative group ${!currentVideoId ? (isActive ? 'cursor-zoom-out' : 'cursor-zoom-in') : ''} will-change-transform`}
+                                className={`aspect-square lg:aspect-[4/5] bg-white rounded-3xl overflow-hidden border-4 border-white shadow-xl shadow-[#514d46]/5 relative group ${!currentVideoId ? (isActive ? 'cursor-zoom-out' : 'cursor-zoom-in') : ''} will-change-transform`}
                                 onClick={!currentVideoId ? handleImageClick : undefined} 
                                 onMouseMove={handleImageMouseMove} 
                                 onMouseLeave={handleMouseLeave}
@@ -315,7 +327,7 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
 
                         {/* RIGHT COLUMN: INFO */}
                         <div className="space-y-6 select-text">
-                            <div className="border-b-2 border-[#514d46]/5 pb-4">
+                            <div className="border-b-2 border-[#514d46]/5 pb-6">
                                 <div className="mb-2 text-xs font-bold text-[#514d46]/60 uppercase tracking-wider">{product.collection}</div>
                                 <h1 className="text-4xl md:text-5xl font-black text-[#514d46] leading-tight mb-4" style={{ fontFamily: '"Jua", sans-serif' }}>{product.name}</h1>
                                 
@@ -328,15 +340,15 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                                 </div>
                             </div>
 
-                            <div className="pt-4 pb-4 border-b-2 border-[#514d46]/5">
+                            <div className="pt-3 pb-4 border-b-2 border-[#514d46]/5">
                                 <div className="grid grid-cols-2 gap-y-4 gap-x-4">
                                     <SpecItem label="Brand" value={product.brand} />
-                                    <SpecItem label="Release" value={product.releaseDate} />
-                                    
-                                    <SpecItem label="Line" value={product.line} />
                                     <SpecItem label="Manufacturer" value={product.manufacturer} />
                                     
                                     <SpecItem label="Type" value={product.type} />
+                                    <SpecItem label="Release" value={product.releaseDate} />
+                                    
+                                    <SpecItem label="Line" value={product.line} />
                                     <SpecItem label="Condition" value={product.condition} />
                                 </div>
                             </div>
