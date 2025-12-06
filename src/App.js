@@ -497,6 +497,3 @@ const AppContent = () => {
 
 const App = () => ( <ErrorBoundary><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_SCHEMA) }} /><AppContent /></ErrorBoundary> );
 export default App;
-```
-
-Are you ready for the next file?
