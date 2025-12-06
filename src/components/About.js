@@ -37,7 +37,8 @@ const About = () => {
 
                         {/* BROTHER */}
                         <div className="float-left mr-6 mb-2 relative select-none z-10 w-[105px] md:w-[115px]" style={{ transform: 'translateY(-2rem)' }}>
-                            <div className="absolute top-2 left-0 bg-[#fffbf0] -rotate-12 w-full h-[100px] md:h-[120px]"></div>
+                            {/* Shape: left-0 on mobile, md:left-2 to move right on desktop */}
+                            <div className="absolute top-2 left-0 md:left-2 bg-[#fffbf0] -rotate-12 w-full h-[100px] md:h-[120px]"></div>
                             <div className="relative overflow-hidden -rotate-3 w-full h-[125px] md:h-[150px]">
                                 <img src={SIBLING_IMG} alt="Brother" className="absolute h-full max-w-none object-cover object-left" style={{ left: '15px', width: 'auto' }} />
                             </div>
@@ -45,14 +46,14 @@ const About = () => {
 
                         <p className="font-medium">We are a brother and sister who grew up in the North East of England in the early '90s. Like most kids, we spent every Christmas circling <i>all the things</i> in the Argos catalogue.</p>
                         
-                        {/* LINK UPDATED: Brand red, no underline */}
                         <p>Recently, while looking through <a href="https://retromash.com/argos/" target="_blank" rel="noopener noreferrer" className="font-bold text-[#d35153] transition-all hover:brightness-110">archived catalogues</a> online, we realized we actually still own most of it. It's been sitting in our parents' loft for decades! We've decided to catalog our collection here, hoping to find new homes for them with people who appreciate them as much as we did.</p>
 
                         {/* SISTER */}
                         <div className="float-right ml-6 mb-1 relative select-none z-10 w-[120px] md:w-[145px]" style={{ transform: 'translateY(-0.5rem)' }}>
                             <div className="absolute top-2 right-0 bg-[#fffbf0] rotate-12 w-full h-[100px] md:h-[120px]"></div>
                             <div className="relative overflow-hidden rotate-3 w-full h-[125px] md:h-[150px]">
-                                <img src={SIBLING_IMG} alt="Sister" className="absolute h-full max-w-none object-cover object-right" style={{ right: '0', width: 'auto' }} />
+                                {/* Changed right from '0' to '15px' to move her left away from edge */}
+                                <img src={SIBLING_IMG} alt="Sister" className="absolute h-full max-w-none object-cover object-right" style={{ right: '15px', width: 'auto' }} />
                             </div>
                         </div>
 
