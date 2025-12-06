@@ -51,7 +51,12 @@ const GlobalStyles = () => (
         @keyframes stamp { 0% { opacity: 0; transform: scale(2) rotate(-12deg); } 40% { opacity: 1; transform: scale(0.9) rotate(-12deg); } 70% { transform: scale(1.1) rotate(-12deg); } 100% { opacity: 1; transform: scale(1) rotate(-12deg); } }
         @keyframes puff { 0% { opacity: 1; transform: translate(0,0) scale(1); } 100% { opacity: 0; transform: translate(var(--x),var(--y)) scale(0); } }
         
-        /* Removed fade-in keyframes and classes here */
+        /* Ticker Animation */
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+        .animate-marquee-slow { animation: marquee 40s linear infinite; }
+        
+        /* Slow down on hover instead of pause */
+        .ticker-wrapper:hover .animate-marquee-slow { animation-duration: 120s; }
         
         .animate-deal-bottom { animation: deal-bottom 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
         .animate-tear-off { animation: tear-off 0.8s ease-in forwards; }
@@ -67,8 +72,6 @@ const GlobalStyles = () => (
         .dust-7 { --x: -80px; --y: 0; top: 50%; left: -10px; transform: translateY(-50%); }
         .dust-8 { --x: 80px; --y: 0; top: 50%; right: -10px; transform: translateY(-50%); }
 
-        .ticker-wrapper:hover .animate-marquee-slow { animation-play-state: paused; }
-        
         input[type=range]::-webkit-slider-thumb { pointer-events: auto; }
         input[type=range]::-moz-range-thumb { pointer-events: auto; }
     `}</style>
@@ -399,6 +402,7 @@ const AppContent = () => {
   return (
     <div className="min-h-screen bg-[#fffbf0] text-[#514d46] selection:bg-pink-200 flex flex-col" style={{ fontFamily: "'Outfit', sans-serif" }}>
       <GlobalStyles />
+      {/* Header with dynamic lists */}
       <Header 
         currentView={currentView} 
         isProductView={!!viewProduct} 
