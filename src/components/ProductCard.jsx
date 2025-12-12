@@ -28,8 +28,8 @@ const ProductCard = React.memo(({ product, index, onOpen, isMicro = false, prior
   
   const hoverTimer = useRef(null);
   const proximityRef = useProximityPreloader(mainImage);
-  
   const [hasMounted, setHasMounted] = useState(false);
+  
   useEffect(() => setHasMounted(true), []);
 
   const handlePointerEnter = useCallback((e) => {
@@ -46,15 +46,20 @@ const ProductCard = React.memo(({ product, index, onOpen, isMicro = false, prior
   }, []);
 
   return (
-    <div ref={proximityRef} className={`group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-[#487ec8]/10 flex flex-col h-full border border-[#f2f4f6] relative cursor-default ${hasMounted ? 'transition-all duration-300' : ''} ${index >= ITEMS_PER_PAGE ? 'animate-deal-bottom' : ''}`} style={index >= ITEMS_PER_PAGE ? { animationDelay } : {}} itemScope itemType="https://schema.org/Product" onPointerEnter={handlePointerEnter} onPointerLeave={handlePointerLeave}>
-      
+    <div 
+        ref={proximityRef} 
+        className={`group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-[#487ec8]/10 flex flex-col h-full border border-[#f2f4f6] relative cursor-default ${hasMounted ? 'transition-all duration-300' : ''} ${index >= ITEMS_PER_PAGE ? 'animate-deal-bottom' : ''}`} 
+        style={index >= ITEMS_PER_PAGE ? { animationDelay } : {}} 
+        itemScope 
+        itemType="https://schema.org/Product" 
+        onPointerEnter={handlePointerEnter} 
+        onPointerLeave={handlePointerLeave}
+    >
       <Link 
         to={`/${fullSlug}/`} 
-        // REMOVED: bg-[#f2f4f6] - No more gray background flicker
         className="aspect-square md:aspect-[4/5] relative overflow-hidden cursor-pointer focus:outline-none select-none block"
       >
         <div className={`absolute inset-0 z-0 ${isSold ? 'grayscale' : ''}`}>
-             {/* Native Image Rendering: No background, no placeholders. */}
              {mainImage && (
                 <img 
                     itemProp="image" 
