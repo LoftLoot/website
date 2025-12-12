@@ -11,7 +11,7 @@ import rawProducts from './src/products.json';
 
 // Paths relative to project root
 const DIST_DIR = path.resolve(process.cwd(), 'dist');
-const BASENAME = '/'; 
+const BASENAME = '/website/'; 
 
 export async function prerender() {
   const templatePath = path.join(DIST_DIR, 'index.html');
