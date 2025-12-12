@@ -1,1 +1,0 @@
-import{r as n,j as e,R as c,B as d,A as i}from"./prerender-h6FsGIq4.js";var s,a,o=n;a=o.createRoot,s=o.hydrateRoot;const t=document.getElementById("root"),m="/website/",r=()=>e.jsx(c.StrictMode,{children:e.jsx(d,{basename:m,children:e.jsx(i,{})})});t.hasChildNodes()?s(t,e.jsx(r,{})):a(t).render(e.jsx(r,{}));
