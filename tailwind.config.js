@@ -1,15 +1,75 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
-  theme: {
-    extend: {
-      fontFamily: {
-        'jua': ['Jua', 'sans-serif'],
-        'outfit': ['Outfit', 'sans-serif'],
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import prerender from 'vite-plugin-prerender'
+import path from 'path'
+import fs from 'fs'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+// slug function
+const slugify = text =>
+  text.toString().toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+
+// read product data
+const productsData = JSON.parse(
+  fs.readFileSync(path.resolve(__dirname, 'src/products.json'), 'utf-8')
+)
+
+// build routes
+const routes = ['/', '/about']
+
+const collections = new Set(productsData.map(p => p.collection))
+collections.forEach(col => {
+  if (col) routes.push(`/${slugify(col)}`)
+})
+
+productsData.forEach(product => {
+  const collectionSlug = slugify(product.collection || 'other')
+  const itemSlug = slugify(
+    `${product.releaseDate || 'vintage'}-${product.manufacturer}-${product.name}`
+  )
+  routes.push(`/${collectionSlug}/${itemSlug}`)
+})
+
+export default defineConfig({
+  base: '/website/',
+  plugins: [
+    react(),
+
+    prerender({
+      routes,
+      staticDir: 'dist',
+
+      // playwright renderer works out of the box
+      renderer: 'playwright',
+      rendererOptions: {
+        renderAfterTime: 400
       },
-    },
+
+      postProcess(rendered) {
+        // fix localhost URLs
+        rendered.html = rendered.html.replace(
+          /http:\/\/localhost:\d+/g,
+          'https://LoftLoot.github.io/website'
+        )
+        return rendered
+      }
+    })
+  ],
+
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src')
+    }
   },
-  plugins: [],
-}
+
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: false
+  }
+})
