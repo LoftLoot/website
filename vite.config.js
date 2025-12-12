@@ -41,12 +41,11 @@ export default defineConfig({
   plugins: [
     react(),
     prerender({
-      staticDir: path.join(__dirname, 'dist'),
       routes: routes,
       renderer: new PuppeteerRenderer({
-        // Wait for data to load
+        // Wait 500ms for React to mount and data to load
         renderAfterTime: 500,
-        // Critical for GitHub Actions (CI) to prevent crashes
+        // Vital for running in GitHub Actions/CI environments
         args: ['--no-sandbox', '--disable-setuid-sandbox'],
       }),
       postProcess(renderedRoute) {
