@@ -3,6 +3,9 @@ import React, { useState, useRef, useEffect, useLayoutEffect, useCallback, useMe
 import { Search, X, Filter, ChevronRight, ArrowRight } from 'lucide-react';
 import { FILTER_COLORS } from '../data';
 
+// --- FIX: Isomorphic Layout Effect ---
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+
 // --- CONSTANTS ---
 const TOP_GAP = 0; 
 const SCROLL_CONTAINER_ID = "app-scroll-container";
@@ -358,7 +361,8 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
   const [spacerHeight, setSpacerHeight] = useState(0);
 
   // 1. HEIGHT MEASUREMENT LAYER
-  useLayoutEffect(() => {
+  // UPDATED: Uses useIsomorphicLayoutEffect
+  useIsomorphicLayoutEffect(() => {
       const container = document.getElementById(SCROLL_CONTAINER_ID);
       const root = document.getElementById('root'); 
 
@@ -497,7 +501,8 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
   const measureRef = useRef(null);
   const lastWidth = useRef(0);
 
-  useLayoutEffect(() => {
+  // UPDATED: Uses useIsomorphicLayoutEffect
+  useIsomorphicLayoutEffect(() => {
       let rafId;
       const calculateRepeats = () => {
           if (!measureRef.current) return;
