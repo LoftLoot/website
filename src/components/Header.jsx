@@ -593,17 +593,21 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
               <div className="px-4 pb-2 pt-4">
                   <SearchInput search={search} onSearchUpdate={onSearchUpdate} onCommit={onCommit} suggestions={suggestions} />
               </div>
-              <QuickFilterChips 
-                onCommit={onCommit}
-                onReset={onHomeClick}
-                selectedCollection={selectedCollection} 
-                selectedDecade={selectedDecade}
-                collections={collections} 
-                decades={decades} 
-                availableCollections={availableCollections}
-                availableDecades={availableDecades}
-                hasMounted={hasMounted} // Passed down to chips
-              />
+              
+              {/* FIX: Only render QuickFilterChips if we are on the main shop page */}
+              {isShopMain && (
+                <QuickFilterChips 
+                    onCommit={onCommit}
+                    onReset={onHomeClick}
+                    selectedCollection={selectedCollection} 
+                    selectedDecade={selectedDecade}
+                    collections={collections} 
+                    decades={decades} 
+                    availableCollections={availableCollections}
+                    availableDecades={availableDecades}
+                    hasMounted={hasMounted} // Passed down to chips
+                />
+              )}
           </div>
       </div>
     </>
