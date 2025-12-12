@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "prerender": "node --loader esm prerender.js",
+    "prerender": "node prerender.js",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
@@ -40,4 +40,3 @@
     ]
   }
 }
-
