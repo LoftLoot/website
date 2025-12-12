@@ -1,10 +1,7 @@
 // src/components/ProductCard.js
-import React, { useState, useRef, useCallback, useLayoutEffect, useEffect } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { PRELOAD_CACHE, addToBoundedCache, ITEMS_PER_PAGE, GlobalObserver } from '../data';
-
-// --- FIX: Isomorphic Layout Effect ---
-const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 // --- UTILS & HOOKS ---
 const preloadImage = (src) => {
@@ -27,23 +24,13 @@ const useProximityPreloader = (src) => {
 
 // --- COMPONENT ---
 const ProductCard = React.memo(({ product, index, onOpen, isMicro = false, priority = false, animationDelay }) => {
-  const { isSold, imageColor, name, price, mainImage, tinyPlaceholder, badgeText, badgeColor, brand, manufacturer, schemaCondition, fullSlug } = product; 
+  const { isSold, name, price, mainImage, badgeText, badgeColor, brand, manufacturer, schemaCondition, fullSlug } = product; 
+  
   const hoverTimer = useRef(null);
   const proximityRef = useProximityPreloader(mainImage);
   
-  // Initialize state. We still track this to hide the placeholder behind the image once loaded.
-  const [imgLoaded, setImgLoaded] = useState(() => priority || PRELOAD_CACHE.has(mainImage));
-  
-  const imgRef = useRef(null);
   const [hasMounted, setHasMounted] = useState(false);
   useEffect(() => setHasMounted(true), []);
-
-  useIsomorphicLayoutEffect(() => {
-      if (imgRef.current?.complete) {
-          setImgLoaded(true);
-          addToBoundedCache(PRELOAD_CACHE, mainImage, true, 50);
-      }
-  }, [mainImage]);
 
   const handlePointerEnter = useCallback((e) => {
       if (e.pointerType === 'touch') return;
@@ -63,19 +50,13 @@ const ProductCard = React.memo(({ product, index, onOpen, isMicro = false, prior
       
       <Link 
         to={`/${fullSlug}/`} 
-        className="aspect-square md:aspect-[4/5] relative overflow-hidden bg-[#f2f4f6] cursor-pointer focus:outline-none select-none block"
+        // REMOVED: bg-[#f2f4f6] - No more gray background flicker
+        className="aspect-square md:aspect-[4/5] relative overflow-hidden cursor-pointer focus:outline-none select-none block"
       >
         <div className={`absolute inset-0 z-0 ${isSold ? 'grayscale' : ''}`}>
-             {/* Placeholder: Removed transition classes. Instantly hides when image reports loaded. */}
-             <div 
-                className={`absolute inset-0 z-0 bg-cover bg-center filter blur-xl scale-110 ${imgLoaded ? 'opacity-0' : 'opacity-100'}`} 
-                style={{ backgroundImage: `url("${tinyPlaceholder}")`, backgroundColor: `#${imageColor}` }}
-             ></div>
-             
-             {/* Image: Always opacity-100. No transition. Shows immediately as browser downloads it. */}
+             {/* Native Image Rendering: No background, no placeholders. */}
              {mainImage && (
                 <img 
-                    ref={imgRef} 
                     itemProp="image" 
                     src={mainImage} 
                     alt={`Vintage ${product.releaseDate || ''} ${name} - ${manufacturer} Action Figure`} 
@@ -84,7 +65,7 @@ const ProductCard = React.memo(({ product, index, onOpen, isMicro = false, prior
                     loading={priority ? "eager" : "lazy"} 
                     fetchpriority={priority ? "high" : "auto"} 
                     decoding={priority ? "sync" : "async"} 
-                    onLoad={() => { setImgLoaded(true); addToBoundedCache(PRELOAD_CACHE, mainImage, true, 50); }} 
+                    onLoad={() => addToBoundedCache(PRELOAD_CACHE, mainImage, true, 50)} 
                     className="absolute inset-0 w-full h-full object-cover z-10"
                 />
              )}
