@@ -25,7 +25,7 @@ jobs:
         run: npm install
 
       - name: Run Prerender Script
-        run: node scripts/prerender.js
+        run: node prerender.js
 
       - name: Build the Website
         run: npm run build
