@@ -751,7 +751,8 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                     "priceCurrency": "GBP", 
                     "price": product.price, 
                     "availability": product.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
-                    "url": window.location.href // Explicit URL link
+                    // FIX: Use static data instead of window.location.href
+                    "url": `https://loftloot.co.uk/${product.fullSlug}/` 
                 }
             },
             {
