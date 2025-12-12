@@ -1,23 +1,20 @@
+import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom/server';
 import { App } from './src/App.jsx';
-import React from 'react';
 
-export function prerender(args) {
+/**
+ * Prerender function called by vite-prerender-plugin.
+ * Always returns { html: string }.
+ */
+export function prerender(route) {
+  // Ensure route is a string
+  const url = typeof route === 'string' ? route : (route.route || route.path || '/');
+
   const basename = '/website/';
 
-  // Ensure url is a string
-  let url = '/';
-  if (typeof args === 'string') {
-    url = args;
-  } else if (args && (typeof args.route === 'string' || typeof args.path === 'string')) {
-    url = args.route || args.path;
-  }
-
-  // Prepend basename if missing
-  const location = String(url).startsWith(basename)
-    ? url
-    : basename.replace(/\/$/, '') + (url === '/' ? '' : url);
+  // Prepend basename if not already present
+  const location = url.startsWith(basename) ? url : basename.replace(/\/$/, '') + url;
 
   const html = renderToString(
     <React.StrictMode>
