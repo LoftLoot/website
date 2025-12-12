@@ -1,51 +1,49 @@
-import { renderToString } from 'react-dom/server';
-import { StaticRouter } from 'react-router-dom/server';
-import React from 'react';
-import { App } from './src/App.jsx';
+// prerender.jsx
 import fs from 'fs';
 import path from 'path';
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
+import { StaticRouter } from 'react-router-dom/server';
+import App from './src/App.jsx';
 
-const BASE_PATH = '/website/'; // your homepage base
+// Where to write the prerendered HTML
+const DIST_DIR = path.resolve(process.cwd(), 'dist');
 
-async function prerender() {
-  const routes = ['/', '/about']; // Add any collection/product routes you want prerendered
+// All routes to prerender
+const routes = ['/', '/about']; // add more routes as needed
 
-  for (const route of routes) {
-    const location = route.startsWith(BASE_PATH) ? route : BASE_PATH.replace(/\/$/, '') + route;
+// Ensure dist folder exists
+if (!fs.existsSync(DIST_DIR)) fs.mkdirSync(DIST_DIR, { recursive: true });
 
-    let html = '';
-    try {
-      html = renderToString(
-        <React.StrictMode>
-          <StaticRouter basename={BASE_PATH} location={location}>
-            <App />
-          </StaticRouter>
-        </React.StrictMode>
-      );
-    } catch (err) {
-      console.error('[PRERENDER ERROR]', err);
-    }
+routes.forEach((url) => {
+  // Wrap your App in a StaticRouter for SSR
+  const appHtml = ReactDOMServer.renderToString(
+    <StaticRouter location={url}>
+      <App />
+    </StaticRouter>
+  );
 
-    // Wrap with basic HTML shell
-    const fullHtml = `<!DOCTYPE html>
+  // Build a simple HTML template
+  const html = `<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Loft Loot</title>
-</head>
-<body>
-<div id="root">${html}</div>
-<script type="module" src="/src/main.jsx"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#fffbf0" />
+    <meta name="description" content="Loft Loot - Vintage Toys & Collectibles" />
+    <title>Loft Loot</title>
+    <link rel="stylesheet" href="/assets/index-Bp2FkpuY.css">
+    <script type="module" src="/assets/index-l1WCnySZ.js" defer></script>
+  </head>
+  <body style="background-color: #fffbf0;">
+    <div id="root">${appHtml}</div>
+  </body>
 </html>`;
 
-    // Save to dist folder
-    const outDir = path.resolve('./dist', route === '/' ? '' : route.slice(1));
-    fs.mkdirSync(outDir, { recursive: true });
-    fs.writeFileSync(path.join(outDir, 'index.html'), fullHtml);
-    console.log(`[PRERENDER] Wrote ${route} to ${outDir}/index.html`);
-  }
-}
+  // Determine output path
+  const outputPath = path.join(DIST_DIR, url === '/' ? '' : url);
+  if (!fs.existsSync(outputPath)) fs.mkdirSync(outputPath, { recursive: true });
 
-prerender();
+  fs.writeFileSync(path.join(outputPath, 'index.html'), html, 'utf-8');
+  console.log(`Prerendered ${url} -> ${path.join(outputPath, 'index.html')}`);
+});
