@@ -9,7 +9,7 @@
   "build": "vite build",
   "preview": "vite preview",
   "deploy": "gh-pages -d dist",
-  "prerender": "vite-node prerender.jsx"
+  "prerender": "npx vite-node prerender.jsx"
   },
   "dependencies": {
     "lucide-react": "^0.263.1",
@@ -41,4 +41,5 @@
     ]
   }
 }
+
 
