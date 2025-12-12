@@ -1,20 +1,25 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import prerender from 'vite-plugin-prerender-spa';
+import vitePrerender from 'vite-plugin-prerender';
 import path from 'path';
 import fs from 'fs';
+import { fileURLToPath } from 'url';
 
-// Helper to slugify text (matching your app logic)
+// Fix for __dirname in ESM (type: module)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Helper to slugify text
 const slugify = (text) => {
   return text.toString().toLowerCase()
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
     .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 };
 
-// Read product data to generate routes
+// Read product data
 const productsData = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'src/products.json'), 'utf-8'));
 
-// Generate Routes List
+// Generate Routes
 const routes = ['/', '/about'];
 
 // Add Collections
@@ -31,27 +36,20 @@ productsData.forEach(product => {
 });
 
 export default defineConfig({
-  base: '/website/', // Matches your homepage in package.json
+  base: '/website/',
   plugins: [
     react(),
-    prerender({
-      routes,
+    vitePrerender({
       staticDir: path.join(__dirname, 'dist'),
-      // Optimization: Minify the generated HTML
-      minify: {
-        collapseBooleanAttributes: true,
-        collapseWhitespace: true,
-        decodeEntities: true,
-        keepClosingSlash: true,
-        sortAttributes: true,
-      },
-      // Ensure the renderer waits for the app to settle
-      rendererOptions: {
-        maxConcurrentRoutes: 5,
-        renderAfterTime: 500, // wait 500ms for data/images to settle
-      },
+      routes: routes,
+      renderer: new vitePrerender.PuppeteerRenderer({
+        // Wait for a short time to ensure data/images populate
+        renderAfterTime: 500,
+        // Critical for CI/GitHub Actions environments
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      }),
       postProcess(renderedRoute) {
-        // Fix up paths for GitHub Pages /website/ subpath if needed
+        // Fix absolute paths for GitHub Pages subpath
         renderedRoute.html = renderedRoute.html.replace(
           /http:\/\/localhost:\d+/g,
           'https://LoftLoot.github.io/website'
