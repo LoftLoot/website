@@ -1,24 +1,27 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import prerender from 'vite-prerender-plugin'; // make sure installed
 
 export default defineConfig({
-  base: '/website/', // matches GitHub Pages repo name
-  plugins: [
-    react(),
-    prerender({
-      staticDir: 'dist',
-      routes: ['/website/'], // match your StaticRouter basename
-      postProcess(context) {
-        // Inject prerendered HTML into <div id="root"></div>
-        context.html = context.html.replace(
-          /<div id="root"><\/div>/,
-          `<div id="root">${context.renderedRoute}</div>`
-        );
-        return context;
-      },
-      // points to your prerender function
-      render: (route) => import('./prerender.jsx').then(mod => mod.prerender(route)),
-    }),
-  ],
+  base: '/website/', // GitHub Pages repo base path
+  plugins: [react()],
+  build: {
+    rollupOptions: {
+      output: {
+        // Keep assets organized
+        assetFileNames: 'assets/[name]-[hash][extname]',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js'
+      }
+    }
+  },
+  // Include these file types as assets so imports like import img from './image.png' work
+  assetsInclude: [
+    '**/*.png',
+    '**/*.jpg',
+    '**/*.jpeg',
+    '**/*.svg',
+    '**/*.woff',
+    '**/*.woff2',
+    '**/*.ttf'
+  ]
 });
