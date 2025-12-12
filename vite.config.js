@@ -5,14 +5,17 @@ export default defineConfig(({ isSsrBuild }) => ({
   base: '/website/',
   plugins: [react()],
   resolve: {
-    // Prevent "Dual React" issues by forcing a single instance
     dedupe: ['react', 'react-dom', 'react-router-dom'],
+  },
+  // FIX: Force Vite to bundle this library so Node.js doesn't fail on named exports
+  ssr: {
+    noExternal: ['react-helmet-async'],
   },
   build: {
     rollupOptions: {
       output: isSsrBuild 
         ? {
-            // SSR Build: Keep filename fixed (no hash) so the node script can find it
+            // SSR Build: Keep filename fixed for the prerender script
             entryFileNames: '[name].js',
           }
         : {
