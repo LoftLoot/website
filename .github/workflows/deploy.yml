@@ -24,13 +24,13 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      # SWAP: Build FIRST to generate the dist folder with assets
+      # 1. Build Client (Generates CSS/JS assets and dist/index.html)
       - name: Build the Website
         run: npm run build
 
-      # SWAP: Prerender SECOND to inject content into the built HTML
+      # 2. Bundle & Execute Prerenderer (Injects HTML into dist/index.html)
       - name: Prerender Pages
-        run: npx vite-node prerender.jsx
+        run: npm run prerender
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
