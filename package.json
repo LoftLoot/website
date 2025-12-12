@@ -5,10 +5,11 @@
   "homepage": "https://LoftLoot.github.io/website",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "prerender": "node prerender.js",
-    "deploy": "gh-pages -d dist"
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "deploy": "gh-pages -d dist",
+  "prerender": "vite-node prerender.jsx"
   },
   "dependencies": {
     "lucide-react": "^0.263.1",
@@ -40,3 +41,4 @@
     ]
   }
 }
+
