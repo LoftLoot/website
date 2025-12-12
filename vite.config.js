@@ -2,10 +2,10 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/website/',
+  base: '/website/', 
   plugins: [react()],
+  // FIX: Force single instance of React/Router to prevent "Dual React" errors
   resolve: {
-    // FIX: Force single instance of React/Router to prevent context errors
     dedupe: ['react', 'react-dom', 'react-router-dom'],
   },
   build: {
