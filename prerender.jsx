@@ -4,10 +4,8 @@ import { App } from './src/App';
 import React from 'react';
 
 export function prerender(url) {
-  // Use the same base as your vite config
   const basename = '/website/';
   
-  // Render the app to a string
   const html = renderToString(
     <React.StrictMode>
       <StaticRouter basename={basename} location={url}>
