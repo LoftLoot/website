@@ -40,7 +40,8 @@ const throttle = (func, limit) => {
 const FilterGroup = React.memo(({ title, options, selected, onChange, available, color, hasMounted }) => (
     <div className="space-y-2">
         <h3 className="font-bold text-[#514d46] text-xs md:text-sm uppercase tracking-widest flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full" style={{ backgroundColor: color }}></div>{title}
+            {/* CHANGED: div -> span to fix invalid HTML nesting */}
+            <span className="w-2 h-2 rounded-full" style={{ backgroundColor: color }}></span>{title}
         </h3>
         <div className="flex flex-col gap-1.5">
             {['All', ...options].map(opt => {
@@ -79,7 +80,10 @@ const FilterSection = React.memo(({ collections, decades, types, selectedCollect
     return (
         <div className="flex flex-col gap-8">
             <div className="space-y-2">
-                <h3 className="font-bold text-[#514d46] text-xs md:text-sm uppercase tracking-widest flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-[#487ec8]"></div>Availability</h3>
+                <h3 className="font-bold text-[#514d46] text-xs md:text-sm uppercase tracking-widest flex items-center gap-2">
+                    {/* CHANGED: div -> span */}
+                    <span className="w-2 h-2 rounded-full bg-[#487ec8]"></span>Availability
+                </h3>
                 <div className="flex flex-col gap-1.5">
                      <button onClick={() => onStockChange(false)} className={`text-left px-4 py-2.5 rounded-xl text-xs md:text-sm font-bold ${!showInStockOnly ? "bg-[#eef5fc] text-[#487ec8] shadow-inner ring-2 ring-[#eef5fc]" : `text-[#514d46]/60 hover:bg-white hover:text-[#487ec8] hover:shadow-sm active:scale-95 ${hasMounted ? 'transition-colors' : ''}`}`}>Show All</button>
                      <button onClick={() => onStockChange(true)} className={`text-left px-4 py-2.5 rounded-xl text-xs md:text-sm font-bold ${showInStockOnly ? "bg-[#eef5fc] text-[#487ec8] shadow-inner ring-2 ring-[#eef5fc]" : `text-[#514d46]/60 hover:bg-white hover:text-[#487ec8] hover:shadow-sm active:scale-95 ${hasMounted ? 'transition-colors' : ''}`}`}>In Stock</button>
@@ -91,7 +95,10 @@ const FilterSection = React.memo(({ collections, decades, types, selectedCollect
             <FilterGroup title="Product Type" options={types} selected={selectedType} onChange={onTypeChange} available={availableTypes} color={FILTER_COLORS.Type} hasMounted={hasMounted} />
             
             <div className="space-y-4">
-                <h3 className="font-bold text-[#514d46] text-xs md:text-sm uppercase tracking-widest flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-[#d99875]"></div>Price Range</h3>
+                <h3 className="font-bold text-[#514d46] text-xs md:text-sm uppercase tracking-widest flex items-center gap-2">
+                    {/* CHANGED: div -> span */}
+                    <span className="w-2 h-2 rounded-full bg-[#d99875]"></span>Price Range
+                </h3>
                 <div className="px-2 py-2">
                     <div className="flex justify-between text-xs md:text-sm text-[#514d46]/60 font-bold mb-2 font-mono"><span>£{isDisabled ? 0 : localRange[0]}</span><span>£{localRange[1]}</span></div>
                     <div className={`relative w-full h-6`}>
