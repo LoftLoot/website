@@ -4,12 +4,12 @@ on:
   workflow_dispatch: # Manual trigger button
 
 permissions:
-  actions: write      # Required to delete workflow runs
-  deployments: write  # Required to delete deployments
+  actions: write      
+  deployments: write  
   contents: read
 
 jobs:
-  # Job 1: Clean up old build logs (Workflow Runs)
+  # Job 1: Clean up old build logs
   prune-runs:
     runs-on: ubuntu-latest
     steps:
@@ -19,9 +19,9 @@ jobs:
           token: ${{ github.token }}
           repository: ${{ github.repository }}
           retain_days: 0
-          keep_minimum_runs: 5 # Always keep the last 5 builds for safety
+          keep_minimum_runs: 5 # Keeps the last 5 builds
 
-  # Job 2: Clean up old deployment history (Environments)
+  # Job 2: Clean up old deployment history
   prune-deployments:
     runs-on: ubuntu-latest
     steps:
@@ -29,6 +29,8 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
+            const KEEP_COUNT = 5; // FIX: Keep the 5 most recent deployments safe
+            
             const owner = context.repo.owner;
             const repo = context.repo.repo;
             const environment = 'github-pages'; 
@@ -45,15 +47,15 @@ jobs:
 
             console.log(`Found ${deployments.length} deployments.`);
 
-            if (deployments.length <= 1) {
-              console.log("Nothing to clean up (keeping the latest one).");
+            if (deployments.length <= KEEP_COUNT) {
+              console.log(`Nothing to clean up (keeping the latest ${KEEP_COUNT}).`);
               return;
             }
 
-            // 2. Iterate, skipping index 0 (the latest/active one)
-            for (let i = 1; i < deployments.length; i++) {
+            // 2. Iterate, skipping the first KEEP_COUNT (preserving recent history)
+            for (let i = KEEP_COUNT; i < deployments.length; i++) {
               const deployment = deployments[i];
-              console.log(`Processing deployment ID ${deployment.id}...`);
+              console.log(`Processing deployment ID ${deployment.id} (${deployment.created_at})...`);
 
               try {
                 // Mark inactive
@@ -64,7 +66,7 @@ jobs:
                   state: 'inactive'
                 });
               } catch (e) {
-                console.log(`  - Note: Could not mark inactive (likely already inactive).`);
+                console.log(`  - Note: Could not mark inactive.`);
               }
 
               // Delete
@@ -79,4 +81,4 @@ jobs:
                 console.error(`  - Failed to delete: ${e.message}`);
               }
             }
-            console.log("Deployment cleanup complete!");
+            console.log("Cleanup complete!");
