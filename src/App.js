@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useState, useMemo, useEffect, useRef, useDeferredValue, useCallback } from 'react';
-import { BrowserRouter, Routes, Route, useNavigate, useParams, useLocation, Navigate, Link, useSearchParams } from 'react-router-dom';
+import { Routes, Route, useNavigate, useParams, useLocation, Navigate, Link, useSearchParams } from 'react-router-dom';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 import { X, ChevronDown, ArrowUp, Search } from 'lucide-react';
 
@@ -67,7 +67,6 @@ const FilterSection = React.memo(({ collections, decades, types, selectedCollect
     const sliderMax = Math.ceil(maxPrice);
     const sliderMin = Math.floor(minPrice);
 
-    // Sync local range if props change externally (e.g. URL update)
     useEffect(() => { setLocalRange(priceRange); }, [priceRange]);
 
     const handleMinChange = (e) => setLocalRange([Math.min(Number(e.target.value), localRange[1] - 1), localRange[1]]);
@@ -116,30 +115,16 @@ const FilterSection = React.memo(({ collections, decades, types, selectedCollect
 const ProductRoute = ({ appData }) => {
     const { collectionSlug, productSlug } = useParams();
     const navigate = useNavigate();
-    
-    // Construct full slug to find product
     const fullSlug = `${collectionSlug}/${productSlug}`;
     const product = appData?.slugMap?.get(fullSlug);
 
-    // 404 UI
     if (appData && !product) {
         return (
             <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
-                 <div className="w-24 h-24 bg-[#f4e799] rounded-full flex items-center justify-center mb-6 text-[#d35153] shadow-inner">
-                    <Search size={40} strokeWidth={3} />
-                 </div>
-                 <h1 className="text-[#514d46] font-black text-3xl md:text-4xl mb-4" style={{ fontFamily: '"Jua", sans-serif' }}>
-                    Item Not Found
-                 </h1>
-                 <p className="text-[#514d46]/70 max-w-md mb-8 font-medium">
-                    This item seems to have gotten lost in the move. It may have been sold or removed from the archive.
-                 </p>
-                 <button 
-                    onClick={() => navigate('/')} 
-                    className="bg-[#487ec8] text-white px-8 py-3 rounded-xl font-bold shadow-lg hover:bg-[#3a66a3] active:scale-95 transition-all"
-                 >
-                    Return to Catalogue
-                 </button>
+                 <div className="w-24 h-24 bg-[#f4e799] rounded-full flex items-center justify-center mb-6 text-[#d35153] shadow-inner"><Search size={40} strokeWidth={3} /></div>
+                 <h1 className="text-[#514d46] font-black text-3xl md:text-4xl mb-4" style={{ fontFamily: '"Jua", sans-serif' }}>Item Not Found</h1>
+                 <p className="text-[#514d46]/70 max-w-md mb-8 font-medium">This item seems to have gotten lost in the move. It may have been sold or removed from the archive.</p>
+                 <button onClick={() => navigate('/')} className="bg-[#487ec8] text-white px-8 py-3 rounded-xl font-bold shadow-lg hover:bg-[#3a66a3] active:scale-95 transition-all">Return to Catalogue</button>
             </div>
         );
     }
@@ -165,24 +150,19 @@ const ProductRoute = ({ appData }) => {
 // --- 3. SHOP VIEW (Presentation) ---
 
 const ShopView = ({ 
-    appData, 
-    visibleProducts, 
-    filteredCount,
+    appData, visibleProducts, filteredCount,
     selectedCollection, selectedDecade, selectedType, priceRange, showInStockOnly,
     sortOption, setSortOption, setPriceRange, setShowInStockOnly, 
     onCollectionChange, onDecadeChange, onTypeChange, onClearFilters,
-    available, hasMounted, committedQuery,
-    onLoadMore, visibleCount 
+    available, hasMounted, committedQuery, onLoadMore, visibleCount 
 }) => {
     const [isSortOpen, setIsSortOpen] = useState(false);
     const sortRef = useRef(null);
     const topSectionRef = useRef(null);
-    const location = useLocation(); // Hook for canonical URL logic
+    const location = useLocation(); 
 
-    // Construct Canonical URL (Safe for react-snap)
     const canonicalUrl = `https://loftloot.co.uk${location.pathname === '/' ? '' : location.pathname}`;
 
-    // Scroll to top of filters when they change
     useEffect(() => {
         if(window.innerWidth >= 1024 && topSectionRef.current && (committedQuery || selectedCollection !== 'All')) {
             const container = document.getElementById('app-scroll-container');
@@ -204,23 +184,17 @@ const ShopView = ({
         if (committedQuery) return `'${committedQuery}'`;
         const parts = [];
         let isVintage = true;
-        
         if (selectedDecade !== 'All' && selectedDecade !== 'Unknown') {
             parts.push(selectedDecade.startsWith('19') ? selectedDecade.substring(2) : selectedDecade);
-            // Don't add "Vintage" if we have a specific era (e.g. "80s Thundercats Toys")
             isVintage = false;
         }
-        
         if (isVintage) parts.push("Vintage");
-        
         if (selectedCollection !== 'All') parts.push(selectedCollection);
         if (selectedType !== 'All') parts.push(TYPE_CONFIG[selectedType] ? TYPE_CONFIG[selectedType].plural : selectedType);
         else parts.push("Toys");
-        
         return parts.join(" ");
     }, [selectedDecade, selectedCollection, selectedType, committedQuery]);
 
-    // SEO Description Logic
     const metaDescription = useMemo(() => {
         if (selectedCollection !== 'All' && COLLECTION_DESCRIPTIONS[selectedCollection]) {
             return COLLECTION_DESCRIPTIONS[selectedCollection];
@@ -285,24 +259,14 @@ const ShopView = ({
                                         <ProductCard key={product.id} product={product} index={index} priority={index < 6} animationDelay={index >= ITEMS_PER_PAGE ? `${(index % ITEMS_PER_PAGE) * 0.03}s` : undefined} />
                                     ))}
                                 </div>
-                                
                                 <div className="flex flex-col items-center gap-4 pb-8 mt-8">
                                     {visibleCount < filteredCount ? (
                                         <>
-                                            <button 
-                                                onClick={onLoadMore} 
-                                                className="mt-4 bg-[#487ec8] text-white px-12 py-3 rounded-xl font-bold hover:bg-[#3a66a3] transition-all active:scale-95"
-                                            >
-                                                View More Loot
-                                            </button>
-                                            <span className="text-[#514d46]/60 font-medium text-xs md:text-sm">
-                                                Viewing {visibleCount} of {filteredCount}
-                                            </span>
+                                            <button onClick={onLoadMore} className="mt-4 bg-[#487ec8] text-white px-12 py-3 rounded-xl font-bold hover:bg-[#3a66a3] transition-all active:scale-95">View More Loot</button>
+                                            <span className="text-[#514d46]/60 font-medium text-xs md:text-sm">Viewing {visibleCount} of {filteredCount}</span>
                                         </>
                                     ) : (
-                                        <span className="text-[#514d46]/60 font-medium text-xs md:text-sm">
-                                            Viewing {filteredCount} of {filteredCount}
-                                        </span>
+                                        <span className="text-[#514d46]/60 font-medium text-xs md:text-sm">Viewing {filteredCount} of {filteredCount}</span>
                                     )}
                                 </div>
                             </>
@@ -316,38 +280,28 @@ const ShopView = ({
     );
 };
 
-// --- 4. APP CONTAINER (Logic) ---
+// --- 4. APP CONTAINER ---
 
 const AppContent = () => {
     const [hasMounted, setHasMounted] = useState(false);
     useEffect(() => setHasMounted(true), []);
   
-    // Data is computed synchronously
     const appData = useMemo(() => processProductData(rawProductsData), []);
-    
     const location = useLocation();
     const navigate = useNavigate();
-    
-    // --- PURE URL STATE MANAGEMENT ---
     const [searchParams, setSearchParams] = useSearchParams();
 
-    // 1. Derive all state directly from URL
     const committedQuery = searchParams.get('q') || "";
     const selectedDecade = searchParams.get('decade') || "All";
     const selectedType = searchParams.get('type') || "All";
     const sortOption = searchParams.get('sort') || "latest";
     const showInStockOnly = searchParams.get('stock') === 'true';
 
-    // "searchQuery" is local input state only, "committedQuery" is the URL truth
     const [searchQuery, setSearchQuery] = useState(committedQuery); 
     const [isTyping, setIsTyping] = useState(false);
 
-    // Sync input box when URL changes (e.g. back button)
-    useEffect(() => {
-        if (!isTyping) setSearchQuery(committedQuery);
-    }, [committedQuery, isTyping]);
+    useEffect(() => { if (!isTyping) setSearchQuery(committedQuery); }, [committedQuery, isTyping]);
 
-    // Initial Collection is derived from Pathname (not query params)
     const [selectedCollection, setSelectedCollection] = useState("All");
 
     useEffect(() => {
@@ -366,40 +320,27 @@ const AppContent = () => {
     const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
     const [showScrollButton, setShowScrollButton] = useState(false);
 
-    // Init price range
     useEffect(() => {
       if (appData) { setPriceRange([Math.floor(appData.minPrice), Math.ceil(appData.maxPrice)]); }
     }, [appData]);
 
-    // --- HELPER TO UPDATE PARAMS ---
     const updateParams = useCallback((updates) => {
         setSearchParams(prev => {
             const next = new URLSearchParams(prev);
             Object.entries(updates).forEach(([key, value]) => {
-                if (value === 'All' || value === false || value === '') {
-                    next.delete(key);
-                } else {
-                    next.set(key, value);
-                }
+                if (value === 'All' || value === false || value === '') next.delete(key);
+                else next.set(key, value);
             });
-            // Reset pagination on filter change
             setVisibleCount(ITEMS_PER_PAGE);
             return next;
         }, { replace: true });
     }, [setSearchParams]);
 
-    // --- NAVIGATION HANDLERS ---
-    
     const handleCollectionChange = useCallback((newCol) => {
-        // Preserve existing query params (filters) when switching collections
         const currentSearch = searchParams.toString();
-        const search = currentSearch ? `?${currentSearch}` : ''; // Fixed: use search variable
-        
-        if (newCol === 'All') {
-            navigate({ pathname: '/', search: search });
-        } else {
-            navigate({ pathname: `/${slugify(newCol)}/`, search: search });
-        }
+        const search = currentSearch ? `?${currentSearch}` : ''; 
+        if (newCol === 'All') navigate({ pathname: '/', search: search });
+        else navigate({ pathname: `/${slugify(newCol)}/`, search: search });
     }, [navigate, searchParams]);
 
     const handleDecadeChange = useCallback((d) => updateParams({ decade: d }), [updateParams]);
@@ -416,36 +357,23 @@ const AppContent = () => {
                 else next.delete('q');
                 return next;
             });
-            // Ensure we are on a shop page to see results
             const pathSegments = location.pathname.split('/').filter(Boolean);
             if (pathSegments.length === 0 || pathSegments[0] === 'about') {
-                 // stay on page or navigate home? Usually home for search results
                  navigate(`/?q=${encodeURIComponent(action.value)}`);
             }
         } else if (action.type === 'filter') {
             const filter = action.payload;
             setSearchQuery("");
-            // Clear query when picking a filter
-            const resetQuery = { q: '' };
-            
-            if (filter.kind === 'Collection') {
-                handleCollectionChange(filter.value);
-            } else {
-                if (filter.kind === 'Type') updateParams({ ...resetQuery, type: filter.value });
-                if (filter.kind === 'Era') updateParams({ ...resetQuery, decade: filter.value });
+            if (filter.kind === 'Collection') handleCollectionChange(filter.value);
+            else {
+                if (filter.kind === 'Type') updateParams({ q: '', type: filter.value });
+                if (filter.kind === 'Era') updateParams({ q: '', decade: filter.value });
             }
-        } else if (action.type === 'product') {
-            navigate(`/${action.payload.fullSlug}/`);
-        }
+        } else if (action.type === 'product') navigate(`/${action.payload.fullSlug}/`);
     }, [navigate, location.pathname, updateParams, handleCollectionChange, setSearchParams]);
 
-    const resetView = useCallback(() => { 
-        setSearchQuery(""); 
-        setSearchParams({});
-        navigate('/'); 
-    }, [navigate, setSearchParams]);
+    const resetView = useCallback(() => { setSearchQuery(""); setSearchParams({}); navigate('/'); }, [navigate, setSearchParams]);
 
-    // --- SEARCH LOGIC ---
     const { autocomplete, search: performSearch } = useSearchIndex(appData ? appData.products : []);
     const deferredSearch = useDeferredValue(searchQuery);
     
@@ -474,10 +402,7 @@ const AppContent = () => {
         return { collections: Array.from(c).sort(), decades: Array.from(d).sort(), types: Array.from(t).sort() };
     }, [selectedDecade, selectedCollection, selectedType, showInStockOnly, appData]);
 
-    // Reset visible count when filters change (using the derived values)
-    useEffect(() => {
-        setVisibleCount(ITEMS_PER_PAGE);
-    }, [selectedCollection, selectedDecade, selectedType, priceRange, committedQuery, sortOption, showInStockOnly]);
+    useEffect(() => { setVisibleCount(ITEMS_PER_PAGE); }, [selectedCollection, selectedDecade, selectedType, priceRange, committedQuery, sortOption, showInStockOnly]);
 
     const slicedProducts = useMemo(() => filteredProducts.slice(0, visibleCount), [filteredProducts, visibleCount]);
     
@@ -504,13 +429,8 @@ const AppContent = () => {
         visibleProducts: slicedProducts,
         filteredCount: filteredProducts.length,
         selectedCollection, selectedDecade, selectedType, priceRange, showInStockOnly, sortOption,
-        setSortOption: handleSortChange, 
-        setPriceRange, 
-        setShowInStockOnly: handleStockChange,
-        onCollectionChange: handleCollectionChange,
-        onDecadeChange: handleDecadeChange,
-        onTypeChange: handleTypeChange,
-        onClearFilters: resetView,
+        setSortOption: handleSortChange, setPriceRange, setShowInStockOnly: handleStockChange,
+        onCollectionChange: handleCollectionChange, onDecadeChange: handleDecadeChange, onTypeChange: handleTypeChange, onClearFilters: resetView,
         available, hasMounted, committedQuery, 
         setCommittedQuery: (val) => updateParams({ q: val }),
         setSearchQuery: (val) => { setSearchQuery(val); setIsTyping(true); },
@@ -530,12 +450,9 @@ const AppContent = () => {
                 onSearchUpdate={(val) => { setSearchQuery(val); setIsTyping(true); }}
                 onCommit={handleCommit} 
                 suggestions={suggestions} 
-                selectedCollection={selectedCollection} 
-                selectedDecade={selectedDecade}
-                collections={appData.collections} 
-                decades={appData.decades} 
-                availableCollections={available.collections}
-                availableDecades={available.decades}
+                selectedCollection={selectedCollection} selectedDecade={selectedDecade}
+                collections={appData.collections} decades={appData.decades} 
+                availableCollections={available.collections} availableDecades={available.decades}
             />
             
             <button onClick={scrollToTopSmart} className={`fixed bottom-8 right-8 z-[100] p-4 rounded-full bg-[#487ec8] text-white shadow-xl hover:scale-110 active:scale-95 ${hasMounted ? 'transition-all duration-300' : ''} ${showScrollButton ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}><ArrowUp size={24} strokeWidth={3} /></button>
@@ -548,7 +465,7 @@ const AppContent = () => {
                 <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
             
-            {navigator.userAgent === 'ReactSnap' && (
+            {typeof navigator !== 'undefined' && navigator.userAgent === 'ReactSnap' && (
                 <div style={{ display: 'none' }}>
                     {appData.products.map(p => (
                         <Link key={p.id} to={`/${p.fullSlug}/`}>{p.name}</Link>
@@ -565,15 +482,12 @@ const AppContent = () => {
     );
 };
 
-const App = () => ( 
+// Export App WITHOUT the Router (we inject it from outside)
+export const App = () => ( 
     <HelmetProvider>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_SCHEMA) }} />
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
-            <AppContent />
-        </BrowserRouter>
+        <AppContent />
     </HelmetProvider>
 );
 
 export default App;
-
-
