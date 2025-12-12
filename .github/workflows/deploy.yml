@@ -24,13 +24,11 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      # STEP 1: Build first.
-      # This creates the 'dist' folder and the 'index.html' file that prerender.jsx reads.
+      # SWAP: Build FIRST to generate the dist folder with assets
       - name: Build the Website
         run: npm run build
 
-      # STEP 2: Prerender second.
-      # This reads 'dist/index.html', injects the React HTML, and saves it back.
+      # SWAP: Prerender SECOND to inject content into the built HTML
       - name: Prerender Pages
         run: npx vite-node prerender.jsx
 
