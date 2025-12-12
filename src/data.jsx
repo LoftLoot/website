@@ -1,6 +1,14 @@
 // src/data.js
 
 // --- HELPER FUNCTIONS ---
+
+// FIX: Helper to get the base URL safely in Vite (works in browser & pre-renderer)
+const getBaseUrl = () => {
+    // import.meta.env.BASE_URL is injected by Vite at build time.
+    // It usually comes with a trailing slash, so we remove it to be safe.
+    return (import.meta.env.BASE_URL || '').replace(/\/$/, '');
+};
+
 export const slugify = (text) => {
     return text
         .toString()
@@ -45,8 +53,9 @@ export const generateYearTokens = (product) => {
 
 // --- CONSTANTS ---
 export const BASE_LOGOS = {
-    "eBay": process.env.PUBLIC_URL + "/images/logos/logo_ebay.png",
-    "Etsy": process.env.PUBLIC_URL + "/images/logos/logo_etsy.png"
+    // FIX: Use getBaseUrl() instead of process.env.PUBLIC_URL
+    "eBay": getBaseUrl() + "/images/logos/logo_ebay.png",
+    "Etsy": getBaseUrl() + "/images/logos/logo_etsy.png"
 };
 
 export const ITEMS_PER_PAGE = 12;
@@ -145,8 +154,9 @@ export const processProductData = (rawProducts) => {
         const processedImages = (product.images || []).map(url => {
             const videoId = extractYouTubeId(url);
             let finalUrl = url;
+            // FIX: Use getBaseUrl() instead of process.env.PUBLIC_URL
             if (!videoId && url.startsWith('/')) {
-                finalUrl = process.env.PUBLIC_URL + url;
+                finalUrl = getBaseUrl() + url;
             }
 
             return { 
@@ -168,9 +178,9 @@ export const processProductData = (rawProducts) => {
         return {
             ...product,
             collection: collectionName,
-            collectionSlug, // NEW
-            itemSlug,       // NEW
-            fullSlug,       // NEW: Combined for easier linking
+            collectionSlug, 
+            itemSlug,       
+            fullSlug,       
             decade: product.releaseDate ? `${Math.floor(product.releaseDate / 10) * 10}s` : 'Unknown',
             lowerName: normalizeText(product.name),
             lowerBrand: normalizeText(product.brand),
@@ -212,7 +222,6 @@ export const processProductData = (rawProducts) => {
 
     const productMap = new Map(finalProducts.map(p => [p.id, p]));
     const slugMap = new Map(finalProducts.map(p => [p.fullSlug, p]));
-    // NEW: Map to find Collection Name by Collection Slug
     const collectionSlugMap = new Map(finalProducts.map(p => [p.collectionSlug, p.collection])); 
 
     const collections = [...new Set(finalProducts.map(p => p.collection))].sort((a, b) => a === 'Other' ? 1 : b === 'Other' ? -1 : a.localeCompare(b));
