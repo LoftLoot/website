@@ -1,7 +1,6 @@
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom/server';
-// CHANGED: Explicitly import App.jsx
-import { App } from './src/App.jsx'; 
+import { App } from './src/App.jsx';
 import React from 'react';
 
 export function prerender(url) {
