@@ -7,7 +7,9 @@ import siblingImg from '../images/us.png';
 // --- SHARED COMPONENT ---
 export const JaggedLine = React.memo(({ position, color = "#f4e799" }) => (
     <div 
-        className={`absolute left-0 right-0 h-[10px] w-full z-20 ${position === 'top' ? '-top-[10px]' : '-bottom-[10px] rotate-180'}`} 
+        // FIX: Changed -top-[10px] to -top-[9px] and -bottom-[10px] to -bottom-[9px]
+        // This creates a 1px overlap to prevent "white line" gaps on mobile screens due to sub-pixel rendering.
+        className={`absolute left-0 right-0 h-[10px] w-full z-20 ${position === 'top' ? '-top-[9px]' : '-bottom-[9px] rotate-180'}`} 
         style={{ 
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='30' height='10' viewBox='0 0 30 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 L15 0 L30 10 Z' fill='${encodeURIComponent(color)}'/%3E%3C/svg%3E")`, 
             backgroundSize: '30px 10px', 
@@ -32,7 +34,6 @@ const About = () => {
                     
                     <div className="space-y-8 leading-relaxed text-sm md:text-base lg:text-lg relative text-left text-[#514d46]">
                         <div className="text-center mb-6">
-                            {/* UPDATED: text-2xl md:text-3xl lg:text-4xl */}
                             <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#514d46] leading-tight" style={{ fontFamily: '"Jua", sans-serif' }}>About Us</h1>
                         </div>
 
