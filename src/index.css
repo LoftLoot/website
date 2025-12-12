@@ -57,8 +57,14 @@ input[type=range]::-moz-range-thumb { pointer-events: auto; }
 
 /* --- ANIMATIONS --- */
 @keyframes deal-bottom {
-  0% { transform: translateY(100px); }
-  100% { transform: translateY(0); }
+  0% { 
+    opacity: 0;               /* FIX: Start invisible to prevent flicker */
+    transform: translateY(30px); /* Tighter movement (was 100px) */
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
 }
 
 @keyframes tear-off {
