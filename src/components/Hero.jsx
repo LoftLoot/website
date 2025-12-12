@@ -13,7 +13,6 @@ const Hero = () => {
         {/* TEXT COLUMN */}
         <div className="relative z-30 shrink-0 flex flex-col items-start justify-center select-none w-fit max-w-[50%] md:max-w-[60%]">
           <h2
-            // UPDATED: text-[1.75rem] (28px) is the exact midpoint between 2xl (24px) and 3xl (30px).
             className="font-black text-[#514d46] text-left leading-none whitespace-nowrap text-[1.75rem] md:text-5xl lg:text-6xl"
             style={{
               fontFamily: '"Jua", sans-serif',
@@ -46,7 +45,8 @@ const Hero = () => {
           <img
             src={headerImg}
             alt=""
-            fetchPriority="high"
+            // FIX: Changed from fetchPriority to fetchpriority
+            fetchpriority="high"
             loading="eager"
             className="w-full h-full object-contain object-right"
           />
@@ -59,19 +59,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
