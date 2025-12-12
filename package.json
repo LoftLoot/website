@@ -19,9 +19,9 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@prerenderer/renderer-puppeteer": "^1.2.0",
+    "@prerenderer/rollup-plugin": "^1.2.0",
     "@vitejs/plugin-react": "^4.2.0",
-    "@prerenderer/rollup-plugin": "^0.1.0",
-    "@prerenderer/renderer-puppeteer": "^0.1.0",
     "gh-pages": "^6.1.1",
     "vite": "^5.0.0",
     "puppeteer": "^21.0.0",
