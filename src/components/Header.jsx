@@ -587,7 +587,7 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
 
           <div 
             ref={stickyRef}
-            className={`relative pb-0 bg-[#fffbf0] z-50 will-change-transform ${(isSticky && enableSticky && isShopMain) ? 'shadow-md' : ''}`}
+            className={`relative ${!isShopMain ? 'pb-1' : 'pb-0'} bg-[#fffbf0] z-50 will-change-transform ${(isSticky && enableSticky && isShopMain) ? 'shadow-md' : ''}`}
             style={(isSticky && enableSticky && isShopMain) ? { position: 'fixed', top: 0, left: 0, right: 0 } : {}} 
           >
               <div className="px-4 pb-2 pt-4">
