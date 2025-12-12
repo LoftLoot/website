@@ -3,6 +3,10 @@ import React, { useState, useRef, useCallback, useLayoutEffect, useEffect } from
 import { Link } from 'react-router-dom';
 import { PRELOAD_CACHE, addToBoundedCache, ITEMS_PER_PAGE, GlobalObserver } from '../data';
 
+// --- FIX: Isomorphic Layout Effect ---
+// This suppresses the SSR warning by switching to useEffect on the server
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+
 // --- UTILS & HOOKS ---
 const preloadImage = (src) => {
     if (!src || PRELOAD_CACHE.has(src)) return;
@@ -32,7 +36,8 @@ const ProductCard = React.memo(({ product, index, onOpen, isMicro = false, prior
   const [hasMounted, setHasMounted] = useState(false);
   useEffect(() => setHasMounted(true), []);
 
-  useLayoutEffect(() => {
+  // UPDATED: Uses useIsomorphicLayoutEffect
+  useIsomorphicLayoutEffect(() => {
       if (imgRef.current?.complete) {
           setImgLoaded(true);
           addToBoundedCache(PRELOAD_CACHE, mainImage, true, 50);
