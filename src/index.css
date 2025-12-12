@@ -2,6 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
+/* --- FONTS --- */
+/* We define these here so Vite processes the files. 
+   'font-display: swap' ensures text is visible immediately (no invisible text). */
+
+@font-face {
+  font-family: 'Jua';
+  src: url('./fonts/Jua-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('./fonts/outfit-v15-latin-300.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('./fonts/outfit-v15-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('./fonts/outfit-v15-latin-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('./fonts/outfit-v15-latin-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('./fonts/outfit-v15-latin-900.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* --- GLOBAL LAYOUT & SCROLLING --- */
 html, body {
   margin: 0;
