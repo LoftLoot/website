@@ -167,14 +167,15 @@ const ShopView = ({
     const canonicalUrl = `https://loftloot.co.uk${location.pathname === '/' ? '' : location.pathname}`;
 
     useEffect(() => {
-        if(window.innerWidth >= 1024 && topSectionRef.current && (committedQuery || selectedCollection !== 'All')) {
-            const container = document.getElementById('app-scroll-container');
-            const top = topSectionRef.current.offsetTop - 80;
-            if (container && container.scrollTop > top) {
-                container.scrollTo({ top, behavior: 'smooth' });
-            }
+    if (typeof window === 'undefined') return;
+    const top = topSectionRef.current?.offsetTop - 80;
+    if(window.innerWidth >= 1024 && topSectionRef.current && (committedQuery || selectedCollection !== 'All')) {
+        const container = document.getElementById('app-scroll-container');
+        if (container && container.scrollTop > top) {
+            container.scrollTo({ top, behavior: 'smooth' });
         }
-    }, [committedQuery, selectedCollection]);
+    }
+}, [committedQuery, selectedCollection]);
 
     useEffect(() => {
         if (!isSortOpen) return;
@@ -428,8 +429,9 @@ const AppContent = () => {
     }, []);
 
     const scrollToTopSmart = () => {
-        const container = document.getElementById('app-scroll-container');
-        if (container) container.scrollTo({ top: 0, behavior: "smooth" });
+        if (typeof window === 'undefined') return;
+const container = document.getElementById('app-scroll-container');
+if (container) container.scrollTo({ top: 0, behavior: "smooth" });
     };
 
     const isAboutPage = location.pathname.startsWith('/about');
@@ -480,16 +482,16 @@ const AppContent = () => {
             </Routes>
             
             {typeof navigator !== 'undefined' && navigator.userAgent === 'ReactSnap' && (
-                <div style={{ display: 'none' }}>
-                    {appData.products.map(p => (
-                        <Link key={p.id} to={`/${p.fullSlug}/`}>{p.name}</Link>
-                    ))}
-                    {appData.collections.map(c => (
-                         <Link key={c} to={`/${slugify(c)}/`}>{c}</Link>
-                    ))}
-                    <Link to="/about/">About</Link>
-                </div>
-            )}
+    <div style={{ display: 'none' }}>
+        {appData.products.map(p => (
+            <Link key={p.id} to={`/${p.fullSlug}/`}>{p.name}</Link>
+        ))}
+        {appData.collections.map(c => (
+             <Link key={c} to={`/${slugify(c)}/`}>{c}</Link>
+        ))}
+        <Link to="/about/">About</Link>
+    </div>
+)}
 
             <Footer />
         </div>
@@ -505,3 +507,4 @@ export const App = () => (
 );
 
 export default App;
+
