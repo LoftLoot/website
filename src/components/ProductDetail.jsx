@@ -610,7 +610,13 @@ const ProductHeader = ({ product, className = "" }) => (
 // --- CAROUSEL (Restored "Sets" Logic) ---
 const RelatedProductsCarousel = ({ products, onOpen }) => {
     const [page, setPage] = useState(0);
-    const [itemsPerSet, setItemsPerSet] = useState(() => (typeof window !== 'undefined' && window.innerWidth < 768) ? 2 : (window.innerWidth < 1024 ? 3 : 5)); 
+    // FIX: Safely initialize state based on environment
+    const [itemsPerSet, setItemsPerSet] = useState(() => {
+        if (typeof window === 'undefined') return 5; // Default to Desktop size on server
+        if (window.innerWidth < 768) return 2;
+        if (window.innerWidth < 1024) return 3;
+        return 5;
+    });
     
     // Swipe Refs
     const touchStart = useRef(null);
