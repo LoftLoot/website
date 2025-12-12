@@ -23,6 +23,12 @@ const DustCloud = ({ className, style }) => (
     </svg>
 );
 
+// Helper to strip HTML tags for SEO/Meta descriptions
+const stripHtml = (html) => {
+    if (!html) return "";
+    return html.replace(/<[^>]*>?/gm, '');
+};
+
 // --- HOOKS ---
 
 // Hook for Swipe Down to Close
@@ -742,6 +748,9 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
 
     const relatedProducts = useMemo(() => (product.relatedIds || []).map(id => productMap?.get(id)).filter(Boolean), [product.relatedIds, productMap]);
     
+    // Create a plain text version of the description for SEO
+    const plainDescription = useMemo(() => stripHtml(product.description), [product.description]);
+
     // [UPDATED] - Implements Breadcrumb Schema
     const jsonLd = useMemo(() => JSON.stringify({
         "@context": "https://schema.org/",
@@ -750,7 +759,7 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                 "@type": "Product", 
                 "name": product.name, 
                 "image": product.processedImages?.map(img => img.original), 
-                "description": product.description, 
+                "description": plainDescription, // Use stripped HTML here
                 "brand": { "@type": "Brand", "name": product.manufacturer }, 
                 "publisher": ORGANIZATION_SCHEMA,
                 "offers": { 
@@ -776,7 +785,7 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                 ]
             }
         ]
-    }), [product]);
+    }), [product, plainDescription]);
 
     // Construct the title parts (safety check for missing data)
     const titleParts = [product.name];
@@ -790,9 +799,10 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
             {/* --- SEO METADATA --- */}
             <Helmet>
                 <title>{pageTitle}</title>
-                <meta name="description" content={product.description.substring(0, 160)} />
+                {/* Use plainDescription instead of product.description */}
+                <meta name="description" content={plainDescription.substring(0, 160)} />
                 <meta property="og:title" content={`${product.name} - Vintage ${product.manufacturer} ${product.releaseDate}`} />
-                <meta property="og:description" content={product.description.substring(0, 160)} />
+                <meta property="og:description" content={plainDescription.substring(0, 160)} />
                 <meta property="og:image" content={product.mainImage} />
                 <meta property="og:type" content="product" />
                 <meta name="twitter:card" content="summary_large_image" />
@@ -864,7 +874,7 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                             </div>
 
                             {/* DESCRIPTION */}
-                            {/* UPDATED: Removed bottom margins to let HR handle even spacing */}
+                            {/* UPDATED: Uses dangerouslySetInnerHTML for HTML descriptions */}
                             <div className="prose prose-stone max-w-none text-[#514d46] text-base leading-relaxed [&>*:last-child]:mb-0 mb-0">
                                 <div dangerouslySetInnerHTML={{ __html: product.description }} />
                                 <p className="text-sm md:text-base text-[#514d46]/80 font-medium mt-6 italic">Photos represent the actual item you will receive. All photos and videos were taken by us.</p>
@@ -920,4 +930,3 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
 };
 
 export default ProductDetail;
-
