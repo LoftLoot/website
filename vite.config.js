@@ -1,11 +1,12 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import vitePrerender from 'vite-plugin-prerender';
+import prerender from '@prerenderer/rollup-plugin';
+import PuppeteerRenderer from '@prerenderer/renderer-puppeteer';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 
-// Fix for __dirname in ESM (type: module)
+// Fix for __dirname in ESM
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -39,13 +40,13 @@ export default defineConfig({
   base: '/website/',
   plugins: [
     react(),
-    vitePrerender({
+    prerender({
       staticDir: path.join(__dirname, 'dist'),
       routes: routes,
-      renderer: new vitePrerender.PuppeteerRenderer({
-        // Wait for a short time to ensure data/images populate
+      renderer: new PuppeteerRenderer({
+        // Wait for data to load
         renderAfterTime: 500,
-        // Critical for CI/GitHub Actions environments
+        // Critical for GitHub Actions (CI) to prevent crashes
         args: ['--no-sandbox', '--disable-setuid-sandbox'],
       }),
       postProcess(renderedRoute) {
