@@ -3,12 +3,14 @@ import { StaticRouter } from 'react-router-dom/server';
 import { App } from './src/App.jsx';
 import React from 'react';
 
-export function prerender(url) {
+export function prerender(args) {
+  // FIX: The plugin usually passes an object (e.g. { route: '/' }), not a string.
+  // We explicitly extract the path string to avoid the Type Error.
+  const url = typeof args === 'string' ? args : (args.route || args.path || '/');
+
   const basename = '/website/';
   
-  // FIX: Prepend the basename to the URL so the Router recognizes it.
-  // If url is "/", location becomes "/website/"
-  // If url is "/about", location becomes "/website/about"
+  // FIX: Prepend the basename so the Router matches the URL correctly.
   const location = url.startsWith(basename) 
     ? url 
     : basename.replace(/\/$/, '') + url;
