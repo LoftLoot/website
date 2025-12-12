@@ -1,13 +1,3 @@
-name: Deploy React to GitHub Pages
-
-on:
-  push:
-    branches: [ "main" ]
-  workflow_dispatch:
-
-permissions:
-  contents: write
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -24,12 +14,15 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Run Prerender Script
+        run: node scripts/prerender.js
+
       - name: Build the Website
         run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages      # target branch
-          folder: dist          # folder to deploy
+          branch: gh-pages
+          folder: dist
           token: ${{ secrets.GITHUB_TOKEN }}
