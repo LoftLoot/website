@@ -2,7 +2,8 @@ import React from 'react';
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
-import { App } from './App'; // Named export
+// CHANGED: Explicitly import App.jsx
+import { App } from './App.jsx'; 
 
 const rootElement = document.getElementById('root');
 const baseUrl = import.meta.env.BASE_URL || '/website/';
