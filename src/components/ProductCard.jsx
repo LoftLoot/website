@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { PRELOAD_CACHE, addToBoundedCache, ITEMS_PER_PAGE, GlobalObserver } from '../data';
 
 // --- FIX: Isomorphic Layout Effect ---
-// This suppresses the SSR warning by switching to useEffect on the server
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 // --- UTILS & HOOKS ---
@@ -32,14 +31,13 @@ const ProductCard = React.memo(({ product, index, onOpen, isMicro = false, prior
   const hoverTimer = useRef(null);
   const proximityRef = useProximityPreloader(mainImage);
   
-  // FIX: If priority is true, assume loaded immediately to prevent "flash" on refresh
+  // Initialize state. We still track this to hide the placeholder behind the image once loaded.
   const [imgLoaded, setImgLoaded] = useState(() => priority || PRELOAD_CACHE.has(mainImage));
   
   const imgRef = useRef(null);
   const [hasMounted, setHasMounted] = useState(false);
   useEffect(() => setHasMounted(true), []);
 
-  // UPDATED: Uses useIsomorphicLayoutEffect
   useIsomorphicLayoutEffect(() => {
       if (imgRef.current?.complete) {
           setImgLoaded(true);
@@ -68,11 +66,28 @@ const ProductCard = React.memo(({ product, index, onOpen, isMicro = false, prior
         className="aspect-square md:aspect-[4/5] relative overflow-hidden bg-[#f2f4f6] cursor-pointer focus:outline-none select-none block"
       >
         <div className={`absolute inset-0 z-0 ${isSold ? 'grayscale' : ''}`}>
-             {/* Placeholder fades out only if not priority/loaded */}
-             <div className={`absolute inset-0 z-0 bg-cover bg-center filter blur-xl scale-110 transition-opacity duration-200 ${imgLoaded ? 'opacity-0' : 'opacity-100'}`} style={{ backgroundImage: `url("${tinyPlaceholder}")`, backgroundColor: `#${imageColor}` }}></div>
+             {/* Placeholder: Removed transition classes. Instantly hides when image reports loaded. */}
+             <div 
+                className={`absolute inset-0 z-0 bg-cover bg-center filter blur-xl scale-110 ${imgLoaded ? 'opacity-0' : 'opacity-100'}`} 
+                style={{ backgroundImage: `url("${tinyPlaceholder}")`, backgroundColor: `#${imageColor}` }}
+             ></div>
              
-             {/* Image fades in only if not priority/loaded */}
-             {mainImage && <img ref={imgRef} itemProp="image" src={mainImage} alt={`Vintage ${product.releaseDate || ''} ${name} - ${manufacturer} Action Figure`} width="600" height="750" loading={priority ? "eager" : "lazy"} fetchpriority={priority ? "high" : "auto"} decoding={priority ? "sync" : "async"} onLoad={() => { setImgLoaded(true); addToBoundedCache(PRELOAD_CACHE, mainImage, true, 50); }} className={`absolute inset-0 w-full h-full object-cover z-10 ${imgLoaded ? 'opacity-100' : 'opacity-0'}`}/>}
+             {/* Image: Always opacity-100. No transition. Shows immediately as browser downloads it. */}
+             {mainImage && (
+                <img 
+                    ref={imgRef} 
+                    itemProp="image" 
+                    src={mainImage} 
+                    alt={`Vintage ${product.releaseDate || ''} ${name} - ${manufacturer} Action Figure`} 
+                    width="600" 
+                    height="750" 
+                    loading={priority ? "eager" : "lazy"} 
+                    fetchpriority={priority ? "high" : "auto"} 
+                    decoding={priority ? "sync" : "async"} 
+                    onLoad={() => { setImgLoaded(true); addToBoundedCache(PRELOAD_CACHE, mainImage, true, 50); }} 
+                    className="absolute inset-0 w-full h-full object-cover z-10"
+                />
+             )}
         </div>
         {isSold ? <div className="absolute inset-0 z-30 pointer-events-none flex items-center justify-center"><div className="bg-[#d35153]/90 text-white text-base md:text-lg font-black px-3 py-1.5 md:px-5 md:py-2.5 -rotate-12 border-2 md:border-4 border-white shadow-xl uppercase tracking-widest">Sold Out</div></div> : (badgeText && <span className="absolute top-3 left-3 text-[#514d46] text-xs font-bold px-2 py-1 rounded-full z-30 shadow-sm uppercase tracking-wider" style={{ backgroundColor: badgeColor || '#efc83d' }}>{badgeText}</span>)}
       </Link>
