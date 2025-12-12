@@ -469,7 +469,8 @@ const ProductGallery = ({ product, activeIndex, setActiveIndex, onOpenLightbox, 
                             ref={imgRef} 
                             src={activeImg?.original} 
                             alt={product.name}
-                            fetchPriority="high"
+                            // FIX: Changed from fetchPriority to fetchpriority
+                            fetchpriority="high"
                             loading="eager"
                             className="w-full h-full object-cover transition-transform duration-300 ease-out" 
                         />
