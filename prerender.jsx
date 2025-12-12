@@ -4,17 +4,21 @@ import { App } from './src/App.jsx';
 import React from 'react';
 
 export function prerender(args) {
-  // FIX: The plugin usually passes an object (e.g. { route: '/' }), not a string.
-  // We explicitly extract the path string to avoid the Type Error.
-  const url = typeof args === 'string' ? args : (args.route || args.path || '/');
-
   const basename = '/website/';
-  
-  // FIX: Prepend the basename so the Router matches the URL correctly.
-  const location = url.startsWith(basename) 
-    ? url 
-    : basename.replace(/\/$/, '') + url;
-  
+
+  // Ensure url is a string
+  let url = '/';
+  if (typeof args === 'string') {
+    url = args;
+  } else if (args && (typeof args.route === 'string' || typeof args.path === 'string')) {
+    url = args.route || args.path;
+  }
+
+  // Prepend basename if missing
+  const location = String(url).startsWith(basename)
+    ? url
+    : basename.replace(/\/$/, '') + (url === '/' ? '' : url);
+
   const html = renderToString(
     <React.StrictMode>
       <StaticRouter basename={basename} location={location}>
