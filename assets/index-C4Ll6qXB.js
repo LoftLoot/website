@@ -1,1 +1,0 @@
-import{r as n,j as o,R as c,B as d,A as m}from"./prerender-bIlv_yyj.js";var s,a,e=n;a=e.createRoot,s=e.hydrateRoot;const t=document.getElementById("root"),i="/",r=()=>o.jsx(c.StrictMode,{children:o.jsx(d,{basename:i,children:o.jsx(m,{})})});t.hasChildNodes()?s(t,o.jsx(r,{})):a(t).render(o.jsx(r,{}));
