@@ -5,6 +5,13 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
+# FIX: Add Concurrency to prevent "spam" deployments
+# "group" names the concurrency lane (only one run allowed here at a time)
+# "cancel-in-progress: true" kills any older runs instantly when a new one arrives
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
