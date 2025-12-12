@@ -2671,5 +2671,53 @@
             "https://i.ebayimg.com/images/g/f2kAAOSwUvNnmZUY/s-l1600.jpg",
             "https://placehold.co/600x750/ccff00/ffffff?text=Back+Detail"
         ]
+    },
+    {
+        "id": 123,
+        "name": "MicroStars Gold and Silver Bundle",
+        "collection": "Other",
+        "brand": "MicroStars",
+        "line": "UK Series 1 and 2",
+        "type": "Figure Bundle",
+        "manufacturer": "Corinthian",
+        "releaseDate": 2001,
+        "price": 20,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Premium bundle of 9 Vintage Corinthian MicroStars (2001/2002). Contains the highly sought-after Gold and Silver base figures featuring high game stats. \n\n**Gold Base Figures:**\n* MC589 Zinedine Zidane (Real Madrid)\n* MC211 Jaap Stam (Man Utd)\n* MC369 Alen Boksic (Middlesbrough)\n\n**Silver Base Figures:**\n* MC185 Patrick Kluivert (Barcelona)\n* MC341 Luis Enrique (Barcelona)\n* MC344 Thierry Henry (Arsenal)\n* MC188 Michael Mols (Rangers)\n* MC337 Lucas Radebe (Leeds)\n* MC354 David James (Aston Villa)",
+        "condition": "Used - Very Good",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/d4af37/ffffff?text=Gold+Zidane+Bundle"
+        ]
+    },
+    {
+        "id": 124,
+        "name": "MicroStars Bulk Starter Lot",
+        "collection": "Other",
+        "brand": "MicroStars",
+        "line": "UK Series 1 and 2",
+        "type": "Figure Bundle",
+        "manufacturer": "Corinthian",
+        "releaseDate": 2001,
+        "price": 25,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Massive instant collection of 40+ Corinthian MicroStars from UK Series 1 & 2. Mixed bases (Green, Red, Blue, White). Includes the McDonald's Promo Sol Campbell.\n\n**Key Players & Codes:**\n* **Arsenal:** Henry (MC256, MC278, MC300, MC322), Silvinho (MC247, MC269), Seaman (MC032, MC076), Campbell (MSE1351)\n* **Man Utd:** Giggs (MC252), Barthez (MC262, MC263, MC330), Stam (MC047)\n* **Newcastle:** Shearer (MC059, MC141), Speed (MC054, MC136)\n* **Chelsea:** Zola (MC301), Desailly (MC314), Lampard (MC053)\n* **Leeds:** Kewell (MC016), Harte (MC045)\n* **West Ham:** Di Canio (MC027, MC068)\n* **International:** Rivaldo (MC467), Raul (MC473)\n* **Others:** Barmby (MC251, MC273, MC295, MC317), Sutton (MC258, MC280), Ginola (MC058, MC140)\n\n*Note: Some figures have minor play wear or markings on the base bottom.*",
+        "condition": "Used - Mixed",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/3c78d8/ffffff?text=MicroStars+Bulk+Lot"
+        ]
     }
 ]
