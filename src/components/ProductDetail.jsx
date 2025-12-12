@@ -866,7 +866,7 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                             {/* DESCRIPTION */}
                             {/* UPDATED: Removed bottom margins to let HR handle even spacing */}
                             <div className="prose prose-stone max-w-none text-[#514d46] text-base leading-relaxed [&>*:last-child]:mb-0 mb-0">
-                                <p>{product.description}</p>
+                                <div dangerouslySetInnerHTML={{ __html: product.description }} />
                                 <p className="text-sm md:text-base text-[#514d46]/80 font-medium mt-6 italic">Photos represent the actual item you will receive. All photos and videos were taken by us.</p>
                             </div>
 
@@ -920,3 +920,4 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
 };
 
 export default ProductDetail;
+
