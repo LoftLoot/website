@@ -58,8 +58,8 @@ input[type=range]::-moz-range-thumb { pointer-events: auto; }
 /* --- ANIMATIONS --- */
 @keyframes deal-bottom {
   0% { 
-    /* No opacity change = fully visible "tactile" slide */
-    transform: translateY(50px); 
+    /* Started from much lower (100px) for that "dealt from deck" feel */
+    transform: translateY(100px); 
   }
   100% { 
     transform: translateY(0); 
@@ -97,7 +97,7 @@ input[type=range]::-moz-range-thumb { pointer-events: auto; }
 
 /* --- ANIMATION HELPERS --- */
 .animate-deal-bottom {
-  /* Retained the cubic-bezier for that heavy "thud" feel */
+  /* Fast duration (0.5s) + strong ease-out to make the long travel distance feel punchy, not floaty */
   animation: deal-bottom 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
