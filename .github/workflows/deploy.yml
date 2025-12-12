@@ -24,11 +24,11 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Run Prerender Script
-        run: node prerender.js
-
       - name: Build the Website
         run: npm run build
+
+      - name: Prerender HTML
+        run: npm run prerender
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
