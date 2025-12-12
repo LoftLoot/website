@@ -38,7 +38,7 @@ productsData.forEach(product => {
 });
 
 export default defineConfig({
-  base: '/',
+  base: '/website/',
   plugins: [
     react(),
     vitePrerenderPlugin({
