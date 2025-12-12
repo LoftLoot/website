@@ -1,41 +1,41 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { vitePrerenderPlugin } from 'vite-prerender-plugin'
-import path from 'path'
-import fs from 'fs'
-import { fileURLToPath } from 'url'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { vitePrerenderPlugin } from 'vite-prerender-plugin';
+import path from 'path';
+import fs from 'fs';
+import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Helper to slugify text
 const slugify = text =>
   text.toString().toLowerCase()
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 
 // Read product data
 const productsData = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, 'src/products.json'), 'utf-8')
-)
+);
 
 // Generate routes
-const routes = ['/', '/about']
+const routes = ['/', '/about'];
 
 // Add collections
-const collections = new Set(productsData.map(p => p.collection))
+const collections = new Set(productsData.map(p => p.collection));
 collections.forEach(col => {
-  if (col) routes.push(`/${slugify(col)}`)
-})
+  if (col) routes.push(`/${slugify(col)}`);
+});
 
 // Add product routes
 productsData.forEach(product => {
-  const collectionSlug = slugify(product.collection || 'other')
+  const collectionSlug = slugify(product.collection || 'other');
   const itemSlug = slugify(
     `${product.releaseDate || 'vintage'}-${product.manufacturer}-${product.name}`
-  )
-  routes.push(`/${collectionSlug}/${itemSlug}`)
-})
+  );
+  routes.push(`/${collectionSlug}/${itemSlug}`);
+});
 
 export default defineConfig({
   base: '/website/',
@@ -44,8 +44,8 @@ export default defineConfig({
     vitePrerenderPlugin({
       routes,
       renderTarget: '#root',
-      // optional: path to a prerender script if you want custom HTML generation
-      // prerenderScript: path.resolve(__dirname, 'prerender.js'),
+      // Explicitly point to the prerender script
+      prerenderScript: path.resolve(__dirname, 'prerender.js'),
     }),
   ],
   resolve: {
@@ -58,4 +58,4 @@ export default defineConfig({
     assetsDir: 'assets',
     sourcemap: false,
   },
-})
+});
