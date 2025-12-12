@@ -215,7 +215,9 @@ const ShopView = ({
             </Helmet>
 
             <Hero />
-            <main className="max-w-7xl mx-auto px-4 py-8 flex-1 w-full pb-12 mb-20">
+            
+            {/* FIX: Removed pb-12 and mb-20 to remove extra bottom spacing */}
+            <main className="max-w-7xl mx-auto px-4 py-8 flex-1 w-full">
                 <div className="flex flex-col lg:flex-row gap-8" ref={topSectionRef}>
                     <aside className={`lg:w-64 flex-shrink-0 hidden lg:block lg:pt-2`}>
                         <FilterSection 
