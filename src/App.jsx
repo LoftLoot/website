@@ -305,27 +305,38 @@ const AppContent = () => {
 
     useEffect(() => { if (!isTyping) setSearchQuery(committedQuery); }, [committedQuery, isTyping]);
 
-    const [selectedCollection, setSelectedCollection] = useState("All");
-
-    useEffect(() => {
+    // --- FIX START: Synchronous Initialization ---
+    
+    // Helper to determine collection from URL synchronously
+    const getInitialCollection = () => {
         const pathSegments = location.pathname.split('/').filter(Boolean);
         if (pathSegments.length > 0 && pathSegments[0] !== 'about') {
             const slug = pathSegments[0];
             if (appData?.collectionSlugMap?.has(slug)) {
-                setSelectedCollection(appData.collectionSlugMap.get(slug));
-                return;
+                return appData.collectionSlugMap.get(slug);
             }
         }
-        setSelectedCollection("All");
+        return "All";
+    };
+
+    const [selectedCollection, setSelectedCollection] = useState(getInitialCollection);
+
+    // Keep effect for subsequent navigations
+    useEffect(() => {
+        setSelectedCollection(getInitialCollection());
     }, [location.pathname, appData]);
 
-    const [priceRange, setPriceRange] = useState([0, 1000]); 
+    const [priceRange, setPriceRange] = useState(() => 
+        appData 
+            ? [Math.floor(appData.minPrice), Math.ceil(appData.maxPrice)] 
+            : [0, 1000]
+    ); 
+    // Removed old useEffect for priceRange as it is now initialized correctly
+    
+    // --- FIX END ---
+
     const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
     const [showScrollButton, setShowScrollButton] = useState(false);
-
-    useEffect(() => {
-      if (appData) { setPriceRange([Math.floor(appData.minPrice), Math.ceil(appData.maxPrice)]); }
-    }, [appData]);
 
     const updateParams = useCallback((updates) => {
         setSearchParams(prev => {
