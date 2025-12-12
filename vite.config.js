@@ -44,8 +44,8 @@ export default defineConfig({
     vitePrerenderPlugin({
       routes,
       renderTarget: '#root',
-      // Explicitly point to the prerender script
-      prerenderScript: path.resolve(__dirname, 'prerender.js'),
+      // Point to the .jsx file so Vite handles the transformation
+      prerenderScript: path.resolve(__dirname, 'prerender.jsx'),
     }),
   ],
   resolve: {
