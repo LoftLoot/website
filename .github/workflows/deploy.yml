@@ -24,11 +24,15 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Prerender Pages
-        run: npx vite-node prerender.jsx
-
+      # STEP 1: Build first.
+      # This creates the 'dist' folder and the 'index.html' file that prerender.jsx reads.
       - name: Build the Website
         run: npm run build
+
+      # STEP 2: Prerender second.
+      # This reads 'dist/index.html', injects the React HTML, and saves it back.
+      - name: Prerender Pages
+        run: npx vite-node prerender.jsx
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
