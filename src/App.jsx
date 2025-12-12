@@ -263,7 +263,7 @@ const ShopView = ({
                                         <ProductCard key={product.id} product={product} index={index} priority={index < 6} animationDelay={index >= ITEMS_PER_PAGE ? `${(index % ITEMS_PER_PAGE) * 0.03}s` : undefined} />
                                     ))}
                                 </div>
-                                <div className="flex flex-col items-center gap-4 pb-8 mt-8">
+                                <div className="flex flex-col items-center gap-4 mt-8">
                                     {visibleCount < filteredCount ? (
                                         <>
                                             <button onClick={onLoadMore} className="mt-4 bg-[#487ec8] text-white px-12 py-3 rounded-xl font-bold hover:bg-[#3a66a3] transition-all active:scale-95">View More Loot</button>
@@ -507,4 +507,3 @@ export const App = () => (
 );
 
 export default App;
-
