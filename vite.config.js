@@ -2,10 +2,10 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/website/', 
+  base: '/website/',
   plugins: [react()],
-  // FIX: Force single instance of React/Router to prevent "Dual React" errors
   resolve: {
+    // Prevent "Dual React" issues by forcing a single instance
     dedupe: ['react', 'react-dom', 'react-router-dom'],
   },
   build: {
@@ -18,6 +18,12 @@ export default defineConfig({
     }
   },
   assetsInclude: [
-    '**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg', '**/*.woff', '**/*.woff2', '**/*.ttf'
+    '**/*.png',
+    '**/*.jpg',
+    '**/*.jpeg',
+    '**/*.svg',
+    '**/*.woff',
+    '**/*.woff2',
+    '**/*.ttf'
   ]
 });
