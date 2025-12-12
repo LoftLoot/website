@@ -1,28 +1,51 @@
-import fs from 'fs';
-import path from 'path';
-import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom/server';
+import React from 'react';
 import { App } from './src/App.jsx';
+import fs from 'fs';
+import path from 'path';
 
-const basename = '/website/';
+const BASE_PATH = '/website/'; // your homepage base
 
-const routes = ['/', '/about', '/contact']; // add your app routes here
+async function prerender() {
+  const routes = ['/', '/about']; // Add any collection/product routes you want prerendered
 
-routes.forEach((route) => {
-  const location = route.startsWith(basename) ? route : basename.replace(/\/$/, '') + route;
+  for (const route of routes) {
+    const location = route.startsWith(BASE_PATH) ? route : BASE_PATH.replace(/\/$/, '') + route;
 
-  const html = renderToString(
-    <React.StrictMode>
-      <StaticRouter basename={basename} location={location}>
-        <App />
-      </StaticRouter>
-    </React.StrictMode>
-  );
+    let html = '';
+    try {
+      html = renderToString(
+        <React.StrictMode>
+          <StaticRouter basename={BASE_PATH} location={location}>
+            <App />
+          </StaticRouter>
+        </React.StrictMode>
+      );
+    } catch (err) {
+      console.error('[PRERENDER ERROR]', err);
+    }
 
-  const outDir = path.resolve('./dist', route === '/' ? '' : route);
-  fs.mkdirSync(outDir, { recursive: true });
-  fs.writeFileSync(path.join(outDir, 'index.html'), html);
+    // Wrap with basic HTML shell
+    const fullHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loft Loot</title>
+</head>
+<body>
+<div id="root">${html}</div>
+<script type="module" src="/src/main.jsx"></script>
+</body>
+</html>`;
 
-  console.log(`[PRERENDER] Wrote HTML for route: ${route}`);
-});
+    // Save to dist folder
+    const outDir = path.resolve('./dist', route === '/' ? '' : route.slice(1));
+    fs.mkdirSync(outDir, { recursive: true });
+    fs.writeFileSync(path.join(outDir, 'index.html'), fullHtml);
+    console.log(`[PRERENDER] Wrote ${route} to ${outDir}/index.html`);
+  }
+}
+
+prerender();
