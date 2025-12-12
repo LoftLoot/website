@@ -1,0 +1,2675 @@
+[
+    {
+        "id": 1,
+        "name": "Pokémon Master Trainer Board Game",
+        "collection": "Pokémon",
+        "brand": "Pokémon",
+        "line": "",
+        "type": "Board Game",
+        "manufacturer": "MB",
+        "releaseDate": 1999,
+        "price": 75,
+        "stock": 1,
+        "demographic": "neutral",
+        "description": "Classic Pokémon board game by MB. Challenge players to travel, battle, and collect Pokémon to become the ultimate Master Trainer. Complete games are highly sought after.",
+        "condition": "Used - Complete",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://i.ebayimg.com/images/g/WIkAAeSwXtlpMC65/s-l1600.jpg"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Talking Baby Sinclair Plush",
+        "collection": "Disney",
+        "brand": "Dinosaurs",
+        "line": "",
+        "type": "Plush",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1992,
+        "price": 100,
+        "stock": 1,
+        "demographic": "unisex",
+        "description": "Talking plush figure based on the popular TV show Dinosaurs. Features the iconic catchphrase 'Not the mama!'.",
+        "condition": "Loose - Still talking",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://i.ebayimg.com/images/g/tTcAAeSwEF9pKL4C/s-l1600.jpg"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Donatello 'Pizza Time'",
+        "collection": "TMNT",
+        "brand": "Teenage Mutant Ninja Turtles",
+        "type": "Action Figure",
+        "manufacturer": "Playmates",
+        "releaseDate": 1992,
+        "price": 85,
+        "stock": 1,
+        "badgeText": "Mint On Card",
+        "badgeColor": "#93c47d",
+        "demographic": "masculine",
+        "description": "Playmates 1992 Wacky Action line. Mint on card. Unpunched. The pizza-throwing mechanism still functions perfectly through the blister pack testing port.",
+        "condition": "MOC (Mint on Card)",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/93c47d/ffffff?text=Donatello+MOC"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Mutatin' Raphael",
+        "collection": "TMNT",
+        "brand": "Teenage Mutant Ninja Turtles",
+        "type": "Action Figure",
+        "manufacturer": "Playmates",
+        "releaseDate": 1992,
+        "price": 85,
+        "stock": 1,
+        "badgeText": "Mint On Card",
+        "badgeColor": "#93c47d",
+        "demographic": "masculine",
+        "description": "Playmates 1992 Wacky Action line.",
+        "condition": "MOC (Mint on Card)",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/93c47d/ffffff?text=Raphael"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Raphael - Trenchcoat",
+        "collection": "TMNT",
+        "brand": "Teenage Mutant Ninja Turtles",
+        "type": "Action Figure",
+        "manufacturer": "Playmates",
+        "releaseDate": 1990,
+        "price": 55,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Playmates 1990 Movie Star line. Rubber texture. Loose, complete. Includes the sai weapons and the fedora hat which is often missing.",
+        "condition": "Loose - Complete",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/cc0000/ffffff?text=Raph+Trenchcoat"
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Goliath - Stone Sleep",
+        "collection": "Gargoyles",
+        "brand": "Gargoyles",
+        "type": "Action Figure",
+        "manufacturer": "Kenner",
+        "releaseDate": 1995,
+        "price": 85,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Kenner 1995. Hard-to-find Stone Sleep variant. 12 inch wingspan. Features 'stone' armor plating that snaps on.",
+        "condition": "Loose - Complete",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/483d8b/ffffff?text=Goliath",
+            "https://placehold.co/600x750/2e2759/ffffff?text=Wing+Span"
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Boba Fett - Kenner 1979",
+        "collection": "Star Wars",
+        "brand": "Star Wars",
+        "type": "Action Figure",
+        "manufacturer": "Kenner",
+        "releaseDate": 1979,
+        "price": 350,
+        "stock": 0,
+        "badgeText": "Holy Grail",
+        "badgeColor": "#E67C73",
+        "demographic": "masculine",
+        "description": "Kenner 1979 original release. Unpunched 21-Back card. The holy grail for many collectors. Blister is clear with no yellowing.",
+        "condition": "MOC - Unpunched",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/556b2f/ffffff?text=Boba+Fett",
+            "https://placehold.co/600x750/3a4a20/ffffff?text=Rocket+Detail"
+        ]
+    },
+    {
+        "id": 18,
+        "name": "Pokémon Pikachu 35mm Camera",
+        "collection": "Pokémon",
+        "brand": "Pokémon",
+        "type": "Electronics",
+        "manufacturer": "Tiger Electronics",
+        "releaseDate": 1999,
+        "price": 55,
+        "stock": 1,
+        "demographic": "neutral",
+        "description": "Tiger Electronics 1999. Fully functional 35mm film camera with built-in flash. Features a molded Pikachu sitting on the top housing. Lens cover intact.",
+        "condition": "Boxed - Untested",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            },
+            {
+                "platform": "Etsy",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://i.ebayimg.com/images/g/ZT0AAeSwx5Zoz77y/s-l1600.jpg",
+            "https://placehold.co/600x750/e69138/ffffff?text=Box+View"
+        ]
+    },
+    {
+        "id": 20,
+        "name": "Cheetara with Wilykit",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 1 (1985)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1985,
+        "price": 60,
+        "stock": 1,
+        "demographic": "unisex",
+        "description": "Loose figure from Wave 1 (1985). Includes Baton and Wilykit PVC Figure.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f4e799/000000?text=Cheetara+W1"
+        ]
+    },
+    {
+        "id": 21,
+        "name": "Jackalman",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 1 (1985)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1985,
+        "price": 30,
+        "stock": 8,
+        "demographic": "masculine",
+        "description": "Loose Mutant villain figure from Wave 1 (1985). Includes Club and Shoulder Strap.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/c2c694/000000?text=Jackalman+W1"
+        ]
+    },
+    {
+        "id": 22,
+        "name": "Lion-O",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 1 (1985)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1985,
+        "price": 85,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose main hero figure from Wave 1 (1985). Includes Sword of Omens, Claw Shield, Power Ring, and Battery.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f7a95b/000000?text=Lion-O+W1"
+        ]
+    },
+    {
+        "id": 23,
+        "name": "Monkian",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 1 (1985)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1985,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose Mutant figure from Wave 1 (1985). Includes Mace and Helmet.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/b09e84/000000?text=Monkian+W1"
+        ]
+    },
+    {
+        "id": 24,
+        "name": "Mumm-Ra",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 1 (1985)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1985,
+        "price": 75,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose primary antagonist figure from Wave 1 (1985). Includes Sword, Dagger, Headdress, Power Ring, and Battery.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/9a83a0/ffffff?text=Mumm-Ra+W1"
+        ]
+    },
+    {
+        "id": 25,
+        "name": "Panthro",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 1 (1985)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1985,
+        "price": 50,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose Thundercats figure from Wave 1 (1985). Includes Nunchuks.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/8a9aa0/ffffff?text=Panthro+W1"
+        ]
+    },
+    {
+        "id": 26,
+        "name": "S-S-Slithe",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 1 (1985)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1985,
+        "price": 40,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose Mutant leader figure from Wave 1 (1985). Includes Battle Axe.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/9aae8d/000000?text=Slithe+W1"
+        ]
+    },
+    {
+        "id": 27,
+        "name": "Tygra with Wilykat",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 1 (1985)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1985,
+        "price": 60,
+        "stock": 1,
+        "demographic": "unisex",
+        "description": "Loose figure from Wave 1 (1985). Includes Bolo Whip and Wilykat PVC Figure.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/999fa4/000000?text=Tygra+W1"
+        ]
+    },
+    {
+        "id": 28,
+        "name": "Mutant Nose Diver",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 1 (1985) Vehicles",
+        "type": "Vehicle",
+        "manufacturer": "LJN",
+        "releaseDate": 1985,
+        "price": 120,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose Mutant vehicle from Wave 1 (1985).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/788c87/ffffff?text=Nose+Diver+W1"
+        ]
+    },
+    {
+        "id": 29,
+        "name": "Mutant Skycutter",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 1 (1985) Vehicles",
+        "type": "Vehicle",
+        "manufacturer": "LJN",
+        "releaseDate": 1985,
+        "price": 100,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose flying Mutant vehicle from Wave 1 (1985).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/8a8b8c/ffffff?text=Skycutter+W1"
+        ]
+    },
+    {
+        "id": 30,
+        "name": "Thundertank",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 1 (1985) Vehicles",
+        "type": "Vehicle",
+        "manufacturer": "LJN",
+        "releaseDate": 1985,
+        "price": 250,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose Thundercats ground assault vehicle. The signature transport, part of Wave 1 (1985).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f0d8d0/000000?text=Thundertank+W1"
+        ]
+    },
+    {
+        "id": 31,
+        "name": "Grune The Destroyer",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 2 (1986)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1986,
+        "price": 55,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose villain figure from Wave 2 (1986). Includes Spiked Mace and Knuckleduster.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/c7c7c7/000000?text=Grune+W2"
+        ]
+    },
+    {
+        "id": 32,
+        "name": "Hachiman",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 2 (1986)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1986,
+        "price": 45,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose samurai warrior figure from Wave 2 (1986). Includes Helmet and Katana Sword.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/e0d164/000000?text=Hachiman+W2"
+        ]
+    },
+    {
+        "id": 33,
+        "name": "Ratar-O",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 2 (1986)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1986,
+        "price": 65,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose villain figure from Wave 2 (1986). Includes Two Daggers (Rat’s Eyes).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f4e2bf/000000?text=Ratar-O+W2"
+        ]
+    },
+    {
+        "id": 34,
+        "name": "Snowman of Hook Mountain",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 2 (1986)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1986,
+        "price": 70,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from Wave 2 (1986). Includes Helmet, Spear, and Shield.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/c2e0e3/000000?text=Snowman+W2"
+        ]
+    },
+    {
+        "id": 35,
+        "name": "Tuska Warrior",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 2 (1986)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1986,
+        "price": 45,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from Wave 2 (1986). Includes Rifle Gun.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f0d8a0/000000?text=Tuska+Warrior+W2"
+        ]
+    },
+    {
+        "id": 36,
+        "name": "Vultureman",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 2 (1986)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1986,
+        "price": 50,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose Mutant figure from Wave 2 (1986). Includes Clawed Staff.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/a8a099/000000?text=Vultureman+W2"
+        ]
+    },
+    {
+        "id": 37,
+        "name": "Cruncher",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 2 (1986) Berserkers Figures",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1986,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose Berserker figure from Wave 2 (1986).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/999fa4/000000?text=Cruncher+W2"
+        ]
+    },
+    {
+        "id": 38,
+        "name": "Hammerhead",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 2 (1986) Berserkers Figures",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1986,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose Berserker figure from Wave 2 (1986).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/9a83a0/ffffff?text=Hammerhead+W2"
+        ]
+    },
+    {
+        "id": 39,
+        "name": "Ram Bam",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 2 (1986) Berserkers Figures",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1986,
+        "price": 35,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose Berserker figure from Wave 2 (1986).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/c2c694/000000?text=Ram+Bam+W2"
+        ]
+    },
+    {
+        "id": 40,
+        "name": "Top Spinner",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 2 (1986) Berserkers Figures",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1986,
+        "price": 35,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose Berserker figure from Wave 2 (1986).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/999fa4/000000?text=Top+Spinner+W2"
+        ]
+    },
+    {
+        "id": 41,
+        "name": "Ma-Mutt",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 2 (1986) Companions Figures",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1986,
+        "price": 25,
+        "stock": 1,
+        "demographic": "unisex",
+        "description": "Loose Companion figure, Mumm-Ra's pet, from Wave 2 (1986). Includes Attached Chain.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/9a83a0/ffffff?text=Ma-Mutt+W2"
+        ]
+    },
+    {
+        "id": 42,
+        "name": "Snarf",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 2 (1986) Companions Figures",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1986,
+        "price": 30,
+        "stock": 1,
+        "demographic": "unisex",
+        "description": "Loose Companion figure from Wave 2 (1986).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f7a95b/000000?text=Snarf+W2"
+        ]
+    },
+    {
+        "id": 43,
+        "name": "Wilykat",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 2 (1986) Companions Figures",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1986,
+        "price": 35,
+        "stock": 1,
+        "demographic": "unisex",
+        "description": "Loose Thunderkitten figure from Wave 2 (1986). Includes Hover Board.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f4e799/000000?text=Wilykat+W2"
+        ]
+    },
+    {
+        "id": 44,
+        "name": "Wilykit",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 2 (1986) Companions Figures",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1986,
+        "price": 35,
+        "stock": 1,
+        "demographic": "unisex",
+        "description": "Loose Thunderkitten figure from Wave 2 (1986). Includes Hover Board.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f4e799/000000?text=Wilykit+W2"
+        ]
+    },
+    {
+        "id": 45,
+        "name": "Berbil Belle",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 2 (1986) Companions Figures",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1986,
+        "price": 25,
+        "stock": 8,
+        "demographic": "feminine",
+        "description": "Loose Berbil Companion figure from Wave 2 (1986).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/d4a59a/000000?text=Berbil+Belle+W2"
+        ]
+    },
+    {
+        "id": 46,
+        "name": "Berbil Bert",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 2 (1986) Companions Figures",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1986,
+        "price": 25,
+        "stock": 8,
+        "demographic": "masculine",
+        "description": "Loose Berbil Companion figure from Wave 2 (1986).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/d4a59a/000000?text=Berbil+Bert+W2"
+        ]
+    },
+    {
+        "id": 47,
+        "name": "Berbil Bill",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 2 (1986) Companions Figures",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1986,
+        "price": 25,
+        "stock": 8,
+        "demographic": "masculine",
+        "description": "Loose Berbil Companion figure from Wave 2 (1986).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/d4a59a/000000?text=Berbil+Bill+W2"
+        ]
+    },
+    {
+        "id": 48,
+        "name": "Mummy Mumm-Ra",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 2 (1986) Companions Figures",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1986,
+        "price": 40,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose Mumm-Ra figure in Mummy Form from Wave 2 (1986). Includes Staff.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/c7c7c7/000000?text=Mummy+Mumm-Ra+W2"
+        ]
+    },
+    {
+        "id": 49,
+        "name": "Mutant Fist Pounder",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 2 (1986) Vehicles",
+        "type": "Vehicle",
+        "manufacturer": "LJN",
+        "releaseDate": 1986,
+        "price": 110,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose Mutant vehicle from Wave 2 (1986).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/8a8b8c/ffffff?text=Fist+Pounder+W2"
+        ]
+    },
+    {
+        "id": 50,
+        "name": "Thunderclaw",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 2 (1986) Vehicles",
+        "type": "Vehicle",
+        "manufacturer": "LJN",
+        "releaseDate": 1986,
+        "price": 150,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose one-man attack hovercraft vehicle from Wave 2 (1986).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/a8a099/000000?text=Thunderclaw+W2"
+        ]
+    },
+    {
+        "id": 51,
+        "name": "Snarf",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 2 (1986) Accessories",
+        "type": "Plush",
+        "manufacturer": "LJN",
+        "releaseDate": 1986,
+        "price": 25,
+        "stock": 1,
+        "demographic": "unisex",
+        "description": "Soft plush version of Snarf, released as an accessory in Wave 2 (1986).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f7a95b/000000?text=Snarf+Plush+W2"
+        ]
+    },
+    {
+        "id": 52,
+        "name": "Bengali",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 3 (1987)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1987,
+        "price": 70,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose new Thundercats figure from Wave 3 (1987). Includes Hammer of Thundera.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/c2e0e3/000000?text=Bengali+W3"
+        ]
+    },
+    {
+        "id": 53,
+        "name": "Captain Cracker",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 3 (1987)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1987,
+        "price": 55,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose space pirate figure from Wave 3 (1987). Includes Cutlass Sword.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/b09e84/000000?text=Capt+Cracker+W3"
+        ]
+    },
+    {
+        "id": 54,
+        "name": "Captain Shiner",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 3 (1987)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1987,
+        "price": 50,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose intergalactic trader figure from Wave 3 (1987). Includes Laser Blaster.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f0d8a0/000000?text=Capt+Shiner+W3"
+        ]
+    },
+    {
+        "id": 55,
+        "name": "Jaga",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 3 (1987)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1987,
+        "price": 80,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose mentor figure from Wave 3 (1987). Includes Helmet and Sword of Omens.",
+        "condition": "Loose - Helmet Glued",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f7f4d0/000000?text=Jaga+W3"
+        ]
+    },
+    {
+        "id": 56,
+        "name": "Lynx-O",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 3 (1987)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1987,
+        "price": 60,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose blind Thundercat elder figure from Wave 3 (1987). Includes Light Shield.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/9a83a0/ffffff?text=Lynx-O+W3"
+        ]
+    },
+    {
+        "id": 57,
+        "name": "Mongor",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 3 (1987)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1987,
+        "price": 75,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose demonic villain figure from Wave 3 (1987). Includes Scythe.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/8a9aa0/ffffff?text=Mongor+W3"
+        ]
+    },
+    {
+        "id": 58,
+        "name": "Pumyra",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 3 (1987)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1987,
+        "price": 60,
+        "stock": 1,
+        "demographic": "feminine",
+        "description": "Loose healer figure from Wave 3 (1987). Includes Sling.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/d4a59a/000000?text=Pumyra+W3"
+        ]
+    },
+    {
+        "id": 59,
+        "name": "Safari Joe",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 3 (1987)",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1987,
+        "price": 50,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose hunter figure from Wave 3 (1987). Includes Safari Gun.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f0d8d0/000000?text=Safari+Joe+W3"
+        ]
+    },
+    {
+        "id": 60,
+        "name": "The Driller",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 3 (1987) Ram-Pagers Figures",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1987,
+        "price": 400,
+        "stock": 1,
+        "badgeText": "Rare!",
+        "badgeColor": "#b4a7d6",
+        "demographic": "masculine",
+        "description": "LJN 1987 Ram-Pagers line. Drill-action figure/vehicle hybrid, part of Wave 3 (1987).",
+        "condition": "Loose - Rare",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/8a8b8c/ffffff?text=The+Driller+W3"
+        ]
+    },
+    {
+        "id": 61,
+        "name": "The Stinger",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 3 (1987) Ram-Pagers Figures",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1987,
+        "price": 200,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "LJN 1987 Ram-Pagers line. Stinger-action figure/vehicle hybrid, part of Wave 3 (1987).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/c2c694/000000?text=The+Stinger+W3"
+        ]
+    },
+    {
+        "id": 62,
+        "name": "Luna Lasher Mumm-Ra",
+        "collection": "Thundercats",
+        "brand": "Thundercats",
+        "line": "Wave 3 (1987) Ram-Pagers Figures",
+        "type": "Figure",
+        "manufacturer": "LJN",
+        "releaseDate": 1987,
+        "price": 220,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "LJN 1987 Ram-Pagers line. Luna Lasher Mumm-Ra figure/vehicle hybrid, part of Wave 3 (1987).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/9a83a0/ffffff?text=Luna+Lasher+W3"
+        ]
+    },
+    {
+        "id": 63,
+        "name": "Akeem",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 1",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1990,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from the first wave of WWF Hasbro Real Wrestling Action figures.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/b09e84/000000?text=Akeem+S1"
+        ]
+    },
+    {
+        "id": 64,
+        "name": "Andre The Giant",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 1",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1990,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 1.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/c7c7c7/000000?text=Andre+S1"
+        ]
+    },
+    {
+        "id": 65,
+        "name": "Big Boss Man ",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 1",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1990,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 1. Includes Nightstick.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/999fa4/000000?text=Boss+Man+S1"
+        ]
+    },
+    {
+        "id": 66,
+        "name": "Brutus The Barber Beefcake ",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 1",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1990,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 1. Includes Sheers.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/d4a59a/000000?text=Brutus+S1"
+        ]
+    },
+    {
+        "id": 67,
+        "name": "Hulk Hogan ",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 1",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1990,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 1.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f4e799/000000?text=Hogan+S1"
+        ]
+    },
+    {
+        "id": 68,
+        "name": "Jake The Snake Roberts",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 1",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1990,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 1. Includes Snake.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/9aae8d/000000?text=Jake+S1"
+        ]
+    },
+    {
+        "id": 69,
+        "name": "Macho Man Randy Savage ",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 1",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1990,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 1.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f7a95b/000000?text=Macho+Man+S1"
+        ]
+    },
+    {
+        "id": 70,
+        "name": "Million Dollar Man Ted DiBiase",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 1",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1990,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 1.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/e0d164/000000?text=DiBiase+S1"
+        ]
+    },
+    {
+        "id": 71,
+        "name": "Ravishing Rick Rude",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 1",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1990,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 1.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f0d8d0/000000?text=Rick+Rude+S1"
+        ]
+    },
+    {
+        "id": 72,
+        "name": "Ultimate Warrior ",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 1",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1990,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 1.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f4e799/000000?text=Warrior+S1"
+        ]
+    },
+    {
+        "id": 73,
+        "name": "Hacksaw Jim Duggan",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 2",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 2 (1991). Includes 2x4.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/9aae8d/000000?text=Duggan+S2"
+        ]
+    },
+    {
+        "id": 74,
+        "name": "Honky Tonk Man",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 2",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 2 (1991). Includes Guitar.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/c7c7c7/000000?text=Honky+Tonk+S2"
+        ]
+    },
+    {
+        "id": 75,
+        "name": "Hulk Hogan ",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 2",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 2 (1991).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f4e799/000000?text=Hogan+S2"
+        ]
+    },
+    {
+        "id": 76,
+        "name": "Million Dollar Man Ted DiBiase ",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 2",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 2 (1991). Includes Belt.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/e0d164/000000?text=DiBiase+S2"
+        ]
+    },
+    {
+        "id": 77,
+        "name": "Rowdy Roddy Piper",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 2",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 2 (1991).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/c2c694/000000?text=Piper+S2"
+        ]
+    },
+    {
+        "id": 78,
+        "name": "Superfly Jimmy Snuka",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 2",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 2 (1991).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f4e2bf/000000?text=Snuka+S2"
+        ]
+    },
+    {
+        "id": 79,
+        "name": "Ultimate Warrior ",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 2",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 2 (1991).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f4e799/000000?text=Warrior+S2"
+        ]
+    },
+    {
+        "id": 80,
+        "name": "Big Boss Man ",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 3",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 3 (1991). Includes Nightstick.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/999fa4/000000?text=Boss+Man+S3"
+        ]
+    },
+    {
+        "id": 81,
+        "name": "Brutus The Barber Beefcake ",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 3",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 3 (1991). Includes Sheers.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/d4a59a/000000?text=Brutus+S3"
+        ]
+    },
+    {
+        "id": 82,
+        "name": "Earthquake",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 3",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 3 (1991).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/c7c7c7/000000?text=Earthquake+S3"
+        ]
+    },
+    {
+        "id": 83,
+        "name": "Greg The Hammer Valentine",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 3",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 3 (1991).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f0d8d0/000000?text=Valentine+S3"
+        ]
+    },
+    {
+        "id": 84,
+        "name": "Hulk Hogan ",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 3",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 3 (1991).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f4e799/000000?text=Hogan+S3"
+        ]
+    },
+    {
+        "id": 85,
+        "name": "Koko B Ware",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 3",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 3 (1991). Includes Bird.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/b09e84/000000?text=Koko+S3"
+        ]
+    },
+    {
+        "id": 86,
+        "name": "Macho Man Randy Savage ",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 3",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 3 (1991).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f7a95b/000000?text=Macho+Man+S3"
+        ]
+    },
+    {
+        "id": 87,
+        "name": "Mr. Perfect ",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 3",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 3 (1991).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/c2c694/000000?text=Mr+Perfect+S3"
+        ]
+    },
+    {
+        "id": 88,
+        "name": "Sgt. Slaughter",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 3",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 3 (1991).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/8a9aa0/ffffff?text=Sgt+Slaughter+S3"
+        ]
+    },
+    {
+        "id": 89,
+        "name": "Texas Tornado",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 3",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 3 (1991).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f0d8d0/000000?text=Texas+Tornado+S3"
+        ]
+    },
+    {
+        "id": 90,
+        "name": "Typhoon",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 3",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 3 (1991).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/8a8b8c/ffffff?text=Typhoon+S3"
+        ]
+    },
+    {
+        "id": 91,
+        "name": "Ultimate Warrior ",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 3",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 3 (1991).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f4e799/000000?text=Warrior+S3"
+        ]
+    },
+    {
+        "id": 92,
+        "name": "Bret The Hitman Hart",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 4",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1992,
+        "price": 12.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 4 (1992).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/d4a59a/000000?text=Bret+Hart+S4"
+        ]
+    },
+    {
+        "id": 93,
+        "name": "British Bulldog",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 4",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1992,
+        "price": 7.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 4 (1992).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/b09e84/000000?text=Bulldog+S4"
+        ]
+    },
+    {
+        "id": 94,
+        "name": "Ricky The Dragon Steamboat",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 4",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1992,
+        "price": 12.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 4 (1992). Includes Dragon Wing.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f7a95b/000000?text=Steamboat+S4"
+        ]
+    },
+    {
+        "id": 95,
+        "name": "The Undertaker",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 4",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1992,
+        "price": 9.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 4 (1992).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/c7c7c7/000000?text=Undertaker+S4"
+        ]
+    },
+    {
+        "id": 96,
+        "name": "IRS",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 5",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1992,
+        "price": 7.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 5 (1992).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f0d8a0/000000?text=IRS+S5"
+        ]
+    },
+    {
+        "id": 97,
+        "name": "Jim The Anvil Neidhart",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 5",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1992,
+        "price": 14.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 5 (1992).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/d4a59a/000000?text=Neidhart+S5"
+        ]
+    },
+    {
+        "id": 98,
+        "name": "The Mountie",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 5",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1992,
+        "price": 34.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 5 (1992). Includes Stick.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f0d8d0/000000?text=Mountie+S5"
+        ]
+    },
+    {
+        "id": 99,
+        "name": "Skinner",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 5",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1992,
+        "price": 12.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 5 (1992).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/9aae8d/000000?text=Skinner+S5"
+        ]
+    },
+    {
+        "id": 100,
+        "name": "Virgil",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 5",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1992,
+        "price": 7.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 5 (1992).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/e0d164/000000?text=Virgil+S5"
+        ]
+    },
+    {
+        "id": 101,
+        "name": "The Warlord",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 5",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1992,
+        "price": 7.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 5 (1992).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/8a8b8c/ffffff?text=Warlord+S5"
+        ]
+    },
+    {
+        "id": 102,
+        "name": "The Berzerker",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 6",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1993,
+        "price": 29.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 6 (1993). Includes Cloak.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f0d8a0/000000?text=Berzerker+S6"
+        ]
+    },
+    {
+        "id": 103,
+        "name": "Papa Shango",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 6",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1993,
+        "price": 37.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 6 (1993). Includes Necklace.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/9aae8d/000000?text=Papa+Shango+S6"
+        ]
+    },
+    {
+        "id": 104,
+        "name": "Repo Man",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 6",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1993,
+        "price": 9.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 6 (1993).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/8a9aa0/ffffff?text=Repo+Man+S6"
+        ]
+    },
+    {
+        "id": 105,
+        "name": "Ric Flair",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 6",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1993,
+        "price": 19.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 6 (1993).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f4e799/000000?text=Ric+Flair+S6"
+        ]
+    },
+    {
+        "id": 106,
+        "name": "Tatanka",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 6",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1993,
+        "price": 12.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 6 (1993).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f0d8d0/000000?text=Tatanka+S6"
+        ]
+    },
+    {
+        "id": 107,
+        "name": "Crush",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 7",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1993,
+        "price": 19.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 7 (1993).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/b09e84/000000?text=Crush+S7"
+        ]
+    },
+    {
+        "id": 108,
+        "name": "Kamala",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 7",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1993,
+        "price": 24.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 7 (1993).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f4e2bf/000000?text=Kamala+S7"
+        ]
+    },
+    {
+        "id": 109,
+        "name": "Nailz",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 7",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1993,
+        "price": 19.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 7 (1993).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/999fa4/000000?text=Nailz+S7"
+        ]
+    },
+    {
+        "id": 110,
+        "name": "Owen Hart",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 7",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1993,
+        "price": 24.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 7 (1993).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/c2e0e3/000000?text=Owen+Hart+S7"
+        ]
+    },
+    {
+        "id": 111,
+        "name": "Razor Ramon",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 7",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1993,
+        "price": 34.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 7 (1993). Includes Gold Chain.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/e0d164/000000?text=Razor+Ramon+S7"
+        ]
+    },
+    {
+        "id": 112,
+        "name": "Shawn Michaels",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 7",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1993,
+        "price": 34.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 7 (1993).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/d4a59a/000000?text=Michaels+S7"
+        ]
+    },
+    {
+        "id": 113,
+        "name": "The Undertaker",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 8",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1994,
+        "price": 9.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 8 (1994). Includes Jacket.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/c7c7c7/000000?text=Undertaker+S8"
+        ]
+    },
+    {
+        "id": 114,
+        "name": "Yokozuna",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 8",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1994,
+        "price": 27.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 8 (1994).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f0d8d0/000000?text=Yokozuna+S8"
+        ]
+    },
+    {
+        "id": 115,
+        "name": "Doink The Clown",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 9",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1994,
+        "price": 24.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 9 (1994).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/e0d164/000000?text=Doink+S9"
+        ]
+    },
+    {
+        "id": 116,
+        "name": "Tatanka",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Series 9",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1994,
+        "price": 12.99,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure from WWF Hasbro Series 9 (1994).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f0d8d0/000000?text=Tatanka+S9"
+        ]
+    },
+    {
+        "id": 117,
+        "name": "The Bushwhackers",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Tag Team Series 1",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure 2-pack from the WWF Hasbro Tag Team Series 1 (1991).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/b09e84/000000?text=Bushwhackers+TT1"
+        ]
+    },
+    {
+        "id": 118,
+        "name": "Demolition",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Tag Team Series 1",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 100,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure 2-pack from the WWF Hasbro Tag Team Series 1 (1991). Includes the 2 original Helmets.",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/9a83a0/ffffff?text=Demolition+TT1"
+        ]
+    },
+    {
+        "id": 119,
+        "name": "The Legion Of Doom",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Tag Team Series 1",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure 2-pack from the WWF Hasbro Tag Team Series 1 (1991).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/8a9aa0/ffffff?text=LOD+TT1"
+        ]
+    },
+    {
+        "id": 120,
+        "name": "The Nasty Boys",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Tag Team Series 2",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1992,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure 2-pack from the WWF Hasbro Tag Team Series 2 (1992).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/999fa4/000000?text=Nasty+Boys+TT2"
+        ]
+    },
+    {
+        "id": 121,
+        "name": "The Rockers",
+        "collection": "WWF",
+        "brand": "WWF",
+        "line": "Tag Team Series 1",
+        "type": "Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 30,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Loose figure 2-pack from the WWF Hasbro Tag Team Series 1 (1991).",
+        "condition": "Loose",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://placehold.co/600x750/f4e799/000000?text=Rockers+TT1"
+        ]
+    },
+    {
+        "id": 122,
+        "name": "Talking  Ultimate Warrior 12\"",
+        "collection": "WWF",
+        "brand": "WWF",
+        "type": "Action Figure",
+        "manufacturer": "Hasbro",
+        "releaseDate": 1991,
+        "price": 85,
+        "stock": 1,
+        "demographic": "masculine",
+        "description": "Hasbro 1991. Massive 12-inch scale figure. Pull-string voice mechanism tested and working: 'Feel the power of the Warrior!' Paint apps on face paint are crisp.",
+        "condition": "Loose - Good",
+        "links": [
+            {
+                "platform": "eBay",
+                "url": "#"
+            }
+        ],
+        "images": [
+            "https://i.ebayimg.com/images/g/f2kAAOSwUvNnmZUY/s-l1600.jpg",
+            "https://placehold.co/600x750/ccff00/ffffff?text=Back+Detail"
+        ]
+    }
+]
