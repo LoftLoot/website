@@ -58,11 +58,10 @@ input[type=range]::-moz-range-thumb { pointer-events: auto; }
 /* --- ANIMATIONS --- */
 @keyframes deal-bottom {
   0% { 
-    opacity: 0;               /* FIX: Start invisible to prevent flicker */
-    transform: translateY(30px); /* Tighter movement (was 100px) */
+    /* No opacity change = fully visible "tactile" slide */
+    transform: translateY(50px); 
   }
   100% { 
-    opacity: 1; 
     transform: translateY(0); 
   }
 }
@@ -98,7 +97,8 @@ input[type=range]::-moz-range-thumb { pointer-events: auto; }
 
 /* --- ANIMATION HELPERS --- */
 .animate-deal-bottom {
-  animation: deal-bottom 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  /* Retained the cubic-bezier for that heavy "thud" feel */
+  animation: deal-bottom 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 .animate-tear-off {
