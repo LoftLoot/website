@@ -2,7 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-/* --- GLOBAL LAYOUT & SCROLLING --- */
+/* --- FONTS --- */
+@font-face {
+  font-family: 'Jua';
+  src: url('./fonts/Jua-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('./fonts/outfit-v15-latin-300.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('./fonts/outfit-v15-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('./fonts/outfit-v15-latin-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('./fonts/outfit-v15-latin-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('./fonts/outfit-v15-latin-900.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: block;
+}
+
+/* --- GLOBAL LAYOUT --- */
 html, body {
   margin: 0;
   padding: 0;
@@ -55,67 +99,21 @@ body {
 input[type=range]::-webkit-slider-thumb { pointer-events: auto; }
 input[type=range]::-moz-range-thumb { pointer-events: auto; }
 
-/* --- FONTS --- */
-/* FIX: 'block' prevents text flicker (FOUT) */
-@font-face {
-  font-family: 'Jua';
-  src: url('./fonts/Jua-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: block; 
-}
-
-@font-face {
-  font-family: 'Outfit';
-  src: url('./fonts/outfit-v15-latin-300.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: block;
-}
-
-@font-face {
-  font-family: 'Outfit';
-  src: url('./fonts/outfit-v15-latin-regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: block;
-}
-
-@font-face {
-  font-family: 'Outfit';
-  src: url('./fonts/outfit-v15-latin-500.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: block;
-}
-
-@font-face {
-  font-family: 'Outfit';
-  src: url('./fonts/outfit-v15-latin-700.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: block;
-}
-
-@font-face {
-  font-family: 'Outfit';
-  src: url('./fonts/outfit-v15-latin-900.woff2') format('woff2');
-  font-weight: 900;
-  font-style: normal;
-  font-display: block;
-}
-
 /* --- ANIMATIONS --- */
+
+/* Desktop Animation Keyframes */
 @keyframes deal-bottom {
   0% { 
-    /* Reduced distance to 30px for smoother performance while keeping tactile feel */
-    transform: translateY(30px); 
+    opacity: 0;                  /* Hidden while waiting for delay */
+    transform: translateY(30px); /* Short, heavy slide distance */
   }
   100% { 
+    opacity: 1; 
     transform: translateY(0); 
   }
 }
 
+/* Sticker Peel Animation */
 @keyframes tear-off {
   0% { transform: rotate(0deg); }
   20% { transform: rotate(-5deg); }
@@ -127,7 +125,7 @@ input[type=range]::-moz-range-thumb { pointer-events: auto; }
   }
 }
 
-/* Heavy Slam - Reduced scale to prevent "flash" */
+/* Sold Stamp Animation */
 @keyframes stamp {
   0% {
     opacity: 0;
@@ -139,23 +137,39 @@ input[type=range]::-moz-range-thumb { pointer-events: auto; }
   }
 }
 
+/* Ticker Animation */
 @keyframes ticker-scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
 
-/* --- ANIMATION HELPERS --- */
+/* Dust Puff Animation */
+@keyframes puff-explode {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.6);
+  }
+  40% {
+    opacity: 0.5;
+    transform: translate(var(--tx), var(--ty)) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(var(--tx) * 1.5), calc(var(--ty) * 1.5)) scale(0.8);
+  }
+}
 
-/* FIX: Only apply the card deal animation on Desktop (md+) */
+/* --- ANIMATION CLASSES --- */
+
+/* DEFAULT (Mobile): No animation for maximum performance */
 .animate-deal-bottom {
-  /* Default: No animation on mobile (instant load) */
   animation: none;
 }
 
+/* DESKTOP (MD+): Enable snappy deal animation */
 @media (min-width: 768px) {
   .animate-deal-bottom {
-    /* Desktop: Short, snappy deal animation */
-    will-change: transform; /* Hint to browser to prioritize painting */
+    will-change: transform, opacity; /* Hint to browser to optimize */
     animation: deal-bottom 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
   }
 }
@@ -165,13 +179,11 @@ input[type=range]::-moz-range-thumb { pointer-events: auto; }
 }
 
 .animate-stamp {
-  /* Heavy impact ease-out */
   animation: stamp 0.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
   opacity: 0;
   animation-delay: 0s;
 }
 
-/* --- TICKER --- */
 .ticker-track {
   display: inline-block;
   white-space: nowrap;
@@ -193,22 +205,6 @@ input[type=range]::-moz-range-thumb { pointer-events: auto; }
 
 .ticker-track:hover {
   animation-play-state: paused;
-}
-
-/* --- SOLD STAMP DUST (SUBTLE STONE COLOR) --- */
-@keyframes puff-explode {
-  0% {
-    opacity: 0;
-    transform: translate(0, 0) scale(0.6);
-  }
-  40% {
-    opacity: 0.5;
-    transform: translate(var(--tx), var(--ty)) scale(1.1);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(calc(var(--tx) * 1.5), calc(var(--ty) * 1.5)) scale(0.8);
-  }
 }
 
 .dust-puff {
