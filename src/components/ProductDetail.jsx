@@ -34,10 +34,8 @@ const generateMailto = (productName) => {
     // TODO: Update with your real email if different
     const email = "hello@loftloot.co.uk"; 
     const subject = encodeURIComponent(`Purchase Request: ${productName}`);
-    const body = encodeURIComponent(
-        `Hi Loft Loot,\n\nI noticed "${productName}" is not listed yet, but I am interested in purchasing it.\n\nCould you please let me know the price and shipping cost?\n\nThanks!`
-    );
-    return `mailto:${email}?subject=${subject}&body=${body}`;
+    // UPDATED: Body removed as requested
+    return `mailto:${email}?subject=${subject}`;
 };
 
 // --- HOOKS ---
@@ -193,13 +191,13 @@ const EmailRevealButton = ({ productName }) => {
     
     return (
         <div className="relative w-full h-[62px] group sticker-container select-none">
-            {/* Back Layer (Revealed Email) - Updated colors to match About.jsx */}
-            <div className="absolute inset-0 flex items-center justify-center bg-white border-2 border-[#f4e799] border-dashed rounded-xl z-0 shadow-sm">
+            {/* Back Layer (Revealed Email) - Updated colors to match section background */}
+            <div className="absolute inset-0 flex items-center justify-center bg-[#f2e9d9] border-2 border-[#f4e799] border-dashed rounded-xl z-0 shadow-sm">
                 <a 
                     href={generateMailto(productName)}
                     className="font-bold text-[#d35153] text-sm md:text-base hover:underline flex items-center gap-2"
                 >
-                    <Mail size={18} />
+                    {/* UPDATED: Icon removed */}
                     <span>hello@loftloot.co.uk</span>
                 </a>
             </div>
