@@ -80,9 +80,7 @@ body {
   /* FIX: Use hidden instead of clip for broader support on layout containment */
   overflow-x: hidden;
   width: 100%;
-  /* Center the content and limit width on large screens */
-  max-width: 1920px; 
-  margin: 0 auto;
+  max-width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
