@@ -6,7 +6,7 @@ import headerImg from '../images/header_full.png';
 const Hero = () => {
   return (
     <div
-      className="relative bg-[#f4e799] text-[#514d46] mb-8 flex flex-row justify-center overflow-visible h-[clamp(200px,35vw,400px)]"
+      className="relative bg-[#f4e799] text-[#514d46] mb-8 flex flex-row justify-center overflow-visible h-[clamp(180px,35vw,400px)]"
     >
       <div className="w-full mx-auto px-4 pt-2 pb-0 relative z-10 flex flex-row flex-nowrap items-center gap-4 h-full">
 
@@ -60,3 +60,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
