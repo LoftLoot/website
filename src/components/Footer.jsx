@@ -11,7 +11,7 @@ const Footer = () => {
 
             <footer className="relative bg-[#f4e799] mt-auto pt-12 pb-12 z-50">
                 <JaggedLine position="top" />
-                <div className="max-w-7xl mx-auto px-2 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                <div className="mx-auto px-2 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                     
                     {/* Column 1: Logo */}
                     <div className="flex justify-center md:justify-start">
@@ -38,6 +38,7 @@ const Footer = () => {
 };
 
 export default Footer;
+
 
 
 
