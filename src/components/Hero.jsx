@@ -2,7 +2,7 @@
 import React from 'react';
 import { JaggedLine } from './About';
 import headerImg from '../images/header_full.png'; 
-import headerMini from '../images/header_mini.png'; // Added import
+import headerMini from '../images/header_mini.png'; 
 
 const Hero = () => {
   return (
@@ -42,8 +42,9 @@ const Hero = () => {
         </div>
 
         {/* IMAGE COLUMN */}
-        <div className="flex-1 relative z-10 flex justify-end items-center h-full pt-4 pb-0 -mt-4 md:-mt-8 overflow-visible">
-          <picture className="w-full h-full flex justify-end items-center">
+        <div className="flex-1 relative z-10 flex justify-end items-center h-full -mt-4 md:-mt-8 overflow-visible">
+          {/* Added min-w-0 to fix flexbox overflow on mobile */}
+          <picture className="w-full h-full flex justify-end items-center min-w-0">
             {/* Show header_mini on screens smaller than 768px */}
             <source media="(max-width: 767px)" srcSet={headerMini} />
             <img
@@ -63,5 +64,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-
