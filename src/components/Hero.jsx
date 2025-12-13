@@ -7,7 +7,7 @@ import headerMini from '../images/header_mini.png';
 const Hero = () => {
   return (
     <div
-      className="relative bg-[#f4e799] text-[#514d46] mb-8 flex flex-row justify-center overflow-visible h-[clamp(180px,35vw,400px)]"
+      className="relative bg-[#f4e799] text-[#514d46] mb-8 flex flex-row justify-center overflow-visible h-[clamp(150px,35vw,400px)]"
     >
       <div className="w-full max-w-7xl mx-auto px-4 pt-2 pb-0 relative z-10 flex flex-row flex-nowrap items-center gap-4 h-full">
 
@@ -42,17 +42,16 @@ const Hero = () => {
         </div>
 
         {/* IMAGE COLUMN */}
-        {/* Added min-w-0 here. This forces the flex item to shrink if the image is too wide, fixing the scroll issue. */}
-        <div className="flex-1 min-w-0 relative z-10 flex justify-end items-center h-full pt-4 pb-0 -mt-4 md:-mt-8 overflow-visible">
+        {/* FIX: min-w-0 must be HERE on the flex child to prevent blowout */}
+        <div className="flex-1 min-w-0 relative z-10 flex justify-end items-center h-full pt-0 md:pt-4 pb-0 -mt-4 md:-mt-8 overflow-visible">
           <picture className="w-full h-full flex justify-end items-center">
-            {/* Show header_mini on screens smaller than 768px */}
             <source media="(max-width: 767px)" srcSet={headerMini} />
             <img
               src={headerImg}
               alt=""
               fetchpriority="high"
               loading="eager"
-              className="w-full h-full object-contain object-right"
+              className="w-full h-full max-w-full object-contain object-right"
             />
           </picture>
         </div>
