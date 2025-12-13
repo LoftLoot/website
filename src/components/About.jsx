@@ -30,9 +30,9 @@ const About = () => {
         <>
             {/* TOP SECTION: STORY - Cream Background */}
             {/* FIX: Reduced mb-12 to mb-8 on mobile to cut space above 'Get in Touch' */}
-            <div className="relative bg-[#f2e9d9] text-[#514d46] mb-8 md:mb-12 pb-12">
+            <div className="relative bg-[#f2e9d9] text-[#514d46] mb-8 md:mb-10 pb-12">
                 {/* FIX: Reduced pt-12 to pt-8 on mobile to cut space above 'About Us' */}
-                <div className="max-w-3xl mx-auto px-4 pt-8 md:pt-12 relative z-10">
+                <div className="max-w-3xl mx-auto px-4 pt-8 md:pt-10 relative z-10">
                     
                     <div className="space-y-8 leading-relaxed text-sm md:text-base lg:text-lg relative text-left text-[#514d46]">
                         <div className="text-center mb-6">
@@ -100,5 +100,6 @@ const About = () => {
 };
 
 export default About;
+
 
 
