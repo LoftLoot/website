@@ -158,7 +158,7 @@ const useImageZoom = () => {
         imgRef.current.style.transformOrigin = `${xPercent}% ${yPercent}%`;
     }, [isActive]);
 
-    const handleMouseLeave = useCallback(() => {
+    const handleMouseLeave = useCallback((e) => {
         if (isActive && imgRef.current) {
             imgRef.current.style.transform = 'scale(1)';
             setIsActive(false);
@@ -193,8 +193,8 @@ const EmailRevealButton = ({ productName }) => {
     
     return (
         <div className="relative w-full h-[62px] group sticker-container select-none">
-            {/* Back Layer (Revealed Email) */}
-            <div className="absolute inset-0 flex items-center justify-center bg-[#f4e799]/20 border-2 border-[#d35153] border-dashed rounded-xl z-0 shadow-inner">
+            {/* Back Layer (Revealed Email) - Updated colors to match About.jsx */}
+            <div className="absolute inset-0 flex items-center justify-center bg-white border-2 border-[#f4e799] border-dashed rounded-xl z-0 shadow-sm">
                 <a 
                     href={generateMailto(productName)}
                     className="font-bold text-[#d35153] text-sm md:text-base hover:underline flex items-center gap-2"
