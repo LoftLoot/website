@@ -2,12 +2,11 @@
 import React from 'react';
 import { JaggedLine } from './About';
 import headerImg from '../images/header_full.png'; 
-import headerMini from '../images/header_mini.png'; 
 
 const Hero = () => {
   return (
     <div
-      className="relative bg-[#f4e799] text-[#514d46] mb-8 flex flex-row justify-center overflow-visible h-[clamp(180px,35vw,400px)]"
+      className="relative bg-[#f4e799] text-[#514d46] mb-8 flex flex-row justify-center overflow-visible h-[clamp(200px,35vw,400px)]"
     >
       <div className="w-full max-w-7xl mx-auto px-4 pt-2 pb-0 relative z-10 flex flex-row flex-nowrap items-center gap-4 h-full">
 
@@ -42,18 +41,15 @@ const Hero = () => {
         </div>
 
         {/* IMAGE COLUMN */}
-        <div className="flex-1 min-w-0 relative z-10 flex justify-end items-center h-full pt-4 pb-0 -mt-4 md:-mt-8 overflow-visible">
-          {/* FIX: Added min-w-0 to the picture element. Since it is a flex child of the div above, it also needs this constraint. */}
-          <picture className="w-full h-full flex justify-end items-center min-w-0">
-            <source media="(max-width: 767px)" srcSet={headerMini} />
-            <img
-              src={headerImg}
-              alt=""
-              fetchpriority="high"
-              loading="eager"
-              className="w-full h-full object-contain object-right"
-            />
-          </picture>
+        <div className="flex-1 relative z-10 flex justify-end items-center h-full pt-4 pb-0 -mt-4 md:-mt-8 overflow-visible">
+          <img
+            src={headerImg}
+            alt=""
+            // FIX: Changed from fetchPriority to fetchpriority
+            fetchpriority="high"
+            loading="eager"
+            className="w-full h-full object-contain object-right"
+          />
         </div>
       </div>
 
