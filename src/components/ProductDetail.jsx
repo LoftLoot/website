@@ -1,8 +1,8 @@
-// src/components/ProductDetail.js
+// src/components/ProductDetail.jsx
 import React, { useState, useRef, useCallback, useEffect, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { Helmet } from 'react-helmet-async'; 
-import { ChevronRight, ChevronLeft, ExternalLink, ShoppingBag, Play, Archive, X } from 'lucide-react';
+import { ChevronRight, ChevronLeft, ExternalLink, ShoppingBag, Play, Archive, X, Mail } from 'lucide-react';
 import { JaggedLine } from './About'; 
 import ProductCard from './ProductCard'; 
 import { ORGANIZATION_SCHEMA } from '../data';
@@ -192,6 +192,40 @@ const useScrollSpy = (ref, itemCount, onIndexChange) => {
 };
 
 // --- SUB-COMPONENTS ---
+
+// NEW: Bot-protected Email Button (Sticker Reveal)
+const EmailRevealButton = ({ productName }) => {
+    const [isPeeled, setIsPeeled] = useState(false);
+    
+    return (
+        <div className="relative w-full h-[62px] group sticker-container select-none">
+            {/* Back Layer (Revealed Email) */}
+            <div className="absolute inset-0 flex items-center justify-center bg-[#f4e799]/20 border-2 border-[#d35153] border-dashed rounded-xl z-0 shadow-inner">
+                <a 
+                    href={`mailto:hello@loftloot.co.uk?subject=Inquiry: ${productName}`} 
+                    className="font-bold text-[#d35153] text-sm md:text-base hover:underline flex items-center gap-2"
+                >
+                    <Mail size={18} />
+                    <span>hello@loftloot.co.uk</span>
+                </a>
+            </div>
+            
+            {/* Front Layer (Sticker Button) */}
+            <button 
+                onClick={() => setIsPeeled(true)} 
+                className={`sticker-front absolute inset-0 z-10 flex items-center justify-between p-4 bg-white border-2 border-[#514d46] text-[#514d46] font-bold rounded-xl cursor-pointer hover:bg-[#514d46] hover:text-white transition-all duration-300 shadow-sm ${isPeeled ? 'animate-tear-off pointer-events-none' : ''}`}
+            >
+                <span className="flex items-center gap-2">
+                    <Mail size={18} />
+                    <span className="flex items-center gap-1.5 text-sm md:text-base">
+                        Email to Buy
+                    </span>
+                </span>
+                <ExternalLink size={18} className="opacity-50 group-hover:opacity-100" />
+            </button>
+        </div>
+    );
+};
 
 const Lightbox = ({ isOpen, onClose, images, initialIndex }) => {
     const [index, setIndex] = useState(initialIndex);
@@ -886,18 +920,29 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                                 <hr className="border-t-2 border-[#514d46]/5 my-8" />
                                 <div className="flex flex-col gap-3">
                                     {product.links && product.links.length > 0 ? (
-                                        product.links.map((link, i) => (
-                                            product.isSold ? (
-                                                <div key={i} className="flex items-center justify-between p-4 rounded-xl border-2 border-[#514d46]/10 bg-white/50 text-[#514d46]/40 font-bold cursor-default">
-                                                    <span className="flex items-center gap-2">
-                                                        <Archive size={18} />
-                                                        <span className="flex items-center gap-1.5 text-sm md:text-base">
-                                                            <span>Sold on</span>
-                                                            {link.logo ? <img src={link.logo} alt={link.platform} style={{ height: '18px', width: 'auto' }} className="object-contain translate-y-[1px] -translate-x-[1px] grayscale opacity-50" /> : link.platform}
+                                        product.links.map((link, i) => {
+                                            if (product.isSold) {
+                                                // Sold View
+                                                return (
+                                                    <div key={i} className="flex items-center justify-between p-4 rounded-xl border-2 border-[#514d46]/10 bg-white/50 text-[#514d46]/40 font-bold cursor-default">
+                                                        <span className="flex items-center gap-2">
+                                                            <Archive size={18} />
+                                                            <span className="flex items-center gap-1.5 text-sm md:text-base">
+                                                                <span>Sold on</span>
+                                                                {link.logo ? <img src={link.logo} alt={link.platform} style={{ height: '18px', width: 'auto' }} className="object-contain translate-y-[1px] -translate-x-[1px] grayscale opacity-50" /> : link.platform}
+                                                            </span>
                                                         </span>
-                                                    </span>
-                                                </div>
-                                            ) : (
+                                                    </div>
+                                                );
+                                            }
+                                            
+                                            // Check for # URL - Render Email Button
+                                            if (link.url === '#' || !link.url) {
+                                                return <EmailRevealButton key={i} productName={product.name} />;
+                                            }
+
+                                            // Normal Link
+                                            return (
                                                 <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className={`flex items-center justify-between p-4 rounded-xl border-2 border-[#514d46] bg-white group font-bold shadow-sm ${hasMounted ? 'hover:bg-[#514d46] hover:text-white transition-all duration-300' : ''}`}>
                                                     <span className="flex items-center gap-2">
                                                         <ShoppingBag size={18} />
@@ -908,10 +953,11 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
                                                     </span>
                                                     <ExternalLink size={18} className="opacity-50 group-hover:opacity-100" />
                                                 </a>
-                                            )
-                                        ))
+                                            );
+                                        })
                                     ) : !product.isSold ? (
-                                        <button disabled className="w-full p-4 rounded-xl bg-[#514d46]/10 text-[#514d46]/40 font-bold cursor-not-allowed">Purchase Link Unavailable</button>
+                                        // Fallback if no links exist at all
+                                        <EmailRevealButton productName={product.name} />
                                     ) : null}
                                 </div>
                             </div>
