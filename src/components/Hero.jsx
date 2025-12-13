@@ -12,8 +12,6 @@ const Hero = () => {
 
         {/* TEXT COLUMN */}
         <div className="relative z-30 shrink-0 flex flex-col items-start justify-center select-none w-fit max-w-[50%] md:max-w-[60%]">
-          {/* FIX: Changed whitespace-nowrap to whitespace-normal md:whitespace-nowrap.
-              This allows the large text to wrap on very small screens if necessary, preventing overflow. */}
           <h2
             className="font-black text-[#514d46] text-left leading-none whitespace-normal md:whitespace-nowrap text-[1.75rem] md:text-5xl lg:text-6xl"
             style={{
@@ -27,8 +25,9 @@ const Hero = () => {
           </h2>
 
           <div className="w-0 min-w-full pt-2 md:pt-6 pointer-events-none relative">
+            {/* FIX: Changed w-[125%] to w-full md:w-[125%] to prevent blowout on small screens */}
             <p
-              className="text-[#514d46] leading-relaxed text-xs md:text-base lg:text-lg w-[125%]"
+              className="text-[#514d46] leading-relaxed text-xs md:text-base lg:text-lg w-full md:w-[125%]"
               style={{
                 textShadow: '0 0 30px rgba(244, 231, 153, 0.8), 0 0 15px rgba(244, 231, 153, 0.5)',
               }}
@@ -61,4 +60,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
