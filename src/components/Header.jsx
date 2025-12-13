@@ -535,10 +535,6 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
 
   return (
     <>
-      {/* FIX: Changed from left-0 to right-full. 
-         This places the hidden measuring div off-screen to the LEFT.
-         If the text expands, it expands away from the viewport, preventing horizontal scrollbars.
-      */}
       <div aria-hidden="true" className="absolute top-0 right-full w-0 h-0 overflow-hidden opacity-0 pointer-events-none">
           <div ref={measureRef} className="whitespace-nowrap text-[10px] md:text-xs font-medium uppercase tracking-[0.2em] inline-block">{singleUnit}</div>
       </div>
@@ -578,9 +574,10 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
 
       {/* --- MOBILE HEADER --- */}
       <div className="lg:hidden relative z-[60]">
-          <div ref={logoRef} className="bg-[#fffbf0] px-4 pt-4 pb-0 flex items-center justify-between relative z-[61]">
-              <div onClick={onHomeClick} className="cursor-pointer"><Logo /></div>
-              <div className="flex items-center gap-3">
+          {/* FIX: Added max-w-[100vw] and overflow-hidden to prevent horizontal scroll if font expansion occurs */}
+          <div ref={logoRef} className="bg-[#fffbf0] px-4 pt-4 pb-0 flex items-center justify-between relative z-[61] max-w-[100vw] overflow-hidden">
+              <div onClick={onHomeClick} className="cursor-pointer shrink-0"><Logo /></div>
+              <div className="flex items-center gap-3 shrink-0">
                   <button onClick={currentView !== 'shop' ? onCatalogueClick : undefined} disabled={currentView === 'shop' && !isProductView} className={`text-base font-bold ${hasMounted ? 'transition-colors' : ''} ${currentView === 'shop' && !isProductView ? 'text-[#487ec8]' : 'text-[#514d46]/60'}`}>Catalogue</button>
                   <div className="h-4 w-0.5 bg-[#514d46]/10"></div>
                   <button onClick={currentView !== 'about' ? onAboutClick : undefined} disabled={currentView === 'about'} className={`text-base font-bold ${hasMounted ? 'transition-colors' : ''} ${currentView === 'about' ? 'text-[#487ec8]' : 'text-[#514d46]/60'}`}>About</button>
@@ -620,4 +617,3 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
 Header.displayName = 'Header';
 
 export default Header;
-
