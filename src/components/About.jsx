@@ -29,8 +29,10 @@ const About = () => {
     return (
         <>
             {/* TOP SECTION: STORY - Cream Background */}
-            <div className="relative bg-[#f2e9d9] text-[#514d46] mb-12 pb-12">
-                <div className="max-w-3xl mx-auto px-4 pt-12 relative z-10">
+            {/* FIX: Reduced mb-12 to mb-6 on mobile to cut space above 'Get in Touch' */}
+            <div className="relative bg-[#f2e9d9] text-[#514d46] mb-6 md:mb-12 pb-12">
+                {/* FIX: Reduced pt-12 to pt-6 on mobile to cut space above 'About Us' */}
+                <div className="max-w-3xl mx-auto px-4 pt-6 md:pt-12 relative z-10">
                     
                     <div className="space-y-8 leading-relaxed text-sm md:text-base lg:text-lg relative text-left text-[#514d46]">
                         <div className="text-center mb-6">
@@ -72,7 +74,8 @@ const About = () => {
             </div>
 
             {/* BOTTOM SECTION: CONTACT */}
-            <div className="max-w-3xl mx-auto px-4 pb-20 relative z-10">
+            {/* FIX: Reduced pb-20 to pb-8 to reduce large empty space before footer */}
+            <div className="max-w-3xl mx-auto px-4 pb-8 md:pb-12 relative z-10">
                 <div className="text-center flex flex-col items-center justify-center">
                     <h3 className="text-xl md:text-2xl font-black text-[#514d46] mb-4" style={{ fontFamily: '"Jua", sans-serif' }}>Get in Touch</h3>
                     <p className="opacity-60 text-sm md:text-base max-w-md mx-auto">Have a question about a specific item? We'd love to hear from you.</p>
