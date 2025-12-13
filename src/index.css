@@ -53,7 +53,7 @@ html, body {
   width: 100%;
   height: 100%;
   background-color: #fffbf0;
-  overflow: hidden;
+  overflow: hidden; /* Prevent body scroll, use app container */
   overscroll-behavior-y: none;
   -webkit-text-size-adjust: 100%;
 }
@@ -67,15 +67,24 @@ body {
 
 #app-scroll-container {
   height: 100%;
+  width: 100%;
   overflow-y: auto;
+  /* FIX: Explicitly hide horizontal overflow on the scroll container */
+  overflow-x: hidden; 
   -webkit-overflow-scrolling: touch;
+  /* FIX: Ensure it never exceeds viewport width */
+  max-width: 100vw; 
 }
 
 #root {
-  overflow-x: clip;
+  /* FIX: Use hidden instead of clip for broader support on layout containment */
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 /* --- UTILITIES --- */
@@ -101,82 +110,47 @@ input[type=range]::-moz-range-thumb { pointer-events: auto; }
 
 /* --- ANIMATIONS --- */
 
-/* Desktop Animation Keyframes */
 @keyframes deal-bottom {
-  0% { 
-    opacity: 0;                  /* Hidden while waiting for delay */
-    transform: translateY(30px); /* Short, heavy slide distance */
-  }
-  100% { 
-    opacity: 1; 
-    transform: translateY(0); 
-  }
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Sticker Peel Animation */
 @keyframes tear-off {
   0% { transform: rotate(0deg); }
   20% { transform: rotate(-5deg); }
   40% { transform: rotate(5deg); }
   60% { transform: rotate(-2deg); }
-  100% {
-    transform: translateY(150%) rotate(10deg);
-    opacity: 0;
-  }
+  100% { transform: translateY(150%) rotate(10deg); opacity: 0; }
 }
 
-/* Sold Stamp Animation */
 @keyframes stamp {
-  0% {
-    opacity: 0;
-    transform: scale(2.5) rotate(-12deg);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) rotate(-12deg);
-  }
+  0% { opacity: 0; transform: scale(2.5) rotate(-12deg); }
+  100% { opacity: 1; transform: scale(1) rotate(-12deg); }
 }
 
-/* Ticker Animation */
 @keyframes ticker-scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
 
-/* Dust Puff Animation */
 @keyframes puff-explode {
-  0% {
-    opacity: 0;
-    transform: translate(0, 0) scale(0.6);
-  }
-  40% {
-    opacity: 0.5;
-    transform: translate(var(--tx), var(--ty)) scale(1.1);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(calc(var(--tx) * 1.5), calc(var(--ty) * 1.5)) scale(0.8);
-  }
+  0% { opacity: 0; transform: translate(0, 0) scale(0.6); }
+  40% { opacity: 0.5; transform: translate(var(--tx), var(--ty)) scale(1.1); }
+  100% { opacity: 0; transform: translate(calc(var(--tx) * 1.5), calc(var(--ty) * 1.5)) scale(0.8); }
 }
 
 /* --- ANIMATION CLASSES --- */
 
-/* DEFAULT (Mobile): No animation for maximum performance */
-.animate-deal-bottom {
-  animation: none;
-}
+.animate-deal-bottom { animation: none; }
 
-/* DESKTOP (MD+): Enable snappy deal animation */
 @media (min-width: 768px) {
   .animate-deal-bottom {
-    will-change: transform, opacity; /* Hint to browser to optimize */
+    will-change: transform, opacity;
     animation: deal-bottom 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
   }
 }
 
-.animate-tear-off {
-  animation: tear-off 0.8s ease-in forwards;
-}
+.animate-tear-off { animation: tear-off 0.8s ease-in forwards; }
 
 .animate-stamp {
   animation: stamp 0.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
@@ -203,9 +177,7 @@ input[type=range]::-moz-range-thumb { pointer-events: auto; }
   white-space: nowrap;
 }
 
-.ticker-track:hover {
-  animation-play-state: paused;
-}
+.ticker-track:hover { animation-play-state: paused; }
 
 .dust-puff {
   position: absolute;
