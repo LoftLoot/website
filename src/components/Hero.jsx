@@ -2,6 +2,7 @@
 import React from 'react';
 import { JaggedLine } from './About';
 import headerImg from '../images/header_full.png'; 
+import headerMini from '../images/header_mini.png'; // Added import
 
 const Hero = () => {
   return (
@@ -42,14 +43,18 @@ const Hero = () => {
 
         {/* IMAGE COLUMN */}
         <div className="flex-1 relative z-10 flex justify-end items-center h-full pt-4 pb-0 -mt-4 md:-mt-8 overflow-visible">
-          <img
-            src={headerImg}
-            alt=""
-            // FIX: Changed from fetchPriority to fetchpriority
-            fetchpriority="high"
-            loading="eager"
-            className="w-full h-full object-contain object-right"
-          />
+          <picture className="w-full h-full flex justify-end items-center">
+            {/* Show header_mini on screens smaller than 768px */}
+            <source media="(max-width: 767px)" srcSet={headerMini} />
+            <img
+              src={headerImg}
+              alt=""
+              // FIX: Changed from fetchPriority to fetchpriority
+              fetchpriority="high"
+              loading="eager"
+              className="w-full h-full object-contain object-right"
+            />
+          </picture>
         </div>
       </div>
 
