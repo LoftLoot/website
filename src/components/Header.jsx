@@ -549,7 +549,7 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
 
       {/* --- DESKTOP HEADER --- */}
       <div className="hidden lg:block bg-[#fffbf0] shadow-sm z-[60] relative">
-        <div className="max-w-7xl mx-auto px-4 h-[86px] flex items-center justify-between">
+        <div className="mx-auto px-4 h-[86px] flex items-center justify-between">
             <div className="flex justify-start items-center cursor-pointer group select-none shrink-0" onClick={onHomeClick}>
                 <Logo />
             </div>
@@ -620,3 +620,4 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
 Header.displayName = 'Header';
 
 export default Header;
+
