@@ -74,8 +74,8 @@ const About = () => {
             </div>
 
             {/* BOTTOM SECTION: CONTACT */}
-            {/* FIX: Reduced pb-20 to pb-4 to reduce large empty space before footer */}
-            <div className="max-w-3xl mx-auto px-4 pb-4 md:pb-12 relative z-10">
+            {/* FIX: Reduced pb-20 to pb-3 to reduce large empty space before footer */}
+            <div className="max-w-3xl mx-auto px-4 pb-3 md:pb-12 relative z-10">
                 <div className="text-center flex flex-col items-center justify-center">
                     <h3 className="text-xl md:text-2xl font-black text-[#514d46] mb-4" style={{ fontFamily: '"Jua", sans-serif' }}>Get in Touch</h3>
                     <p className="opacity-60 text-sm md:text-base max-w-md mx-auto">Have a question about a specific item? We'd love to hear from you.</p>
@@ -100,4 +100,5 @@ const About = () => {
 };
 
 export default About;
+
 
