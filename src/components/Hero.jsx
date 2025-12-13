@@ -8,7 +8,7 @@ const Hero = () => {
     <div
       className="relative bg-[#f4e799] text-[#514d46] mb-8 flex flex-row justify-center overflow-visible h-[clamp(180px,35vw,400px)]"
     >
-      <div className="w-full max-w-7xl mx-auto px-4 pt-2 pb-0 relative z-10 flex flex-row flex-nowrap items-center gap-4 h-full">
+      <div className="w-full mx-auto px-4 pt-2 pb-0 relative z-10 flex flex-row flex-nowrap items-center gap-4 h-full">
 
         {/* TEXT COLUMN */}
         <div className="relative z-30 shrink-0 flex flex-col items-start justify-center select-none w-fit max-w-[50%] md:max-w-[60%]">
@@ -60,3 +60,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
