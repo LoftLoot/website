@@ -191,8 +191,8 @@ const EmailRevealButton = ({ productName }) => {
     
     return (
         <div className="relative w-full h-[62px] group sticker-container select-none">
-            {/* Back Layer (Revealed Email) - Updated colors to match section background & hr border */}
-            <div className="absolute inset-0 flex items-center justify-center bg-[#f2e9d9] border-2 border-[#514d46]/5 border-dashed rounded-xl z-0 shadow-sm">
+            {/* Back Layer (Revealed Email) - Updated colors: Tan bg + Solid Dark Border */}
+            <div className="absolute inset-0 flex items-center justify-center bg-[#f2e9d9] border-2 border-[#514d46] border-dashed rounded-xl z-0 shadow-sm">
                 <a 
                     href={generateMailto(productName)}
                     className="font-bold text-[#d35153] text-sm md:text-base hover:underline flex items-center gap-2"
