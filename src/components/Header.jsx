@@ -349,7 +349,7 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
       </div>
 
       <div className="hidden lg:block bg-[#fffbf0] shadow-sm z-[60] relative">
-        <div className="mx-auto px-4 h-[86px] flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 h-[86px] flex items-center justify-between">
             <div className="flex justify-start items-center cursor-pointer group select-none shrink-0" onClick={onHomeClick}><Logo /></div>
             <div className="absolute left-1/2 -translate-x-1/2 w-1/2 max-w-3xl"><SearchInput search={search} onSearchUpdate={onSearchUpdate} onCommit={onCommit} suggestions={suggestions} /></div>
             <div className="flex justify-end items-center gap-6 shrink-0 relative z-[61]">
@@ -382,4 +382,5 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
 Header.displayName = 'Header';
 
 export default Header;
+
 
