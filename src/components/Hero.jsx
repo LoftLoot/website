@@ -7,9 +7,10 @@ import headerMiniImg from '../images/header_mini.png';
 const Hero = () => {
   return (
     <div
-      className="relative bg-[#f4e799] text-[#514d46] mb-8 flex flex-row justify-center overflow-visible h-[clamp(180px,35vw,400px)]"
+      className="relative bg-[#f4e799] text-[#514d46] mb-8 flex flex-row justify-center overflow-visible h-[clamp(160px,35vw,400px)]"
     >
-      <div className="w-full mx-auto px-4 pt-0 md:pt-2 pb-0 relative z-10 flex flex-row flex-nowrap items-center gap-4 h-full">
+      {/* FIX: Changed px-4 to pl-4 pr-2 md:px-4 to halve right padding on mobile */}
+      <div className="w-full mx-auto pl-4 pr-2 md:px-4 pt-0 md:pt-2 pb-0 relative z-10 flex flex-row flex-nowrap items-center gap-4 h-full">
 
         {/* TEXT COLUMN */}
         <div className="relative z-30 shrink-0 flex flex-col items-start justify-center select-none w-fit max-w-[50%] md:max-w-[60%]">
@@ -26,7 +27,6 @@ const Hero = () => {
           </h2>
 
           <div className="w-0 min-w-full pt-2 md:pt-6 pointer-events-none relative">
-            {/* FIX: Changed w-[125%] to w-full md:w-[125%] to prevent blowout on small screens */}
             <p
               className="text-[#514d46] leading-relaxed text-xs md:text-base lg:text-lg w-full md:w-[125%]"
               style={{
@@ -49,7 +49,6 @@ const Hero = () => {
             <img
               src={headerImg}
               alt=""
-              // FIX: Changed from fetchPriority to fetchpriority
               fetchpriority="high"
               loading="eager"
               className="w-full h-full object-contain object-right"
