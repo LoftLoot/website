@@ -542,7 +542,7 @@ const RelatedProductsCarousel = ({ products, onOpen }) => {
     if (products.length === 0) return null;
 
     return (
-        <div className="max-w-7xl mx-auto px-4 w-full relative group/carousel">
+        <div className="mx-auto px-4 w-full relative group/carousel">
             <div className="mb-6">
                 <h3 className="font-black text-[#514d46] text-lg md:text-xl lg:text-2xl flex items-center gap-2" style={{ fontFamily: '"Jua", sans-serif' }}><span className="text-[#d35153]">You May Also Like</span></h3>
             </div>
@@ -639,7 +639,7 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
             <Lightbox isOpen={isLightboxOpen} onClose={() => setIsLightboxOpen(false)} images={product.processedImages || []} initialIndex={activeIndex} />
 
             <div className="bg-[#f2e9d9] pb-12 pt-6 relative w-full">
-                <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
+                <div className="mx-auto px-4 lg:px-8 relative z-10">
                     <nav aria-label="Breadcrumb" className="flex items-center flex-wrap gap-2 mb-6 text-xs md:text-sm font-bold uppercase tracking-wider text-[#514d46]/60">
                         <button onClick={onShopAll} className={`hover:text-[#487ec8] ${hasMounted ? 'transition-colors' : ''}`}>Catalogue</button>
                         <ChevronRight size={12} className="opacity-40" />
@@ -725,3 +725,4 @@ const ProductDetail = ({ product, productMap, onClose, onShopAll, onCategoryClic
 };
 
 export default ProductDetail;
+
