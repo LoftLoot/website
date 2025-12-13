@@ -7,7 +7,7 @@ import headerMiniImg from '../images/header_mini.png';
 const Hero = () => {
   return (
     <div
-      className="relative bg-[#f4e799] text-[#514d46] mb-8 flex flex-row justify-center overflow-visible h-[clamp(160px,35vw,400px)]"
+      className="relative bg-[#f4e799] text-[#514d46] mb-8 flex flex-row justify-center overflow-visible h-[clamp(170px,35vw,400px)]"
     >
       <div className="w-full mx-auto pl-4 pr-2 md:px-4 pt-0 md:pt-2 pb-0 relative z-10 flex flex-row flex-nowrap items-center gap-4 h-full">
 
@@ -42,8 +42,8 @@ const Hero = () => {
         </div>
 
         {/* IMAGE COLUMN */}
-        {/* FIX: Removed -mt-4 md:-mt-8 to fix vertical alignment and containment */}
-        <div className="flex-1 relative z-10 flex justify-end items-center h-full pt-0 md:pt-4 pb-0 overflow-visible">
+        {/* FIX: Removed md:pt-4, now just pt-0 pb-0 for consistent vertical centering */}
+        <div className="flex-1 relative z-10 flex justify-end items-center h-full pt-0 pb-0 overflow-visible">
           <picture className="w-full h-full flex justify-end items-center">
             <source media="(max-width: 767px)" srcSet={headerMiniImg} />
             <img
