@@ -217,7 +217,7 @@ const ShopView = ({
             <Hero />
             
             {/* FIX: Removed pb-12 and mb-20 to remove extra bottom spacing */}
-            <main className="mx-auto px-4 py-8 flex-1 w-full">
+            <main className="max-w-7xl mx-auto px-4 py-8 flex-1 w-full">
                 <div className="flex flex-col lg:flex-row gap-8" ref={topSectionRef}>
                     <aside className={`lg:w-64 flex-shrink-0 hidden lg:block lg:pt-2`}>
                         <FilterSection 
@@ -509,4 +509,5 @@ export const App = () => (
 );
 
 export default App;
+
 
