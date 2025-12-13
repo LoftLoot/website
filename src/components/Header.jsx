@@ -317,7 +317,7 @@ const SearchInput = React.memo(({ search, onSearchUpdate, onCommit, suggestions 
                                             )}
                                         </div>
                                         <div className="ml-auto flex items-center gap-2">
-                                            {prod.stock < 1 && <span className="text-[10px] font-bold bg-white text-[#d35153] px-2 py-0.5 rounded-full uppercase tracking-wider border border-[#d35153]/10 shadow-sm">Sold</span>}
+                                            {prod.stock < 1 && <span className="text-[10px] font-bold bg-white text-[#d35153] px-2 py-0.5 rounded-full uppercase tracking-wider border border border-[#d35153]/10 shadow-sm">Sold</span>}
                                             <ChevronRight size={16} className="text-[#514d46]/50" />
                                         </div>
                                     </div>
@@ -535,7 +535,11 @@ const Header = React.memo(({ currentView, isProductView, onCatalogueClick, onAbo
 
   return (
     <>
-      <div aria-hidden="true" className="absolute top-0 left-0 w-0 h-0 overflow-hidden opacity-0 pointer-events-none">
+      {/* FIX: Changed from left-0 to right-full. 
+         This places the hidden measuring div off-screen to the LEFT.
+         If the text expands, it expands away from the viewport, preventing horizontal scrollbars.
+      */}
+      <div aria-hidden="true" className="absolute top-0 right-full w-0 h-0 overflow-hidden opacity-0 pointer-events-none">
           <div ref={measureRef} className="whitespace-nowrap text-[10px] md:text-xs font-medium uppercase tracking-[0.2em] inline-block">{singleUnit}</div>
       </div>
 
